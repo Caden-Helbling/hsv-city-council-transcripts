@@ -6,11 +6,14 @@ import argparse
 import html as html_lib
 import json
 import re
+import subprocess
 import sys
 from dataclasses import asdict, dataclass, field
 from datetime import date
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
+
+RunFn = Callable[..., Any]
 
 import requests
 
@@ -302,16 +305,75 @@ def render_captions_txt(vtt: str, marker_interval: float = 300.0) -> str:
     return "\n".join(lines).strip() + "\n"
 
 
+def _pending_slugs(meetings_dir: Path, key: str) -> list[str]:
+    out: list[str] = []
+    for mdir in sorted(meetings_dir.iterdir()):
+        if (mdir / "meeting.json").exists() and not Manifest.load(mdir).status.get(key, False):
+            out.append(mdir.name)
+    return out
+
+
+def fetch_audio(slugs: list[str], all_pending: bool, publish: bool, meetings_dir: Path,
+                audio_dir: Path, session: requests.Session,
+                run: RunFn = subprocess.run) -> int:
+    if all_pending:
+        slugs = _pending_slugs(meetings_dir, "has_audio_asset" if publish else "has_whisper")
+    audio_dir.mkdir(parents=True, exist_ok=True)
+    failures = 0
+    for slug in slugs:
+        try:
+            manifest = Manifest.load(meetings_dir / slug)
+            opus = audio_dir / f"{slug}.opus"
+            if not opus.exists():
+                got_asset = False
+                if not publish:
+                    r = run(["gh", "release", "download", manifest.audio_asset_tag,
+                             "--pattern", "*.opus", "--dir", str(audio_dir)])
+                    got_asset = r.returncode == 0 and opus.exists()
+                if not got_asset:
+                    mp4 = audio_dir / f"{slug}.mp4"
+                    print(f"  downloading video for {slug} (large)...")
+                    download_file(manifest.mp4_url, mp4, session)
+                    r = run(["ffmpeg", "-y", "-i", str(mp4), "-vn", "-ac", "1",
+                             "-ar", "16000", "-c:a", "libopus", "-b:a", "24k", str(opus)])
+                    mp4.unlink(missing_ok=True)
+                    if r.returncode != 0:
+                        raise RuntimeError("ffmpeg failed")
+            if publish:
+                r = run(["gh", "release", "create", manifest.audio_asset_tag, str(opus),
+                         "--title", manifest.audio_asset_tag, "--notes", manifest.mp4_url])
+                if r.returncode != 0:
+                    r = run(["gh", "release", "upload", manifest.audio_asset_tag,
+                             str(opus), "--clobber"])
+                    if r.returncode != 0:
+                        raise RuntimeError("gh release create/upload failed")
+                manifest.status["has_audio_asset"] = True
+                manifest.save(meetings_dir / slug)
+            print(f"ok: audio ready for {slug}")
+        except Exception as exc:  # noqa: BLE001 — keep processing remaining meetings
+            failures += 1
+            print(f"FAIL: {slug}: {exc}", file=sys.stderr)
+    return 1 if failures else 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="hsvcc", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
     p_disc = sub.add_parser("discover", help="find meetings, fetch agendas + captions")
     p_disc.add_argument("--since", type=date.fromisoformat, default=date(2026, 4, 1))
+    p_audio = sub.add_parser("fetch-audio", help="get audio (release asset or MP4+ffmpeg)")
+    p_audio.add_argument("slugs", nargs="*")
+    p_audio.add_argument("--all-pending", action="store_true")
+    p_audio.add_argument("--publish", action="store_true",
+                         help="extract from MP4 and upload as GitHub release asset (CI)")
     args = parser.parse_args(argv)
     session = requests.Session()
     session.headers["User-Agent"] = "hsv-city-council-transcripts (personal archival tool)"
     if args.command == "discover":
         return 1 if discover(args.since, MEETINGS_DIR, session) else 0
+    if args.command == "fetch-audio":
+        return fetch_audio(args.slugs, args.all_pending, args.publish,
+                           MEETINGS_DIR, AUDIO_DIR, session)
     return 0
 
 
