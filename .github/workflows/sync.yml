@@ -37,4 +37,6 @@ jobs:
         run: |
           git add meetings/
           git diff --cached --quiet || git commit -m "chore: record published audio assets"
+          # main may have moved while this job ran (races with local pushes)
+          git pull --rebase origin main
           git push

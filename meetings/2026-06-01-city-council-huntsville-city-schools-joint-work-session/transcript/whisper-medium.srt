@@ -1,0 +1,5299 @@
+1
+00:00:00,000 --> 00:00:02,060
+you
+
+2
+00:00:30,000 --> 00:00:32,060
+you
+
+3
+00:01:01,000 --> 00:01:10,340
+Welcome everyone who has joined us this evening. It is Monday, June 1st, 2026,
+
+4
+00:01:10,340 --> 00:01:16,000
+3 o'clock and this joint meeting of the Huntsville City Council and Huntsville
+
+5
+00:01:16,000 --> 00:01:20,600
+Board of Education is called to order. We welcome everyone who is joining us here
+
+6
+00:01:20,600 --> 00:01:28,960
+in the table, in the chambers, or who may be joining us virtually. It has taken a
+
+7
+00:01:28,960 --> 00:01:33,520
+little bit of scheduling to pull this together, but we are very grateful for
+
+8
+00:01:33,520 --> 00:01:38,320
+everyone who has joined us tonight. The City of Huntsville is honored to host
+
+9
+00:01:38,320 --> 00:01:44,600
+this meeting. It's been a number of years since we have had a joint session and we
+
+10
+00:01:44,600 --> 00:01:49,080
+welcome those who have joined the Board of Education, those who have joined us, my
+
+11
+00:01:49,080 --> 00:01:56,240
+fellow council members, Mayor Battle, the superintendent, Dr. Sutton. We have had a
+
+12
+00:01:56,240 --> 00:02:01,000
+great partnership historically. We have an opportunity to explore that
+
+13
+00:02:01,000 --> 00:02:06,640
+partnership further tonight and look forward to learning about how our city
+
+14
+00:02:06,640 --> 00:02:12,440
+is growing, how we are adjusting to that growth, and how we can fund future growth.
+
+15
+00:02:12,440 --> 00:02:18,000
+So before we go any further, Board President Carlos Matthews, thank you
+
+16
+00:02:18,000 --> 00:02:23,040
+again for your work in helping bring this, make this meeting possible. I'll
+
+17
+00:02:23,040 --> 00:02:26,680
+turn some time over to you for comments. I appreciate that. I want to thank
+
+18
+00:02:26,680 --> 00:02:31,080
+everybody for being here this afternoon. It has been since 2021 since the last
+
+19
+00:02:31,080 --> 00:02:34,960
+time we've had a joint session between the Board of Education and the City
+
+20
+00:02:34,960 --> 00:02:39,440
+Council. It is a tough task to try to get all the schedules together to try to
+
+21
+00:02:39,440 --> 00:02:44,760
+make this happen, but we really wanted to show that these two bodies work
+
+22
+00:02:44,760 --> 00:02:47,360
+together for the citizens of Huntsville to make sure they have the best
+
+23
+00:02:47,360 --> 00:02:50,400
+education and the best living environments that they could possibly
+
+24
+00:02:50,400 --> 00:02:54,080
+have with their tax dollars. So today we hope to have some fruitful
+
+25
+00:02:54,080 --> 00:02:57,720
+conversations and get some really good information on how our city is growing
+
+26
+00:02:57,720 --> 00:03:01,560
+and what our school system is doing going forward. So I'll turn it back over to you.
+
+27
+00:03:01,560 --> 00:03:09,000
+Thank you, Mr. Matthews. So the agenda today has been created with feedback from
+
+28
+00:03:09,000 --> 00:03:14,680
+council members, from board members, and from the public. Mayor Battle is fond of
+
+29
+00:03:14,680 --> 00:03:18,320
+saying that we want to not just be the biggest city, we want to be the best city.
+
+30
+00:03:18,320 --> 00:03:26,960
+And that requires attention to growth and again the partnerships that we've had. So
+
+31
+00:03:26,960 --> 00:03:32,160
+our agenda tonight is going to focus on how we are growing and that presentation
+
+32
+00:03:32,160 --> 00:03:36,560
+on demographics and population overview will be given by James Vandiver, our city
+
+33
+00:03:36,560 --> 00:03:40,040
+demographer, and he will be joined by Dennis Madsen who's here to answer
+
+34
+00:03:40,040 --> 00:03:46,360
+questions as well. We'll have discussion following that. Then we will have a
+
+35
+00:03:46,360 --> 00:03:52,160
+presentation on the Huntsville City Schools capital plan expansion. Dr. Sutton
+
+36
+00:03:52,160 --> 00:03:57,840
+has agreed to give that overview for us. Again, any discussion after that? And
+
+37
+00:03:57,840 --> 00:04:03,440
+finally, now that we know how we're growing, how we're accommodating that
+
+38
+00:04:03,440 --> 00:04:06,760
+growth through the capital plan, we'll talk about how we're funding that growth.
+
+39
+00:04:06,760 --> 00:04:11,800
+And that will be presented by our director of urban and economic development,
+
+40
+00:04:11,800 --> 00:04:18,880
+Shane Davis. And again, conversations about that and then we will summarize. So
+
+41
+00:04:18,880 --> 00:04:22,760
+anybody have questions about the agenda? Any comments on that? All right, we're
+
+42
+00:04:22,760 --> 00:04:27,480
+going to go forward then and we will begin with a presentation from James
+
+43
+00:04:27,480 --> 00:04:35,360
+Vandiver on demographics and population overview. Thank You Councilwoman. Good
+
+44
+00:04:35,360 --> 00:04:48,760
+afternoon everyone. Good afternoon. All right, so today I'm going to talk a
+
+45
+00:04:48,760 --> 00:04:53,880
+little bit about the development review, go over some data from last year from
+
+46
+00:04:53,880 --> 00:04:58,600
+2025 and give you some indications of what's going to happen this year and
+
+47
+00:04:58,600 --> 00:05:04,800
+and beyond. So last year we had a really good year with development with
+
+48
+00:05:04,800 --> 00:05:09,160
+development in the city, with residential development. In fact, in terms of how new
+
+49
+00:05:09,160 --> 00:05:15,160
+housing added, we had the second highest on record. I think 2024 was the
+
+50
+00:05:15,160 --> 00:05:20,960
+only other, was the record-breaking year. So we've had a really strong couple of
+
+51
+00:05:20,960 --> 00:05:24,720
+years in terms of residential development. It's been kind of an anomaly
+
+52
+00:05:24,720 --> 00:05:28,840
+really and we are starting to come down from that and a lot of that had to do
+
+53
+00:05:28,840 --> 00:05:34,680
+with a historic boom in multifamily housing. Something we haven't seen
+
+54
+00:05:34,680 --> 00:05:38,680
+in the 40 years that we've done the development review and so we're starting
+
+55
+00:05:38,680 --> 00:05:41,280
+to see that with the building permit numbers that we saw last year, the
+
+56
+00:05:41,280 --> 00:05:48,280
+housing starts. We saw a 24% decrease compared to 2024 but then you start, when
+
+57
+00:05:48,280 --> 00:05:52,360
+you break down the numbers, you can kind of see where the trends are going and
+
+58
+00:05:52,360 --> 00:05:56,840
+we see that our single-family detached housing starts are starting to go back
+
+59
+00:05:56,840 --> 00:06:02,080
+up. We had a 2% increase last year even with that, the overall decrease and the
+
+60
+00:06:02,080 --> 00:06:05,920
+overall decrease was mostly because of that multifamily. We're still building
+
+61
+00:06:05,920 --> 00:06:08,640
+more multifamily. We in fact will probably have about eight new
+
+62
+00:06:08,640 --> 00:06:14,760
+developments open up this year. So the spigot hasn't completely been turned off
+
+63
+00:06:14,760 --> 00:06:20,480
+but at the same time we're going back to historical norms. Before 2020 our
+
+64
+00:06:20,480 --> 00:06:24,600
+average was between a thousand and fifteen hundred new homes a year. So
+
+65
+00:06:24,600 --> 00:06:31,240
+that's, we're going back towards that after an anomalous couple of years.
+
+66
+00:06:31,240 --> 00:06:35,760
+Typically, I know many of you have seen my development review presentation. A lot
+
+67
+00:06:35,760 --> 00:06:40,680
+of times I talk about city-wide data and or sometimes I do district-specific
+
+68
+00:06:40,680 --> 00:06:45,520
+presentations but this time I wanted to do something a little more useful to the
+
+69
+00:06:45,520 --> 00:06:50,080
+joint members of the City Council and School Board. We wanted to look at the
+
+70
+00:06:50,080 --> 00:06:55,440
+development review by elementary school zones. So the maps on the left, the green
+
+71
+00:06:55,440 --> 00:06:59,560
+maps are building permits or housing starts. The maps on the right for the
+
+72
+00:06:59,560 --> 00:07:04,360
+next few slides are certificates of occupancy. Those are homes that are ready
+
+73
+00:07:04,360 --> 00:07:11,120
+to be occupied. So I'll start out on the left. This is, these are these are total
+
+74
+00:07:11,120 --> 00:07:14,640
+numbers for single-family plus multifamily and then I'll go in and
+
+75
+00:07:14,640 --> 00:07:20,080
+break them down here in just a minute. The single, sorry, so the combined building
+
+76
+00:07:20,080 --> 00:07:25,320
+permits, the top five school zones for building permits last year were
+
+77
+00:07:25,320 --> 00:07:30,680
+Providence with just over 500 units followed by Williams, Rolling Hills, MLK,
+
+78
+00:07:30,680 --> 00:07:34,920
+and Hampton Cove. And then on the other side we have the certificates of occupancy,
+
+79
+00:07:34,920 --> 00:07:39,960
+the homes that have that are ready for to be lived in. Providence had more than
+
+80
+00:07:39,960 --> 00:07:45,160
+1,200 housing units added followed by Blossomwood which had just under a
+
+81
+00:07:45,160 --> 00:07:49,080
+thousand. A lot of that has to do with Blossomwood including downtown. Downtown
+
+82
+00:07:49,080 --> 00:07:52,640
+had several new apartment complexes go in there as well as the trailhead
+
+83
+00:07:52,640 --> 00:07:57,720
+development on the other side of Chapman Mountain. Morris has Mid City so that's
+
+84
+00:07:57,720 --> 00:08:03,880
+why you have a large number of new units in that school zone. Williams of course
+
+85
+00:08:03,880 --> 00:08:07,960
+has your fast growing areas in Limestone County as well as around the Zert Road
+
+86
+00:08:07,960 --> 00:08:12,600
+area. And then Chaffee in South Huntsville has Hayes Farm and a lot of
+
+87
+00:08:12,600 --> 00:08:18,360
+the homes in that zone were centered around that development. So we'll break
+
+88
+00:08:18,360 --> 00:08:23,640
+it down and look at single-family residential data first. So looking at the
+
+89
+00:08:23,640 --> 00:08:29,520
+single-family on the left building permits, Providence, I'm gonna sound like
+
+90
+00:08:29,520 --> 00:08:33,040
+a broken record, Providence had the most building permits and COs of every
+
+91
+00:08:33,040 --> 00:08:38,360
+category no matter how you look at it. And so Providence was the top followed
+
+92
+00:08:38,360 --> 00:08:41,200
+by Hampton Cove and Goldsmiths-Shiffman. We're still seeing some housing growth
+
+93
+00:08:41,200 --> 00:08:46,600
+there but it's not growing as much as it had been in previous years. But we're
+
+94
+00:08:46,600 --> 00:08:50,680
+still seeing that as a strong growth area. Followed by Williams and
+
+95
+00:08:50,680 --> 00:08:53,560
+we'll start seeing that number creep up over the next few years with the
+
+96
+00:08:53,560 --> 00:08:57,760
+development going on in Limestone County and then Blossomwood rounded out the top
+
+97
+00:08:57,760 --> 00:09:03,680
+five for building permits. On the CO side, Providence again just over 300 units
+
+98
+00:09:03,680 --> 00:09:07,720
+followed by Goldsmiths-Shiffman and Hampton Cove and Blossomwood and Williams. So
+
+99
+00:09:07,720 --> 00:09:12,000
+really it's those five schools that they just mixed it up a little bit on either
+
+100
+00:09:12,000 --> 00:09:16,720
+either way you look at it. So those are your five schools, school zones that are
+
+101
+00:09:16,720 --> 00:09:21,880
+seeing the most single-family development in the city. So we'll take a
+
+102
+00:09:21,880 --> 00:09:28,040
+look at multifamily units. All right so as we mentioned earlier we started to
+
+103
+00:09:28,040 --> 00:09:33,600
+see a bit of a decrease in multifamily units starting construction. But we're
+
+104
+00:09:33,600 --> 00:09:36,620
+still seeing a lot of new multifamily units come online just because they
+
+105
+00:09:36,620 --> 00:09:41,760
+started construction several years prior. In Providence, Providence, Rolling Hills
+
+106
+00:09:41,760 --> 00:09:47,480
+Williams and MLK were the four zones that we saw substantial multifamily
+
+107
+00:09:47,480 --> 00:09:50,040
+development. Beyond that you didn't really see a whole lot beyond a couple
+
+108
+00:09:50,040 --> 00:09:55,120
+of duplexes around town. And then on the certificates of occupancy side though
+
+109
+00:09:55,120 --> 00:09:58,960
+with multifamily like I said some of the apartment complexes that started
+
+110
+00:09:58,960 --> 00:10:03,960
+construction a few years prior are now coming online. Providence and Blossomwood
+
+111
+00:10:03,960 --> 00:10:09,160
+both had over 900 new housing units followed by Morris with Mid-City,
+
+112
+00:10:09,160 --> 00:10:17,440
+Williams and Chaffee. So I'm gonna give you guys some key takeaways to wrap this
+
+113
+00:10:17,440 --> 00:10:22,000
+up and it's a bit of an outlook just based on what we've been seeing so far.
+
+114
+00:10:22,000 --> 00:10:26,040
+We're already in June of this year so we've started to see a few trends in in
+
+115
+00:10:26,040 --> 00:10:31,640
+2026. So one of the big things is that we're going to see building permits go
+
+116
+00:10:31,640 --> 00:10:37,480
+up this year. We've had we had a really good year last year with subdivision lot
+
+117
+00:10:37,480 --> 00:10:42,280
+approvals. The Huntsville Planning Commission approved more single-family
+
+118
+00:10:42,280 --> 00:10:48,400
+subdivision lots in 2025 than they had since 2007. So we're doing
+
+119
+00:10:48,400 --> 00:10:51,840
+better in single-family than we have in 20 years. So that's that's really good
+
+120
+00:10:51,840 --> 00:10:54,640
+that's a really good indicator that over the next couple years we're gonna see
+
+121
+00:10:54,640 --> 00:11:00,040
+more single-family housing come online. In fact year-to-date we have had 40%
+
+122
+00:11:00,040 --> 00:11:05,000
+increase in single-family housing starting single-family housing starts
+
+123
+00:11:05,000 --> 00:11:10,560
+compared to 2025 up to this point. We will see our COs go down though because
+
+124
+00:11:10,560 --> 00:11:16,440
+of that lack of multi-family projects and but like I said we're still gonna see a
+
+125
+00:11:16,440 --> 00:11:22,880
+few of those and as I mentioned earlier we had the average number of units we
+
+126
+00:11:22,880 --> 00:11:27,480
+got per year was between a thousand and fifteen hundred prior to 2020. We're
+
+127
+00:11:27,480 --> 00:11:30,760
+still gonna see around 2,000 homes this year so we're still well above the
+
+128
+00:11:30,760 --> 00:11:36,040
+historical averages and we're doing great. Some near-term growth areas I
+
+129
+00:11:36,040 --> 00:11:40,480
+wanted to mention here just to kind of point out some areas that we're
+
+130
+00:11:40,480 --> 00:11:45,000
+watching for growth. Providence of course as you saw it was dominating doesn't
+
+131
+00:11:45,000 --> 00:11:47,760
+matter if it's starting a home or finishing home. Providence seemed to have
+
+132
+00:11:47,760 --> 00:11:53,200
+the most most homes being added and started. Limestone of course with the new
+
+133
+00:11:53,200 --> 00:11:57,700
+school coming I know that's gonna be a hot spot for development. One that we
+
+134
+00:11:57,700 --> 00:12:02,480
+really need to be watching out for is North Huntsville. It's somewhat flown
+
+135
+00:12:02,480 --> 00:12:06,460
+under the radar though I know last week there was a City Council considered the
+
+136
+00:12:06,460 --> 00:12:10,760
+rezoning of a fairly large potentially a large residential development in North
+
+137
+00:12:10,760 --> 00:12:16,600
+off of the northern bypass or SR 255. Definitely that is definitely an area
+
+138
+00:12:16,600 --> 00:12:20,040
+that we we see as an area that will have more residential development so
+
+139
+00:12:20,040 --> 00:12:25,840
+Rolling Hills, MLK those zones will be we'll need to watch out there for
+
+140
+00:12:25,840 --> 00:12:29,840
+potential enrollment growth in those areas. Hampton Cove will continue to grow
+
+141
+00:12:29,840 --> 00:12:33,560
+though there are some natural constraints in Hampton Cove that will
+
+142
+00:12:33,560 --> 00:12:39,000
+eventually restrict the development in that area and then South Huntsville in
+
+143
+00:12:39,000 --> 00:12:41,760
+the Hayes Farm development that still has some potential for growth in there.
+
+144
+00:12:41,760 --> 00:12:47,020
+And beyond 2026 I really think those two big hot spots for growth are going to be
+
+145
+00:12:47,020 --> 00:12:50,840
+West Huntsville. I mean limestone is basically a blank canvas when it comes
+
+146
+00:12:50,840 --> 00:12:53,520
+to development. Got all the economic development projects going on out there
+
+147
+00:12:53,520 --> 00:12:57,880
+plus the new school I mean it's it's it's ripe for new development. And then
+
+148
+00:12:57,880 --> 00:13:00,520
+North Huntsville as well with the northern bypass and with all the
+
+149
+00:13:00,520 --> 00:13:03,840
+commercial and economic development going on there. Definitely see the
+
+150
+00:13:03,840 --> 00:13:08,160
+Rolling Hills MLK elementary school zones seeing some growth over the next few
+
+151
+00:13:08,160 --> 00:13:13,800
+years. So with that I'll take any questions. You guys give me curveballs I
+
+152
+00:13:13,800 --> 00:13:17,600
+do have Dennis and Shane with me. And there's any problems. Before we open to
+
+153
+00:13:17,600 --> 00:13:23,120
+questions will those slides be available to will be posted be posting them on a
+
+154
+00:13:23,120 --> 00:13:26,360
+website sending them out via email. What would be the best way to access those?
+
+155
+00:13:26,360 --> 00:13:31,320
+We can certainly make them available. Okay we will work that out. Questions for
+
+156
+00:13:31,320 --> 00:13:35,840
+Mr. Vandiver. I don't really have a question but what I would like to have
+
+157
+00:13:35,840 --> 00:13:39,600
+is the data that you broke it down there I like for us to have that on a regular
+
+158
+00:13:39,600 --> 00:13:42,920
+basis as you break that you get that information so that the superintendent
+
+159
+00:13:42,920 --> 00:13:47,360
+to see if O can use that data to they plan for our future capital plans.
+
+160
+00:13:47,360 --> 00:13:52,680
+We'll just have it yearly whenever the development plan is released presented
+
+161
+00:13:52,680 --> 00:13:55,920
+planning Commission that you all get it. Yeah I think that would be good enough
+
+162
+00:13:55,920 --> 00:13:59,240
+but I'll ask them to see if O and the superintendent with what the cadence
+
+163
+00:13:59,240 --> 00:14:02,240
+should be if they feel they need it more than that but for now I think that will work.
+
+164
+00:14:02,240 --> 00:14:09,360
+Okay good. Questions. Mr. Vandiver thank you so much for the presentation. Can you
+
+165
+00:14:09,360 --> 00:14:12,920
+explain to us so that we can re-explain or to anyone watching how the
+
+166
+00:14:12,920 --> 00:14:16,960
+multifamilies were included in the numbers you guys gave for our capital
+
+167
+00:14:16,960 --> 00:14:21,920
+planning processes. We know that that multifamilies it's like a different
+
+168
+00:14:21,920 --> 00:14:26,800
+math and and we're taking a lot of hits that we didn't capture that and so I
+
+169
+00:14:26,800 --> 00:14:30,480
+just want to know how your methodology into that. Of course. Yes the
+
+170
+00:14:30,480 --> 00:14:33,960
+multifamily multifamily works a little bit different especially for schools
+
+171
+00:14:33,960 --> 00:14:37,800
+because you know single families kind of considered the traditional family home
+
+172
+00:14:37,800 --> 00:14:41,440
+but in a lot of cases we have been noticing with the data that some
+
+173
+00:14:41,440 --> 00:14:46,800
+multifamily developments have been having more more families and so we we've
+
+174
+00:14:46,800 --> 00:14:50,960
+looked at some of the multifamily in terms of you know whether or not it's
+
+175
+00:14:50,960 --> 00:14:54,720
+multi unit like multi-story apartment complex versus some of the single
+
+176
+00:14:54,720 --> 00:15:00,080
+family for rent properties that you've seen especially off of South Parkway and
+
+177
+00:15:00,080 --> 00:15:04,480
+so we've been looking at that and and the school system has been very helpful
+
+178
+00:15:04,480 --> 00:15:08,800
+with giving us some data on that on in terms of enrollment and trying to figure
+
+179
+00:15:08,800 --> 00:15:14,800
+out how to model how multifamily works with with the enrollment of the school
+
+180
+00:15:14,800 --> 00:15:22,000
+system. So the follow-up to that question what is the math for if you have a
+
+181
+00:15:22,000 --> 00:15:26,360
+certificate of occupancy whether it's single family or multifamily what's the
+
+182
+00:15:26,360 --> 00:15:30,560
+math that translates into we're predicting X number of children will be
+
+183
+00:15:30,560 --> 00:15:34,840
+coming to the school. Sure so when we're when we're doing population and
+
+184
+00:15:34,840 --> 00:15:39,600
+enrollment projections typically our rule of thumb is single family will have
+
+185
+00:15:39,600 --> 00:15:44,600
+nine out of ninety percent of single family homes are usually occupied whereas
+
+186
+00:15:44,600 --> 00:15:48,520
+multifamily it's probably closer to 80 percent there's a lot more fluidity when
+
+187
+00:15:48,520 --> 00:15:54,160
+it comes to multifamily units so that's what we use on that when we come when it
+
+188
+00:15:54,160 --> 00:16:01,160
+comes to the number of number occupants per unit which is it's pretty important
+
+189
+00:16:01,160 --> 00:16:04,720
+for the for those projections as well once again single family it tends to
+
+190
+00:16:04,720 --> 00:16:10,000
+have a higher number probably closer to 2.5 persons per household whereas a
+
+191
+00:16:10,000 --> 00:16:15,400
+multifamily unit probably has somewhere between 1.5 and 2 it depends on the area
+
+192
+00:16:15,400 --> 00:16:19,680
+as well like research park we would expect to have a lower persons occupancy
+
+193
+00:16:19,680 --> 00:16:25,240
+per household just because you have a lot of singles or you know couples that
+
+194
+00:16:25,240 --> 00:16:29,560
+live in like mid-city research park whereas place like South Huntsville or
+
+195
+00:16:29,560 --> 00:16:33,280
+Hampton Cove even in a multifamily complex it may be a little bit higher so
+
+196
+00:16:33,280 --> 00:16:36,520
+yeah that's how we project those and even when you have that number you don't
+
+197
+00:16:36,520 --> 00:16:41,560
+know if it's going to be elementary middle school high school that's you're
+
+198
+00:16:41,560 --> 00:16:45,040
+just using a number of saying here's the number of people and we don't know
+
+199
+00:16:45,040 --> 00:16:49,560
+really what age so it's hard to tell we're constantly getting better with our
+
+200
+00:16:49,560 --> 00:16:57,120
+projections but yeah we're getting there so yeah other questions I don't have any
+
+201
+00:16:57,120 --> 00:17:01,400
+specific increase for you mr. Vandebrouik did just want to express a note of
+
+202
+00:17:01,400 --> 00:17:05,680
+gratitude when you and mr. Madsen sat down with the board two years back when
+
+203
+00:17:05,680 --> 00:17:09,240
+we were going through the capital planning process your your data and your
+
+204
+00:17:09,240 --> 00:17:13,000
+evaluation was extremely helpful and I think today reassures myself as
+
+205
+00:17:13,000 --> 00:17:17,760
+hopefully as well as anybody watching that your data is also not just accurate
+
+206
+00:17:17,760 --> 00:17:21,440
+but reflected in the capital plan that was approved in terms of a long-range
+
+207
+00:17:21,440 --> 00:17:25,460
+capital plan we were able to with y'all's help and assistance from the
+
+208
+00:17:25,460 --> 00:17:30,800
+city and the administration identify those near those near-term growth
+
+209
+00:17:30,800 --> 00:17:35,640
+corridors as well as the long term and between a new feeder pattern out west
+
+210
+00:17:35,640 --> 00:17:40,880
+a new expansion facility for the Cove area we were able to address those needs
+
+211
+00:17:40,880 --> 00:17:44,240
+I just wanted to say thank you for your efforts and mr. Madsen as well as your
+
+212
+00:17:44,240 --> 00:17:50,400
+team so very much appreciate it thank you thank you oh yeah I can you tell us
+
+213
+00:17:50,400 --> 00:17:54,320
+a little bit more about your like was any of this a surprise that when you
+
+214
+00:17:54,320 --> 00:17:57,560
+were going back to review it is this information that you were expecting to
+
+215
+00:17:57,560 --> 00:18:03,760
+have I mean we've talked over the years and can you explain more about your
+
+216
+00:18:03,760 --> 00:18:08,680
+methodology I think you know we say these words and sometimes I feel like
+
+217
+00:18:08,680 --> 00:18:13,200
+it's met with disbelief or people don't understand the process or they don't
+
+218
+00:18:13,200 --> 00:18:16,760
+trust it so can you give us a little bit more information about the methodology
+
+219
+00:18:16,760 --> 00:18:20,600
+so we can make sure that we're explaining it properly and that we're
+
+220
+00:18:20,600 --> 00:18:25,080
+we're doing our due diligence as well absolutely so in a lot of these high
+
+221
+00:18:25,080 --> 00:18:28,640
+growth areas we have known about them for many years whether it comes whether
+
+222
+00:18:28,640 --> 00:18:33,920
+it's limestone County whether it's out in the Cove area and North Huntsville as
+
+223
+00:18:33,920 --> 00:18:38,080
+well that's kind of our emerging growth area up there as well those are not
+
+224
+00:18:38,080 --> 00:18:43,760
+surprises to us we work with we work on these many years out in advance and we
+
+225
+00:18:43,760 --> 00:18:49,400
+do enroll we've done we do projections 20 25 years out we look at all the
+
+226
+00:18:49,400 --> 00:18:54,040
+developed land in a certain area over we have an excellent GIS department that
+
+227
+00:18:54,040 --> 00:18:58,400
+helps us out with that looking at floodplain sub development it constraints
+
+228
+00:18:58,400 --> 00:19:02,000
+to development and seeing where we're development might happen and that
+
+229
+00:19:02,000 --> 00:19:06,360
+absolutely helps us out and so looking at that we figure out where the
+
+230
+00:19:06,360 --> 00:19:11,960
+development land is going and then we can do residential land calculations
+
+231
+00:19:11,960 --> 00:19:16,000
+based on you know if we think this area is going to be more single-family versus
+
+232
+00:19:16,000 --> 00:19:21,560
+multifamily and so that so we have a pretty good number or pretty good
+
+233
+00:19:21,560 --> 00:19:26,200
+forecast of where the housing units will be in the future or what like an
+
+234
+00:19:26,200 --> 00:19:34,520
+ultimate build out would be in that kind of scenario councilmember mr. Meredith
+
+235
+00:19:34,520 --> 00:19:44,760
+how much of a disruption to your projecting our big changes in zoning such
+
+236
+00:19:44,760 --> 00:19:49,960
+as the one that happened at our last council meeting where I believe it was
+
+237
+00:19:49,960 --> 00:19:58,080
+over certainly over 200 acres of land that had been c4 are now our twos what
+
+238
+00:19:58,080 --> 00:20:03,800
+does that do to your ability to forecast well in that specific case if it was a c4
+
+239
+00:20:03,800 --> 00:20:10,320
+going to an r2 c4 could do multifamily whereas r2 is probably I mean it still
+
+240
+00:20:10,320 --> 00:20:14,760
+can do some multifamily at least like townhomes but actually probably lower our
+
+241
+00:20:14,760 --> 00:20:18,460
+numbers a little bit based on the forecast of what that we've done for
+
+242
+00:20:18,460 --> 00:20:26,960
+that area thank you council members any other questions all right James thank
+
+243
+00:20:26,960 --> 00:20:29,880
+you very much thank you for your presentation tonight for sharing that
+
+244
+00:20:29,880 --> 00:20:34,960
+information and also let's make sure to follow up yearly and make sure that this
+
+245
+00:20:34,960 --> 00:20:41,120
+that kind of data is available to the school system now that we have a picture
+
+246
+00:20:41,120 --> 00:20:46,920
+of growth let's take a look at capital plan and how we are planning for that
+
+247
+00:20:46,920 --> 00:20:54,600
+thank you dr. Robertson and thank you city council members mayor battle for
+
+248
+00:20:54,600 --> 00:20:58,960
+always supporting us as you see tonight mr. Dane who is our CSFO will be
+
+249
+00:20:58,960 --> 00:21:02,920
+presenting that update on our capital plan I want to thank the board for the
+
+250
+00:21:02,920 --> 00:21:06,280
+support and the forward thinking we are entering the fourth year of this plan
+
+251
+00:21:06,280 --> 00:21:12,240
+is going very rapidly with a lot of projects going hopefully we will meet
+
+252
+00:21:12,240 --> 00:21:17,320
+soon using the data to plan the years after this 10 years because we want to
+
+253
+00:21:17,320 --> 00:21:21,360
+keep up with the growth of the city so we'll turn over to mr. Dane at this time
+
+254
+00:21:21,360 --> 00:21:25,360
+but I do want to thank you and your team for always supporting and providing what
+
+255
+00:21:25,360 --> 00:21:32,240
+we need and this board for their support but it's not a set your day yeah good
+
+256
+00:21:32,240 --> 00:21:36,480
+afternoon thank you board thank you council for the chance to relay and
+
+257
+00:21:36,480 --> 00:21:40,880
+update our capital plan for you again this is a capital plan that we started
+
+258
+00:21:40,880 --> 00:21:46,640
+in 2024 it's approximately 600 million dollars it's actually 600 million dollars
+
+259
+00:21:46,640 --> 00:21:51,120
+plus I think that's probably important to realize but with that number going up
+
+260
+00:21:51,120 --> 00:21:55,000
+and down it is dependent on the flexibility that we asked for and that
+
+261
+00:21:55,000 --> 00:21:59,440
+we do need as we go through the rest of this capital plan again a 10-year
+
+262
+00:21:59,440 --> 00:22:04,220
+implementation starting with 2024 and the goal of this is obviously to
+
+263
+00:22:04,220 --> 00:22:09,520
+modernize facilities whether that's for renovations or basic deferred maintenance
+
+264
+00:22:09,520 --> 00:22:14,240
+catching up deferred maintenance or brand new buildings and the capital plan
+
+265
+00:22:14,240 --> 00:22:17,480
+does align with our mission to provide a safe and supportive learning environment
+
+266
+00:22:17,480 --> 00:22:22,120
+characterized by quality staff rigorous academic instruction innovative
+
+267
+00:22:22,120 --> 00:22:28,040
+programs outstanding extracurricular opportunities and exceptional resources
+
+268
+00:22:28,040 --> 00:22:33,120
+going back to the beginning of the capital plan we did work a lot with mr.
+
+269
+00:22:33,120 --> 00:22:38,120
+Vandiver and mr. Madsen and the city with penny and and everybody to get this
+
+270
+00:22:38,120 --> 00:22:43,720
+version of the capital plan together as you heard previously there is a lot of
+
+271
+00:22:43,720 --> 00:22:48,280
+forecasting that goes into the makeup of all of our capital plans every
+
+272
+00:22:48,280 --> 00:22:52,480
+iteration of it but certainly there was a lot that went into this again this
+
+273
+00:22:52,480 --> 00:22:56,960
+this was ongoing up to the spring of 2024 where we held community meetings
+
+274
+00:22:56,960 --> 00:22:59,800
+and all of our feeder patterns that would have been affected which is all
+
+275
+00:22:59,800 --> 00:23:04,040
+over our feeding the patterns we solicited feedback in person and online
+
+276
+00:23:04,040 --> 00:23:08,160
+met with city organizations such as an issue of the chamber city leaders
+
+277
+00:23:08,160 --> 00:23:12,920
+retired educators etc and then ultimately brought a very well discussed
+
+278
+00:23:12,920 --> 00:23:17,680
+and communicated capital plan to the board for approval in May and then the
+
+279
+00:23:17,680 --> 00:23:25,440
+court the DOJ the court approved our capital plan in September of 2024 the
+
+280
+00:23:25,440 --> 00:23:29,960
+funding structure for the capital plan is very diversified at this point about
+
+281
+00:23:29,960 --> 00:23:34,680
+60 to 65 percent of it is going to come from public financing in which case I
+
+282
+00:23:34,680 --> 00:23:39,640
+will work through the finance office with the city as well as all of their
+
+283
+00:23:39,640 --> 00:23:44,520
+team in order to and we have worked together to develop a plan to fund like
+
+284
+00:23:44,520 --> 00:23:48,440
+I said about 63 percent of it and then the remainder of that is funded by
+
+285
+00:23:48,440 --> 00:23:52,840
+local dollars local dollars being what we send over from our general fund as
+
+286
+00:23:52,840 --> 00:23:58,720
+well as dollars provided by the state so 60 percent publicly funded 20 ish percent
+
+287
+00:23:58,720 --> 00:24:04,160
+locally funded 20 ish percent funded by state state dollars for the purpose of
+
+288
+00:24:04,160 --> 00:24:09,800
+capital expenditures capital plan is a phased execution it does align with
+
+289
+00:24:09,800 --> 00:24:13,720
+fiscal capacity we can't do everything all up front so we do have to stagger
+
+290
+00:24:13,720 --> 00:24:18,600
+this out when you start that out you're able to take advantage of contractor
+
+291
+00:24:18,600 --> 00:24:23,160
+availability schedule availability funding availability because to do this
+
+292
+00:24:23,160 --> 00:24:28,320
+all up front just as impossible but we are lucky we're fortunate to have you
+
+293
+00:24:28,320 --> 00:24:32,600
+know a six and a half mils of ad valorem taxes that are collected by the city for
+
+294
+00:24:32,600 --> 00:24:38,960
+Huntsville City Schools capital growth and that is where the 60 ish percent of
+
+295
+00:24:38,960 --> 00:24:43,560
+our funding is coming from is from that six and a half mils and then of course
+
+296
+00:24:43,560 --> 00:24:49,360
+we do work with the city we work with the demographers we work with the growth
+
+297
+00:24:49,360 --> 00:24:54,440
+side of the city to make sure that we are to monitor the capital plan that we
+
+298
+00:24:54,440 --> 00:24:58,640
+are tracking the way we think we're going to be tracking as we set out two
+
+299
+00:24:58,640 --> 00:25:06,200
+years ago to go there is work happening at every school in every feeder pattern
+
+300
+00:25:06,200 --> 00:25:11,280
+not only are you getting either a new school or a renovation but we are
+
+301
+00:25:11,280 --> 00:25:14,480
+catching up deferred maintenance that was foregone for a little while which is
+
+302
+00:25:14,480 --> 00:25:18,760
+extremely important and there is still ongoing maintenance our facilities
+
+303
+00:25:18,760 --> 00:25:24,480
+teams continue to provide just general planned maintenance and repairs to our
+
+304
+00:25:24,480 --> 00:25:28,240
+buildings but that's that's now in addition to the deferred maintenance
+
+305
+00:25:28,240 --> 00:25:32,000
+that we're getting caught up so we're happy that every school and every
+
+306
+00:25:32,000 --> 00:25:37,600
+district district in our school district is seeing action from the capital plan
+
+307
+00:25:37,600 --> 00:25:41,240
+we went over the sequencing with the projects already but obviously we're
+
+308
+00:25:41,240 --> 00:25:44,880
+focused you know when student needs first what kind of revenues do we have
+
+309
+00:25:44,880 --> 00:25:49,680
+to support capital operational needs operational effects to our to our
+
+310
+00:25:49,680 --> 00:25:54,040
+repairs and maintenance team facilities teams what are the construction costs
+
+311
+00:25:54,040 --> 00:25:59,560
+are there are there better times to borrow better times to to get with GC's
+
+312
+00:25:59,560 --> 00:26:04,720
+to find GC's to have a plenty of a big enough pool to perk to bid on to make
+
+313
+00:26:04,720 --> 00:26:08,560
+sure that we're getting the best pricing and of course all of those things mean
+
+314
+00:26:08,560 --> 00:26:11,840
+you have to be you have to be flexible because we are subject to change and
+
+315
+00:26:11,840 --> 00:26:16,200
+things do change but so far we haven't had any big changes so that that we're
+
+316
+00:26:16,200 --> 00:26:22,920
+fortunate that way and then individual contracts and and projects are subject
+
+317
+00:26:22,920 --> 00:26:26,600
+to individual board approval so just because we have a ten-year capital plan
+
+318
+00:26:26,600 --> 00:26:30,800
+doesn't mean that every plan in that every project in that plan is
+
+319
+00:26:30,800 --> 00:26:34,080
+automatically board approved we still bring owner architects agreements to the
+
+320
+00:26:34,080 --> 00:26:38,440
+board for approval we bring projects like we had an hour ago in our in our
+
+321
+00:26:38,440 --> 00:26:42,840
+college board meeting to the board for approval so every project in the capital
+
+322
+00:26:42,840 --> 00:26:50,680
+plan does see board approval at several levels as you know we finished our
+
+323
+00:26:50,680 --> 00:26:57,080
+central office in our HCT our CTE department or building about a year ago
+
+324
+00:26:57,080 --> 00:27:01,280
+now I think we've been in there almost exactly a year over on the North Parkway
+
+325
+00:27:01,280 --> 00:27:04,840
+so we're excited about that that's a new central office for us and a new career
+
+326
+00:27:04,840 --> 00:27:11,520
+tech which is extremely exciting for our school system all of our ten softball
+
+327
+00:27:11,520 --> 00:27:15,600
+and baseball fields have been completed now we have installed turf on every one
+
+328
+00:27:15,600 --> 00:27:21,560
+of those in our district and we are efforting to replace the old pod gems
+
+329
+00:27:21,560 --> 00:27:27,040
+that all of our schools with a new updated version of the gym as you can
+
+330
+00:27:27,040 --> 00:27:30,600
+see we completed those champion Highlands we still have some in progress
+
+331
+00:27:30,600 --> 00:27:36,840
+and then some future projects that will start within the next year or so
+
+332
+00:27:36,840 --> 00:27:41,040
+Columbia High School we have completed our Innovation Center which opened in
+
+333
+00:27:41,040 --> 00:27:44,920
+2025 if you haven't been by there I suggest you go look at that it's a very
+
+334
+00:27:44,920 --> 00:27:50,080
+it's very cool place to be if you're a student it's a very modern type facility
+
+335
+00:27:50,080 --> 00:27:56,360
+does get our students ready to think about innovation technology business
+
+336
+00:27:56,360 --> 00:28:04,280
+podcast I mean different types of tech stuff and hopefully careers jogs some
+
+337
+00:28:04,280 --> 00:28:08,800
+ideas for our students at Columbia High School and then in front of Columbia
+
+338
+00:28:08,800 --> 00:28:12,520
+High School is our JROTC training facility that we've started as you can
+
+339
+00:28:12,520 --> 00:28:17,360
+see we intend to open that up at the end of this calendar year there's a rendering
+
+340
+00:28:17,360 --> 00:28:24,240
+of it there to the right pretty cool building at Hampton Cove and Goldsmith
+
+341
+00:28:24,240 --> 00:28:29,920
+we have added classrooms to both of those I believe four classrooms to one
+
+342
+00:28:29,920 --> 00:28:33,120
+and five to the other I can never remember which is which but both have
+
+343
+00:28:33,120 --> 00:28:39,760
+seeded classroom expansion to accommodate growth in that area and then
+
+344
+00:28:39,760 --> 00:28:45,120
+at Jemison McNair we have the new sixth grade wing being added on to
+
+345
+00:28:45,120 --> 00:28:50,320
+the McNair side to the left to to welcome our sixth grade students coming
+
+346
+00:28:50,320 --> 00:28:54,640
+in from the elementary schools in district one so we're very excited about
+
+347
+00:28:54,640 --> 00:28:59,520
+that part of this sixth grade wing addition there will be a little bit of
+
+348
+00:28:59,520 --> 00:29:04,200
+an expansion to the McNair cafeteria serving line area to accommodate those
+
+349
+00:29:04,200 --> 00:29:09,600
+those students with the option to potentially you know revisit that CMP
+
+350
+00:29:09,600 --> 00:29:15,040
+kitchen area further down the road as enrollment grows super excited for that
+
+351
+00:29:15,040 --> 00:29:25,880
+to open in August of 2026 a few months ago we bid Chapman Chapman and STEM
+
+352
+00:29:25,880 --> 00:29:32,360
+Magnet Middle School as well as the Montview STEM Magnet Elementary School
+
+353
+00:29:32,360 --> 00:29:37,960
+both of those are going well I believe our walls are starting to go up in both
+
+354
+00:29:37,960 --> 00:29:43,920
+schools yeah so we're making some good headway there excited for Montview to
+
+355
+00:29:43,920 --> 00:29:51,920
+open August of next year that's full middle school we just got board approval
+
+356
+00:29:51,920 --> 00:29:56,520
+to to start that construction here a little while ago excited for that to
+
+357
+00:29:56,520 --> 00:30:09,040
+start in August of 2028 our new Limestone County school will be a P8 out in East
+
+358
+00:30:09,040 --> 00:30:17,320
+Limestone County which is West Huntsville slated to open August 2028 and
+
+359
+00:30:17,320 --> 00:30:21,560
+of course we've recently worked with the city to acquire property in Hampton Cove
+
+360
+00:30:21,560 --> 00:30:25,880
+for a future site we don't exactly know what that's going to be yet but it's
+
+361
+00:30:25,880 --> 00:30:30,000
+likely you know an elementary or middle school depending on you know what the
+
+362
+00:30:30,000 --> 00:30:34,600
+continued work with the city produces for us to contemplate over the next
+
+363
+00:30:34,600 --> 00:30:44,200
+several years but something to open you know around August 2033 and that's all I
+
+364
+00:30:44,200 --> 00:30:50,000
+have for the presentation if you have any questions discussion council members
+
+365
+00:30:50,000 --> 00:30:55,400
+mr. Merritt when can we expect to do the groundbreaking for the Limestone County
+
+366
+00:30:55,400 --> 00:31:02,240
+school we're hoping this fall don't know exactly which month yet but we need to
+
+367
+00:31:02,240 --> 00:31:07,760
+probably get going on that ASAP so I would say I think somewhere around
+
+368
+00:31:07,760 --> 00:31:15,440
+September October timeframe is where our schedule shows us right okay and
+
+369
+00:31:15,440 --> 00:31:20,680
+generally speaking who wins the contracts on school building the low bid
+
+370
+00:31:20,680 --> 00:31:26,800
+no I mean who is getting low but what company is currently engaged in building
+
+371
+00:31:26,800 --> 00:31:36,000
+schools yeah yes so we do you have an idea of which contractors will be
+
+372
+00:31:36,000 --> 00:31:39,600
+available to bid on that I mean we really don't know in that yeah it's
+
+373
+00:31:39,600 --> 00:31:46,120
+gonna be the typical names Lee fight Pierce others I don't know that yet I
+
+374
+00:31:46,120 --> 00:31:49,760
+mean that answers my question I think between the city and us we're keeping
+
+375
+00:31:49,760 --> 00:31:54,000
+our local builders pretty busy so we do have to keep away keep abreast of that
+
+376
+00:31:54,000 --> 00:31:59,400
+where I was trying to figure out is which one of it was going to be a local
+
+377
+00:31:59,400 --> 00:32:05,640
+I know the low bidder gets it regardless but historically has it been local folks
+
+378
+00:32:05,640 --> 00:32:12,240
+that we have ongoing relationships with versus someone that comes in that we
+
+379
+00:32:12,240 --> 00:32:16,280
+maybe only built one or two schools or did one or two renovations yes or
+
+380
+00:32:16,280 --> 00:32:20,080
+historically it is local for the most part local contractors thank you sir
+
+381
+00:32:20,080 --> 00:32:27,600
+yes or members miss Alvarez mr. Dane thank you but the one thing that we
+
+382
+00:32:27,600 --> 00:32:31,240
+didn't capture in this is you know that there are school consolidations that
+
+383
+00:32:31,240 --> 00:32:36,040
+also came in that capital plan I just wanted to to say you know on the record
+
+384
+00:32:36,040 --> 00:32:39,720
+that we had 24,000 students ten years ago we roughly have that same amount now
+
+385
+00:32:39,720 --> 00:32:44,800
+what we're seeing is they're in different areas and so you know because
+
+386
+00:32:44,800 --> 00:32:48,720
+of that that ultimately leads to us having to close three schools and
+
+387
+00:32:48,720 --> 00:32:52,760
+consolidate students so I think it's just imperative that as we continue to
+
+388
+00:32:52,760 --> 00:32:56,920
+grow we have to realize that the schools are adapting the best they can with the
+
+389
+00:32:56,920 --> 00:33:01,680
+same enrollment that they've had for a long time yeah that's very fair to say
+
+390
+00:33:01,680 --> 00:33:05,120
+we continue to work with the city and what they project for enrollment and
+
+391
+00:33:05,120 --> 00:33:10,120
+growth in areas around to continue to inform our plan so again another reason
+
+392
+00:33:10,120 --> 00:33:15,080
+for the flexibility is to to not lock in something now but be able to see over
+
+393
+00:33:15,080 --> 00:33:19,000
+the next couple of two three four five ten years what that looks like so you
+
+394
+00:33:19,000 --> 00:33:23,160
+know in our capital plan there's consideration for expansion and
+
+395
+00:33:23,160 --> 00:33:29,040
+otherwise mr. Nod yeah if I can to miss Alvarez's point this isn't directed at
+
+396
+00:33:29,040 --> 00:33:33,440
+you mr. Dane but just for general purposes and awareness for constituents
+
+397
+00:33:33,440 --> 00:33:39,680
+watching you know mr. Van der Verde mr. Madsen McGuffey and mr. Davis and the
+
+398
+00:33:39,680 --> 00:33:43,000
+entire city administration do a great job in supplying us and making sure that
+
+399
+00:33:43,000 --> 00:33:47,560
+we will we are well resourced to analyze that data for capital planning purposes
+
+400
+00:33:47,560 --> 00:33:50,440
+there I think that it's an important to acknowledge an additional layer of
+
+401
+00:33:50,440 --> 00:33:54,680
+context which is the current funding mechanism for public education is such
+
+402
+00:33:54,680 --> 00:33:59,640
+that we can only build based on enrollment so why you may see four
+
+403
+00:33:59,640 --> 00:34:04,080
+thousand single-family units and fourteen thousand multifamily units pop
+
+404
+00:34:04,080 --> 00:34:08,480
+up over the course of 24 to 48 months in the city limits of Huntsville one
+
+405
+00:34:08,480 --> 00:34:11,480
+there's other education opportunities of families are taking advantage of
+
+406
+00:34:11,480 --> 00:34:16,480
+outside of the public system and to those units don't always translate to
+
+407
+00:34:16,480 --> 00:34:21,600
+students in seats and k-12 classroom environments and so I just think it's
+
+408
+00:34:21,600 --> 00:34:24,440
+important for the general public to understand that while your
+
+409
+00:34:24,440 --> 00:34:29,000
+administration does a fantastic job on organizing and analyzing that data it's
+
+410
+00:34:29,000 --> 00:34:33,000
+not an exact science and it's not a perfect science but we're very thankful
+
+411
+00:34:33,000 --> 00:34:37,240
+for the job that you guys do with it such as an additional layer of context I
+
+412
+00:34:37,240 --> 00:34:41,440
+think is important to acknowledge for folks thank you for sharing that my
+
+413
+00:34:41,440 --> 00:34:47,400
+also ask what impact the court order has on facilities and facilities is one of
+
+414
+00:34:47,400 --> 00:34:51,760
+the green factors where are we on that and how does that fit into this capital
+
+415
+00:34:51,760 --> 00:34:55,680
+plan well we are working under a court approved capital plan now so any major
+
+416
+00:34:55,680 --> 00:35:00,320
+change and I don't know what the definition of major equals but any major
+
+417
+00:35:00,320 --> 00:35:06,040
+change to it would would require court approval and the court has approved this
+
+418
+00:35:06,040 --> 00:35:09,680
+capital plan and so we will be sticking with this capital plan as her has
+
+419
+00:35:09,680 --> 00:35:16,840
+approved it correct yes ma'am how close are we to getting clearance on that
+
+420
+00:35:17,760 --> 00:35:23,860
+we're waiting we have submitted the court did meet with our team and the
+
+421
+00:35:23,860 --> 00:35:29,400
+deck and so we are hoping within the next few months that we do receive that
+
+422
+00:35:29,400 --> 00:35:37,720
+order for facilities thank you and then can I just say we're tracking on our
+
+423
+00:35:37,720 --> 00:35:41,800
+capital projections I mean we're on track there's not been any
+
+424
+00:35:41,800 --> 00:35:48,080
+unanticipated hurdles no hurdles no but there's always there are always things
+
+425
+00:35:48,080 --> 00:35:59,240
+that will that will cause us to pivot so nothing major as of an hour ago we will
+
+426
+00:35:59,240 --> 00:36:05,400
+be at about 55 percent under contract of the entire capital plan as of the
+
+427
+00:36:05,400 --> 00:36:11,960
+limestone county project will be about 60 to 365 percent under contract for the
+
+428
+00:36:11,960 --> 00:36:17,160
+capital plan which means we have a handful more major renovations a
+
+429
+00:36:17,160 --> 00:36:22,960
+handful more new constructed buildings and and then again just the deferred
+
+430
+00:36:22,960 --> 00:36:29,480
+maintenance so no we're tracking right where we need to be funding wise as well
+
+431
+00:36:29,800 --> 00:36:34,840
+all right there are no other comments or questions thank you very much mr. Dane
+
+432
+00:36:34,840 --> 00:36:41,120
+we will now hear so we've talked about how we're growing how that growth is
+
+433
+00:36:41,120 --> 00:36:45,520
+being accommodated with the capital plan our next piece is the funding because
+
+434
+00:36:45,520 --> 00:36:50,720
+nothing happens without funding and our director of urban and economic
+
+435
+00:36:50,720 --> 00:36:55,040
+development Shane Davis will lead us in that discussion thank you madam
+
+436
+00:36:55,040 --> 00:36:58,720
+president mayor battle dr. Sutton school board members City Council good
+
+437
+00:36:58,720 --> 00:37:04,320
+afternoon thank you for this opportunity to brief you all in one setting I think
+
+438
+00:37:04,320 --> 00:37:09,640
+it's a unique opportunity for both of you guys and also for general public as
+
+439
+00:37:09,640 --> 00:37:13,840
+you're aware there's a proposed TIF 9 district that both Mass County
+
+440
+00:37:13,840 --> 00:37:20,720
+Commission this City Council body will take up in the next few weeks I don't
+
+441
+00:37:20,720 --> 00:37:24,040
+want to get into that but before that I want to talk about TIF districts in
+
+442
+00:37:24,040 --> 00:37:28,960
+general most of this body here it's been quite a while since we've introduced a
+
+443
+00:37:28,960 --> 00:37:34,320
+TIF district in Madison County in recent years we've introduced a couple in
+
+444
+00:37:34,320 --> 00:37:37,520
+limestone County one of those is closed out so I thought it'd be a good
+
+445
+00:37:37,520 --> 00:37:42,480
+refresher just to go through TIF district where we've been and where we're
+
+446
+00:37:42,480 --> 00:37:45,920
+going and the benefits those have brought to our community both to the
+
+447
+00:37:45,920 --> 00:37:49,880
+school board and the City Council and then get more specifically into that
+
+448
+00:37:49,880 --> 00:37:56,880
+TIF 9 district okay so just kind of what I just really what is a TIF district
+
+449
+00:37:56,880 --> 00:38:02,200
+our history of TIF districts in Huntsville and those successes and then
+
+450
+00:38:02,200 --> 00:38:08,280
+we'll get into TIF district 9 that's being proposed so what is a TIF district
+
+451
+00:38:08,280 --> 00:38:12,800
+the creation of a tax increment financing or TIF district is a tool that
+
+452
+00:38:12,800 --> 00:38:17,520
+allows municipalities complete public infrastructure improvements by using
+
+453
+00:38:17,520 --> 00:38:22,840
+increment tax revenue or future revenue streams not any existing revenue streams
+
+454
+00:38:22,840 --> 00:38:27,280
+within that district those existing revenue streams continue to flow through
+
+455
+00:38:27,280 --> 00:38:32,520
+the tax recipients as they do today the principles very simple the city makes
+
+456
+00:38:32,520 --> 00:38:37,760
+public improvements in a defined geographic area the district if you will
+
+457
+00:38:37,760 --> 00:38:42,400
+with the intent of stimulating new private investment or new economic
+
+458
+00:38:42,400 --> 00:38:47,040
+development within that district or that boundary as new development occurs the
+
+459
+00:38:47,040 --> 00:38:51,720
+taxable value or that new tax base that's being created by those new
+
+460
+00:38:51,720 --> 00:38:56,720
+investments go with it stay within the district to pay off projects if they're
+
+461
+00:38:56,720 --> 00:39:02,840
+paid for by cash or the or debt service and then as you roll through that and
+
+462
+00:39:02,840 --> 00:39:08,760
+you pay off those bonds or you pay off that project the TIF district is closed
+
+463
+00:39:08,760 --> 00:39:13,200
+in all new tax recipients or the tax receipts received they're proportional
+
+464
+00:39:13,200 --> 00:39:20,280
+of those new taxes that were created as a result of those public investments one
+
+465
+00:39:20,280 --> 00:39:24,720
+understand misunderstanding that sometimes people think is are we
+
+466
+00:39:24,720 --> 00:39:31,160
+increasing taxes no by the Alabama Constitution it takes a vote of the
+
+467
+00:39:31,160 --> 00:39:36,540
+people to increase any property tax ie the millage rate for Madison County for
+
+468
+00:39:36,540 --> 00:39:42,000
+all of us combined it's 58 mills the creation of TIF district keeps that
+
+469
+00:39:42,000 --> 00:39:46,960
+millage at 58 mills the city of Huntsville the administration or the
+
+470
+00:39:46,960 --> 00:39:51,240
+City Council adjusts anybody's property taxes we actually have elected official
+
+471
+00:39:51,240 --> 00:39:57,000
+the county tax assessor that evaluates all taxes within the county and provides
+
+472
+00:39:57,000 --> 00:40:01,440
+that assessment so the City Council nor the Mass County Commission passing a
+
+473
+00:40:01,440 --> 00:40:06,000
+TIF district does nothing to affect one's individuality of their tax base
+
+474
+00:40:06,000 --> 00:40:13,520
+that's done by the tax assessor lastly no it as I mentioned no existing tax
+
+475
+00:40:13,520 --> 00:40:18,840
+revenues dedicated for schools the county or city budgets were reduced or
+
+476
+00:40:18,840 --> 00:40:23,800
+diverted within a TIF district it's only the new tax base or the increment growth
+
+477
+00:40:23,800 --> 00:40:30,160
+within that district that is captured we'll get into that for TIF none in very
+
+478
+00:40:30,160 --> 00:40:35,480
+specific since 2000 the city of Huntsville as you can see on the screen
+
+479
+00:40:35,480 --> 00:40:40,920
+has completed several TIF districts the ones that you see kind of grayed out
+
+480
+00:40:40,920 --> 00:40:47,840
+tips 1 2 3 3 a 4 and 6 have been closed TIF 5 is redstone arsenal which is
+
+481
+00:40:47,840 --> 00:40:52,800
+active TIF 7 that was created in limestone County as a result the Mazda
+
+482
+00:40:52,800 --> 00:40:57,280
+Toyota economic development project is active we are considering
+
+483
+00:40:57,280 --> 00:41:02,880
+administration with limestone County Commission a future TIF 8 in limestone
+
+484
+00:41:02,880 --> 00:41:06,760
+County and then we'll get into the proposed TIF 9 district here in
+
+485
+00:41:06,760 --> 00:41:12,760
+Madison County so this is a list of those tips that I just showed you on the
+
+486
+00:41:12,760 --> 00:41:17,000
+screen and when they were established the number of years it took for them to
+
+487
+00:41:17,000 --> 00:41:22,560
+close out and the public improvements that were put in those TIF districts so
+
+488
+00:41:22,560 --> 00:41:27,840
+we'll go through those TIF one was the very first one this the city ever did it
+
+489
+00:41:27,840 --> 00:41:35,400
+was really small in its way as far as its boundary but the the improvements
+
+490
+00:41:35,400 --> 00:41:40,480
+were very large it was US Highway 72 widening from essentially just east of
+
+491
+00:41:40,480 --> 00:41:45,840
+research Park Boulevard to just west of Providence main and then the widening and
+
+492
+00:41:45,840 --> 00:41:49,640
+improvements McMurphy Drive this brought the Target Center if you've been out in
+
+493
+00:41:49,640 --> 00:41:55,680
+that general area it was a former junkyard and we saw massive investment
+
+494
+00:41:55,680 --> 00:42:00,160
+along there new tax base created but it did take a while to close it was one of
+
+495
+00:42:00,160 --> 00:42:05,160
+our first and we've gotten better as you can see through that experience TIF 2
+
+496
+00:42:05,160 --> 00:42:09,320
+helped build a new Huntsville High School and a public parking garage for
+
+497
+00:42:09,320 --> 00:42:14,760
+partway place mall was created in 2000 it took about five years we saw a mass
+
+498
+00:42:14,760 --> 00:42:19,040
+improvement along the Parkway and capital investment in and around that
+
+499
+00:42:19,040 --> 00:42:24,960
+medical district area TIF 3 constructed a new Providence Elementary School in
+
+500
+00:42:24,960 --> 00:42:29,000
+Columbia High School made improvements to Feral Road and Old Monrovia
+
+501
+00:42:29,000 --> 00:42:35,840
+improvements in and around research Park that district was created again in 2000
+
+502
+00:42:35,840 --> 00:42:40,360
+and took 18 years to complete now I do want to point out by the statute
+
+503
+00:42:40,360 --> 00:42:46,520
+Alabama statute TIF district maximum term is 30 years so you can see all of
+
+504
+00:42:46,520 --> 00:42:51,880
+these are have accelerated much early closure TIF 3a provided 12 million
+
+505
+00:42:51,880 --> 00:42:56,640
+dollars to Huntsville City Schools for various school improvements built the
+
+506
+00:42:56,640 --> 00:43:00,480
+first phase of the northern bypass the new north Huntsville Industrial Park that
+
+507
+00:43:00,480 --> 00:43:05,520
+gave way to Toyota engine plant and now plethora of industry up there and the
+
+508
+00:43:05,520 --> 00:43:09,520
+Wade Mountain Preserve expansion our first greenway in that district one and
+
+509
+00:43:09,520 --> 00:43:17,640
+Trailhead TIF 4 again you kind of see the theme in blue of you know
+
+510
+00:43:17,640 --> 00:43:23,800
+understanding what the TIF does as far as to our tax recipients and trying to
+
+511
+00:43:23,800 --> 00:43:31,800
+build in projects where we can to yield to that deferred tax recipient TIF 4 was
+
+512
+00:43:31,800 --> 00:43:35,760
+was no exception with 13 million dollars in school improvements both Lee and
+
+513
+00:43:35,760 --> 00:43:40,160
+Butler High Schools expansion of the art museum some minor improvements the Vaughn
+
+514
+00:43:40,160 --> 00:43:44,560
+Braun Center a new downtown public safety precinct which combined police
+
+515
+00:43:44,560 --> 00:43:49,640
+and fire for downtown let us to kind of get better service throughout the entire
+
+516
+00:43:49,640 --> 00:43:55,440
+city building that facility and then redrawing the response or boundaries for
+
+517
+00:43:55,440 --> 00:44:00,760
+public safety courthouse improvements and then Harris Hill Boulevard that gave
+
+518
+00:44:00,760 --> 00:44:08,440
+way to east side of highway 72 East now we're seeing growth in that area nine
+
+519
+00:44:08,440 --> 00:44:13,600
+years to closure I was a credit in 2006 TIF 5 is one of our active tips it was
+
+520
+00:44:13,600 --> 00:44:17,480
+Redstone Gateway Park in partnership with the Gerson Redstone Arsenal and
+
+521
+00:44:17,480 --> 00:44:25,600
+produced Redstone Gateway Park TIF 6 is also closed included Chase Farm Road
+
+522
+00:44:25,600 --> 00:44:30,080
+Greenbower Parkway sewer improvements and I do want to circle back to this it
+
+523
+00:44:30,080 --> 00:44:36,000
+proposed a new K-8 school in Limestone County when we created that tip a few
+
+524
+00:44:36,000 --> 00:44:41,480
+years later it was determined based on rooftops and the feasibility of Humsville
+
+525
+00:44:41,480 --> 00:44:46,520
+City Schools moving forward with that to delay that TIF 8 as I mentioned we are
+
+526
+00:44:46,520 --> 00:44:50,360
+evaluating could possibly bring that project back into that future TIF
+
+527
+00:44:50,360 --> 00:44:56,640
+district one of the things I do want to discuss about TIF districts although I
+
+528
+00:44:56,640 --> 00:45:01,040
+have a term of 30 years that they must be closed out all projects must start
+
+529
+00:45:01,040 --> 00:45:05,680
+in the first five years any project that hasn't started within that time period
+
+530
+00:45:05,680 --> 00:45:13,160
+rolls out of the its qualification so that was the case with this K-8 school so
+
+531
+00:45:13,160 --> 00:45:21,240
+in 2015 and there's an error there it says 20 years that project closed out
+
+532
+00:45:21,240 --> 00:45:28,360
+several years ago then tip 7 our latest tip and also in Limestone County Greenbower
+
+533
+00:45:28,360 --> 00:45:33,200
+Parkway extension of what old highway 20 improvements and sewer improvement that
+
+534
+00:45:33,200 --> 00:45:38,000
+is going very well very ahead of schedule due to the mass amount of
+
+535
+00:45:38,000 --> 00:45:42,200
+industrial projects we've seen along that Greenbower Parkway corridor the
+
+536
+00:45:42,200 --> 00:45:47,560
+likes of Mazda Toyota Amazon VTEC the list goes on and on that we're seeing
+
+537
+00:45:47,560 --> 00:45:57,320
+out there so again kind of nutshell here of just kind of taking you through
+
+538
+00:45:57,320 --> 00:46:02,960
+everything that has occurred in this district so 70 million dollars in new
+
+539
+00:46:02,960 --> 00:46:07,120
+school improvements in all tips that the city has created 240 million dollars in
+
+540
+00:46:07,120 --> 00:46:12,840
+new public capital and infrastructure projects from public facilities public
+
+541
+00:46:12,840 --> 00:46:18,080
+safety roads utilities new private investments exceeding eight and a half
+
+542
+00:46:18,080 --> 00:46:22,980
+billion dollars I think that's the key of why you do tips and return on that
+
+543
+00:46:22,980 --> 00:46:28,680
+investment a new tax base has been created at least tips generating 110
+
+544
+00:46:28,680 --> 00:46:32,560
+million dollars annually so how does that break down 47 million dollars of
+
+545
+00:46:32,560 --> 00:46:37,240
+new revenue has been created for Huntsville City Schools annually 22
+
+546
+00:46:37,240 --> 00:46:40,500
+million dollars for the City of Huntsville General Fund and just under 20
+
+547
+00:46:40,500 --> 00:46:44,840
+million dollars for the Mass County Commission General Fund those would be
+
+548
+00:46:44,840 --> 00:46:50,080
+just in the tip districts have been closed those revenue streams would not
+
+549
+00:46:50,080 --> 00:46:54,080
+include any existing tip districts that are open so that number would only
+
+550
+00:46:54,080 --> 00:47:01,820
+increase as we close those districts out so I want to walk you through what is in
+
+551
+00:47:01,820 --> 00:47:07,400
+front of and had been in the news coming for this City Council come for a Mass
+
+552
+00:47:07,400 --> 00:47:14,760
+County Commission it would be a new tip district 9 so tip district 9 would
+
+553
+00:47:14,760 --> 00:47:18,680
+create a new tax district primarily consisting of the central portion of the
+
+554
+00:47:18,680 --> 00:47:24,000
+city would encompass about just under 3,700 acres that is not the largest tip
+
+555
+00:47:24,000 --> 00:47:30,680
+district we've created North Huntsville and tip 6 & 7 were a little larger than
+
+556
+00:47:30,680 --> 00:47:36,600
+that all proposed activities by law and public work projects must take place
+
+557
+00:47:36,600 --> 00:47:39,200
+within the corporate limits of the City of Huntsville one of the reasons I want
+
+558
+00:47:39,200 --> 00:47:43,720
+to point that out see a small black box in the central southern portion of that
+
+559
+00:47:43,720 --> 00:47:49,640
+that map there that's actually low mill so that is a tax island I can tell you
+
+560
+00:47:49,640 --> 00:47:53,640
+though with some of the investments that we'd like to do in this district there
+
+561
+00:47:53,640 --> 00:47:58,480
+has been discussions of that coming in being annexed into the city now what I
+
+562
+00:47:58,480 --> 00:48:02,600
+want to point out there is should that come into the city be annexed and more
+
+563
+00:48:02,600 --> 00:48:06,040
+investment happen in there the tip district would not catch that new
+
+564
+00:48:06,040 --> 00:48:10,320
+revenue that would go immediately to the tax recipients so there's a benefit
+
+565
+00:48:10,320 --> 00:48:14,500
+there of us being able to induce that or entice that to come into the city be
+
+566
+00:48:14,500 --> 00:48:20,280
+immediate plus up to all of our general fund the new tip district 9 contains
+
+567
+00:48:20,280 --> 00:48:24,400
+properties that are currently under your laws are underdeveloped and we believe
+
+568
+00:48:24,400 --> 00:48:27,720
+with the investments that I will show you we can stimulate redevelopment and
+
+569
+00:48:27,720 --> 00:48:31,640
+new private investment within this proposed district furthermore the
+
+570
+00:48:31,640 --> 00:48:35,700
+development or redevelopment of areas located within this district we don't
+
+571
+00:48:35,700 --> 00:48:39,480
+believe can be fully realized without some of these capital improvement
+
+572
+00:48:39,480 --> 00:48:44,040
+projects we've had a good run downtown we really have I mean you've seen new
+
+573
+00:48:44,040 --> 00:48:49,400
+hotels you've seen new multifamily but we've about reached our limit of where
+
+574
+00:48:49,400 --> 00:48:54,640
+private investment is willing to go downtown without some new inducement
+
+575
+00:48:54,640 --> 00:49:03,280
+some new interest that would drive more activity so the first project would be
+
+576
+00:49:03,280 --> 00:49:07,160
+the largest project in the district would be expansion of the North Hall of
+
+577
+00:49:07,160 --> 00:49:13,320
+the Vaughn Braun Center over the years we've delayed this project we have
+
+578
+00:49:13,440 --> 00:49:17,120
+taken capital funds out of the city's budget so graciously approved by the
+
+579
+00:49:17,120 --> 00:49:22,200
+City Council to take and do small projects if you've been in the Vaughn
+
+580
+00:49:22,200 --> 00:49:26,280
+Braun Center at any time in the last couple of years you've seen improvements
+
+581
+00:49:26,280 --> 00:49:32,480
+to hallways you've seen improvements to the existing expansion of South Hall the
+
+582
+00:49:32,480 --> 00:49:36,160
+existing North Hall what you don't see in the back is back-of-house
+
+583
+00:49:36,160 --> 00:49:43,040
+improvements but we're at an impasse with the Vaughn Braun Center so we have
+
+584
+00:49:43,040 --> 00:49:47,800
+some very large conferences that come in that have for the three straight years
+
+585
+00:49:47,800 --> 00:49:53,200
+not been able to fulfill all the people who want to participate in that so may
+
+586
+00:49:53,200 --> 00:49:59,320
+kind of tell you how conferences work let's take something like a USA where if
+
+587
+00:49:59,320 --> 00:50:03,280
+you happen to stroll the halls and over several council members did they were
+
+588
+00:50:03,280 --> 00:50:07,680
+every nook and cranny in the BBC everywhere anywhere they could put a
+
+589
+00:50:07,680 --> 00:50:13,120
+booth they put a booth and sold a booth and they were short about 70 vendors that
+
+590
+00:50:13,120 --> 00:50:17,880
+wanted to be there now how conferences make money is based on being able to sell
+
+591
+00:50:17,880 --> 00:50:22,920
+a booth so three straight years this is our largest defense contract conference
+
+592
+00:50:22,920 --> 00:50:28,520
+here that as we know Redstone Arsenal Research Parts a lot below this economy
+
+593
+00:50:28,520 --> 00:50:34,880
+their inability to satisfy those has them potentially looking at should they
+
+594
+00:50:34,880 --> 00:50:40,320
+continue here we used to host Quad A here same thing happened at Quad A it's
+
+595
+00:50:40,320 --> 00:50:45,920
+now in that excuse me in Nashville is that a reason to expand North Hall not
+
+596
+00:50:45,920 --> 00:50:52,960
+necessarily but we've run the math of what we know that front row would do in
+
+597
+00:50:52,960 --> 00:50:57,920
+another phase what Hart of Huntsville Mall area in that redevelopment is not
+
+598
+00:50:57,920 --> 00:51:01,940
+moving forward without seeing that and some other properties in around the
+
+599
+00:51:01,940 --> 00:51:05,680
+downtown area that we know would make a significant investment that would help
+
+600
+00:51:05,680 --> 00:51:11,280
+us all from a future tax base the North Huntsville Beltline Greenway we think
+
+601
+00:51:11,280 --> 00:51:16,600
+that is a significant project to see redevelop along North Parkway along
+
+602
+00:51:16,600 --> 00:51:24,520
+Meridian Street and Church Street that area has not been kind to what I would
+
+603
+00:51:24,520 --> 00:51:29,800
+say past infrastructure project mainly by all but the widening of the Parkway
+
+604
+00:51:29,800 --> 00:51:34,200
+so what this does is create a new front door back door along the east side of
+
+605
+00:51:34,200 --> 00:51:39,680
+the Parkway we see a lot of underutilized properties there that we in
+
+606
+00:51:39,680 --> 00:51:45,240
+talking with people we introduced this last year anybody's been to Atlanta and
+
+607
+00:51:45,240 --> 00:51:48,800
+seen that Atlanta Beltline what that has done is probably the single most
+
+608
+00:51:48,800 --> 00:51:54,880
+impactful project in the city Atlanta's history I think you know it's 30 years
+
+609
+00:51:54,880 --> 00:51:58,860
+old but over a trillion dollars of private investment now this is not that
+
+610
+00:51:58,860 --> 00:52:03,720
+linked but this would be the first phase for the city of Huntsville we think it's
+
+611
+00:52:03,720 --> 00:52:08,160
+the most important phase it connects into downtown it connects to Holmes
+
+612
+00:52:08,160 --> 00:52:13,640
+Avenue that provides linkage between UAH Alabama A&M Cummings Research Park
+
+613
+00:52:13,640 --> 00:52:18,840
+downtown all the way into John Hunt Park with a park project that is underway
+
+614
+00:52:18,840 --> 00:52:23,440
+new Mill Creek Park that's our choice neighborhood redevelopment project
+
+615
+00:52:23,440 --> 00:52:28,160
+putting five million dollars in a public park there we know that will help
+
+616
+00:52:28,160 --> 00:52:33,120
+accelerate at least two phases of an eight phase project and allow that
+
+617
+00:52:33,120 --> 00:52:38,920
+project to know it will move forward in all phases that is also in partnership
+
+618
+00:52:38,920 --> 00:52:43,600
+with Huntsville Housing Authority with private investment all the new
+
+619
+00:52:43,600 --> 00:52:48,640
+construction that that this would take place at Mill Creek would be private so
+
+620
+00:52:48,640 --> 00:52:53,640
+it means it pay taxes so you know much like City of Huntsville and the school
+
+621
+00:52:53,640 --> 00:52:59,160
+board your tax exempt with Huntsville's housing authority but they will maintain
+
+622
+00:52:59,160 --> 00:53:04,720
+the dirt so all vertical improvements will pay 58 mills tax regardless okay so
+
+623
+00:53:04,720 --> 00:53:09,920
+that can be a significant boost and needle mover for all of us Low Avenue
+
+624
+00:53:09,920 --> 00:53:15,760
+and Huntsville Junior High Improvement so as you're aware of your project with
+
+625
+00:53:15,760 --> 00:53:18,680
+Huntsville Junior High Improvements there's there's improvements that we
+
+626
+00:53:18,680 --> 00:53:22,960
+need to do along low to make sure that kids that want to walk to school and
+
+627
+00:53:22,960 --> 00:53:28,040
+some pedestrian facilities there but the remaining portion of those funds would
+
+628
+00:53:28,040 --> 00:53:32,760
+be to the school board to help facilitate the construction of Huntsville
+
+629
+00:53:32,760 --> 00:53:36,720
+Junior High we believe the city's portion of the road and public improvements is
+
+630
+00:53:36,720 --> 00:53:39,840
+about a million dollars it leave about four million dollars from city schools
+
+631
+00:53:39,840 --> 00:53:46,760
+to finish the construction that project as talking with the Mass County
+
+632
+00:53:46,760 --> 00:53:51,160
+Commission they are looking at what to do with the courthouse and how do they
+
+633
+00:53:51,160 --> 00:53:55,460
+rebuild courts how do they rebuild their offices and where they hold their
+
+634
+00:53:55,460 --> 00:54:01,960
+meetings we know that that process will be lengthy and require some displacement
+
+635
+00:54:01,960 --> 00:54:07,720
+so with the construction or in the completion of the federal courthouse GSA
+
+636
+00:54:07,720 --> 00:54:13,280
+donated if you will the former federal courthouse to the city to be caretakers
+
+637
+00:54:13,280 --> 00:54:19,440
+of it for the city we we don't have a purpose for it so making five million
+
+638
+00:54:19,440 --> 00:54:22,560
+dollars in renovations to the former federal courthouse to allow the County
+
+639
+00:54:22,560 --> 00:54:27,640
+Commission and or the courts move in to there as part of what they do with the
+
+640
+00:54:27,640 --> 00:54:36,680
+future current County courthouse facility so as we do this we also try to
+
+641
+00:54:36,680 --> 00:54:42,000
+model what future tax revenues would look like and and this comes from a
+
+642
+00:54:42,000 --> 00:54:47,120
+variety of information information from private investment has that has made
+
+643
+00:54:47,120 --> 00:54:51,560
+investments in their downtown they still have properties and have chose for
+
+644
+00:54:51,560 --> 00:54:55,960
+whatever reason not to move forward with additional investments areas that we know
+
+645
+00:54:55,960 --> 00:54:59,960
+where these projects will be the highest and best use is not what is there now
+
+646
+00:54:59,960 --> 00:55:04,240
+some of its vacant land some of its distressed properties and we start to
+
+647
+00:55:04,240 --> 00:55:09,840
+see based on zoning and in the top amenities that this TIF would place in
+
+648
+00:55:09,840 --> 00:55:15,800
+there we start modeling like-minded new projects so take homes at Clinton
+
+649
+00:55:15,800 --> 00:55:19,160
+Avenue for instance if you got stove house and you start to see that the top
+
+650
+00:55:19,160 --> 00:55:22,600
+investments being made there if we can induce between stove house back to the
+
+651
+00:55:22,600 --> 00:55:28,400
+BBC we have you know data that shows when that building permit was pulled
+
+652
+00:55:28,400 --> 00:55:32,880
+mainly for multifamily mixed use or a restaurant so we start to model that in
+
+653
+00:55:32,880 --> 00:55:37,320
+certain spots and then we get a good capture what that new private investment
+
+654
+00:55:37,320 --> 00:55:41,780
+is most likely to be we do that for all TIF district we're very conservative with
+
+655
+00:55:41,780 --> 00:55:47,960
+it what you've seen in that chart I showed you our conservative part is to
+
+656
+00:55:47,960 --> 00:55:51,680
+really make sure this thing doesn't last 30 years all none of our TIFs we've been
+
+657
+00:55:51,680 --> 00:55:55,960
+very conservative on what that backside investment would be because we want
+
+658
+00:55:55,960 --> 00:56:00,000
+these things to pay off accelerate get the projects done and get it closed
+
+659
+00:56:00,000 --> 00:56:08,200
+that's the goal of our TIFs so let's get into numbers really quick and then
+
+660
+00:56:08,200 --> 00:56:14,300
+open up to questions so the gray shaded area that you see that is what we
+
+661
+00:56:14,300 --> 00:56:19,080
+refer to as the 2025 baseline tax revenue that came from the Mass County
+
+662
+00:56:19,080 --> 00:56:24,560
+tax assessor's office so total for this district should City Council and Mass
+
+663
+00:56:24,560 --> 00:56:29,440
+County Commission approve the baseline is just over 29 million dollars that
+
+664
+00:56:29,440 --> 00:56:33,960
+annual 29 million dollars continues to get cut up and sent to all tax
+
+665
+00:56:33,960 --> 00:56:38,720
+recipients the tip district captures is not one penny of that so what that means
+
+666
+00:56:38,720 --> 00:56:44,040
+this City Council and the school board to the city of Huntsville it's just
+
+667
+00:56:44,040 --> 00:56:47,360
+under six and a half million dollars you will continue to get that that's what
+
+668
+00:56:47,360 --> 00:56:52,240
+the blue line is showing and and the white bar dots that you see every year
+
+669
+00:56:52,240 --> 00:56:59,320
+that tax base is frozen it goes to Huntsville City Council or City General
+
+670
+00:56:59,320 --> 00:57:03,120
+Fund the green bar represents the Huntsville City Schools General Fund
+
+671
+00:57:03,120 --> 00:57:07,800
+just under 11 million dollars that continues to flow into Huntsville City
+
+672
+00:57:07,800 --> 00:57:14,160
+Schools just as if they're one of tip district then there's a dashed orange
+
+673
+00:57:14,160 --> 00:57:20,200
+line there there's a countywide education tax it's currently at 2.9
+
+674
+00:57:20,200 --> 00:57:24,800
+million dollars now that can fluctuate how that gets distributed because it's
+
+675
+00:57:24,800 --> 00:57:30,000
+based off overall enrollment of Madison County in your percentage or Huntsville
+
+676
+00:57:30,000 --> 00:57:33,840
+City Schools percent that overall enrollments how that's cut off I did
+
+677
+00:57:33,840 --> 00:57:37,680
+want to try to calculate that because it probably changes a little bit each year
+
+678
+00:57:37,680 --> 00:57:42,680
+but just know that base that would get divided between the three school systems
+
+679
+00:57:42,680 --> 00:57:47,160
+would not change that 2.9 million dollars continues to flow out to those
+
+680
+00:57:47,160 --> 00:57:56,520
+schools okay so let's start looking at okay what if the gray box at the bottom
+
+681
+00:57:56,520 --> 00:58:02,520
+is is that same 29 million dollars the burnt orange line that you see is new
+
+682
+00:58:02,520 --> 00:58:07,640
+tax revenue from the existing tax base what do what I mean by that so with that
+
+683
+00:58:07,640 --> 00:58:14,640
+represents a 3% increase by year every year for 30 years so what does that
+
+684
+00:58:14,640 --> 00:58:20,080
+mean so let's say I have a piece of property is worth $100 okay and the
+
+685
+00:58:20,080 --> 00:58:24,440
+Mass County tax assessor in 2026 says it went up in value by 3% we don't
+
+686
+00:58:24,440 --> 00:58:31,160
+determine that it may go up 0 it could go up 5% 7% they determine that that's
+
+687
+00:58:31,160 --> 00:58:37,120
+what that would indicate that additional $3 so the way we typically model that
+
+688
+00:58:37,120 --> 00:58:45,040
+is we just do 3% inflation and and we typically get over that long span pretty
+
+689
+00:58:45,040 --> 00:58:51,360
+close we've seen the tax assessor in recent year do you know 5 to 6% then
+
+690
+00:58:51,360 --> 00:58:54,800
+when you're being one and a half cent but I think what we've seen if we model
+
+691
+00:58:54,800 --> 00:59:00,760
+just 3% for inflation it gets pretty close okay then the blue that you see
+
+692
+00:59:00,760 --> 00:59:06,960
+that is the new tax revenue that we projected in those green circles that I
+
+693
+00:59:06,960 --> 00:59:11,760
+pointed of having new capital investment that start to occur you notice in year
+
+694
+00:59:11,760 --> 00:59:17,280
+one it's almost nothing right the far left and then we think what we typically
+
+695
+00:59:17,280 --> 00:59:22,240
+see is those first 36 months that three-year timepan as we start to deploy
+
+696
+00:59:22,240 --> 00:59:26,640
+this public improvements we see that capital investment start to come in and
+
+697
+00:59:26,640 --> 00:59:33,240
+then as you see it round up don't forget that that new investment also is not
+
+698
+00:59:33,240 --> 00:59:39,880
+immune to the adjusted tax rate that the inflation or whatever the tax assessor
+
+699
+00:59:39,880 --> 00:59:46,120
+you know if I placed a project in year two and paid my taxes in year three I'm
+
+700
+00:59:46,120 --> 00:59:52,640
+a new tax participant but if they adjusted everyone's taxes by 3% in the
+
+701
+00:59:52,640 --> 00:59:57,080
+district because of inflation or whatever that new tax base is also went
+
+702
+00:59:57,080 --> 01:00:02,720
+up so that's when you see it to the right it starts to really hook hook up
+
+703
+01:00:02,720 --> 01:00:06,160
+to a vertical position as you get now or years because it's playing the same
+
+704
+01:00:06,160 --> 01:00:10,080
+inflation it's not all just new tax coming on but those big projects as they
+
+705
+01:00:10,080 --> 01:00:15,640
+hit once they're in the system they get treated just like the brown or the
+
+706
+01:00:15,640 --> 01:00:23,280
+maroon part so I thought I'd make this a lot simpler just to what does it mean to
+
+707
+01:00:23,280 --> 01:00:27,560
+the school board so again I showed that your ten point nine eight million
+
+708
+01:00:27,560 --> 01:00:34,160
+dollars of existing revenue to get annually that does not change during the
+
+709
+01:00:34,160 --> 01:00:39,240
+life we have projected that this tip would pay off in 14 years so on average
+
+710
+01:00:39,240 --> 01:00:45,040
+if I do a ten-year average of that 3% inflation of your tax base should the
+
+711
+01:00:45,040 --> 01:00:50,720
+tax assessor every year take it 3% 3% and I do that on average across that
+
+712
+01:00:50,720 --> 01:00:55,840
+that term is about four hundred and eight million dollars per year or for
+
+713
+01:00:55,840 --> 01:01:00,440
+the entire 14 years at six point three million dollars so now you start to put
+
+714
+01:01:00,440 --> 01:01:03,880
+in the five million dollars that this district would deliver to the school
+
+715
+01:01:03,880 --> 01:01:08,240
+board it's almost budget-neutral not quite plus or minus a million dollars
+
+716
+01:01:08,240 --> 01:01:15,000
+but what happens once we pay the TIF off at upon closure year 15 that first year
+
+717
+01:01:15,000 --> 01:01:20,400
+you'd see an increase of seven point six eight million dollars added to the ten
+
+718
+01:01:20,400 --> 01:01:25,800
+point nine eight so you go from ten point nine eight let's say that we did not pass
+
+719
+01:01:25,800 --> 01:01:31,360
+the tip okay if you took the ten point nine eight plus the four hundred million
+
+720
+01:01:31,360 --> 01:01:36,800
+dollars so about eleven if we do nothing about eleven point three million dollars
+
+721
+01:01:36,800 --> 01:01:43,160
+before you'd be in 14 years versus the seven point six plus the ten point nine
+
+722
+01:01:43,160 --> 01:01:48,880
+you're just under 19 so it's a plus up net of about six and a half million
+
+723
+01:01:48,880 --> 01:01:54,960
+dollars a year once the tip is closed out I'll take any questions and I'll go
+
+724
+01:01:54,960 --> 01:01:58,920
+back to a slide I know I plowed through a lot but I wanted to get the question
+
+725
+01:01:58,920 --> 01:02:03,760
+that was a lot of information it was thank you Shane nobody does numbers like
+
+726
+01:02:03,760 --> 01:02:09,120
+Shane does council members I and board members I'm sure you have questions who
+
+727
+01:02:09,120 --> 01:02:16,800
+wants to start by mr. Merida we'll let the school board go first board members
+
+728
+01:02:16,800 --> 01:02:27,960
+and I have one miss Albert okay so there are if you include if you don't include
+
+729
+01:02:27,960 --> 01:02:32,280
+the proposed tip eight just based on the two tips that are open plus this proposed
+
+730
+01:02:32,280 --> 01:02:35,600
+third one it's about four hundred and six million dollars of that four hundred
+
+731
+01:02:35,600 --> 01:02:38,960
+six million dollars only five of it is allocated to Huntsville City Schools
+
+732
+01:02:38,960 --> 01:02:45,120
+historically the other tips were a lot smaller and and included schools is there
+
+733
+01:02:45,120 --> 01:02:52,320
+a reason that we're not using education money to invest into education I think
+
+734
+01:02:52,320 --> 01:02:58,800
+we are I think what I would argue at least for this tip or point out are just
+
+735
+01:02:58,800 --> 01:03:06,040
+too strong of a word what you would give up in education funds is about six point
+
+736
+01:03:06,040 --> 01:03:10,600
+one three million dollars for just this tip what about the other two let me let
+
+737
+01:03:10,600 --> 01:03:16,760
+me stay here we'll go back okay so six point one three million dollars over
+
+738
+01:03:16,760 --> 01:03:22,240
+fourteen years he took the net present value that is less than five right and
+
+739
+01:03:22,240 --> 01:03:27,220
+this project has five this tip has five million dollars to the school board for
+
+740
+01:03:27,220 --> 01:03:32,880
+Huntsville Junior High so to me it's almost a net zero impact right now let's
+
+741
+01:03:32,880 --> 01:03:40,800
+go to tip six and seven thank you go look at tip six and tip seven without
+
+742
+01:03:40,800 --> 01:03:48,400
+the tip there would not be about three point five billion dollars of taxes on
+
+743
+01:03:48,400 --> 01:03:53,520
+the tax roll because without Green bar Parkway without the utilities there would
+
+744
+01:03:53,520 --> 01:03:59,880
+be no players no Amazon no Mazda Toyota so all that was farmland I need to go
+
+745
+01:03:59,880 --> 01:04:03,120
+back and look and I can follow up with Dustin and get you this information so
+
+746
+01:04:03,120 --> 01:04:09,440
+it's all accurate I would gauge that your revenue prior to those tips in that
+
+747
+01:04:09,440 --> 01:04:14,240
+area was probably less than $20,000 a year because it was current use
+
+748
+01:04:14,240 --> 01:04:20,600
+agricultural there wasn't anything on it yet so we haven't reached the benefit
+
+749
+01:04:20,600 --> 01:04:23,880
+one of the two has and the other ones accelerating but I guess the point I'm
+
+750
+01:04:23,880 --> 01:04:31,240
+making is the revenue that you see tip seven producing without the tip district
+
+751
+01:04:31,240 --> 01:04:35,040
+that revenue would not exist right but and what I'm trying to reiterate is it
+
+752
+01:04:35,040 --> 01:04:40,320
+does not exist to us yet and it won't until the proposed payoff 2047 that's
+
+753
+01:04:40,320 --> 01:04:44,360
+the whole goal of a tip district right and I'm saying that's a generation so you
+
+754
+01:04:44,360 --> 01:04:49,120
+know my fifth grader will be my age by the time some of these tips are proposed
+
+755
+01:04:49,120 --> 01:04:53,720
+to be paid off and is that really an investment into education well it will
+
+756
+01:04:53,720 --> 01:04:59,240
+be the other way to look at it would be just don't do tip seven instead of those
+
+757
+01:04:59,240 --> 01:05:03,840
+multi-million dollars that will be coming to all school systems we could be
+
+758
+01:05:03,840 --> 01:05:09,680
+splitting $25,000 if I can mr. Davis not that not the short here I think a
+
+759
+01:05:09,680 --> 01:05:13,240
+different perspective that I'm looking at this from not to contradict or
+
+760
+01:05:13,240 --> 01:05:17,960
+counteract this out for this point because I think she's well rooted and
+
+761
+01:05:17,960 --> 01:05:21,360
+burst in her disposition that we want to make sure we're using education funds
+
+762
+01:05:21,360 --> 01:05:26,320
+to invest in education also agree with your disposition that we are here and
+
+763
+01:05:26,320 --> 01:05:31,160
+I'll add an additional layer of perspective here which is when we're
+
+764
+01:05:31,160 --> 01:05:35,120
+talking about tax assessed values and what's being captured in the tip we are
+
+765
+01:05:35,120 --> 01:05:39,480
+strictly talking about property tax is that correct yes we are not talking
+
+766
+01:05:39,480 --> 01:05:43,320
+about sales tax that is correct which sales tax is another revenue generator
+
+767
+01:05:43,320 --> 01:05:47,920
+for us which test districts afford the city and the school district a direct
+
+768
+01:05:47,920 --> 01:05:53,120
+benefit by an increase in sales tax revenue primarily because when we talk
+
+769
+01:05:53,120 --> 01:05:57,360
+about the private investment coming into the tune of billions of dollars we're
+
+770
+01:05:57,360 --> 01:06:02,360
+talking about the investment in property which more often than not in a district
+
+771
+01:06:02,360 --> 01:06:06,720
+like this is generating additional sales tax revenue so while we may not realize
+
+772
+01:06:06,720 --> 01:06:10,760
+a return on investment from the property tax perspective throughout the duration
+
+773
+01:06:10,760 --> 01:06:14,840
+of the tip we are realizing immediate gains from the schools in an increase in
+
+774
+01:06:14,840 --> 01:06:18,200
+sales tax revenue generation and I would I be accurate in an assessment you'd be
+
+775
+01:06:18,200 --> 01:06:23,200
+be correct one of the things I would point out is kudos to the school board
+
+776
+01:06:23,200 --> 01:06:27,920
+you're in the middle of a six hundred million dollar capital plan right I
+
+777
+01:06:27,920 --> 01:06:32,920
+would argue the tips that I showed you a close you would not be in a position
+
+778
+01:06:32,920 --> 01:06:37,800
+where you're at today without those tips creating those new private investments
+
+779
+01:06:37,800 --> 01:06:42,600
+getting them closed out and that revenue flowing to you I just with all the
+
+780
+01:06:42,600 --> 01:06:46,360
+growth that's happened in Huntsville without eight and a half billion dollars
+
+781
+01:06:46,360 --> 01:06:50,840
+of private investments now paying school taxes they're paying city taxes or
+
+782
+01:06:50,840 --> 01:06:55,360
+paying county taxes without those TIF districts it wouldn't be nowhere near
+
+783
+01:06:55,360 --> 01:06:59,320
+that would it be something absolutely you know a billion two billion we could
+
+784
+01:06:59,320 --> 01:07:03,120
+argue that but it's nowhere close to eight and a half billion dollars so
+
+785
+01:07:03,120 --> 01:07:07,200
+speaking of the capital plan we have anticipated a certain level of growth in
+
+786
+01:07:07,200 --> 01:07:10,400
+our capital plan to fund it oh I'm sorry I'm sorry
+
+787
+01:07:10,400 --> 01:07:15,240
+mission well I'm sorry without being recognized let's make sure miss Alvarez
+
+788
+01:07:15,240 --> 01:07:20,080
+has had a chance to finish to finish her thoughts did you have any other questions
+
+789
+01:07:20,080 --> 01:07:27,960
+all right miss no okay sorry speaking about the capital plan obviously we
+
+790
+01:07:27,960 --> 01:07:31,520
+anticipated a certain level of growth within our capital plan to fund that and
+
+791
+01:07:31,520 --> 01:07:34,680
+that included city growth without this TIF district because we were I guess
+
+792
+01:07:34,680 --> 01:07:39,000
+unaware of it so one thing is what sort of prompted this it seems like it was a
+
+793
+01:07:39,000 --> 01:07:42,680
+little bit sudden and second I guess that might be something for Dustin also
+
+794
+01:07:42,680 --> 01:07:47,080
+is that still without capturing any growth in this district which is a
+
+795
+01:07:47,080 --> 01:07:52,240
+fairly large district are we confident that we're still going to meet the goals
+
+796
+01:07:52,240 --> 01:07:58,560
+of our capital plan as far as growth and also if you said something about private
+
+797
+01:07:58,560 --> 01:08:01,640
+investors weren't cautious about this district they didn't want to continue
+
+798
+01:08:01,640 --> 01:08:06,480
+investing in it so why just the city so those are my probably three compound
+
+799
+01:08:06,480 --> 01:08:10,960
+questions all great questions so we try to follow those in order if I miss one
+
+800
+01:08:10,960 --> 01:08:16,840
+please repeat it okay so the first I think your capital plan working with
+
+801
+01:08:16,840 --> 01:08:21,880
+Dustin is secure again this ten point just call it eleven million dollars is
+
+802
+01:08:21,880 --> 01:08:26,840
+still going to flow to you the you know four hundred eight thousand per year if
+
+803
+01:08:26,840 --> 01:08:31,560
+you will net present value is probably about four point six million dollars
+
+804
+01:08:31,560 --> 01:08:36,480
+this this plan has five million dollars direct out allocation to you so we
+
+805
+01:08:36,480 --> 01:08:40,560
+essentially cover that for you so everything in blue is just new money
+
+806
+01:08:40,560 --> 01:08:47,700
+that would come so the district was larger as we looked we looked at areas
+
+807
+01:08:47,700 --> 01:08:52,280
+that we know are going to grow in North Huntsville and further south so we've
+
+808
+01:08:52,280 --> 01:08:57,880
+shrunk it originally it went north of Oakwood and went to Airport Road so we
+
+809
+01:08:57,880 --> 01:09:03,160
+pulled it all the way back up to Drake Avenue and actually went further west
+
+810
+01:09:03,160 --> 01:09:08,480
+really to just west of Jordan Lane so we've shrunk it to the west shrunk it to
+
+811
+01:09:08,480 --> 01:09:14,000
+the south and shrunk it to the north and there's not exact science to that so it
+
+812
+01:09:14,000 --> 01:09:20,600
+it's kind of a push or pull of how big of an area to capture to accelerate paying
+
+813
+01:09:20,600 --> 01:09:23,840
+this thing off as fast as possible and get you that just seven point seven
+
+814
+01:09:23,840 --> 01:09:28,200
+million dollars or make it as small as possible and painful for all of us to
+
+815
+01:09:28,200 --> 01:09:32,280
+carry out for 30 years what we've typically done is try to accelerate it
+
+816
+01:09:32,280 --> 01:09:36,920
+as quickly as possible to close and let everybody start getting this new revenue
+
+817
+01:09:36,920 --> 01:09:42,720
+and if I miss one please bring it back up I'm sorry yeah again if we're like
+
+818
+01:09:42,720 --> 01:09:47,240
+private investors are cautious why are we not why is the city willing to risk
+
+819
+01:09:47,240 --> 01:09:53,160
+it well it's through our office having conversation with private investment
+
+820
+01:09:53,160 --> 01:10:00,360
+take the front row for instance they've only done one phase of four I do know of
+
+821
+01:10:00,360 --> 01:10:03,200
+a multi-story building if you look at some of the renderings on al.com
+
+822
+01:10:03,200 --> 01:10:08,680
+there's a 22 story complex office building with Commission style hotel and
+
+823
+01:10:08,680 --> 01:10:14,320
+condos without more conferences coming here that building doesn't happen should
+
+824
+01:10:14,320 --> 01:10:18,920
+we announce the North Hall expansion we know that building move forward that's
+
+825
+01:10:18,920 --> 01:10:24,640
+a significant move the needle in this TIF district to accelerate payoff on it
+
+826
+01:10:24,640 --> 01:10:32,160
+also other hotel years that have seen where their ADR and where their oxy
+
+827
+01:10:32,160 --> 01:10:36,800
+rate is downtown the new hotels they know with more conventions the
+
+828
+01:10:36,800 --> 01:10:40,320
+expansion of the North Hall does not just to handle the large convention we
+
+829
+01:10:40,320 --> 01:10:45,320
+can't cover now but is like able to have two in one week you know split the
+
+830
+01:10:45,320 --> 01:10:51,560
+Bonbon Center up much like other convention centers in Southeast United
+
+831
+01:10:51,560 --> 01:10:56,640
+States where the CVB and the BBC or the Sports Commission they can all be
+
+832
+01:10:56,640 --> 01:11:02,120
+recruiting those type of events here on the same week you know a lot of times you
+
+833
+01:11:02,120 --> 01:11:07,480
+take a USA for instance we lose three weeks with a one-week conference that's
+
+834
+01:11:07,480 --> 01:11:12,120
+the most important conference we hold it's Redstone Arsenal Research Park but
+
+835
+01:11:12,120 --> 01:11:16,120
+they lose the week before for everybody to load in they lose the week of the
+
+836
+01:11:16,120 --> 01:11:19,600
+Commission going on and then it's almost a week after for everybody to load out
+
+837
+01:11:19,600 --> 01:11:25,880
+see so that one conference almost cost you a month worth of sales tax and
+
+838
+01:11:25,880 --> 01:11:31,520
+different revenue streams that we all could benefit from but it's it's really
+
+839
+01:11:31,520 --> 01:11:36,360
+working with us hoteliers to the own property downtown that says look there's
+
+840
+01:11:36,360 --> 01:11:39,920
+just not enough demand you got to go create more demand and I'll create more
+
+841
+01:11:39,920 --> 01:11:45,880
+investment that's really the whole intent of a TIF district give an example
+
+842
+01:11:45,880 --> 01:11:50,600
+for TIF 6 in Lomston County we strictly did it because Polaris come we knew what
+
+843
+01:11:50,600 --> 01:11:54,440
+that CapEx was we knew we needed to get utilities on a road bill or they weren't
+
+844
+01:11:54,440 --> 01:11:57,560
+coming because the road didn't exist it's just all farmland in the middle of
+
+845
+01:11:57,560 --> 01:12:02,800
+nowhere the reason they accelerated and paid off so quick is once we put those
+
+846
+01:12:02,800 --> 01:12:08,040
+utilities that road in three under three other industry located on there it just
+
+847
+01:12:08,040 --> 01:12:12,680
+burn off in a matter of couple years that's what's happened with TIF 7
+
+848
+01:12:12,680 --> 01:12:18,200
+Mazda Toyota since that time Mazda Toyota put 2.6 billion we've already
+
+849
+01:12:18,200 --> 01:12:24,040
+exceeded to 4 billion there so so again it's go prime the pump make these small
+
+850
+01:12:24,040 --> 01:12:28,800
+investments and then watch it accelerate that's the whole premise behind the
+
+851
+01:12:28,800 --> 01:12:34,320
+Alabama Constitution of Taxing and Financing great question council
+
+852
+01:12:34,320 --> 01:12:40,800
+members I think mr. Meredith you have a question and then mr. cling mr. Davis
+
+853
+01:12:40,800 --> 01:12:46,480
+could you define what you mean by payoff payoff would mean that all debt if we
+
+854
+01:12:46,480 --> 01:12:52,480
+issue bonds which we most likely do have been closed or paid off what usually
+
+855
+01:12:52,480 --> 01:12:59,800
+happens in acceleration format is again I'll do simple math okay bond payments
+
+856
+01:12:59,800 --> 01:13:07,520
+$10 a year at the first part of it the tip district may only produce $2 see
+
+857
+01:13:07,520 --> 01:13:11,280
+his capital plan will make up that other eight we don't ask any of your deferred
+
+858
+01:13:11,280 --> 01:13:15,160
+tax receipts hey this tip district small we give us some money pay this this $10
+
+859
+01:13:15,160 --> 01:13:21,880
+debt we cover it but then as the years progress it starts producing 12 15 20
+
+860
+01:13:21,880 --> 01:13:26,680
+that's how you accelerate paying the debt off but once it's closed it the debt
+
+861
+01:13:26,680 --> 01:13:31,480
+is paid off the tip must be closed that new revenue that was paying that debt
+
+862
+01:13:31,480 --> 01:13:35,600
+service or accelerating that payoff now gets divided amongst the tax recipients
+
+863
+01:13:35,600 --> 01:13:45,520
+thank you you mentioned how the tax assessor may raise the the tax or the
+
+864
+01:13:45,520 --> 01:13:52,080
+you know what I'm trying to say yes the evaluation it's my understanding now we
+
+865
+01:13:52,080 --> 01:13:59,820
+are limited to 7% increase in any given year that is that does the tax creation
+
+866
+01:13:59,820 --> 01:14:07,680
+of a TIF does that the limit of 7% still apply or or can they raise it 10 to 12
+
+867
+01:14:07,680 --> 01:14:11,400
+percent if they want and thought about that's very good question though it will
+
+868
+01:14:11,400 --> 01:14:17,480
+be limited by Alabama law which is that 7% but we you know the this council the
+
+869
+01:14:17,480 --> 01:14:21,440
+mayor Mass County Commission even you know we have no bearing on that that's
+
+870
+01:14:21,440 --> 01:14:24,960
+actually falls in the hands of the tax assessor but you you're correct it
+
+871
+01:14:24,960 --> 01:14:34,160
+doesn't change any laws that set any limit mr. Davis and this just answer your
+
+872
+01:14:34,160 --> 01:14:40,000
+question as we were is that that law was being put in place we talked to
+
+873
+01:14:40,000 --> 01:14:45,840
+lieutenant governor who was pushing that and he was able to pull out most of the
+
+874
+01:14:45,840 --> 01:14:51,680
+TIF districts out of out of that that legislation so I don't think that the
+
+875
+01:14:51,680 --> 01:14:58,680
+TIF districts will be will be hindered in those I appreciate what you're trying
+
+876
+01:14:58,680 --> 01:15:03,200
+to do by answering the question but I would more greatly appreciate not being
+
+877
+01:15:03,200 --> 01:15:07,760
+interrupted when I have the floor he was just trying to answer the question I
+
+878
+01:15:07,760 --> 01:15:12,680
+understand he was trying to answer my question but he interrupted me while I
+
+879
+01:15:12,680 --> 01:15:17,000
+had do you have any other additional I do have additional please go ahead thank
+
+880
+01:15:17,000 --> 01:15:27,400
+you for a TIF district you need 50% of the district to be considered blighted
+
+881
+01:15:27,400 --> 01:15:33,000
+is my understanding well is that correct the law actually changed this session
+
+882
+01:15:33,000 --> 01:15:40,200
+okay what is it what was it adjusted to that you can exceed more than 50 percent
+
+883
+01:15:40,200 --> 01:15:45,680
+is the way the law was written certainly there's not it didn't say you know no
+
+884
+01:15:45,680 --> 01:15:50,840
+more than 70 just said it they took the I guess my point is but we've ran that
+
+885
+01:15:50,840 --> 01:15:55,960
+math and this does comply if if you could pull up a map show me where the
+
+886
+01:15:55,960 --> 01:16:03,680
+blighted parts are well there's six actually six points of a TIF statute
+
+887
+01:16:03,680 --> 01:16:11,040
+blight is one of those but also also economic distress or properties that are
+
+888
+01:16:11,040 --> 01:16:17,760
+not in its highest and best use based on zoning and its adjacent tax values so
+
+889
+01:16:17,760 --> 01:16:23,100
+there's a whole series of I call them the six TIF statutes or warrants if you
+
+890
+01:16:23,100 --> 01:16:27,960
+will the one that you mentioned being blighted is just one of those six can
+
+891
+01:16:27,960 --> 01:16:32,920
+you show me what would be considered blight in this tech well it's according
+
+892
+01:16:32,920 --> 01:16:39,000
+what's your definition of blight is blight can be for instance a tax value
+
+893
+01:16:39,000 --> 01:16:44,400
+that is I'm gonna make up easy math again okay I like easy man yeah hundred
+
+894
+01:16:44,400 --> 01:16:49,960
+dollars is this property's value you know two parcels over the values 20,000
+
+895
+01:16:49,960 --> 01:16:53,960
+so that is a piece of distress or undervalued piece of property not in its
+
+896
+01:16:53,960 --> 01:17:00,080
+highest and best use and roughly if you could use your mouse where in this if
+
+897
+01:17:00,080 --> 01:17:06,960
+this mouse word would I would say a large portion is up in this area here
+
+898
+01:17:06,960 --> 01:17:12,200
+certainly around the Holmes Avenue and the low mill areas we're seeing some
+
+899
+01:17:12,200 --> 01:17:17,600
+reinvestment but most of those properties have not really changed in
+
+900
+01:17:17,600 --> 01:17:23,240
+its use in probably five six seven decades and then in and around the
+
+901
+01:17:23,240 --> 01:17:28,240
+downtown district area it would be the vacant properties or you know second
+
+902
+01:17:28,240 --> 01:17:32,640
+third fourth generation top buildings that are underserved as far as its
+
+903
+01:17:32,640 --> 01:17:39,600
+rent roll rates you know it's kind of hard to give you a parcel-by-parcel
+
+904
+01:17:39,600 --> 01:17:46,120
+description of those but we did work with GIS to run some of that okay we can
+
+905
+01:17:46,120 --> 01:17:50,120
+talk offline sure and then finally I just want to encourage you to talk with
+
+906
+01:17:50,120 --> 01:17:54,680
+the Madison County Commission I know they're pretty concerned about what this
+
+907
+01:17:54,680 --> 01:17:59,840
+TIF would do in terms of the effect on both Madison City and Madison County
+
+908
+01:17:59,840 --> 01:18:05,000
+school systems and we have those numbers I got final preliminary numbers from
+
+909
+01:18:05,000 --> 01:18:10,520
+Cliff man's office on Friday I've actually sent that to Jeff rich today
+
+910
+01:18:10,520 --> 01:18:14,960
+and they were there was some confusion of some numbers the County Commission
+
+911
+01:18:14,960 --> 01:18:20,520
+had run and they I will tell you they were 10x what they thought it was so I
+
+912
+01:18:20,520 --> 01:18:24,440
+think a lot of that has been subsided today thank you very much you're welcome
+
+913
+01:18:24,440 --> 01:18:32,280
+sir mr. clean mr. Davis based upon past history do you feel that the numbers
+
+914
+01:18:32,280 --> 01:18:43,640
+that you're projecting on the new TIF 9 is conservative excessive I mean what
+
+915
+01:18:43,640 --> 01:18:50,880
+do you think the ultimate outcomes gonna be I do councilman clean as I said by
+
+916
+01:18:50,880 --> 01:18:57,320
+statute a tip district in the last 30 years right now based on you know the
+
+917
+01:18:57,320 --> 01:19:02,760
+2014 capital plan that will see the TIF district in early years meaning the debt
+
+918
+01:19:02,760 --> 01:19:08,480
+service versus the tax revenue coming in they don't match meaning this the city
+
+919
+01:19:08,480 --> 01:19:13,080
+will actually write a check for those debt service payments in early years
+
+920
+01:19:13,080 --> 01:19:19,540
+which accelerates the payoff right it's one of all these work but right now
+
+921
+01:19:19,540 --> 01:19:24,760
+we're modeling in a conservative manner between year 14 and year 15 this close
+
+922
+01:19:24,760 --> 01:19:31,400
+it out so there would be a chance and we're not trying to you know sugarcoat
+
+923
+01:19:31,400 --> 01:19:36,040
+it there could be a chance that based on your projections if it's like other tips
+
+924
+01:19:36,040 --> 01:19:42,000
+that we've had the school system may be getting more perhaps quicker than the
+
+925
+01:19:42,000 --> 01:19:47,200
+30-year payout that this thing is built into is that an exam is that reasonable
+
+926
+01:19:47,200 --> 01:19:56,560
+that's right the number that let me go back to here so again this number is
+
+927
+01:19:56,560 --> 01:20:05,160
+based on year 14 to 7.6 million but let's say let's just pick a number let's
+
+928
+01:20:05,160 --> 01:20:14,000
+say it was year 11 that number is 6.9 million okay but then as inflation
+
+929
+01:20:14,000 --> 01:20:18,440
+happens those years you get to this number so the number would be a little
+
+930
+01:20:18,440 --> 01:20:25,520
+less because the TIF has not as mature but it would start early so you're
+
+931
+01:20:25,520 --> 01:20:31,840
+correct that's a long way of saying yes okay thank you any other council members
+
+932
+01:20:31,840 --> 01:20:39,840
+have miss Watkins good evening thank you miss Davis for their presentation can
+
+933
+01:20:39,840 --> 01:20:45,640
+you tell us how does the city currently support Houseful City schools and how do
+
+934
+01:20:45,640 --> 01:20:52,360
+we go above statement date of funding as far as the finances piece of mass penny
+
+935
+01:20:52,360 --> 01:20:57,800
+Smith who can go through six and a half meals and the 22 and a half meals you
+
+936
+01:20:57,800 --> 01:21:09,880
+like to speak on that and the capital plans good afternoon penny Smith
+
+937
+01:21:09,880 --> 01:21:14,800
+director of finance so a couple of ways we've been we contribute to the
+
+938
+01:21:14,800 --> 01:21:20,240
+Huntsville City schools and to their bottom line first is already mentioned
+
+939
+01:21:20,240 --> 01:21:26,880
+the sales and use tax that comes through the city 14 14 percent of 3.5 percent
+
+940
+01:21:26,880 --> 01:21:32,480
+goes through goes to the city school system directly each month and and that
+
+941
+01:21:32,480 --> 01:21:36,640
+is remitted to our schools there is a trip at the end of the year so that so
+
+942
+01:21:36,640 --> 01:21:42,360
+that tax base goes goes to there and goes forward for that the also the
+
+943
+01:21:42,360 --> 01:21:47,800
+capital plan so there's six and a half meals that is contributed to our general
+
+944
+01:21:47,800 --> 01:21:51,000
+fund six and a half meals goes directly to the school system for the
+
+945
+01:21:51,000 --> 01:21:57,160
+furtherance of education and and that is utilized but it really in two ways it's
+
+946
+01:21:57,160 --> 01:22:01,920
+it's made it is the vast majority is of it is utilized for capital and to
+
+947
+01:22:01,920 --> 01:22:07,640
+payment of debt that is issued by the school system I'm sorry by the city for
+
+948
+01:22:07,640 --> 01:22:14,480
+for all the school system things but capital plans but then also sometimes
+
+949
+01:22:14,480 --> 01:22:18,560
+there are payments like land or the purchase of something like that that is
+
+950
+01:22:18,560 --> 01:22:25,200
+a direct withdrawal from that from that corpus that goes back to to the school
+
+951
+01:22:25,200 --> 01:22:31,440
+system for for those capital purchases in addition to that there are numerous
+
+952
+01:22:31,440 --> 01:22:37,720
+other ways that both are from from capital from the capital projects that
+
+953
+01:22:37,720 --> 01:22:41,680
+are that are put in the ground both of our capital plans benefit the school
+
+954
+01:22:41,680 --> 01:22:47,440
+systems in various ways due to from sewer systems to things that we help with
+
+955
+01:22:47,440 --> 01:22:52,640
+on various capital plant various projects and things like that across the
+
+956
+01:22:52,640 --> 01:22:58,840
+city roads that that are repaired or put pushed through for the school system
+
+957
+01:22:58,840 --> 01:23:03,960
+that are requested by that specifically and then also our City Council has
+
+958
+01:23:03,960 --> 01:23:08,160
+contributed to the school system in various ways through their own
+
+959
+01:23:08,160 --> 01:23:14,240
+discretionary plans that they have in place I don't know if I'm mentioning in
+
+960
+01:23:14,240 --> 01:23:18,120
+this I'm missing one thing I'm missing the appropriation that's that goes
+
+961
+01:23:18,120 --> 01:23:23,320
+through every year for books as well this Watkins did that answer your
+
+962
+01:23:23,320 --> 01:23:29,040
+question it did but I need mr. Davis come back up thank you miss Smith so I
+
+963
+01:23:29,040 --> 01:23:33,040
+think it was probably was it two months ago when the Eli Lilly announcement
+
+964
+01:23:33,040 --> 01:23:38,840
+came through late November early December yeah time flies time flies
+
+965
+01:23:38,840 --> 01:23:44,960
+well anyway I received a call from Mayor battles secretary to ask me to come meet
+
+966
+01:23:44,960 --> 01:23:49,600
+with him in his office and you were there and I want to thank both of you
+
+967
+01:23:49,600 --> 01:23:54,360
+because when I got there you said you're going to be happy it sounds like well
+
+968
+01:23:54,360 --> 01:23:57,520
+what this is about that's what I was thinking in my head and one of the
+
+969
+01:23:57,520 --> 01:24:01,720
+things you shared in the mayor's well which I think both of you for is you
+
+970
+01:24:01,720 --> 01:24:05,120
+know with all the development that's coming out of district 5 even though
+
+971
+01:24:05,120 --> 01:24:09,800
+it's not in my district it's still it is a compliment to hospital City schools
+
+972
+01:24:09,800 --> 01:24:16,080
+that land was donated and money will be allocated to build a school out there
+
+973
+01:24:16,080 --> 01:24:20,480
+with all the development coming so I want to thank you for that as well as I
+
+974
+01:24:20,480 --> 01:24:27,200
+wanted to be noted in February hospital City of Huntsville closed out to 246 and
+
+975
+01:24:27,200 --> 01:24:31,960
+we presented a 5.5 million dollar check to dr. Sudden here in council chambers
+
+976
+01:24:31,960 --> 01:24:39,440
+so I will say this when I first got here I was talking a lot about funding for
+
+977
+01:24:39,440 --> 01:24:44,560
+Huntsville City Schools but I do know that the City Council and the mayor is
+
+978
+01:24:44,560 --> 01:24:49,440
+committed to doing what's best for us with city schools and helping them with
+
+979
+01:24:49,440 --> 01:24:54,880
+these facilities and the growth that we have so I thank you for that but my next
+
+980
+01:24:54,880 --> 01:24:59,760
+comment is going to be I know that we have planning Commission and I know that
+
+981
+01:24:59,760 --> 01:25:05,840
+I think mr. Bernard is to representative for Huntsville City Schools but are we
+
+982
+01:25:05,840 --> 01:25:11,440
+communicating clearly about the growth and the expansion and how is it going
+
+983
+01:25:11,440 --> 01:25:14,760
+back to house for city schools and I guess that's a question for mr. Bernard
+
+984
+01:25:14,760 --> 01:25:19,280
+because when I was on the council I wasn't getting this information I mean on
+
+985
+01:25:19,280 --> 01:25:23,320
+school board and I think it's extremely important that we're communicating this
+
+986
+01:25:23,320 --> 01:25:27,400
+information and that we have this dialogue because this is especially
+
+987
+01:25:27,400 --> 01:25:32,960
+important especially with the growth and expansion in how see schools is prepared
+
+988
+01:25:32,960 --> 01:25:40,440
+it's a great question let me unpack some of that I'll be the first to omit five
+
+989
+01:25:40,440 --> 01:25:44,120
+years ago probably not so much we were disseminating the right information and
+
+990
+01:25:44,120 --> 01:25:49,200
+doing it timely I'd say over the last five years we've done a really good job
+
+991
+01:25:49,200 --> 01:25:53,960
+and a lot of that is information we didn't have it was it was not as
+
+992
+01:25:53,960 --> 01:25:58,600
+advanced not as automated as it's we bought a lot of programs and inspection
+
+993
+01:25:58,600 --> 01:26:02,560
+department a lot of shuttle programs and engineering planning so that data is now
+
+994
+01:26:02,560 --> 01:26:08,600
+at our fingertips so we're able to compile it with mr. Vandiver and Thomas
+
+995
+01:26:08,600 --> 01:26:13,600
+Nunes and city engineer and we're able to get that and get it in a way not only
+
+996
+01:26:13,600 --> 01:26:17,400
+for you to understand as a school board but for us to understand and developing
+
+997
+01:26:17,400 --> 01:26:21,360
+capital plans so it's just the really the advancement of the tools our staff
+
+998
+01:26:21,360 --> 01:26:25,680
+has we've always had that data but if you would have asked for it you know
+
+999
+01:26:25,680 --> 01:26:30,320
+probably five seven years ago it took someone going through filing cabinets of
+
+1000
+01:26:30,320 --> 01:26:34,800
+paper and permits and try to you know key all that in Excel and hopefully give
+
+1001
+01:26:34,800 --> 01:26:38,520
+you some snapshots so we've gotten much better at that we'll continue to evolve
+
+1002
+01:26:38,520 --> 01:26:42,480
+and get better we can pretty much give it to you on a month to month basis now
+
+1003
+01:26:42,480 --> 01:26:47,720
+we get a roll up every month but you know you do bring up a good point in
+
+1004
+01:26:47,720 --> 01:26:52,280
+limestone county and our partnerships you know the the central office and new
+
+1005
+01:26:52,280 --> 01:26:56,320
+tech school you know that came out of the capital plan as miss penny said of
+
+1006
+01:26:56,320 --> 01:27:02,400
+just under five million dollars we've worked with Dustin and the team where's
+
+1007
+01:27:02,400 --> 01:27:05,480
+the best location for a new school in limestone county we don't want you to
+
+1008
+01:27:05,480 --> 01:27:08,960
+build two campuses one on the north side of the interstate one on the south side
+
+1009
+01:27:08,960 --> 01:27:12,880
+and be coming back to you you know with 2,000 more lots ten years from now and
+
+1010
+01:27:12,880 --> 01:27:17,160
+say hey man that school would have been three miles the other way but it's just
+
+1011
+01:27:17,160 --> 01:27:20,440
+not you got to have that so we worked with that found out where it should be
+
+1012
+01:27:20,440 --> 01:27:25,560
+that said okay you can have one school district here to handle the next 30
+
+1013
+01:27:25,560 --> 01:27:29,480
+years out here you know may need a wing addition but it's not build this campus
+
+1014
+01:27:29,480 --> 01:27:32,760
+and go up here ten years from now build another campus and then we've worked
+
+1015
+01:27:32,760 --> 01:27:37,040
+with landowners such that to build get 126 acres for the school board at no
+
+1016
+01:27:37,040 --> 01:27:41,720
+cost now we're making capital investments out there bringing utilities and
+
+1017
+01:27:41,720 --> 01:27:45,640
+improving some roads that yes the landowner will benefit down the road but
+
+1018
+01:27:45,640 --> 01:27:49,920
+that benefit we transferred to the school board and tiff ain't we're
+
+1019
+01:27:49,920 --> 01:27:54,480
+starting to model that but there's a very good likelihood that that tip will
+
+1020
+01:27:54,480 --> 01:28:00,160
+include a k8 school that you're already budgeting your 600 million dollars if
+
+1021
+01:28:00,160 --> 01:28:04,560
+that comes to fruition whatever you're going to spend on that cage you go spend
+
+1022
+01:28:04,560 --> 01:28:08,520
+somewhere else in the school district okay so so we're working we're working
+
+1023
+01:28:08,520 --> 01:28:13,760
+really hard I feel like we got a good partnership tips are hard I mean that
+
+1024
+01:28:13,760 --> 01:28:18,640
+there's you know different ways to look at it I think historically I showed
+
+1025
+01:28:18,640 --> 01:28:22,360
+we've been able to build educational facilities build public infrastructure
+
+1026
+01:28:22,360 --> 01:28:28,000
+get them closed and then see everybody benefit all three school systems Madison
+
+1027
+01:28:28,000 --> 01:28:32,360
+County limestone County Commission I remember I called chairman Daly limestone
+
+1028
+01:28:32,360 --> 01:28:36,880
+County Commission when we closed tip six and and I don't remember his number but
+
+1029
+01:28:36,880 --> 01:28:40,160
+I called him and said hey we're closing tip six and here's the amount to
+
+1030
+01:28:40,160 --> 01:28:44,120
+limestone County schools here's meant to the County Commission he said man we
+
+1031
+01:28:44,120 --> 01:28:47,640
+could really use that this year I said well Commissioner it's that plus every
+
+1032
+01:28:47,640 --> 01:28:51,440
+year following and he's like this is like a blessing and then the
+
+1033
+01:28:51,440 --> 01:28:54,280
+superintendent of limestone County schools called because chairman Daly give
+
+1034
+01:28:54,280 --> 01:28:57,960
+him a cell number he's like okay walk me through this again I said we closed them
+
+1035
+01:28:57,960 --> 01:29:02,280
+out here's your check it's a partial tax year because we closed it out not you
+
+1036
+01:29:02,280 --> 01:29:06,280
+know somewhere in the middle call penny and got the actual number for the next
+
+1037
+01:29:06,280 --> 01:29:11,440
+year and call that back that's collaborative partnership it mean it's
+
+1038
+01:29:11,440 --> 01:29:15,720
+right or wrong I think we could all could debate that but I think long term
+
+1039
+01:29:15,720 --> 01:29:22,280
+if we really look down the road we've shown past success and I really think
+
+1040
+01:29:22,280 --> 01:29:26,880
+we'll show future success in continuous trend thank you well I really I'm not
+
+1041
+01:29:26,880 --> 01:29:31,480
+done I'm really excited about this meeting today because it shows that
+
+1042
+01:29:31,480 --> 01:29:35,120
+Huntsville City Schools in the city of Huntsville is collaborating and
+
+1043
+01:29:35,120 --> 01:29:38,880
+communicating for the benefit of our city and well as our schools and
+
+1044
+01:29:38,880 --> 01:29:44,640
+students I have another question for you Shane yes ma'am are we communicating
+
+1045
+01:29:44,640 --> 01:29:48,440
+with Huntsville City Schools when it comes to the skill sets that's needed
+
+1046
+01:29:48,440 --> 01:29:52,680
+for our upcoming graduates being that we have a state of the art Career Tech
+
+1047
+01:29:52,680 --> 01:29:58,240
+Center I know you know businesses industry drive our workforce are we
+
+1048
+01:29:58,240 --> 01:30:03,400
+communicating those needs to Huntsville City Schools I think so you know our
+
+1049
+01:30:03,400 --> 01:30:06,640
+workforce development team but the chamber works very closely to all our
+
+1050
+01:30:06,640 --> 01:30:10,400
+school system or two-year colleges or four-year colleges I've got to tour that
+
+1051
+01:30:10,400 --> 01:30:14,960
+new facility kudos to this board I can't wait to see the programs that keep
+
+1052
+01:30:14,960 --> 01:30:22,160
+coming out of it but before that facility was built we were behind no
+
+1053
+01:30:22,160 --> 01:30:27,240
+disrespect to anybody up here but you know what AIDT was having to do what
+
+1054
+01:30:27,240 --> 01:30:31,840
+Calhoun was having to do we send a lot of people limestone Career Tech Center
+
+1055
+01:30:31,840 --> 01:30:34,680
+was one of the best in the state they can't say that anymore
+
+1056
+01:30:34,680 --> 01:30:39,680
+kudos to this board the facility that you have put on the ground is absolutely
+
+1057
+01:30:39,680 --> 01:30:44,720
+phenomenal and the programs will only get better we see it every day I mean
+
+1058
+01:30:44,720 --> 01:30:49,640
+last year very very quietly in this community we created about 5,000 jobs
+
+1059
+01:30:49,640 --> 01:30:54,640
+you know what in the miles of Toyota that we announced them all at once but
+
+1060
+01:30:54,640 --> 01:30:58,880
+of those almost 73% you can get with high school diploma GED with a little
+
+1061
+01:30:58,880 --> 01:31:04,960
+bit tech training and go make 67,000 dollars a year so that facility will bring
+
+1062
+01:31:04,960 --> 01:31:08,720
+benefits this community for generations to come so kudos to you guys for having
+
+1063
+01:31:08,720 --> 01:31:12,240
+that vision we're glad that we were a part of it don't forget Michelle
+
+1064
+01:31:12,240 --> 01:31:18,440
+Watkins was on that board that got their Career Tech Center approved I fussed about it
+
+1065
+01:31:18,440 --> 01:31:24,720
+every day Beth can say she sat next to me I do have another comment though I
+
+1066
+01:31:24,720 --> 01:31:29,440
+know that there has been a lot of talk on Facebook about the BBC and this tip
+
+1067
+01:31:29,440 --> 01:31:36,480
+but this is the reality I've attended several conferences being on the council
+
+1068
+01:31:36,480 --> 01:31:41,320
+you get invited to conferences I went to the SMDC which one is one of the largest
+
+1069
+01:31:41,320 --> 01:31:46,720
+conferences we have at the Civic Center and last year they were really excited
+
+1070
+01:31:46,720 --> 01:31:51,760
+because Golden Dome was discussed in there are so many government agencies
+
+1071
+01:31:51,760 --> 01:31:57,040
+and contractors there and when I went last year they took me through and was
+
+1072
+01:31:57,040 --> 01:32:03,520
+touring we are so out of space that people were in hallways with their
+
+1073
+01:32:03,520 --> 01:32:09,160
+display booths hallways and little side entrances they fit them in everywhere
+
+1074
+01:32:09,160 --> 01:32:14,280
+they could because they had actually ran out of space and I know when you're
+
+1075
+01:32:14,280 --> 01:32:21,520
+trying to attract large conferences to the city you got to have hotel space
+
+1076
+01:32:21,520 --> 01:32:27,240
+as well as you have to have space at your facility and I know that one
+
+1077
+01:32:27,240 --> 01:32:31,320
+organization did not come because we didn't have enough breakout rooms and
+
+1078
+01:32:31,320 --> 01:32:36,560
+they passed elsewhere over for their reason so I totally understand the BBC
+
+1079
+01:32:36,560 --> 01:32:43,400
+expansion our city has grown and if we want to attract seminars and workshops
+
+1080
+01:32:43,400 --> 01:32:50,040
+and events to this city that are of a magnitude that we want to show that
+
+1081
+01:32:50,040 --> 01:32:54,800
+Huntsville can handle it we have to have that space available at the BBC but at
+
+1082
+01:32:54,800 --> 01:32:59,760
+no time is the schools being slighted not at all education is still at the
+
+1083
+01:32:59,760 --> 01:33:03,800
+forefront of the thoughts of this city and I do have to say that we are
+
+1084
+01:33:03,800 --> 01:33:07,480
+dedicated to working with Huntsville City Schools to ensure that that happens
+
+1085
+01:33:07,480 --> 01:33:13,360
+so thank you Shane I don't think anyone in this room other than council members
+
+1086
+01:33:13,360 --> 01:33:17,400
+and the mayor and people that work at the city really understand the job that
+
+1087
+01:33:17,400 --> 01:33:24,560
+Shane does Shane works seven days a week and not only that anytime you call him
+
+1088
+01:33:24,560 --> 01:33:28,360
+y'all might call him at two or three o'clock in the afternoon eight or nine
+
+1089
+01:33:28,360 --> 01:33:32,040
+o'clock at night Shane is calling me back because he has been too busy to
+
+1090
+01:33:32,040 --> 01:33:37,800
+return a phone call so thank you Shane you're too kind I'm just one of many
+
+1091
+01:33:37,800 --> 01:33:42,560
+mayor battle I know you have some thoughts on all of this please share
+
+1092
+01:33:42,560 --> 01:33:47,360
+those with us thank you and thank you to the council for having this and thank
+
+1093
+01:33:47,360 --> 01:33:50,240
+you for the school board for joining us with this I think this is one of the
+
+1094
+01:33:50,240 --> 01:33:55,320
+most important conversations we can have we are no better than our education
+
+1095
+01:33:55,320 --> 01:34:01,320
+system we cannot grow we cannot prosper unless we have a good education system
+
+1096
+01:34:01,320 --> 01:34:05,160
+and we've all got to work with that work together to make sure that we have that
+
+1097
+01:34:05,160 --> 01:34:14,920
+education system back when we did TIF was it six with Toyota Mazda seven
+
+1098
+01:34:14,920 --> 01:34:18,920
+when we did TIF seven former superintendent came to me and said I'm
+
+1099
+01:34:18,920 --> 01:34:22,360
+going to oppose that because I don't like taking away the revenues that I'm
+
+1100
+01:34:22,360 --> 01:34:28,320
+going to have in the future off that land and and I had to explain to him and
+
+1101
+01:34:28,320 --> 01:34:34,240
+I said you know you've got to realize I mean this is something this is a three
+
+1102
+01:34:34,240 --> 01:34:37,920
+billion dollar investment that's going to be happening with that land that three
+
+1103
+01:34:37,920 --> 01:34:43,760
+billion dollar investment once it's once the debts paid off for what the TIF the
+
+1104
+01:34:43,760 --> 01:34:51,640
+TIF process was it brings in 17 million dollars a year that 2400 acres that
+
+1105
+01:34:51,640 --> 01:34:59,960
+sitting out there is taxed at rural farm rates $750 an acre and then it's then
+
+1106
+01:34:59,960 --> 01:35:05,280
+it's taxed at 10% of their assessed value so each acre of that land out
+
+1107
+01:35:05,280 --> 01:35:12,240
+there that 2400 acres is taxed at $75 an acre you put that $75 an acre together
+
+1108
+01:35:12,240 --> 01:35:18,720
+and you got a total assessment of $180,000 which is what that land would be
+
+1109
+01:35:18,720 --> 01:35:28,440
+assessed for today if if we had not done Mazda Toyota 180,000 versus for three
+
+1110
+01:35:28,440 --> 01:35:36,720
+billion dollars that 180,000 would would give us what do you think Shane about
+
+1111
+01:35:36,720 --> 01:35:42,520
+about eight eight eight thousand nine thousand dollars a year eighteen nineteen thousand dollars a year
+
+1112
+01:35:42,520 --> 01:35:48,120
+right now that that property is kicking off about 17 million dollars a year that
+
+1113
+01:35:48,120 --> 01:35:53,400
+is going back into our school systems and back into our community you know
+
+1114
+01:35:53,400 --> 01:35:57,480
+we've got to remember and take the long look and that's what Huntsville's always
+
+1115
+01:35:57,480 --> 01:36:03,240
+been good at taking that long look looking ahead 15 20 25 years and seeing
+
+1116
+01:36:03,240 --> 01:36:08,280
+what it's going to do to us and how it's going to make us a better community you
+
+1117
+01:36:08,280 --> 01:36:14,280
+know we we had our conversation I think we were able to needless say we were
+
+1118
+01:36:14,280 --> 01:36:20,640
+able to do the tip and as we did the tip we watched it very closely and today I
+
+1119
+01:36:20,640 --> 01:36:24,920
+think that it has been a great partnership with the school board with
+
+1120
+01:36:24,920 --> 01:36:33,000
+the school administration with everybody and I as a citizen of Huntsville but
+
+1121
+01:36:33,000 --> 01:36:36,360
+also as mayor I also want to thank each of you for the job that y'all done to
+
+1122
+01:36:36,360 --> 01:36:40,480
+make sure that we have a great education system and that we're able to pay for
+
+1123
+01:36:40,480 --> 01:36:45,200
+that great education system no other system across the state is able to put
+
+1124
+01:36:45,200 --> 01:36:49,680
+six hundred million dollars into a capital plan right now to have better
+
+1125
+01:36:49,680 --> 01:36:55,660
+schools better and better facilities for their for their young students and as we
+
+1126
+01:36:55,660 --> 01:37:01,680
+do that we'll see the we'll see the long the long game of that we'll see in 10 15
+
+1127
+01:37:01,680 --> 01:37:06,920
+20 25 years we'll see we'll see each year we'll see a gain in our community
+
+1128
+01:37:06,920 --> 01:37:12,400
+and the prosperity of our community keep on coming in day after day after day you
+
+1129
+01:37:12,400 --> 01:37:15,720
+know because of the decisions that y'all have made and the work that y'all done
+
+1130
+01:37:15,720 --> 01:37:20,000
+over the past thank each of you for your efforts council thank you for your
+
+1131
+01:37:20,000 --> 01:37:25,200
+efforts in this this is a long play I mean it's a play for a long term but the
+
+1132
+01:37:25,200 --> 01:37:29,680
+long term is that it benefits our community and benefits our children long
+
+1133
+01:37:29,680 --> 01:37:37,400
+term thank you thank you mayor battle mr. not thank you dr. Roberts I just
+
+1134
+01:37:37,400 --> 01:37:43,680
+councilman Watkins wanted to answer one brief question you had directed is and
+
+1135
+01:37:43,680 --> 01:37:47,000
+I'm confident my board colleagues will attest to this but they get no less
+
+1136
+01:37:47,000 --> 01:37:50,640
+than three emails from me every month being the Planning Commission agenda
+
+1137
+01:37:50,640 --> 01:37:58,000
+zoning subcommittee agenda and then the subdivision subcommittee agenda so while
+
+1138
+01:37:58,000 --> 01:38:01,560
+the communications are indirect but they are forwarded each and every month so
+
+1139
+01:38:01,560 --> 01:38:05,160
+it's not a full breakdown but they at least get the agenda items for each
+
+1140
+01:38:05,160 --> 01:38:08,800
+subcommittee as well as the Planning Commission and just so I can give you
+
+1141
+01:38:08,800 --> 01:38:14,160
+all your flowers while we're up here in person there was one omission of how the
+
+1142
+01:38:14,160 --> 01:38:17,320
+city of Huntsville does support Huntsville City Schools in the recent
+
+1143
+01:38:17,320 --> 01:38:23,360
+passage of the SSUT member or ordinance so there is a share of SSUT revenue above
+
+1144
+01:38:23,360 --> 01:38:28,240
+and beyond that 20 million 750 annual allocation so thank you all for that as
+
+1145
+01:38:28,240 --> 01:38:35,880
+well miss miss miss miss miss Smith did mention it she said the sales and use
+
+1146
+01:38:35,880 --> 01:38:41,840
+tax oh okay she did yeah and I was actually referring to my time on the
+
+1147
+01:38:41,840 --> 01:38:46,280
+council because during my I mean on the board during my time on the board a lot
+
+1148
+01:38:46,280 --> 01:38:50,120
+of times things were not being communicated like they should have and I
+
+1149
+01:38:50,120 --> 01:38:55,640
+just feel that the city is growing too fast for communication elapsed so it's
+
+1150
+01:38:55,640 --> 01:38:59,760
+great that the city of Huntsville and Huntsville City Schools is now communicating on
+
+1151
+01:38:59,760 --> 01:39:04,960
+that and I would add to that mr. Matthews has asked for that yearly report as we
+
+1152
+01:39:04,960 --> 01:39:08,560
+have had tonight not just the regular development review but that very
+
+1153
+01:39:08,560 --> 01:39:13,360
+granular view down to permits and certificates of occupancy I would simply
+
+1154
+01:39:13,360 --> 01:39:18,160
+add to what's been said tonight I when I was on the school board it was right
+
+1155
+01:39:18,160 --> 01:39:22,760
+after tiff 2 had been created so I got to see that grow but then I was there
+
+1156
+01:39:22,760 --> 01:39:29,160
+for tiff 3 tiff 3a to 4 and I had the same concerns that have been expressed
+
+1157
+01:39:29,160 --> 01:39:34,000
+here tonight but it was recognizing that you can take a short-term view or you
+
+1158
+01:39:34,000 --> 01:39:37,480
+can take a long-term view and that long-term view and I didn't realize it
+
+1159
+01:39:37,480 --> 01:39:42,480
+until you shared the information tonight is 47 million dollars to Huntsville City
+
+1160
+01:39:42,480 --> 01:39:49,520
+Schools annually is that correct as a result of that that comes in as a result
+
+1161
+01:39:49,520 --> 01:39:54,720
+of growth in those tax districts it was 22 million to the city 19 to the county
+
+1162
+01:39:54,720 --> 01:40:00,840
+and 47 million twice as much as what goes into the city operating budget as
+
+1163
+01:40:00,840 --> 01:40:05,720
+a result of the payoff from those tips so we really are looking at this as a
+
+1164
+01:40:05,720 --> 01:40:11,440
+mayor said the long game the return on investment is what we're making for our
+
+1165
+01:40:11,440 --> 01:40:17,160
+children's future and that future focus is really what this is all about this
+
+1166
+01:40:17,160 --> 01:40:24,440
+what meeting is about making those investments mr. Matthews any comments
+
+1167
+01:40:24,440 --> 01:40:27,840
+from you you have been very quiet
+
+1168
+01:40:28,320 --> 01:40:32,880
+think what for a reason just wanted to listen to hear what we had to say on all
+
+1169
+01:40:32,880 --> 01:40:37,180
+of this information here one of the things I will say is is that as the
+
+1170
+01:40:37,180 --> 01:40:43,720
+federal and state move money around for education having a strong local economy
+
+1171
+01:40:43,720 --> 01:40:49,600
+for our citizens and our students is important and playing the long game to
+
+1172
+01:40:49,600 --> 01:40:53,600
+make sure that we're doing the right thing of now getting schools built but
+
+1173
+01:40:53,600 --> 01:40:57,680
+also in the future bringing revenue in for those schools and for the city is
+
+1174
+01:40:57,680 --> 01:41:03,600
+important I think for Huntsville to have that local strong economy that is our
+
+1175
+01:41:03,600 --> 01:41:07,960
+future because at the state and federal level we don't have control over that
+
+1176
+01:41:07,960 --> 01:41:11,560
+we're not sure where those things are going to land but here in the city we
+
+1177
+01:41:11,560 --> 01:41:15,120
+have an opportunity to work with our City Council to make sure that we're
+
+1178
+01:41:15,120 --> 01:41:18,800
+doing the right things for our students and our citizens here in Huntsville so
+
+1179
+01:41:18,800 --> 01:41:21,880
+I'm very excited for us to have had this meeting and been able to work together
+
+1180
+01:41:21,880 --> 01:41:26,960
+to to get this going for our school system in our city thank you mr.
+
+1181
+01:41:26,960 --> 01:41:31,260
+Matthews and I believe this Alvarez wants to make one last um so I had two
+
+1182
+01:41:31,260 --> 01:41:36,480
+clarifying questions after listening tip 7 is not paid off correct the Toyota it
+
+1183
+01:41:36,480 --> 01:41:40,000
+is not so we are getting close we are not getting 17 million dollars a year
+
+1184
+01:41:40,000 --> 01:41:44,680
+as stated I don't think mayor Bell said you're getting 17 he said it's
+
+1185
+01:41:44,680 --> 01:41:49,720
+producing that which right not going to the schools yet and the 17 million would
+
+1186
+01:41:49,720 --> 01:41:54,400
+be divided between limestone County Commission CDF Huntsville and the two
+
+1187
+01:41:54,400 --> 01:41:58,120
+schools districts out there and we'll get that to Dustin in the morning so
+
+1188
+01:41:58,120 --> 01:42:00,760
+you'll have that information great I just wanted to clarify that we have not
+
+1189
+01:42:00,760 --> 01:42:05,560
+received 17 million annually from that investment yet the other is if you'll go
+
+1190
+01:42:05,560 --> 01:42:09,360
+back to your chart where you're determining our investment is only the
+
+1191
+01:42:09,360 --> 01:42:16,360
+400 ish million or 400,000 a year so earlier you said okay so the seven point
+
+1192
+01:42:16,360 --> 01:42:22,000
+six eight windfall in 2014 you then went to your charts that you're looking at
+
+1193
+01:42:22,000 --> 01:42:28,600
+and said that if it paid off in 11 years instead of 14 years that it would be six
+
+1194
+01:42:28,600 --> 01:42:39,160
+ish million so how can we not lose six million if we could have gained it lose
+
+1195
+01:42:39,160 --> 01:42:44,020
+six million so if the windfall after 11 years was six million with the new
+
+1196
+01:42:44,020 --> 01:42:48,960
+investments so you're saying as soon as it's paid off it's a huge spike in
+
+1197
+01:42:48,960 --> 01:42:54,360
+that's right value instantly that's right okay no different than when tip 6
+
+1198
+01:42:54,360 --> 01:42:59,320
+paid off as one of the council members said you got a check for five and a half
+
+1199
+01:42:59,320 --> 01:43:03,000
+million dollars instantly and you'll get it the next year the next year next year
+
+1200
+01:43:03,000 --> 01:43:05,760
+right and I understand that but this would be similar to that so but that's
+
+1201
+01:43:05,760 --> 01:43:09,920
+not a 3% attrition rate so I'm saying when does it switch from 3% to these
+
+1202
+01:43:09,920 --> 01:43:13,000
+higher rates but if you would have paid it off it'd be 6 million let's see we
+
+1203
+01:43:13,000 --> 01:43:16,400
+were going so I just don't know how we didn't lose 6 million by you not paying
+
+1204
+01:43:16,400 --> 01:43:20,080
+it off and it would have been 6 million between years 11 and 14 with an
+
+1205
+01:43:20,080 --> 01:43:26,400
+attrition rate so I just don't understand the math yeah of so let me
+
+1206
+01:43:26,400 --> 01:43:31,320
+walk through that a little bit okay so the gray center the 400 and just call it
+
+1207
+01:43:31,320 --> 01:43:37,880
+four hundred nine thousand dollars there that is 3% increase on the ten point
+
+1208
+01:43:37,880 --> 01:43:44,360
+eight over 14 years okay so you're probably guaranteed that if it tips not
+
+1209
+01:43:44,360 --> 01:43:48,440
+happening right okay because that existing tax base the tax assessor is
+
+1210
+01:43:48,440 --> 01:43:53,080
+going to adjust that value and reassess taxes and everybody's gonna pay the taxes
+
+1211
+01:43:53,080 --> 01:43:59,080
+so based on that 3% per year that been historically the average if you take
+
+1212
+01:43:59,080 --> 01:44:03,400
+that over 14 years at six point one three million dollars okay now let's get
+
+1213
+01:44:03,400 --> 01:44:07,360
+now let's now let's go to the blue there so what is the percent you're thinking
+
+1214
+01:44:07,360 --> 01:44:13,880
+this isn't it's almost doubling so let's go to the blue so that is investment
+
+1215
+01:44:13,880 --> 01:44:17,840
+that has not occurred in this city it's not an adjustment somebody's property
+
+1216
+01:44:17,840 --> 01:44:24,280
+value it has not been built it would get built and come on the tax rolls for the
+
+1217
+01:44:24,280 --> 01:44:31,000
+very first time so let's say something happens in 2026 2027 it pays its
+
+1218
+01:44:31,000 --> 01:44:36,200
+property tax year one of the actual property tax would pay property tax one
+
+1219
+01:44:36,200 --> 01:44:40,760
+year in the rear so ain't something got built from there forward for the next
+
+1220
+01:44:40,760 --> 01:44:46,160
+14 years whatever that initial value of new property tax it was generating the
+
+1221
+01:44:46,160 --> 01:44:51,640
+TIF district is also getting that 3% escalation so you go take 20 of those
+
+1222
+01:44:51,640 --> 01:44:56,760
+projects plus its escalation it's definitely got a very vertical growth
+
+1223
+01:44:56,760 --> 01:45:02,520
+period versus a 3% growth period on existing property so that's why there's
+
+1224
+01:45:02,520 --> 01:45:10,400
+such a drastic difference there and so there's there's enough plain land in
+
+1225
+01:45:10,400 --> 01:45:15,440
+that TIF district to almost double in value we believe so 30 years yeah and if
+
+1226
+01:45:15,440 --> 01:45:19,040
+you look at the ones that have paid off in six years in eight years with the
+
+1227
+01:45:19,040 --> 01:45:24,000
+30 years they've paid off 300% and we're only doing we're only doing a 2x here
+
+1228
+01:45:24,000 --> 01:45:28,240
+undeveloped land and that's why not necessarily okay if you look at North
+
+1229
+01:45:28,240 --> 01:45:32,160
+Huntsville district with North Huntsville Industrial Park a large percentage of
+
+1230
+01:45:32,160 --> 01:45:39,800
+that district was existing to the south right so and so I think another point is
+
+1231
+01:45:39,800 --> 01:45:44,320
+while I do understand your math as those developers come on and as it
+
+1232
+01:45:44,320 --> 01:45:49,360
+develops within those 14 years we're not seeing those gains and I understand
+
+1233
+01:45:49,360 --> 01:45:52,400
+that if we wouldn't have seen them regardless but I think it is a point to
+
+1234
+01:45:52,400 --> 01:45:55,920
+say we are probably losing more than 400k a year because we're not also
+
+1235
+01:45:55,920 --> 01:46:01,040
+reaping anything new that does develop because it also has to go towards the
+
+1236
+01:46:01,040 --> 01:46:04,280
+debt and so I just want to be very clear that while I do understand the windfall
+
+1237
+01:46:04,280 --> 01:46:08,040
+and the long-term investment we also aren't getting the short-term gains and
+
+1238
+01:46:08,040 --> 01:46:13,640
+as Ms. Watkins said about the BBC being not enough room we are feeling that at
+
+1239
+01:46:13,640 --> 01:46:17,600
+Providence where our kids are in classrooms that are formerly closets we
+
+1240
+01:46:17,600 --> 01:46:22,240
+also do feel the growth without the windfall coming on time with it and I
+
+1241
+01:46:22,240 --> 01:46:27,560
+think that's just my point of view is while I do understand this and I think
+
+1242
+01:46:27,560 --> 01:46:31,080
+it's beneficial in the long run we would also like some more short-term
+
+1243
+01:46:31,080 --> 01:46:36,040
+assistance with the city to help us with the growth okay that's fair one of the
+
+1244
+01:46:36,040 --> 01:46:41,880
+things I will point out to your analogy I don't disagree with tip district 9 is
+
+1245
+01:46:41,880 --> 01:46:46,080
+going to be different than that analogy but called it is in a central business
+
+1246
+01:46:46,080 --> 01:46:51,660
+district where the other tips have been suburban areas are outlined to where you
+
+1247
+01:46:51,660 --> 01:46:55,240
+could get a 600 lot subdivision with five six hundred thousand dollar houses
+
+1248
+01:46:55,240 --> 01:47:00,960
+and have four thousand of those houses or you know 500 acre farmland to get a
+
+1249
+01:47:00,960 --> 01:47:06,460
+two billion dollar investment on it so so those would you know that I would
+
+1250
+01:47:06,460 --> 01:47:12,460
+argue and agree with you that the incremental increase if it was in
+
+1251
+01:47:12,460 --> 01:47:16,360
+Hampton Cove or Providence or somewhere yeah there's probably gonna be four or
+
+1252
+01:47:16,360 --> 01:47:20,680
+five subdivisions we don't do anything that we get developed and that's brand
+
+1253
+01:47:20,680 --> 01:47:25,280
+new tax it's a little different and we model that we do model that in those
+
+1254
+01:47:25,280 --> 01:47:29,080
+types scenarios like tiff eight that were proposed limestone county we can
+
+1255
+01:47:29,080 --> 01:47:33,680
+show you some of that data and say okay look this would have probably occurred so
+
+1256
+01:47:33,680 --> 01:47:39,320
+we got to take that out of this bump up in the central business district because
+
+1257
+01:47:39,320 --> 01:47:44,160
+you don't have that type of acreage to make that natural growth of residential
+
+1258
+01:47:44,160 --> 01:47:48,320
+it's a little different but but I do agree with you in that sediment if this
+
+1259
+01:47:48,320 --> 01:47:55,000
+was not in a downtown mr. not I believe you yeah just to talk about that
+
+1260
+01:47:55,000 --> 01:47:59,800
+vertical curve on the latter half of this so I mean 90% of this is within
+
+1261
+01:47:59,800 --> 01:48:04,960
+district four it's also have in my neighborhood where I live and eat sleep
+
+1262
+01:48:04,960 --> 01:48:08,200
+and plays in the heart of this because I'm bad about getting out of my bubble
+
+1263
+01:48:08,200 --> 01:48:13,280
+to Shane's point there's not a lot of a lot of there is undeveloped land you
+
+1264
+01:48:13,280 --> 01:48:16,960
+know you look up and down the Lehman Ferry corridor which is in its early
+
+1265
+01:48:16,960 --> 01:48:20,800
+early stages of redevelopment and then you look at stuff like Stadium Commons
+
+1266
+01:48:20,800 --> 01:48:25,320
+which is a new ground-up build-to-suit development but you know if you were to
+
+1267
+01:48:25,320 --> 01:48:28,440
+look at the tax assessed value of a project like Stadium Commons two years
+
+1268
+01:48:28,440 --> 01:48:33,440
+ago before they went vertical versus today you're talking about quadrupling
+
+1269
+01:48:33,440 --> 01:48:36,720
+8x potentially of that's what that assessed value is and that's what you're
+
+1270
+01:48:36,720 --> 01:48:42,320
+going to see a lot of particularly along Parkway corridor where you've got
+
+1271
+01:48:42,320 --> 01:48:46,200
+observation not a criticism of any property owners but you have a lot of
+
+1272
+01:48:46,200 --> 01:48:50,800
+dilapidated retail and office spaces that right now you could see values
+
+1273
+01:48:50,800 --> 01:48:54,320
+anywhere from half a million up to one and a half million for a half acre and
+
+1274
+01:48:54,320 --> 01:48:57,680
+those are going to be teardown opportunities for private developers
+
+1275
+01:48:57,680 --> 01:49:02,000
+you're going to come in and build of five ten fifteen million dollar
+
+1276
+01:49:02,000 --> 01:49:06,720
+multi-story office and retail and so that vertical curve he's talking about
+
+1277
+01:49:06,720 --> 01:49:10,560
+is it's going to take a couple years but it's it's going to be significant in the
+
+1278
+01:49:10,560 --> 01:49:15,120
+latter half of that. If I can add he Mr. Rehner just brought up something when
+
+1279
+01:49:15,120 --> 01:49:19,880
+someone asked about the the boundary you bring a really good point with Stadium
+
+1280
+01:49:19,880 --> 01:49:23,520
+Commons in its first phase with three more phases to go in around John Hunt
+
+1281
+01:49:23,520 --> 01:49:29,600
+Park our original boundary captured that and we took it out so as that continues
+
+1282
+01:49:29,600 --> 01:49:34,920
+to be on the fringe of this district and continue to see accelerated because of
+
+1283
+01:49:34,920 --> 01:49:39,200
+conference space in the hotels that is new revenue will all this council this
+
+1284
+01:49:39,200 --> 01:49:42,560
+this school board will see immediate because we we've carved that out of this
+
+1285
+01:49:42,560 --> 01:49:47,000
+district so that was where we were trying to be intentional not to say okay
+
+1286
+01:49:47,000 --> 01:49:50,800
+well this would help further accelerate it you know we wanted to give some of
+
+1287
+01:49:50,800 --> 01:49:56,800
+that growth to be coming on the tax rolls immediately. Mr. McAfee. I'll just
+
+1288
+01:49:56,800 --> 01:50:01,000
+add so you know while that four hundred and eight thousand dollars that we're
+
+1289
+01:50:01,000 --> 01:50:04,760
+seeing there when I seen that revenue come in to the school district when you
+
+1290
+01:50:04,760 --> 01:50:10,800
+look at it it's really a wash it's actually really a wash but the donated
+
+1291
+01:50:10,800 --> 01:50:15,040
+land and district five is out there plus the actual funding that we're going to
+
+1292
+01:50:15,040 --> 01:50:19,120
+be able to get from the schools from the city to help fund that that completely
+
+1293
+01:50:19,120 --> 01:50:25,480
+dwarfs this four hundred eight thousand dollars very easily so while it looks
+
+1294
+01:50:25,480 --> 01:50:28,720
+like we're not doing anything there but the city has made that effort to make
+
+1295
+01:50:28,720 --> 01:50:31,920
+sure that we're good on that area and take that take care of that that also
+
+1296
+01:50:31,920 --> 01:50:35,680
+gives the superintendent I see if I'll look at the funding that we were going
+
+1297
+01:50:35,680 --> 01:50:39,360
+to use for that school where we can place that in other areas for our
+
+1298
+01:50:39,360 --> 01:50:43,240
+academic needs throughout our school that's right I'll defund that so I think
+
+1299
+01:50:43,240 --> 01:50:47,960
+that you know number wise yes I can understand it makes sense but when we
+
+1300
+01:50:47,960 --> 01:50:51,360
+look at what was done with the mayor and the City Council to donate get that lane
+
+1301
+01:50:51,360 --> 01:50:55,280
+donated and that funding for district fire for that school that really is
+
+1302
+01:50:55,280 --> 01:50:59,200
+going to help the situation with Providence and Williams and so forth as
+
+1303
+01:50:59,200 --> 01:51:04,560
+we go along so I think we're I feel like we're in a good spot with that but I miss
+
+1304
+01:51:04,560 --> 01:51:09,680
+however I do understand your concern mr. clean I think we're getting close to
+
+1305
+01:51:09,680 --> 01:51:13,320
+wrapping things up I just want to say I think this was a very positive meeting
+
+1306
+01:51:13,320 --> 01:51:18,560
+you've got 11 elected officials and one school superintendent all coming together
+
+1307
+01:51:18,560 --> 01:51:22,840
+to talk about literally hundreds of millions of dollars some pretty
+
+1308
+01:51:22,840 --> 01:51:29,280
+important issues and I think we've traveled around other cities and what we
+
+1309
+01:51:29,280 --> 01:51:34,240
+have here you don't see too often and I think it's glad to work at the school
+
+1310
+01:51:34,240 --> 01:51:39,400
+board my fellow council members the staff the mayor the superintendent and I
+
+1311
+01:51:39,400 --> 01:51:43,080
+think this is something at Hudson will can be proud of and hope we can continue
+
+1312
+01:51:43,080 --> 01:51:48,600
+to do this type of meeting maybe once a year thank you mr. cling I couldn't agree
+
+1313
+01:51:48,600 --> 01:51:54,640
+with you more I appreciate the partnership that we have and I've mr.
+
+1314
+01:51:54,640 --> 01:51:58,640
+Matthews and I have talked about it over the last few months as we've tried to
+
+1315
+01:51:58,640 --> 01:52:03,240
+put this meeting together that this is a meeting that I think demonstrates I know
+
+1316
+01:52:03,240 --> 01:52:07,440
+that the superintendent the mayor that are the finance directors meet together
+
+1317
+01:52:07,440 --> 01:52:13,880
+regularly but I think we each all have our own partners that we that we've been
+
+1318
+01:52:13,880 --> 01:52:17,480
+working closely with and this is great demonstration of that so mr. Matthews
+
+1319
+01:52:17,480 --> 01:52:21,720
+thank you for working with me to put it together dr. Sutton mayor battle thank
+
+1320
+01:52:21,720 --> 01:52:26,920
+you for what you do to to help ensure that partnership continues as well and
+
+1321
+01:52:26,920 --> 01:52:31,480
+to the board members and council members thank you for all you each contribute as
+
+1322
+01:52:31,480 --> 01:52:37,000
+well hope we can do this again many thanks to everybody who made this happen
+
+1323
+01:52:37,000 --> 01:52:42,640
+the council staff the school system staff we appreciate your efforts and
+
+1324
+01:52:42,640 --> 01:52:48,040
+unless there are any other comments we are adjourned thank you all for joining
+
+1325
+01:52:48,040 --> 01:53:08,080
+us
