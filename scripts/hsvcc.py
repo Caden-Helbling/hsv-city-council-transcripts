@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import html as html_lib
+import json
 import re
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass, field
 from datetime import date
+from pathlib import Path
 from typing import Any
 
 import requests
@@ -51,6 +53,45 @@ def date_from_slug(url: str) -> date | None:
     if not m:
         return None
     return date(int(m.group(3)), MONTHS[m.group(1)], int(m.group(2)))
+
+
+def _default_status() -> dict[str, bool]:
+    return {"has_agenda": False, "has_minutes": False, "has_captions": False,
+            "has_audio_asset": False, "has_whisper": False}
+
+
+@dataclass
+class Manifest:
+    slug: str
+    title: str
+    date: str
+    body: str | None
+    video_page_url: str
+    castus_id: str
+    mp4_url: str
+    legistar_event_id: int | None
+    legistar_url: str | None
+    agenda_url: str | None
+    minutes_url: str | None
+    audio_asset_tag: str
+    status: dict[str, bool] = field(default_factory=_default_status)
+
+    @classmethod
+    def load(cls, meeting_dir: Path) -> "Manifest":
+        return cls(**json.loads((meeting_dir / "meeting.json").read_text()))
+
+    def save(self, meeting_dir: Path) -> None:
+        meeting_dir.mkdir(parents=True, exist_ok=True)
+        (meeting_dir / "meeting.json").write_text(json.dumps(asdict(self), indent=2) + "\n")
+
+
+def recompute_status(meeting_dir: Path, manifest: Manifest) -> None:
+    manifest.status.update({
+        "has_agenda": (meeting_dir / "agenda.pdf").exists(),
+        "has_minutes": (meeting_dir / "minutes.pdf").exists(),
+        "has_captions": (meeting_dir / "captions.vtt").exists(),
+        "has_whisper": (meeting_dir / "transcript" / "whisper-medium.txt").exists(),
+    })
 
 
 def resolve_mp4_url(castus_id: str, session: requests.Session) -> str:
