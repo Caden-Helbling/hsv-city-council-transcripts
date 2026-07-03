@@ -1,0 +1,40 @@
+name: Sync meetings
+on:
+  schedule:
+    - cron: "0 13 * * 5" # Fridays 13:00 UTC — meetings are Thursday evenings
+  workflow_dispatch:
+
+concurrency:
+  group: sync
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Discover meetings (agendas, captions, manifests)
+        run: python3 scripts/hsvcc.py discover
+      - name: Commit discovered artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add meetings/
+          git diff --cached --quiet || git commit -m "chore: sync meetings $(date -u +%F)"
+      - name: Extract + publish audio release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/hsvcc.py fetch-audio --all-pending --publish
+      - name: Commit manifest audio flags and push
+        run: |
+          git add meetings/
+          git diff --cached --quiet || git commit -m "chore: record published audio assets"
+          git push
