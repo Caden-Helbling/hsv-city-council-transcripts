@@ -1,0 +1,10 @@
+audio/
+*.mp4
+*.opus
+__pycache__/
+.pytest_cache/
+
+# Personal AI / agent context — scratch space for individual contributors.
+CLAUDE.md
+.claude/
+status.md
