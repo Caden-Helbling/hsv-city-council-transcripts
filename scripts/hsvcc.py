@@ -356,6 +356,50 @@ def fetch_audio(slugs: list[str], all_pending: bool, publish: bool, meetings_dir
     return 1 if failures else 0
 
 
+def _srt_ts(seconds: float) -> str:
+    ms = int(round(seconds * 1000))
+    return f"{ms // 3600000:02d}:{ms // 60000 % 60:02d}:{ms // 1000 % 60:02d},{ms % 1000:03d}"
+
+
+def segments_to_srt(segments: list[dict]) -> str:
+    blocks = [f"{i}\n{_srt_ts(s['start'])} --> {_srt_ts(s['end'])}\n{s['text'].strip()}\n"
+              for i, s in enumerate(segments, start=1)]
+    return "\n".join(blocks)
+
+
+def transcribe(slugs: list[str], all_pending: bool, meetings_dir: Path, audio_dir: Path,
+               model_name: str = "medium") -> int:
+    import whisper  # heavy import — only when transcribing
+
+    if all_pending:
+        slugs = _pending_slugs(meetings_dir, "has_whisper")
+    if not slugs:
+        print("nothing to transcribe")
+        return 0
+    device = "mps" if sys.platform == "darwin" else "cpu"
+    model = whisper.load_model(model_name, device=device)
+    failures = 0
+    for slug in slugs:  # serial — MPS does not parallelize
+        try:
+            audio_path = audio_dir / f"{slug}.opus"
+            if not audio_path.exists():
+                raise FileNotFoundError(f"{audio_path} missing — run fetch-audio first")
+            print(f"transcribing {slug} (this takes a while)...")
+            result = model.transcribe(str(audio_path), language="en", fp16=False)
+            tdir = meetings_dir / slug / "transcript"
+            tdir.mkdir(parents=True, exist_ok=True)
+            (tdir / f"whisper-{model_name}.txt").write_text(result["text"].strip() + "\n")
+            (tdir / f"whisper-{model_name}.srt").write_text(segments_to_srt(result["segments"]))
+            manifest = Manifest.load(meetings_dir / slug)
+            recompute_status(meetings_dir / slug, manifest)
+            manifest.save(meetings_dir / slug)
+            print(f"ok: transcribed {slug}")
+        except Exception as exc:  # noqa: BLE001 — keep processing remaining meetings
+            failures += 1
+            print(f"FAIL: {slug}: {exc}", file=sys.stderr)
+    return 1 if failures else 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="hsvcc", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -366,6 +410,10 @@ def main(argv: list[str] | None = None) -> int:
     p_audio.add_argument("--all-pending", action="store_true")
     p_audio.add_argument("--publish", action="store_true",
                          help="extract from MP4 and upload as GitHub release asset (CI)")
+    p_tr = sub.add_parser("transcribe", help="run Whisper on fetched audio")
+    p_tr.add_argument("slugs", nargs="*")
+    p_tr.add_argument("--all-pending", action="store_true")
+    p_tr.add_argument("--model", default="medium")
     args = parser.parse_args(argv)
     session = requests.Session()
     session.headers["User-Agent"] = "hsv-city-council-transcripts (personal archival tool)"
@@ -374,6 +422,9 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "fetch-audio":
         return fetch_audio(args.slugs, args.all_pending, args.publish,
                            MEETINGS_DIR, AUDIO_DIR, session)
+    if args.command == "transcribe":
+        return transcribe(args.slugs, args.all_pending, MEETINGS_DIR, AUDIO_DIR,
+                          model_name=args.model)
     return 0
 
 
