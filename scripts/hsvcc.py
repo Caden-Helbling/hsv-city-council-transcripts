@@ -6,6 +6,13 @@ import html as html_lib
 import re
 from dataclasses import dataclass
 from datetime import date
+from typing import Any
+
+import requests
+
+CASTUS_API = "https://imd0mxanj2.execute-api.us-west-2.amazonaws.com"
+LEGISTAR_API = "https://webapi.legistar.com/v1/huntsvilleal"
+TIMEOUT = 60
 
 _TS_RE = re.compile(r"(?:(\d+):)?(\d+):(\d+)\.(\d+)\s*-->")
 
@@ -44,6 +51,64 @@ def date_from_slug(url: str) -> date | None:
     if not m:
         return None
     return date(int(m.group(3)), MONTHS[m.group(1)], int(m.group(2)))
+
+
+def resolve_mp4_url(castus_id: str, session: requests.Session) -> str:
+    resp = session.post(f"{CASTUS_API}/upload/get",
+                        json={"file": castus_id, "type": "vod", "user": ""}, timeout=TIMEOUT)
+    resp.raise_for_status()
+    data = resp.json()
+    url = data.get("response", {}).get("payload", {}).get("data")
+    if not isinstance(url, str) or not url.startswith("http"):
+        raise ValueError(f"unexpected Castus upload/get shape for {castus_id}: {data}")
+    return url.split("?")[0]
+
+
+def fetch_captions(castus_id: str, session: requests.Session) -> str | None:
+    try:
+        resp = session.post(f"{CASTUS_API}/upload/get-captions",
+                            json={"file": {"_id": castus_id}, "user": {"_id": ""}}, timeout=TIMEOUT)
+        resp.raise_for_status()
+        url = resp.json().get("response", {}).get("payload")
+        if not isinstance(url, str) or not url.startswith("http"):
+            return None
+        vtt = session.get(url, timeout=TIMEOUT)
+        vtt.raise_for_status()
+        return vtt.text if vtt.text.lstrip().startswith("WEBVTT") else None
+    except Exception as exc:  # noqa: BLE001 — captions are best-effort
+        print(f"  warn: captions unavailable for {castus_id}: {exc}")
+        return None
+
+
+def fetch_legistar_events(since: date, session: requests.Session) -> list[dict]:
+    resp = session.get(
+        f"{LEGISTAR_API}/events",
+        params={"$filter": f"EventDate ge datetime'{since.isoformat()}T00:00:00'",
+                "$orderby": "EventDate asc"},
+        timeout=TIMEOUT)
+    resp.raise_for_status()
+    events = resp.json()
+    if not isinstance(events, list):
+        raise ValueError(f"unexpected Legistar events shape: {type(events)}")
+    return events
+
+
+def match_event(meeting_date: date, title: str, events: list[dict]) -> dict | None:
+    same_day = [e for e in events if e.get("EventDate", "").startswith(meeting_date.isoformat())]
+    if not same_day:
+        return None
+    if len(same_day) == 1:
+        return same_day[0]
+    title_l = title.lower()
+    for keyword in ("work session", "special"):
+        if keyword in title_l:
+            for e in same_day:
+                if keyword in e.get("EventBodyName", "").lower():
+                    return e
+    for e in same_day:
+        if "regular" in e.get("EventBodyName", "").lower():
+            return e
+    return same_day[0]
 
 
 def meeting_slug(title: str, meeting_date: date) -> str:
