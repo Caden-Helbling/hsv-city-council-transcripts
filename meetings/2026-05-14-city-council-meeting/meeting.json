@@ -1,0 +1,21 @@
+{
+  "slug": "2026-05-14-city-council-meeting",
+  "title": "Huntsville City Council Meeting \u2013 May 14, 2026",
+  "date": "2026-05-14",
+  "body": "City Council Regular Meeting",
+  "video_page_url": "https://www.huntsvilleal.gov/videos/huntsville-city-council-meeting-may-14-2026-2/",
+  "castus_id": "6a068ac15a41ce00026a28da",
+  "mp4_url": "https://dlttx48mxf9m3.cloudfront.net/outputs/6a068ac15a41ce00026a28da/Default/MP4/out_1080.mp4",
+  "legistar_event_id": 1217,
+  "legistar_url": "https://huntsvilleal.legistar.com/MeetingDetail.aspx?LEGID=1217&GID=835&G=6DB813AB-6E2A-4080-9388-DE513170C63D",
+  "agenda_url": "https://huntsvilleal.legistar1.com/huntsvilleal/meetings/2026/5/1217_A_City_Council_Regular_Meeting_26-05-14_Agenda.pdf",
+  "minutes_url": null,
+  "audio_asset_tag": "audio-2026-05-14-city-council-meeting",
+  "status": {
+    "has_agenda": true,
+    "has_minutes": false,
+    "has_captions": false,
+    "has_audio_asset": false,
+    "has_whisper": false
+  }
+}
