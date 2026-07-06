@@ -5,6 +5,9 @@ __pycache__/
 .pytest_cache/
 
 # Personal AI / agent context — scratch space for individual contributors.
+# (.claude/commands/ is tracked: project slash commands are part of the repo.)
 CLAUDE.md
-.claude/
+!.claude/
+.claude/*
+!.claude/commands/
 status.md
