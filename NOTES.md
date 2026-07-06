@@ -20,9 +20,14 @@ here, not in caden-work-machine.)
 
 - [ ] Verify first scheduled Action run (Friday) commits cleanly (first dispatch hit a push race,
       fixed with `git pull --rebase` in sync.yml — unverified until next run)
-- [ ] Consider a `/council-notes` slash command for LLM note generation against a meeting folder
+- [ ] Run `/council-notes` on the remaining meetings without notes (Apr 9, Apr 23, May 14,
+      Jun 1; May 28 has an uncommitted pre-command draft — regenerate or reshape it)
 
 ## Recently done
+
+- (2026-07-06) Added `/council-notes` project command (`.claude/commands/`, now tracked in
+  git); validated on June 11. June 11 transcript names Caden re: the Flock ALPR records
+  request — see that meeting's notes.
 
 - (2026-07-03) Designed + implemented full pipeline, backfilled since April, pushed to GitHub.
 - (2026-07-03) Full backfill complete: 7 meetings, all with agendas + Whisper-medium transcripts;
