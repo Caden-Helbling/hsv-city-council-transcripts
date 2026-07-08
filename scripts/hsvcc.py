@@ -8,6 +8,7 @@ import json
 import re
 import subprocess
 import sys
+import tempfile
 from dataclasses import asdict, dataclass, field
 from datetime import date
 from pathlib import Path
@@ -66,7 +67,7 @@ def date_from_slug(url: str) -> date | None:
 
 def _default_status() -> dict[str, bool]:
     return {"has_agenda": False, "has_minutes": False, "has_captions": False,
-            "has_audio_asset": False, "has_whisper": False}
+            "has_audio_asset": False, "has_whisper": False, "has_votes": False}
 
 
 @dataclass
@@ -100,6 +101,7 @@ def recompute_status(meeting_dir: Path, manifest: Manifest) -> None:
         "has_minutes": (meeting_dir / "minutes.pdf").exists(),
         "has_captions": (meeting_dir / "captions.vtt").exists(),
         "has_whisper": (meeting_dir / "transcript" / "whisper-medium.txt").exists(),
+        "has_votes": (meeting_dir / "votes.json").exists(),
     })
 
 
@@ -400,6 +402,227 @@ def transcribe(slugs: list[str], all_pending: bool, meetings_dir: Path, audio_di
     return 1 if failures else 0
 
 
+# ---- votes: resolve a Resolution/Ordinance number to its council roll-call ----
+
+_NUM_RE = re.compile(r"No\.\s*(\d{2}-\d+)")
+_AYE_RE = re.compile(r"Aye:\s*(.+)")
+_NAY_RE = re.compile(r"Nay:\s*(.+)")
+
+
+@dataclass
+class RollCall:
+    consent: bool
+    aye: list[str]
+    nay: list[str]
+
+
+def find_matter(number: str, session: requests.Session) -> dict | None:
+    """Find a Legistar matter by its adopted Resolution/Ordinance number (e.g. '23-689').
+
+    Huntsville stores the number inside MatterTitle ('...Resolution No. 23-689'),
+    not in a structured field, so we filter on the substring then confirm by regex.
+    """
+    resp = session.get(f"{LEGISTAR_API}/matters",
+                       params={"$filter": f"substringof('No. {number}',MatterTitle)"},
+                       timeout=TIMEOUT)
+    resp.raise_for_status()
+    matters = resp.json()
+    if not isinstance(matters, list):
+        raise ValueError(f"unexpected Legistar matters shape: {type(matters)}")
+    exact = re.compile(rf"No\.\s*{re.escape(number)}\b")
+    for m in matters:
+        if exact.search(m.get("MatterTitle") or ""):
+            return m
+    return matters[0] if matters else None
+
+
+def matter_action(matter_id: int, session: requests.Session) -> dict | None:
+    resp = session.get(f"{LEGISTAR_API}/matters/{matter_id}/histories", timeout=TIMEOUT)
+    resp.raise_for_status()
+    hist = resp.json()
+    if not isinstance(hist, list) or not hist:
+        return None
+    passed = [h for h in hist if h.get("MatterHistoryPassedFlagName")]
+    return passed[-1] if passed else hist[-1]
+
+
+def find_regular_event(day: str, session: requests.Session) -> dict | None:
+    resp = session.get(f"{LEGISTAR_API}/events",
+                       params={"$filter": f"EventDate eq datetime'{day}T00:00:00'"},
+                       timeout=TIMEOUT)
+    resp.raise_for_status()
+    events = resp.json()
+    if not isinstance(events, list) or not events:
+        return None
+    for e in events:
+        if "regular" in (e.get("EventBodyName") or "").lower():
+            return e
+    return events[0]
+
+
+def _pdf_text(path: Path, run: RunFn = subprocess.run) -> str | None:
+    """Best-effort PDF -> text: pdftotext if present, else pypdf/PyPDF2. None if all fail."""
+    try:
+        r = run(["pdftotext", "-layout", str(path), "-"], capture_output=True, text=True)
+        if getattr(r, "returncode", 1) == 0 and (r.stdout or "").strip():
+            return r.stdout
+    except FileNotFoundError:
+        pass
+    for mod in ("pypdf", "PyPDF2"):
+        try:
+            reader = __import__(mod).PdfReader(str(path))
+            return "\n".join((p.extract_text() or "") for p in reader.pages)
+        except Exception:  # noqa: BLE001 — try the next backend
+            continue
+    return None
+
+
+def _names(line: str) -> list[str]:
+    line = re.sub(r"\band\b", ",", line.split("\n", 1)[0])
+    out = [n.strip() for n in line.split(",")]
+    return [n for n in out if n and n.lower() != "none"]
+
+
+def parse_minutes_rollcall(text: str, number: str) -> RollCall | None:
+    """Return the roll-call governing item `number` in `text` (minutes body).
+
+    Handles both Huntsville patterns: an item voted individually (its own
+    'moved to approve ... Aye: ... Nay: ...' right after it) and an item swept
+    into the Consent Agenda (a single earlier 'to approve the Consent Agenda ...
+    Aye: ...' motion). Returns None if no roll-call is recorded (voice/draft).
+    """
+    idx = text.find(f"No. {number}")
+    if idx < 0:
+        return None
+    nxt = _NUM_RE.search(text, idx + 4)
+    window = text[idx: nxt.start() if nxt else len(text)]
+    if re.search(r"moved\s+to\s+approve", window) and _AYE_RE.search(window):
+        aye = _AYE_RE.search(window)
+        nay = _NAY_RE.search(window)
+        return RollCall(False, _names(aye.group(1)), _names(nay.group(1)) if nay else [])
+    consent_at = None
+    for m in re.finditer(r"approve\s+the\s+Consent\s+Agenda", text[:idx]):
+        consent_at = m.start()
+    if consent_at is None:
+        return None
+    tail = text[consent_at:]
+    aye = _AYE_RE.search(tail)
+    if not aye:
+        return None
+    nay = _NAY_RE.search(tail)
+    return RollCall(True, _names(aye.group(1)), _names(nay.group(1)) if nay else [])
+
+
+def extract_minutes_votes(text: str) -> list[dict]:
+    """Every Resolution/Ordinance number in minutes order, each with its roll-call.
+
+    `vote` is None when the minutes record no roll-call for the item
+    (voice vote, Draft minutes, or an item merely presented).
+    """
+    items: list[dict] = []
+    seen: set[str] = set()
+    for m in _NUM_RE.finditer(text):
+        number = m.group(1)
+        if number in seen:
+            continue
+        seen.add(number)
+        rc = parse_minutes_rollcall(text, number)
+        items.append({"number": number, "vote": asdict(rc) if rc else None})
+    return items
+
+
+def extract_votes(slugs: list[str], meetings_dir: Path, session: requests.Session) -> int:
+    if not slugs:
+        slugs = [d.name for d in sorted(meetings_dir.iterdir())
+                 if (d / "meeting.json").exists()]
+    failures = 0
+    for slug in slugs:
+        try:
+            mdir = meetings_dir / slug
+            manifest = Manifest.load(mdir)
+            # pick up late-published minutes from Legistar
+            minutes_status = None
+            if not manifest.minutes_url and manifest.legistar_event_id:
+                resp = session.get(f"{LEGISTAR_API}/events/{manifest.legistar_event_id}",
+                                   timeout=TIMEOUT)
+                resp.raise_for_status()
+                event = resp.json()
+                manifest.minutes_url = event.get("EventMinutesFile")
+                minutes_status = event.get("EventMinutesStatusName")
+            if manifest.minutes_url and not (mdir / "minutes.pdf").exists():
+                download_file(manifest.minutes_url, mdir / "minutes.pdf", session)
+            if not (mdir / "minutes.pdf").exists():
+                detail = f" (Legistar status: {minutes_status})" if minutes_status else ""
+                print(f"skip: {slug}: no minutes PDF published yet{detail}")
+                recompute_status(mdir, manifest)
+                manifest.save(mdir)
+                continue
+            text = _pdf_text(mdir / "minutes.pdf")
+            if text is None:
+                raise RuntimeError("could not extract text from minutes.pdf")
+            items = extract_minutes_votes(text)
+            (mdir / "votes.json").write_text(json.dumps(
+                {"slug": slug, "date": manifest.date,
+                 "minutes_url": manifest.minutes_url, "items": items},
+                indent=2) + "\n")
+            recompute_status(mdir, manifest)
+            manifest.save(mdir)
+            recorded = sum(1 for i in items if i["vote"])
+            print(f"ok: {slug}: {len(items)} items, {recorded} with roll-calls -> votes.json")
+        except Exception as exc:  # noqa: BLE001 — keep processing remaining meetings
+            failures += 1
+            print(f"FAIL: {slug}: {exc}", file=sys.stderr)
+    return 1 if failures else 0
+
+
+def votes(number: str, session: requests.Session, meetings_dir: Path) -> int:
+    number = number.strip()
+    matter = find_matter(number, session)
+    if not matter:
+        print(f"no Legistar matter found for No. {number}", file=sys.stderr)
+        return 1
+    mid = matter["MatterId"]
+    title = re.sub(r"\s+", " ", (matter.get("MatterTitle") or "")).strip()
+    print(f"Resolution/Ordinance No. {number}  (Matter {mid}, file {matter.get('MatterFile')})")
+    print(f"  {title[:200]}")
+    action = matter_action(mid, session)
+    day = ((action or {}).get("MatterHistoryActionDate")
+           or matter.get("MatterPassedDate") or "")[:10]
+    if action:
+        print(f"  action: {action.get('MatterHistoryActionName')} "
+              f"({action.get('MatterHistoryPassedFlagName')})  "
+              f"mover: {action.get('MatterHistoryMoverName')}  "
+              f"second: {action.get('MatterHistorySeconderName')}  ({day})")
+    event = find_regular_event(day, session) if day else None
+    minutes_url = (event or {}).get("EventMinutesFile")
+    if minutes_url:
+        print(f"  minutes: {minutes_url}")
+    text = None
+    for mdir in sorted(meetings_dir.glob(f"{day}*")) if day else []:
+        if (mdir / "minutes.pdf").exists():
+            text = _pdf_text(mdir / "minutes.pdf")
+            break
+    if text is None and minutes_url:
+        try:
+            tmp = Path(tempfile.gettempdir()) / f"hsvcc_minutes_{day}.pdf"
+            download_file(minutes_url, tmp, session)
+            text = _pdf_text(tmp)
+        except Exception as exc:  # noqa: BLE001 — minutes are best-effort
+            print(f"  warn: could not fetch/parse minutes: {exc}")
+    if text:
+        rc = parse_minutes_rollcall(text, number)
+        if rc:
+            kind = "CONSENT AGENDA (no separate vote/debate)" if rc.consent else "individual roll-call"
+            print(f"  vote [{kind}]:")
+            print(f"    Aye: {', '.join(rc.aye) if rc.aye else '—'}")
+            print(f"    Nay: {', '.join(rc.nay) if rc.nay else 'None'}")
+        else:
+            print("  (no roll-call recorded in minutes — likely a voice vote or Draft minutes)")
+    else:
+        print("  (no machine-readable minutes available; see minutes URL above)")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="hsvcc", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -414,6 +637,12 @@ def main(argv: list[str] | None = None) -> int:
     p_tr.add_argument("slugs", nargs="*")
     p_tr.add_argument("--all-pending", action="store_true")
     p_tr.add_argument("--model", default="medium")
+    p_votes = sub.add_parser(
+        "votes", help="show the council roll-call for a Resolution/Ordinance number")
+    p_votes.add_argument("number", help="adopted number, e.g. 23-689")
+    p_ev = sub.add_parser(
+        "extract-votes", help="parse each meeting's minutes into votes.json")
+    p_ev.add_argument("slugs", nargs="*", help="meeting slugs (default: all meetings)")
     args = parser.parse_args(argv)
     session = requests.Session()
     session.headers["User-Agent"] = "hsv-city-council-transcripts (personal archival tool)"
@@ -425,6 +654,10 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "transcribe":
         return transcribe(args.slugs, args.all_pending, MEETINGS_DIR, AUDIO_DIR,
                           model_name=args.model)
+    if args.command == "votes":
+        return votes(args.number, session, MEETINGS_DIR)
+    if args.command == "extract-votes":
+        return extract_votes(args.slugs, MEETINGS_DIR, session)
     return 0
 
 

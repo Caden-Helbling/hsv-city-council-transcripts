@@ -37,4 +37,4 @@ def test_recompute_status_from_disk(tmp_path: Path) -> None:
     (tmp_path / "transcript" / "whisper-medium.txt").write_text("hi")
     recompute_status(tmp_path, m)
     assert m.status == {"has_agenda": True, "has_minutes": False, "has_captions": True,
-                        "has_audio_asset": True, "has_whisper": True}
+                        "has_audio_asset": True, "has_whisper": True, "has_votes": False}

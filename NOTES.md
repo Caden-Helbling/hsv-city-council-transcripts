@@ -25,6 +25,22 @@ here, not in caden-work-machine.)
 
 ## Recently done
 
+- (2026-07-07) Added `extract-votes [slugs...]` subcommand: parses a meeting's minutes into
+  `meetings/<slug>/votes.json` (every Res/Ord number in minutes order, each with its
+  roll-call or `null`), re-checks Legistar for late-published minutes, and adds a
+  `has_votes` status flag. Verified end-to-end against the 2025-12-18 Final minutes
+  (45 items, 40 roll-calls). Ran against all 7 repo meetings — **all skipped**: Huntsville
+  has published no Final minutes PDF for any 2026 meeting yet (Jan–Apr are "Unapproved
+  Minutes", May–Jun "Draft"; `EventMinutesFile` null on all). Re-run once minutes go Final.
+
+- (2026-07-07) Added `votes <res-no>` subcommand (`scripts/hsvcc.py`) + `tests/test_votes.py`:
+  resolves a Resolution/Ordinance number → Legistar matter → roll-call from the Final
+  minutes PDF, detecting Consent-Agenda sweeps vs individual roll-calls. Used it to build
+  the Flock voting record in the `flock-talk` repo (all 5 Flock authorizations passed
+  unanimously; 4 of 5 rode the consent agenda). Note: MatterEnactmentNumber is null in
+  this Legistar instance — the adopted "23-689" number lives in MatterTitle text, and
+  per-person Aye/Nay names exist ONLY in the minutes PDF, not the API.
+
 - (2026-07-06) Added `/council-notes` project command (`.claude/commands/`, now tracked in
   git); validated on June 11. June 11 transcript names Caden re: the Flock ALPR records
   request — see that meeting's notes.

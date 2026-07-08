@@ -21,6 +21,7 @@ meetings/2026-06-25-city-council-meeting/
 ├── meeting.json        # manifest: dates, URLs, IDs, status flags
 ├── agenda.pdf          # from Legistar
 ├── minutes.pdf         # when published
+├── votes.json          # per-item roll-calls parsed from minutes (extract-votes)
 ├── captions.vtt        # official captions
 ├── captions.txt        # plain-text captions with [HH:MM:SS] markers
 └── transcript/
@@ -42,7 +43,30 @@ python3 scripts/hsvcc.py fetch-audio --all-pending
 
 # local Whisper transcription (needs: pip install openai-whisper)
 python3 scripts/hsvcc.py transcribe --all-pending
+
+# look up how the Council voted on a Resolution/Ordinance number
+python3 scripts/hsvcc.py votes 23-689
+
+# parse every item's roll-call out of each meeting's minutes -> votes.json
+python3 scripts/hsvcc.py extract-votes                # all meetings (default)
+python3 scripts/hsvcc.py extract-votes <slug> ...     # specific meetings
 ```
+
+`votes` resolves the adopted number to its Legistar matter, prints the
+action/mover/seconder, then extracts the roll-call from the Final minutes PDF —
+distinguishing an **individual roll-call** from a **Consent Agenda** sweep (where
+the item passed in a bundle with no separate vote or debate). Minutes text
+extraction uses `pdftotext` (poppler) if present, else `pypdf`/`PyPDF2`; without
+either it still prints the matter info and the minutes URL. Draft/unpublished
+minutes have no roll-call to extract.
+
+`extract-votes` does the same parse for **every** Resolution/Ordinance number
+in a meeting's minutes and writes the results to `meetings/<slug>/votes.json`
+(items in minutes order; `"vote": null` where no roll-call is recorded). It
+re-checks Legistar for late-published minutes, downloads `minutes.pdf` into
+the meeting folder, and skips meetings whose minutes are still Draft or
+Unapproved — as of 2026-07-07 that is every 2026 meeting, so re-run it once
+Final minutes land.
 
 `fetch-audio --publish` is the CI mode: extracts audio and uploads it as a
 GitHub release asset tagged `audio-<slug>` instead of keeping it locally.
