@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r requirements.txt
-      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg poppler-utils
       - name: Discover meetings (agendas, captions, manifests)
         run: python3 scripts/hsvcc.py discover
       - name: Commit discovered artifacts
@@ -29,6 +29,12 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add meetings/
           git diff --cached --quiet || git commit -m "chore: sync meetings $(date -u +%F)"
+      - name: Extract votes from published minutes
+        run: python3 scripts/hsvcc.py extract-votes
+      - name: Commit votes
+        run: |
+          git add meetings/
+          git diff --cached --quiet || git commit -m "chore: extract votes from minutes"
       - name: Extract + publish audio release assets
         env:
           GH_TOKEN: ${{ github.token }}

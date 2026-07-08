@@ -65,8 +65,9 @@ in a meeting's minutes and writes the results to `meetings/<slug>/votes.json`
 (items in minutes order; `"vote": null` where no roll-call is recorded). It
 re-checks Legistar for late-published minutes, downloads `minutes.pdf` into
 the meeting folder, and skips meetings whose minutes are still Draft or
-Unapproved — as of 2026-07-07 that is every 2026 meeting, so re-run it once
-Final minutes land.
+Unapproved — as of 2026-07-07 that is every 2026 meeting. The Friday sync
+workflow runs it automatically, so votes.json files appear as Final minutes
+land.
 
 `fetch-audio --publish` is the CI mode: extracts audio and uploads it as a
 GitHub release asset tagged `audio-<slug>` instead of keeping it locally.
@@ -77,7 +78,9 @@ GitHub release asset tagged `audio-<slug>` instead of keeping it locally.
 evenings) and on manual dispatch:
 
 1. `discover` — commits new manifests, agendas, captions.
-2. `fetch-audio --all-pending --publish` — extracts each new meeting's
+2. `extract-votes` — once Legistar publishes a meeting's Final minutes,
+   commits `minutes.pdf` + `votes.json` for it.
+3. `fetch-audio --all-pending --publish` — extracts each new meeting's
    audio (~40 MB opus) and attaches it to a release, so a local
    `fetch-audio` never needs the full video.
 
