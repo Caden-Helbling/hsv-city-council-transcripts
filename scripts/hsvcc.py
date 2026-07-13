@@ -378,16 +378,24 @@ def transcribe(slugs: list[str], all_pending: bool, meetings_dir: Path, audio_di
     if not slugs:
         print("nothing to transcribe")
         return 0
-    device = "mps" if sys.platform == "darwin" else "cpu"
+    import torch  # provided by whisper; used only for device selection
+    if sys.platform == "darwin":
+        device = "mps"
+    elif torch.cuda.is_available():
+        device = "cuda"  # e.g. desktop-6npd885's GTX 1080 Ti
+    else:
+        device = "cpu"
+    fp16 = device == "cuda"  # half precision on CUDA; fp32 elsewhere
+    print(f"whisper {model_name} on {device}")
     model = whisper.load_model(model_name, device=device)
     failures = 0
-    for slug in slugs:  # serial — MPS does not parallelize
+    for slug in slugs:  # serial — GPU does not parallelize across meetings
         try:
             audio_path = audio_dir / f"{slug}.opus"
             if not audio_path.exists():
                 raise FileNotFoundError(f"{audio_path} missing — run fetch-audio first")
             print(f"transcribing {slug} (this takes a while)...")
-            result = model.transcribe(str(audio_path), language="en", fp16=False)
+            result = model.transcribe(str(audio_path), language="en", fp16=fp16)
             tdir = meetings_dir / slug / "transcript"
             tdir.mkdir(parents=True, exist_ok=True)
             (tdir / f"whisper-{model_name}.txt").write_text(result["text"].strip() + "\n")
