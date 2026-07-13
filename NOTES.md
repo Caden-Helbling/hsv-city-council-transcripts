@@ -18,10 +18,32 @@ here, not in caden-work-machine.)
 
 ## Next up
 
-- [ ] Run `/council-notes` on the remaining meetings without notes (Apr 9, Apr 23, May 14,
-      Jun 1; May 28 has an uncommitted pre-command draft — regenerate or reshape it)
+- [ ] Re-run `extract-votes` once Huntsville publishes Final minutes (all 2026 meetings are
+      still Draft/Unapproved — every meeting's notes.md currently says "no roll-call recorded").
+      When minutes go Final, notes.md decision tables can be reconciled against votes.json.
 
 ## Recently done
+
+- (2026-07-12) Ran `/council-notes` on **all remaining meetings** — every meeting in the repo now
+  has a notes.md. New: Apr 9 (40 MW solar farm lease, Res 26-327), Apr 23 (Huntsville Hospital →
+  Crestwood $450M acquisition; TIF 9 project plan launched, ~3,689.58 ac), May 14 (TIF 9 public
+  hearing; "Microwave Dave" triple honor; $59.2M expenditures), May 28 (lodging-tax Ord 26-484
+  *introduced*; TIF 9 *certified* only; Greenbrier rezone passed w/ Meredith NAY), Jun 1 (first
+  Council/HCS joint work session since 2021 — discussion-only, no votes). Generated via 5 parallel
+  fork agents; committed one-per-meeting.
+- (2026-07-12) **TIF 9 does NOT fund a Lowe Mill↔Big Spring Park pedestrian bridge** (user Q).
+  Verified against the binding `TIF 9 Project Plan Complete 7-7-26.pdf` (Legistar matter 8217,
+  attachment 16186; 23 pp) — zero hits for bridge/pedestrian/big spring/lowe. TIF 9's 5 projects:
+  VBC North Hall expansion (~$200M), North Huntsville Beltline Greenway ($5M, connects Big Spring
+  going *north* to Oakwood), Mill Creek Park ($5M), Lowe *Avenue* school improvements ($5M),
+  former federal courthouse reno. Lowe *Mill* is a carved-out county "tax island." The only
+  pedestrian "sky bridge" (Pinhook Creek remediation) is separately federally funded, not TIF.
+
+- (2026-07-12) Ran `/council-notes` on the **2026-07-09** meeting →
+  `meetings/2026-07-09-city-council-meeting/notes.md`. Highlights: TIF 9 created
+  (Res 26-592, 5 projects), lodging tax +1% for the VBC finally passed (Ord 26-484,
+  after 3 postponements), Ryan Renaud declared elected to the school board unopposed,
+  $21.9M expenditures. All by voice vote — no roll-calls (Draft minutes, no votes.json yet).
 
 - (2026-07-12) Ran `/council-notes` on the **2026-07-09** meeting →
   `meetings/2026-07-09-city-council-meeting/notes.md`. Highlights: TIF 9 created
