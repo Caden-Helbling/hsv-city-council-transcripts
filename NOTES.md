@@ -18,13 +18,17 @@ here, not in caden-work-machine.)
 
 ## Next up
 
-- [ ] Transcribe the new **2026-07-09** meeting: run Whisper locally (M2 Max) to produce its
-      transcript, then `/council-notes`. CI only discovers + publishes audio; `has_whisper`
-      is still false. (The Friday Action added the agenda, meeting.json, and audio release asset.)
+- [ ] Run `/council-notes` on the newly-transcribed **2026-07-09** meeting.
 - [ ] Run `/council-notes` on the remaining meetings without notes (Apr 9, Apr 23, May 14,
       Jun 1; May 28 has an uncommitted pre-command draft — regenerate or reshape it)
 
 ## Recently done
+
+- (2026-07-12) Transcribed the **2026-07-09** meeting locally on **desktop-6npd885's GTX 1080 Ti**
+  (~88 min → a few min; 13.5k words). This box is now a CUDA transcription node, not just the
+  M2 Max: `transcribe` picked cpu on any non-Mac host, so it hardcoded the GPU idle — fixed to
+  prefer cuda → mps → cpu with fp16 on CUDA (`scripts/hsvcc.py`). Needs `openai-whisper` installed
+  (not in requirements; CI never transcribes) + torch-cu126 (already present here).
 
 - (2026-07-10) **First scheduled Friday Action verified clean.** Run
   [29103885416](https://github.com/Caden-Helbling/hsv-city-council-transcripts/actions/runs/29103885416)
