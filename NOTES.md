@@ -18,12 +18,21 @@ here, not in caden-work-machine.)
 
 ## Next up
 
-- [ ] Verify first scheduled Action run (Friday) commits cleanly (first dispatch hit a push race,
-      fixed with `git pull --rebase` in sync.yml — unverified until next run)
+- [ ] Transcribe the new **2026-07-09** meeting: run Whisper locally (M2 Max) to produce its
+      transcript, then `/council-notes`. CI only discovers + publishes audio; `has_whisper`
+      is still false. (The Friday Action added the agenda, meeting.json, and audio release asset.)
 - [ ] Run `/council-notes` on the remaining meetings without notes (Apr 9, Apr 23, May 14,
       Jun 1; May 28 has an uncommitted pre-command draft — regenerate or reshape it)
 
 ## Recently done
+
+- (2026-07-10) **First scheduled Friday Action verified clean.** Run
+  [29103885416](https://github.com/Caden-Helbling/hsv-city-council-transcripts/actions/runs/29103885416)
+  (schedule, 48m) discovered the new **2026-07-09** meeting (agenda + meeting.json → commit
+  `e41c470`), published its audio opus release asset (tag `audio-2026-07-09-city-council-meeting`),
+  and recorded the manifest audio flag (commit `7b1f6ff`) — `git pull --rebase` + push landed
+  with no race. `extract-votes` ran and skipped all 8 meetings (still no Final minutes — Legistar
+  shows Draft/Unapproved). Confirms the push-race fix from the first dispatch.
 
 - (2026-07-07) Added `extract-votes [slugs...]` subcommand: parses a meeting's minutes into
   `meetings/<slug>/votes.json` (every Res/Ord number in minutes order, each with its
