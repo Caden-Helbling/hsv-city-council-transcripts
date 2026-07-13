@@ -18,11 +18,16 @@ here, not in caden-work-machine.)
 
 ## Next up
 
-- [ ] Run `/council-notes` on the newly-transcribed **2026-07-09** meeting.
 - [ ] Run `/council-notes` on the remaining meetings without notes (Apr 9, Apr 23, May 14,
       Jun 1; May 28 has an uncommitted pre-command draft — regenerate or reshape it)
 
 ## Recently done
+
+- (2026-07-12) Ran `/council-notes` on the **2026-07-09** meeting →
+  `meetings/2026-07-09-city-council-meeting/notes.md`. Highlights: TIF 9 created
+  (Res 26-592, 5 projects), lodging tax +1% for the VBC finally passed (Ord 26-484,
+  after 3 postponements), Ryan Renaud declared elected to the school board unopposed,
+  $21.9M expenditures. All by voice vote — no roll-calls (Draft minutes, no votes.json yet).
 
 - (2026-07-12) Transcribed the **2026-07-09** meeting locally on **desktop-6npd885's GTX 1080 Ti**
   (~88 min → a few min; 13.5k words). This box is now a CUDA transcription node, not just the
