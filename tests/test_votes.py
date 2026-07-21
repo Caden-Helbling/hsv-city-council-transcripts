@@ -1,6 +1,12 @@
+import json
+from pathlib import Path
 from typing import Any
 
-from hsvcc import RollCall, extract_minutes_votes, find_matter, parse_minutes_rollcall
+import pytest
+import requests
+
+from hsvcc import (RollCall, _get_with_retry, extract_minutes_votes, extract_votes,
+                   find_matter, parse_minutes_rollcall)
 
 CONSENT_MINUTES = """
 20. NEW BUSINESS ITEMS FOR CONSIDERATION OR ACTION
@@ -95,3 +101,90 @@ def test_find_matter_prefers_exact_number_not_prefix() -> None:
     m = find_matter("23-689", s)  # type: ignore[arg-type]
     assert m is not None and m["MatterId"] == 2
     assert "substringof('No. 23-689',MatterTitle)" in str(s.calls[0][1])
+
+
+class _Resp:
+    """Response stub whose raise_for_status() mimics requests' HTTPError."""
+
+    def __init__(self, status: int, payload: Any = None) -> None:
+        self.status_code = status
+        self._payload = payload
+
+    def json(self) -> Any:
+        return self._payload
+
+    def raise_for_status(self) -> None:
+        if self.status_code >= 400:
+            err = requests.HTTPError(f"{self.status_code} error")
+            err.response = self  # type: ignore[assignment]
+            raise err
+
+
+class _SeqSession:
+    """Yields queued _Resp objects (or raises queued exceptions) per get()."""
+
+    def __init__(self, seq: list[Any]) -> None:
+        self._seq = list(seq)
+        self.calls = 0
+
+    def get(self, url: str, params: Any = None, timeout: int = 0) -> Any:
+        self.calls += 1
+        item = self._seq.pop(0)
+        if isinstance(item, Exception):
+            raise item
+        return item
+
+
+def _no_sleep(_seconds: float) -> None:
+    pass
+
+
+def test_get_with_retry_recovers_from_transient_404() -> None:
+    s = _SeqSession([_Resp(404), _Resp(200, {"ok": True})])
+    resp = _get_with_retry("http://x", s, sleep=_no_sleep)  # type: ignore[arg-type]
+    assert resp.json() == {"ok": True}
+    assert s.calls == 2
+
+
+def test_get_with_retry_retries_5xx_then_gives_up() -> None:
+    s = _SeqSession([_Resp(503), _Resp(503), _Resp(503)])
+    with pytest.raises(requests.HTTPError):
+        _get_with_retry("http://x", s, attempts=3, sleep=_no_sleep)  # type: ignore[arg-type]
+    assert s.calls == 3
+
+
+def test_get_with_retry_does_not_retry_forbidden() -> None:
+    s = _SeqSession([_Resp(403), _Resp(200, {"ok": True})])
+    with pytest.raises(requests.HTTPError):
+        _get_with_retry("http://x", s, sleep=_no_sleep)  # type: ignore[arg-type]
+    assert s.calls == 1  # a 403 is not transient -> no retry
+
+
+def test_get_with_retry_retries_connection_errors() -> None:
+    s = _SeqSession([requests.ConnectionError("boom"), _Resp(200, {"ok": True})])
+    resp = _get_with_retry("http://x", s, sleep=_no_sleep)  # type: ignore[arg-type]
+    assert resp.json() == {"ok": True}
+    assert s.calls == 2
+
+
+def _write_manifest(mdir: Path, **overrides: Any) -> None:
+    mdir.mkdir(parents=True, exist_ok=True)
+    manifest: dict[str, Any] = {
+        "slug": mdir.name, "title": "Test Meeting", "date": "2026-06-11",
+        "body": None, "video_page_url": "", "castus_id": "", "mp4_url": "",
+        "legistar_event_id": 1222, "legistar_url": None, "agenda_url": None,
+        "minutes_url": None, "audio_asset_tag": "",
+    }
+    manifest.update(overrides)
+    (mdir / "meeting.json").write_text(json.dumps(manifest))
+
+
+def test_extract_votes_skips_meeting_when_legistar_flaky(
+        tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr("hsvcc.time.sleep", _no_sleep)
+    meetings = tmp_path / "meetings"
+    _write_manifest(meetings / "2026-06-11-city-council-meeting")
+    # Legistar 404s on every retry -> the opportunistic lookup ultimately fails.
+    s = _SeqSession([_Resp(404)] * 10)
+    rc = extract_votes([], meetings, s)  # type: ignore[arg-type]
+    assert rc == 0  # a flaky Legistar lookup must not fail the whole run

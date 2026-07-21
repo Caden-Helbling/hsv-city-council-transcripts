@@ -9,6 +9,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import time
 from dataclasses import asdict, dataclass, field
 from datetime import date
 from pathlib import Path
@@ -103,6 +104,34 @@ def recompute_status(meeting_dir: Path, manifest: Manifest) -> None:
         "has_whisper": (meeting_dir / "transcript" / "whisper-medium.txt").exists(),
         "has_votes": (meeting_dir / "votes.json").exists(),
     })
+
+
+def _get_with_retry(url: str, session: requests.Session, *, params: Any = None,
+                    attempts: int = 4, backoff: float = 2.0,
+                    sleep: Callable[[float], None] | None = None) -> requests.Response:
+    """GET a URL, retrying transient upstream errors before giving up.
+
+    Legistar's API intermittently answers valid event IDs with a 404 or 5xx
+    (and occasionally drops the connection). A single such blip used to fail
+    the whole weekly sync, so retry transient failures with exponential
+    backoff. Non-transient 4xx (e.g. 400/401/403) raise immediately.
+    """
+    _sleep = sleep if sleep is not None else time.sleep
+    last_exc: requests.RequestException | None = None
+    for attempt in range(attempts):
+        try:
+            resp = session.get(url, params=params, timeout=TIMEOUT)
+            resp.raise_for_status()
+            return resp
+        except requests.RequestException as exc:
+            last_exc = exc
+            status = getattr(getattr(exc, "response", None), "status_code", None)
+            transient = status is None or status == 404 or status >= 500
+            if not transient or attempt == attempts - 1:
+                raise
+            _sleep(backoff * 2 ** attempt)
+    assert last_exc is not None  # unreachable: attempts >= 1
+    raise last_exc
 
 
 def resolve_mp4_url(castus_id: str, session: requests.Session) -> str:
@@ -551,9 +580,14 @@ def extract_votes(slugs: list[str], meetings_dir: Path, session: requests.Sessio
             # pick up late-published minutes from Legistar
             minutes_status = None
             if not manifest.minutes_url and manifest.legistar_event_id:
-                resp = session.get(f"{LEGISTAR_API}/events/{manifest.legistar_event_id}",
-                                   timeout=TIMEOUT)
-                resp.raise_for_status()
+                # Best-effort: a flaky Legistar lookup must not fail the sync.
+                try:
+                    resp = _get_with_retry(
+                        f"{LEGISTAR_API}/events/{manifest.legistar_event_id}", session)
+                except requests.RequestException as exc:
+                    print(f"skip: {slug}: Legistar unreachable for late minutes "
+                          f"({exc}); will retry next run", file=sys.stderr)
+                    continue
                 event = resp.json()
                 manifest.minutes_url = event.get("EventMinutesFile")
                 minutes_status = event.get("EventMinutesStatusName")
