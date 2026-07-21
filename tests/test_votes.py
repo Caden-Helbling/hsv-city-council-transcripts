@@ -5,8 +5,8 @@ from typing import Any
 import pytest
 import requests
 
-from hsvcc import (RollCall, _get_with_retry, extract_minutes_votes, extract_votes,
-                   find_matter, parse_minutes_rollcall)
+from hsvcc import (RollCall, _get_with_retry, download_file, extract_minutes_votes,
+                   extract_votes, find_matter, parse_minutes_rollcall)
 
 CONSENT_MINUTES = """
 20. NEW BUSINESS ITEMS FOR CONSIDERATION OR ACTION
@@ -127,7 +127,8 @@ class _SeqSession:
         self._seq = list(seq)
         self.calls = 0
 
-    def get(self, url: str, params: Any = None, timeout: int = 0) -> Any:
+    def get(self, url: str, params: Any = None, stream: bool = False,
+            timeout: int = 0) -> Any:
         self.calls += 1
         item = self._seq.pop(0)
         if isinstance(item, Exception):
@@ -177,6 +178,39 @@ def _write_manifest(mdir: Path, **overrides: Any) -> None:
     }
     manifest.update(overrides)
     (mdir / "meeting.json").write_text(json.dumps(manifest))
+
+
+class _StreamResp:
+    """Streaming response stub usable as a context manager for download_file."""
+
+    def __init__(self, status: int, body: bytes = b"") -> None:
+        self.status_code = status
+        self._body = body
+
+    def raise_for_status(self) -> None:
+        if self.status_code >= 400:
+            err = requests.HTTPError(f"{self.status_code} error")
+            err.response = self  # type: ignore[assignment]
+            raise err
+
+    def iter_content(self, chunk_size: int = 0) -> Any:
+        yield self._body
+
+    def __enter__(self) -> "_StreamResp":
+        return self
+
+    def __exit__(self, *exc: Any) -> None:
+        pass
+
+
+def test_download_file_retries_transient_error(
+        tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr("hsvcc.time.sleep", _no_sleep)
+    s = _SeqSession([_StreamResp(503), _StreamResp(200, b"PDFDATA")])
+    dest = tmp_path / "out" / "minutes.pdf"
+    download_file("http://x", dest, s)  # type: ignore[arg-type]
+    assert dest.read_bytes() == b"PDFDATA"
+    assert s.calls == 2  # first 503 retried, second succeeded
 
 
 def test_extract_votes_skips_meeting_when_legistar_flaky(

@@ -107,7 +107,7 @@ def recompute_status(meeting_dir: Path, manifest: Manifest) -> None:
 
 
 def _get_with_retry(url: str, session: requests.Session, *, params: Any = None,
-                    attempts: int = 4, backoff: float = 2.0,
+                    stream: bool = False, attempts: int = 4, backoff: float = 2.0,
                     sleep: Callable[[float], None] | None = None) -> requests.Response:
     """GET a URL, retrying transient upstream errors before giving up.
 
@@ -120,7 +120,7 @@ def _get_with_retry(url: str, session: requests.Session, *, params: Any = None,
     last_exc: requests.RequestException | None = None
     for attempt in range(attempts):
         try:
-            resp = session.get(url, params=params, timeout=TIMEOUT)
+            resp = session.get(url, params=params, stream=stream, timeout=TIMEOUT)
             resp.raise_for_status()
             return resp
         except requests.RequestException as exc:
@@ -237,8 +237,7 @@ def iter_archive_video_urls(session: requests.Session, since: date) -> list[str]
 
 
 def download_file(url: str, dest: Path, session: requests.Session) -> None:
-    with session.get(url, stream=True, timeout=TIMEOUT) as resp:
-        resp.raise_for_status()
+    with _get_with_retry(url, session, stream=True) as resp:
         dest.parent.mkdir(parents=True, exist_ok=True)
         with open(dest, "wb") as fh:
             for chunk in resp.iter_content(chunk_size=1 << 20):
