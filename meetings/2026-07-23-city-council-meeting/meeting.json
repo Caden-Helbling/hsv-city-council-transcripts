@@ -15,7 +15,7 @@
     "has_agenda": true,
     "has_minutes": false,
     "has_captions": false,
-    "has_audio_asset": false,
+    "has_audio_asset": true,
     "has_whisper": false,
     "has_votes": false
   }
