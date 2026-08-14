@@ -27,6 +27,9 @@ class FakeResponse:
         if self.status_code >= 400:
             raise RuntimeError(f"HTTP {self.status_code}")
 
+    def close(self) -> None:
+        pass
+
     def __enter__(self) -> "FakeResponse":
         return self
 

@@ -6,12 +6,13 @@ import argparse
 import html as html_lib
 import json
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
 import time
 from dataclasses import asdict, dataclass, field
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 from typing import Any, Callable
 
@@ -26,6 +27,7 @@ TIMEOUT = 60
 REPO_ROOT = Path(__file__).resolve().parent.parent
 MEETINGS_DIR = REPO_ROOT / "meetings"
 AUDIO_DIR = REPO_ROOT / "audio"
+UPCOMING_DIR = REPO_ROOT / "upcoming"
 
 _TS_RE = re.compile(r"(?:(\d+):)?(\d+):(\d+)\.(\d+)\s*-->")
 
@@ -499,7 +501,10 @@ def find_regular_event(day: str, session: requests.Session) -> dict | None:
 def _pdf_text(path: Path, run: RunFn = subprocess.run) -> str | None:
     """Best-effort PDF -> text: pdftotext if present, else pypdf/PyPDF2. None if all fail."""
     try:
-        r = run(["pdftotext", "-layout", str(path), "-"], capture_output=True, text=True)
+        # pdftotext emits UTF-8; without an explicit encoding, Windows decodes
+        # the pipe as cp1252 and the reader thread dies on the first en-dash
+        r = run(["pdftotext", "-layout", str(path), "-"], capture_output=True,
+                text=True, encoding="utf-8", errors="replace")
         if getattr(r, "returncode", 1) == 0 and (r.stdout or "").strip():
             return r.stdout
     except FileNotFoundError:
@@ -616,6 +621,255 @@ def extract_votes(slugs: list[str], meetings_dir: Path, session: requests.Sessio
     return 1 if failures else 0
 
 
+# ---- agenda preview: grab upcoming agendas before the meeting happens ----
+#
+# `discover` is driven by the video archive, which only lists meetings after
+# they occur. Upcoming meetings come straight from Legistar's events feed,
+# which publishes the agenda PDF days ahead. Previews live in upcoming/ and
+# are pruned (with the summary preserved into meetings/) once the meeting
+# has passed and discover has created the real folder.
+
+_SECTION_RE = re.compile(r"^(\d{1,2})\.\s+(.+)$")
+_ITEM_RE = re.compile(r"^([a-z])\.\s+(.+)$")
+_MATTER_NO_RE = re.compile(r"^(Resolution|Ordinance)\s+No\.\s*(\d{2}-\d+)")
+_FILE_ID_RE = re.compile(r"^(\d{4}-\d+)\s*$")
+_SPONSORS_RE = re.compile(r"^Sponsors:\s*(.+)$")
+_PAGE_NOISE_RE = re.compile(r"^Page \d+ of \d+|^City Council .*Agenda \w+ \d{1,2}, \d{4}")
+
+
+def parse_agenda_items(text: str) -> list[dict]:
+    """Parse a Legistar agenda PDF's text into numbered sections of lettered items.
+
+    Huntsville agendas are 'N. ALL-CAPS SECTION' headings containing 'a. Title...'
+    items, each followed by an optional 'Resolution/Ordinance No. NN-NNN', a
+    Legistar file id (YYYY-NNN), 'Sponsors: ...', and an attachments line.
+    """
+    sections: list[dict] = []
+    item: dict | None = None
+    in_title = False
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line or _PAGE_NOISE_RE.match(line):
+            continue
+        m = _SECTION_RE.match(line)
+        if m and not any(c.islower() for c in m.group(2)):
+            sections.append({"number": int(m.group(1)), "heading": m.group(2).strip(),
+                             "items": []})
+            item, in_title = None, False
+            continue
+        if not sections:
+            continue  # cover page (officials, chamber, meeting type)
+        m = _ITEM_RE.match(line)
+        if m:
+            item = {"letter": m.group(1), "title": m.group(2).strip(),
+                    "matter_number": None, "file_id": None, "sponsors": None}
+            sections[-1]["items"].append(item)
+            in_title = True
+            continue
+        if item is None:
+            continue
+        m = _MATTER_NO_RE.match(line)
+        if m:
+            item["matter_number"] = f"{m.group(1)} No. {m.group(2)}"
+            in_title = False
+            continue
+        m = _FILE_ID_RE.match(line)
+        if m:
+            item["file_id"] = m.group(1)
+            in_title = False
+            continue
+        m = _SPONSORS_RE.match(line)
+        if m:
+            item["sponsors"] = m.group(1).strip()
+            in_title = False
+            continue
+        if "Attachments:" in line:
+            in_title = False
+            continue
+        if in_title:
+            item["title"] += " " + line
+    # PDF text extraction sometimes glues the file id onto the title line
+    # (items with no Resolution/Ordinance number in between)
+    for section in sections:
+        for it in section["items"]:
+            m = re.search(r"\s*(\d{4}-\d+)$", it["title"])
+            if m and not it["file_id"]:
+                it["file_id"] = m.group(1)
+                it["title"] = it["title"][:m.start()].rstrip()
+    return sections
+
+
+def extract_pdf_links(pdf_path: Path) -> list[str]:
+    """Unique external URIs from a PDF's link annotations (agenda item links)."""
+    try:
+        from pypdf import PdfReader
+    except ImportError:
+        try:
+            from PyPDF2 import PdfReader  # type: ignore[no-redef]
+        except ImportError:
+            print("  warn: pypdf not installed; skipping link extraction")
+            return []
+    import logging
+    # Legistar agendas trip pypdf's "Multiple definitions in dictionary"
+    # warning once per link — hundreds of lines of noise per agenda
+    logging.getLogger(PdfReader.__module__.split(".")[0]).setLevel(logging.ERROR)
+    urls: list[str] = []
+    try:
+        reader = PdfReader(str(pdf_path))
+        for page in reader.pages:
+            for annot in page.get("/Annots") or []:
+                action = annot.get_object().get("/A")
+                uri = action.get("/URI") if action else None
+                if isinstance(uri, str) and uri not in urls:
+                    urls.append(uri)
+    except Exception as exc:  # noqa: BLE001 — links are best-effort
+        print(f"  warn: could not read links from {pdf_path.name}: {exc}")
+    return urls
+
+
+def check_links(urls: list[str], session: requests.Session) -> list[dict]:
+    """GET each URL (following redirects); record final status. None = no response."""
+    results: list[dict] = []
+    for url in urls:
+        try:
+            resp = session.get(url, timeout=TIMEOUT, stream=True)
+            status: int | None = resp.status_code
+            resp.close()
+        except requests.RequestException:
+            status = None
+        results.append({"url": url, "status": status,
+                        "ok": status is not None and status < 400})
+    return results
+
+
+def render_agenda_preview(event: dict, sections: list[dict],
+                          link_results: list[dict], generated: str) -> str:
+    day = (event.get("EventDate") or "")[:10]
+    lines = [f"# Agenda preview — {event.get('EventBodyName')}, {day}", ""]
+    when_where = " · ".join(s for s in (event.get("EventTime"),
+                                        event.get("EventLocation")) if s)
+    if when_where:
+        lines.append(f"- When/where: {when_where}")
+    if event.get("EventInSiteURL"):
+        lines.append(f"- Legistar: {event['EventInSiteURL']}")
+    if event.get("EventAgendaFile"):
+        lines.append(f"- Agenda PDF: {event['EventAgendaFile']}")
+    lines.append(f"- Generated {generated} by `hsvcc.py preview-agendas` "
+                 "(verbatim agenda item titles, no LLM)")
+    lines += ["", "## Topics", ""]
+    with_items = [s for s in sections if s["items"]]
+    if not with_items:
+        lines.append("*(no items parsed from the agenda PDF — see the PDF itself)*")
+    for section in with_items:
+        lines.append(f"### {section['number']}. {section['heading']}")
+        lines.append("")
+        for it in section["items"]:
+            detail = ", ".join(s for s in (
+                it["matter_number"], f"file {it['file_id']}" if it["file_id"] else None,
+                f"sponsors: {it['sponsors']}" if it["sponsors"] else None) if s)
+            lines.append(f"- {it['title']}" + (f" *({detail})*" if detail else ""))
+        lines.append("")
+    other = [s for s in sections if not s["items"]]
+    if other:
+        lines.append("Sections with no listed items: "
+                     + "; ".join(f"{s['number']}. {s['heading']}" for s in other))
+        lines.append("")
+    lines += ["## Link check", ""]
+    if not link_results:
+        lines.append("*(no links found in the agenda PDF)*")
+    else:
+        broken = [r for r in link_results if not r["ok"]]
+        lines.append(f"{len(link_results) - len(broken)}/{len(link_results)} "
+                     "agenda links OK.")
+        if broken:
+            lines.append("")
+            lines.append("Broken:")
+            for r in broken:
+                status = f"HTTP {r['status']}" if r["status"] else "no response"
+                lines.append(f"- {status} — {r['url']}")
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def _body_slug(body: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", body.lower()).strip("-")
+
+
+def prune_upcoming(upcoming_dir: Path, meetings_dir: Path, today: date) -> None:
+    """Drop previews for past meetings, keeping the summary in the archive folder.
+
+    The preview markdown is copied into the meetings/ folder whose manifest has
+    the same Legistar event id. If discover hasn't created that folder yet, the
+    preview is kept for a 14-day grace period so a late/failed sync can't lose it.
+    """
+    if not upcoming_dir.exists():
+        return
+    for pdir in sorted(p for p in upcoming_dir.iterdir() if p.is_dir()):
+        m = re.match(r"^(\d{4}-\d{2}-\d{2})", pdir.name)
+        if not m:
+            continue
+        meeting_day = date.fromisoformat(m.group(1))
+        if meeting_day >= today:
+            continue
+        preview = pdir / "agenda-preview.md"
+        event_id = None
+        if (pdir / "event.json").exists():
+            event_id = json.loads((pdir / "event.json").read_text()).get("EventId")
+        archived = False
+        if preview.exists() and event_id:
+            for mdir in sorted(meetings_dir.glob(f"{meeting_day.isoformat()}*")):
+                if ((mdir / "meeting.json").exists()
+                        and Manifest.load(mdir).legistar_event_id == event_id):
+                    if not (mdir / "agenda-preview.md").exists():
+                        shutil.copy(preview, mdir / "agenda-preview.md")
+                    archived = True
+                    break
+        if archived or not preview.exists() or (today - meeting_day).days > 14:
+            shutil.rmtree(pdir)
+            print(f"pruned: upcoming/{pdir.name}"
+                  + (" (preview archived to meetings/)" if archived else ""))
+
+
+def preview_agendas(window_days: int, upcoming_dir: Path, meetings_dir: Path,
+                    session: requests.Session, today: date | None = None) -> int:
+    today = today or date.today()
+    prune_upcoming(upcoming_dir, meetings_dir, today)
+    end = today + timedelta(days=window_days)
+    failures = found = 0
+    for event in fetch_legistar_events(today, session):
+        try:
+            day = date.fromisoformat((event.get("EventDate") or "")[:10])
+        except ValueError:
+            continue
+        if not today <= day <= end:
+            continue
+        body = event.get("EventBodyName") or "meeting"
+        if not event.get("EventAgendaFile"):
+            print(f"skip: {day} {body}: no agenda published yet")
+            continue
+        found += 1
+        pdir = upcoming_dir / f"{day.isoformat()}-{_body_slug(body)}"
+        try:
+            # always re-download: agendas get amended between publish and meeting
+            download_file(event["EventAgendaFile"], pdir / "agenda.pdf", session)
+            (pdir / "event.json").write_text(json.dumps(event, indent=2) + "\n")
+            text = _pdf_text(pdir / "agenda.pdf")
+            sections = parse_agenda_items(text) if text else []
+            links = check_links(extract_pdf_links(pdir / "agenda.pdf"), session)
+            (pdir / "agenda-preview.md").write_text(
+                render_agenda_preview(event, sections, links, today.isoformat()),
+                encoding="utf-8")
+            n_items = sum(len(s["items"]) for s in sections)
+            n_broken = sum(1 for r in links if not r["ok"])
+            print(f"ok: {pdir.name}: {n_items} agenda items, "
+                  f"{len(links)} links ({n_broken} broken)")
+        except Exception as exc:  # noqa: BLE001 — one bad meeting must not kill the batch
+            failures += 1
+            print(f"FAIL: {day} {body}: {exc}", file=sys.stderr)
+    if not found:
+        print(f"no upcoming agendas within {window_days} days of {today}")
+    return 1 if failures else 0
+
+
 def votes(number: str, session: requests.Session, meetings_dir: Path) -> int:
     number = number.strip()
     matter = find_matter(number, session)
@@ -684,6 +938,11 @@ def main(argv: list[str] | None = None) -> int:
     p_ev = sub.add_parser(
         "extract-votes", help="parse each meeting's minutes into votes.json")
     p_ev.add_argument("slugs", nargs="*", help="meeting slugs (default: all meetings)")
+    p_prev = sub.add_parser(
+        "preview-agendas",
+        help="fetch agendas for upcoming meetings; summarize topics + check links")
+    p_prev.add_argument("--window", type=int, default=7,
+                        help="days ahead to look for meetings (default 7)")
     args = parser.parse_args(argv)
     session = requests.Session()
     session.headers["User-Agent"] = "hsv-city-council-transcripts (personal archival tool)"
@@ -699,6 +958,8 @@ def main(argv: list[str] | None = None) -> int:
         return votes(args.number, session, MEETINGS_DIR)
     if args.command == "extract-votes":
         return extract_votes(args.slugs, MEETINGS_DIR, session)
+    if args.command == "preview-agendas":
+        return preview_agendas(args.window, UPCOMING_DIR, MEETINGS_DIR, session)
     return 0
 
 

@@ -20,6 +20,7 @@ Each meeting gets a folder:
 meetings/2026-06-25-city-council-meeting/
 ├── meeting.json        # manifest: dates, URLs, IDs, status flags
 ├── agenda.pdf          # from Legistar
+├── agenda-preview.md   # pre-meeting topic summary (from the Tuesday preview run)
 ├── minutes.pdf         # when published
 ├── votes.json          # per-item roll-calls parsed from minutes (extract-votes)
 ├── captions.vtt        # official captions
@@ -50,6 +51,11 @@ python3 scripts/hsvcc.py votes 23-689
 # parse every item's roll-call out of each meeting's minutes -> votes.json
 python3 scripts/hsvcc.py extract-votes                # all meetings (default)
 python3 scripts/hsvcc.py extract-votes <slug> ...     # specific meetings
+
+# before a meeting happens: grab its agenda from Legistar, summarize the
+# topics, and check every link inside the PDF -> upcoming/<date>-<body>/
+python3 scripts/hsvcc.py preview-agendas              # next 7 days
+python3 scripts/hsvcc.py preview-agendas --window 14
 ```
 
 `votes` resolves the adopted number to its Legistar matter, prints the
@@ -72,10 +78,28 @@ land.
 `fetch-audio --publish` is the CI mode: extracts audio and uploads it as a
 GitHub release asset tagged `audio-<slug>` instead of keeping it locally.
 
+`preview-agendas` works *ahead* of the meeting: `discover` is driven by the
+video archive (which only lists meetings after they happen), so previews come
+straight from Legistar's events feed instead. Each upcoming meeting with a
+published agenda gets `upcoming/<date>-<body>/` holding the agenda PDF, the
+raw Legistar event record, and `agenda-preview.md` — a deterministic (no-LLM)
+summary of every agenda item grouped by section, plus an HTTP check of every
+link embedded in the PDF (Legistar matter pages + attachments). Agendas are
+re-downloaded on every run to catch amendments. Once a meeting has passed and
+`discover` has created the real `meetings/<slug>/` folder, the preview
+markdown is archived there as `agenda-preview.md` and the `upcoming/` entry
+is pruned (matched by Legistar event id, with a 14-day grace period).
+
 ## Automation
 
-`.github/workflows/sync.yml` runs Friday mornings (meetings are Thursday
-evenings) and on manual dispatch:
+`.github/workflows/sync.yml` runs on two schedules plus manual dispatch
+(dispatch runs both jobs, sync first):
+
+**Tuesday evenings** (23:00 UTC / 6 pm CT — ahead of Thursday's meeting),
+the `preview` job runs `preview-agendas` and commits `upcoming/` — agenda
+PDF, topic summary, and link-check results for each upcoming meeting.
+
+**Friday mornings** (meetings are Thursday evenings), the `sync` job runs:
 
 1. `discover` — commits new manifests, agendas, captions.
 2. `extract-votes` — once Legistar publishes a meeting's Final minutes,
