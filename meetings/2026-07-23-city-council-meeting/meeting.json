@@ -14,7 +14,7 @@
   "status": {
     "has_agenda": true,
     "has_minutes": false,
-    "has_captions": false,
+    "has_captions": true,
     "has_audio_asset": true,
     "has_whisper": true,
     "has_votes": false
