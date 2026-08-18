@@ -66,12 +66,12 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - name: Fetch upcoming agendas, summarize topics, check links
         run: python3 scripts/hsvcc.py preview-agendas
-      - name: Plain-language agenda summaries (LLM; skips gracefully without a key)
+      # LLM step runs on the self-hosted Qwen3.5-35B (slayden) via its public
+      # token-authed endpoint; skips gracefully if the token or server is absent
+      - name: Plain-language agenda summaries (local LLM)
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          if [ -n "$ANTHROPIC_API_KEY" ]; then pip install -q anthropic; fi
-          python3 scripts/summarize_agendas.py
+          SLAYDEN_API_TOKEN: ${{ secrets.SLAYDEN_API_TOKEN }}
+        run: python3 scripts/summarize_agendas.py
       - name: Commit agenda previews and push
         run: |
           git config user.name "github-actions[bot]"

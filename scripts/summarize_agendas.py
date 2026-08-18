@@ -2,15 +2,22 @@
 """Plain-language summaries of upcoming agendas — the pipeline's one LLM step.
 
 Phase 3 of docs/superpowers/plans/2026-08-13-github-pages-site.md. For each
-upcoming/<slug>/ with an agenda-preview.md, generate summary.md via the Claude
-API (3-8 resident-friendly bullets). The layer is strictly additive:
+upcoming/<slug>/ with an agenda-preview.md, generate summary.md (3-8
+resident-friendly bullets) using the self-hosted llama-server (Qwen3.5-35B on
+slayden), reached through its token-authed public endpoint. The layer is
+strictly additive:
 
-- No ANTHROPIC_API_KEY -> print a notice and exit 0; the site falls back to
+- No SLAYDEN_API_TOKEN -> print a notice and exit 0; the site falls back to
   the deterministic topic list.
 - A summary is regenerated only when the preview's content hash changes
   (amended agendas), so unchanged agendas produce no diff.
-- Generation failures warn and exit 0 so the Tuesday workflow still commits
-  the deterministic preview artifacts.
+- Generation failures (server down for gaming, network) warn and exit 0 so
+  the Tuesday workflow still commits the deterministic preview artifacts.
+
+Model note (measured 2026-08-18 on the Aug 13 agenda): Qwen3.5 MUST run with
+thinking disabled here — thinking mode spent the entire output budget on
+reasoning and produced no summary; thinking-off completed in ~8 s with an
+accurate, hallucination-free bullet list.
 """
 from __future__ import annotations
 
@@ -21,11 +28,15 @@ import sys
 from datetime import date
 from pathlib import Path
 
+import requests
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 UPCOMING_DIR = REPO_ROOT / "upcoming"
 PROMPT_PATH = Path(__file__).resolve().parent / "prompts" / "laymans-summary.md"
 
-MODEL = "claude-opus-5"
+BASE_URL = os.environ.get("SUMMARY_BASE_URL", "https://slayden-api.duckdns.org")
+MODEL = os.environ.get("SUMMARY_MODEL", "qwen3.5-35b")
+TIMEOUT = 300
 _HASH_RE = re.compile(r"source-sha256: ([0-9a-f]{64})")
 
 
@@ -51,32 +62,36 @@ def render_summary_md(bullets: str, preview_md: str, generated: str) -> str:
 
 
 def generate_bullets(preview_md: str) -> str:
-    """One Claude call: agenda preview markdown -> plain-language bullet list."""
-    import anthropic  # imported lazily so the pipeline runs without the SDK
+    """One LLM call: agenda preview markdown -> plain-language bullet list.
 
-    client = anthropic.Anthropic()
+    OpenAI-compatible endpoint with Qwen thinking disabled via
+    chat_template_kwargs — the same recipe the aider config uses.
+    """
     prompt = PROMPT_PATH.read_text(encoding="utf-8").replace("{agenda}", preview_md)
-    # server-side fallback: if a safety classifier declines (implausible for a
-    # public agenda, but the recommended default), retry on Anthropic's pick
-    response = client.beta.messages.create(
-        model=MODEL,
-        max_tokens=16000,
-        betas=["server-side-fallback-2026-07-01"],
-        fallbacks="default",
-        messages=[{"role": "user", "content": prompt}],
-    )
-    if response.stop_reason == "refusal":
-        raise RuntimeError("model declined the request (stop_reason=refusal)")
-    text = "".join(block.text for block in response.content if block.type == "text")
-    if not text.strip().startswith("-"):
+    resp = requests.post(
+        f"{BASE_URL}/v1/chat/completions",
+        headers={"Authorization": f"Bearer {os.environ['SLAYDEN_API_TOKEN']}"},
+        json={
+            "model": MODEL,
+            "max_tokens": 4096,
+            "messages": [{"role": "user", "content": prompt}],
+            "chat_template_kwargs": {"enable_thinking": False},
+        },
+        timeout=TIMEOUT)
+    resp.raise_for_status()
+    choice = resp.json()["choices"][0]
+    if choice.get("finish_reason") != "stop":
+        raise RuntimeError(f"generation did not finish: {choice.get('finish_reason')}")
+    text = (choice["message"].get("content") or "").strip()
+    if not text.startswith(("-", "*")):
         raise RuntimeError(f"unexpected summary shape: {text[:120]!r}")
     return text
 
 
 def summarize(upcoming_dir: Path, today: date | None = None,
               generate: "callable[[str], str]" = generate_bullets) -> int:
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("ANTHROPIC_API_KEY not set; skipping plain-language summaries "
+    if not os.environ.get("SLAYDEN_API_TOKEN"):
+        print("SLAYDEN_API_TOKEN not set; skipping plain-language summaries "
               "(the site falls back to the topic list)")
         return 0
     today = today or date.today()

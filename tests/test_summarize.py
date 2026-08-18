@@ -1,4 +1,4 @@
-from datetime import date
+﻿from datetime import date
 from pathlib import Path
 
 import pytest
@@ -18,7 +18,7 @@ def _make_upcoming(tmp_path: Path) -> Path:
 
 
 def test_skips_without_api_key(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.delenv("SLAYDEN_API_TOKEN", raising=False)
     pdir = _make_upcoming(tmp_path)
     assert summarize(tmp_path / "upcoming", today=TODAY,
                      generate=lambda _: pytest.fail("should not call the API")) == 0
@@ -27,7 +27,7 @@ def test_skips_without_api_key(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) 
 
 def test_generates_summary_with_hash_marker(tmp_path: Path,
                                             monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setenv("ANTHROPIC_API_KEY", "test-key")
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
     pdir = _make_upcoming(tmp_path)
     assert summarize(tmp_path / "upcoming", today=TODAY,
                      generate=lambda _: "- The city plans X\n") == 0
@@ -39,7 +39,7 @@ def test_generates_summary_with_hash_marker(tmp_path: Path,
 
 def test_skips_when_summary_matches_preview_hash(tmp_path: Path,
                                                  monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setenv("ANTHROPIC_API_KEY", "test-key")
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
     pdir = _make_upcoming(tmp_path)
     (pdir / "summary.md").write_text(render_summary_md("- old", PREVIEW, "2026-08-11"),
                                      encoding="utf-8")
@@ -49,7 +49,7 @@ def test_skips_when_summary_matches_preview_hash(tmp_path: Path,
 
 def test_regenerates_when_agenda_amended(tmp_path: Path,
                                          monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setenv("ANTHROPIC_API_KEY", "test-key")
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
     pdir = _make_upcoming(tmp_path)
     (pdir / "summary.md").write_text(
         render_summary_md("- old", "different preview", "2026-08-11"), encoding="utf-8")
@@ -60,7 +60,7 @@ def test_regenerates_when_agenda_amended(tmp_path: Path,
 
 def test_generation_failure_is_nonfatal(tmp_path: Path,
                                         monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setenv("ANTHROPIC_API_KEY", "test-key")
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
     pdir = _make_upcoming(tmp_path)
 
     def boom(_: str) -> str:

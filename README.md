@@ -99,10 +99,14 @@ is pruned (matched by Legistar event id, with a 14-day grace period).
 the `preview` job runs `preview-agendas` and commits `upcoming/` — agenda
 PDF, topic summary, and link-check results for each upcoming meeting. It then
 runs `scripts/summarize_agendas.py`, the repo's **one LLM step**: a single
-Claude API call per new/amended agenda that writes `summary.md` (3–8
-plain-language bullets for the website's main page). This layer is strictly
-additive — it needs the `ANTHROPIC_API_KEY` repo secret (`gh secret set
-ANTHROPIC_API_KEY`) and skips gracefully without it, the site falls back to
+call per new/amended agenda that writes `summary.md` (3–8 plain-language
+bullets for the website's main page). It runs on the self-hosted
+Qwen3.5-35B (llama-server on slayden) through its token-authed public
+endpoint — `SLAYDEN_API_TOKEN` repo secret; base URL and model overridable
+via `SUMMARY_BASE_URL` / `SUMMARY_MODEL`. Qwen must run with thinking
+disabled here (`chat_template_kwargs`): thinking mode spends the whole
+output budget reasoning and emits nothing. The layer is strictly additive —
+no token or an unreachable server skips gracefully, the site falls back to
 the verbatim topic list, and a generation failure never fails the sync. The
 scraping/parsing pipeline itself remains LLM-free. Summaries regenerate only
 when the agenda content actually changes (tracked by a source hash in

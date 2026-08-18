@@ -108,11 +108,17 @@ what free static hosting is for; keep thinku's Caddy out of it).
 - [x] **Phase 3 — layman's summaries:** add the Claude step to the Tuesday
   job (option a), `summary.md` schema + prompt, render on the main page and
   archive with the preview on prune.
-  *(Done 2026-08-18: `scripts/summarize_agendas.py` (claude-opus-5 via the
-  anthropic SDK, server-side refusal fallback enabled, source-hash to skip
-  unchanged agendas), prompt at `scripts/prompts/laymans-summary.md`,
-  workflow step gated on the `ANTHROPIC_API_KEY` secret — Caden still to
-  create the secret; everything degrades gracefully until then.)*
+  *(Done 2026-08-18. First shipped on claude-opus-5, then — after a
+  same-day head-to-head on the Aug 13 agenda (both accurate; Qwen missed
+  the Graham Farms item, Claude's slightly more complete; local is $0 and
+  ~8 s) — Caden chose **local-only**: `scripts/summarize_agendas.py` calls
+  slayden's Qwen3.5-35B via the token-authed public endpoint
+  (`SLAYDEN_API_TOKEN` secret, `SUMMARY_BASE_URL`/`SUMMARY_MODEL`
+  overridable), OpenAI endpoint with Qwen thinking DISABLED via
+  `chat_template_kwargs` (thinking mode burns the whole output budget and
+  emits nothing). Source-hash skips unchanged agendas; prompt at
+  `scripts/prompts/laymans-summary.md`; degrades gracefully when slayden
+  is off (gaming) — that week just shows the topic list.)*
 - [ ] **Phase 4 — polish (optional):** votes visualization per member,
   client-side search over topics (a prebuilt JSON index + ~50 lines of JS),
   RSS/Atom feed of upcoming agendas, custom domain.
