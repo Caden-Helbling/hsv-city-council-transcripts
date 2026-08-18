@@ -110,7 +110,10 @@ no token or an unreachable server skips gracefully, the site falls back to
 the verbatim topic list, and a generation failure never fails the sync. The
 scraping/parsing pipeline itself remains LLM-free. Summaries regenerate only
 when the agenda content actually changes (tracked by a source hash in
-`summary.md`).
+`summary.md`). A **backlog check** heals gaps: if the server was down and a
+meeting passed without a summary, its archived `meetings/<slug>/agenda-preview.md`
+is summarized on the next run where the server is up — both the Tuesday
+preview job and the Friday sync job run the check.
 
 **Friday mornings** (meetings are Thursday evenings), the `sync` job runs:
 

@@ -68,3 +68,47 @@ def test_generation_failure_is_nonfatal(tmp_path: Path,
 
     assert summarize(tmp_path / "upcoming", today=TODAY, generate=boom) == 0
     assert not (pdir / "summary.md").exists()
+
+
+def _make_meeting(tmp_path: Path, slug: str, with_preview: bool = True,
+                  with_summary: bool = False) -> Path:
+    mdir = tmp_path / "meetings" / slug
+    mdir.mkdir(parents=True)
+    if with_preview:
+        (mdir / "agenda-preview.md").write_text(PREVIEW, encoding="utf-8")
+    if with_summary:
+        (mdir / "summary.md").write_text(
+            render_summary_md("- archived", PREVIEW, "2026-08-11"), encoding="utf-8")
+    return mdir
+
+
+def test_backfills_past_meeting_missing_summary(tmp_path: Path,
+                                                monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
+    missed = _make_meeting(tmp_path, "2026-08-13-city-council-meeting")
+    done = _make_meeting(tmp_path, "2026-07-23-city-council-meeting", with_summary=True)
+    no_preview = _make_meeting(tmp_path, "2026-04-09-city-council-meeting",
+                               with_preview=False)
+    calls: list[str] = []
+
+    def gen(preview: str) -> str:
+        calls.append(preview)
+        return "- backfilled bullet\n"
+
+    assert summarize(tmp_path / "upcoming", tmp_path / "meetings",
+                     today=TODAY, generate=gen) == 0
+    assert len(calls) == 1  # only the meeting that missed its summary
+    assert "- backfilled bullet" in (missed / "summary.md").read_text(encoding="utf-8")
+    assert "- archived" in (done / "summary.md").read_text(encoding="utf-8")
+    assert not (no_preview / "summary.md").exists()
+
+
+def test_backlog_and_upcoming_processed_in_one_run(tmp_path: Path,
+                                                   monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
+    up = _make_upcoming(tmp_path)
+    missed = _make_meeting(tmp_path, "2026-08-13-city-council-meeting")
+    assert summarize(tmp_path / "upcoming", tmp_path / "meetings",
+                     today=TODAY, generate=lambda _: "- bullet\n") == 0
+    assert (up / "summary.md").exists()
+    assert (missed / "summary.md").exists()

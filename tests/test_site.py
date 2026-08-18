@@ -82,7 +82,7 @@ def test_index_hides_upcoming_entries_for_past_meetings() -> None:
 def test_meeting_page_renders_archived_summary() -> None:
     html = render_meeting_page(_meeting(summary_md="- Big rezoning vote\n"))
     assert "Big rezoning vote" in html
-    assert "Written before the meeting" in html
+    assert "Generated from the agenda as published" in html
 
 
 def test_meeting_page_links_records() -> None:

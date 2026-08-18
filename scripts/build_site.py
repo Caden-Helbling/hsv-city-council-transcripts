@@ -299,8 +299,8 @@ def render_meeting_page(meeting: dict) -> str:
     if meeting.get("summary_md"):
         parts.append('<div class="card">')
         parts.append(f'<div class="md">{_md(_demote_headings(meeting["summary_md"]))}</div>')
-        parts.append('<p class="ai-note">Written before the meeting from the '
-                     "published agenda.</p>")
+        parts.append('<p class="ai-note">Generated from the agenda as published '
+                     "before the meeting.</p>")
         parts.append("</div>")
     if meeting.get("votes"):
         parts.append("<h2>Votes</h2>")

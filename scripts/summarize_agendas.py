@@ -13,6 +13,9 @@ strictly additive:
   (amended agendas), so unchanged agendas produce no diff.
 - Generation failures (server down for gaming, network) warn and exit 0 so
   the Tuesday workflow still commits the deterministic preview artifacts.
+- Backlog: meetings/<slug>/ folders holding an agenda-preview.md without a
+  matching summary.md (the meeting passed while the LLM was down) are
+  backfilled on every run, so the next run with the server up heals the gap.
 
 Model note (measured 2026-08-18 on the Aug 13 agenda): Qwen3.5 MUST run with
 thinking disabled here — thinking mode spent the entire output budget on
@@ -32,6 +35,7 @@ import requests
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 UPCOMING_DIR = REPO_ROOT / "upcoming"
+MEETINGS_DIR = REPO_ROOT / "meetings"
 PROMPT_PATH = Path(__file__).resolve().parent / "prompts" / "laymans-summary.md"
 
 BASE_URL = os.environ.get("SUMMARY_BASE_URL", "https://slayden-api.duckdns.org")
@@ -88,35 +92,47 @@ def generate_bullets(preview_md: str) -> str:
     return text
 
 
-def summarize(upcoming_dir: Path, today: date | None = None,
+def _summarize_dir(pdir: Path, today: date, generate: "callable[[str], str]",
+                   label: str) -> None:
+    preview_md = (pdir / "agenda-preview.md").read_text(encoding="utf-8")
+    if summary_is_current(pdir / "summary.md", preview_md):
+        print(f"ok: {pdir.name}: summary.md up to date")
+        return
+    try:
+        bullets = generate(preview_md)
+        (pdir / "summary.md").write_text(
+            render_summary_md(bullets, preview_md, today.isoformat()),
+            encoding="utf-8")
+        print(f"ok: {pdir.name}: wrote summary.md{label}")
+    except Exception as exc:  # noqa: BLE001 — LLM layer must never fail the sync
+        print(f"warn: {pdir.name}: summary generation failed: {exc}",
+              file=sys.stderr)
+
+
+def summarize(upcoming_dir: Path, meetings_dir: Path | None = None,
+              today: date | None = None,
               generate: "callable[[str], str]" = generate_bullets) -> int:
     if not os.environ.get("SLAYDEN_API_TOKEN"):
         print("SLAYDEN_API_TOKEN not set; skipping plain-language summaries "
               "(the site falls back to the topic list)")
         return 0
     today = today or date.today()
-    if not upcoming_dir.exists():
-        print("no upcoming/ directory; nothing to summarize")
+    # upcoming meetings first (site main page), then the backlog of past
+    # meetings whose summary was skipped while the LLM was down
+    dirs: list[tuple[Path, str]] = []
+    if upcoming_dir.exists():
+        dirs += [(p, "") for p in sorted(upcoming_dir.iterdir()) if p.is_dir()]
+    if meetings_dir is not None and meetings_dir.exists():
+        dirs += [(p, " (backfilled)") for p in sorted(meetings_dir.iterdir())
+                 if p.is_dir()]
+    todo = [(p, label) for p, label in dirs if (p / "agenda-preview.md").exists()]
+    if not todo:
+        print("nothing to summarize")
         return 0
-    for pdir in sorted(p for p in upcoming_dir.iterdir() if p.is_dir()):
-        preview_path = pdir / "agenda-preview.md"
-        if not preview_path.exists():
-            continue
-        preview_md = preview_path.read_text(encoding="utf-8")
-        if summary_is_current(pdir / "summary.md", preview_md):
-            print(f"ok: {pdir.name}: summary.md up to date")
-            continue
-        try:
-            bullets = generate(preview_md)
-            (pdir / "summary.md").write_text(
-                render_summary_md(bullets, preview_md, today.isoformat()),
-                encoding="utf-8")
-            print(f"ok: {pdir.name}: wrote summary.md")
-        except Exception as exc:  # noqa: BLE001 — LLM layer must never fail the sync
-            print(f"warn: {pdir.name}: summary generation failed: {exc}",
-                  file=sys.stderr)
+    for pdir, label in todo:
+        _summarize_dir(pdir, today, generate, label)
     return 0
 
 
 if __name__ == "__main__":
-    sys.exit(summarize(UPCOMING_DIR))
+    sys.exit(summarize(UPCOMING_DIR, MEETINGS_DIR))
