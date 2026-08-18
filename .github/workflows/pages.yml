@@ -2,9 +2,13 @@ name: Publish site
 on:
   push:
     branches: [main]
+  # Sync-workflow pushes use GITHUB_TOKEN, which never fires `push` triggers
+  # (GitHub's anti-recursion rule) — rebuild when the sync run completes instead
+  workflow_run:
+    workflows: ["Sync meetings"]
+    types: [completed]
   workflow_dispatch:
 
-# every Tuesday/Friday sync commit republishes the site automatically
 permissions:
   contents: read
   pages: write
@@ -16,6 +20,7 @@ concurrency:
 
 jobs:
   build:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
