@@ -1,0 +1,2 @@
+# deps for scripts/build_site.py only (the pipeline itself needs just requirements.txt)
+markdown>=3.5

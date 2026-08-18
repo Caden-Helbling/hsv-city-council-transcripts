@@ -94,9 +94,12 @@ what free static hosting is for; keep thinku's Caddy out of it).
 
 ## Phases
 
-- [ ] **Phase 1 — history site:** `build_site.py` + `pages.yml`; render
+- [x] **Phase 1 — history site:** `build_site.py` + `pages.yml`; render
   meeting index + per-meeting pages from data already in `meetings/`
   (manifest, votes, notes, transcript links). Ship it — useful immediately.
+  *(Done 2026-08-18. Repo made public — free-plan Pages requires it; history
+  scanned for secrets first, clean. Live at
+  <https://caden-helbling.github.io/hsv-city-council-transcripts/>.)*
 - [ ] **Phase 2 — upcoming meetings on the main page:** consume `upcoming/`
   (previews + event.json), handle the "no agenda yet" state. Requires the
   Tuesday run to have produced at least one preview (already live).

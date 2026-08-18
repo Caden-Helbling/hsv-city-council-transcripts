@@ -112,6 +112,18 @@ Whisper is **not** run in CI (4-core runners are too slow for a 3-hour
 meeting at acceptable quality) — run `transcribe` locally when you want the
 higher-fidelity transcript. `captions.txt` is available immediately either way.
 
+## Website
+
+The archive is browsable at
+**<https://caden-helbling.github.io/hsv-city-council-transcripts/>** — an
+index of every meeting plus one page per meeting (records links, votes,
+notes, pre-meeting agenda preview). `scripts/build_site.py` renders it
+deterministically from the repo's data (`pip install -r requirements-site.txt`,
+then `python3 scripts/build_site.py` → `_site/`); the `Publish site` workflow
+rebuilds and deploys on every push to `main`, so the Tuesday/Friday syncs
+republish automatically. Roadmap (upcoming-meeting cards, plain-language
+summaries): `docs/superpowers/plans/2026-08-13-github-pages-site.md`.
+
 ## Generating notes with an LLM
 
 Point your tool of choice at a meeting folder and use:
