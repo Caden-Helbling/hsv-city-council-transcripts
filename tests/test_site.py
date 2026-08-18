@@ -1,7 +1,10 @@
 import json
+from datetime import date
 from pathlib import Path
 
 from build_site import (_demote_headings, build, render_index, render_meeting_page)
+
+TODAY = date(2026, 8, 18)
 
 
 def _meeting(**overrides) -> dict:
@@ -22,13 +25,64 @@ def _meeting(**overrides) -> dict:
     return base
 
 
+def _upcoming(**overrides) -> dict:
+    base = {
+        "slug": "2026-08-27-city-council-regular-meeting",
+        "event": {"EventDate": "2026-08-27T00:00:00",
+                  "EventBodyName": "City Council Regular Meeting",
+                  "EventTime": "5:30 PM", "EventLocation": "Council Chambers",
+                  "EventAgendaFile": "https://legistar/a.pdf",
+                  "EventInSiteURL": "https://legistar/detail"},
+        "preview_md": "# Agenda preview\n\n## Topics\n\n- Rezoning of 12 acres\n",
+        "summary_md": None,
+    }
+    base.update(overrides)
+    return base
+
+
 def test_index_sorts_reverse_chronological_and_links_pages() -> None:
     older = _meeting(slug="2026-05-14-city-council-meeting", date="2026-05-14",
                      title="Older Meeting")
-    html = render_index([older, _meeting()])
+    html = render_index([older, _meeting()], [], TODAY)
     assert html.index("2026-06-25-city-council-meeting") < html.index("Older Meeting")
     assert 'href="meetings/2026-06-25-city-council-meeting/index.html"' in html
     assert '<span class="badge">transcript</span>' in html
+
+
+def test_index_empty_state_when_no_upcoming_agendas() -> None:
+    html = render_index([_meeting()], [], TODAY)
+    assert "No upcoming meeting agendas posted yet" in html
+
+
+def test_index_upcoming_card_falls_back_to_topic_list() -> None:
+    html = render_index([], [_upcoming()], TODAY)
+    assert "City Council Regular Meeting — Thursday, August 27, 2026" in html
+    assert "Plain-language summary not generated yet" in html
+    assert "<details><summary>Full agenda topics</summary>" in html
+    assert "Rezoning of 12 acres" in html
+    assert "https://legistar/a.pdf" in html
+
+
+def test_index_upcoming_card_renders_summary_when_present() -> None:
+    entry = _upcoming(summary_md="## In plain language\n\n- The city plans X\n")
+    html = render_index([], [entry], TODAY)
+    assert "The city plans X" in html
+    assert "Plain-language summary not generated yet" not in html
+
+
+def test_index_hides_upcoming_entries_for_past_meetings() -> None:
+    stale = _upcoming(slug="2026-08-13-city-council-regular-meeting",
+                      event={"EventDate": "2026-08-13T00:00:00",
+                             "EventBodyName": "City Council Regular Meeting"})
+    html = render_index([], [stale], TODAY)
+    assert "August 13" not in html
+    assert "No upcoming meeting agendas posted yet" in html
+
+
+def test_meeting_page_renders_archived_summary() -> None:
+    html = render_meeting_page(_meeting(summary_md="- Big rezoning vote\n"))
+    assert "Big rezoning vote" in html
+    assert "Written before the meeting" in html
 
 
 def test_meeting_page_links_records() -> None:

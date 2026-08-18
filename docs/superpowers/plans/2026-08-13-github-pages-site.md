@@ -100,12 +100,19 @@ what free static hosting is for; keep thinku's Caddy out of it).
   *(Done 2026-08-18. Repo made public — free-plan Pages requires it; history
   scanned for secrets first, clean. Live at
   <https://caden-helbling.github.io/hsv-city-council-transcripts/>.)*
-- [ ] **Phase 2 — upcoming meetings on the main page:** consume `upcoming/`
+- [x] **Phase 2 — upcoming meetings on the main page:** consume `upcoming/`
   (previews + event.json), handle the "no agenda yet" state. Requires the
   Tuesday run to have produced at least one preview (already live).
-- [ ] **Phase 3 — layman's summaries:** add the Claude step to the Tuesday
+  *(Done 2026-08-18. Cards filter out past-dated upcoming entries so a
+  not-yet-pruned preview never shows as "coming up".)*
+- [x] **Phase 3 — layman's summaries:** add the Claude step to the Tuesday
   job (option a), `summary.md` schema + prompt, render on the main page and
   archive with the preview on prune.
+  *(Done 2026-08-18: `scripts/summarize_agendas.py` (claude-opus-5 via the
+  anthropic SDK, server-side refusal fallback enabled, source-hash to skip
+  unchanged agendas), prompt at `scripts/prompts/laymans-summary.md`,
+  workflow step gated on the `ANTHROPIC_API_KEY` secret — Caden still to
+  create the secret; everything degrades gracefully until then.)*
 - [ ] **Phase 4 — polish (optional):** votes visualization per member,
   client-side search over topics (a prebuilt JSON index + ~50 lines of JS),
   RSS/Atom feed of upcoming agendas, custom domain.

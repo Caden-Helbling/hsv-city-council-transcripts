@@ -97,7 +97,16 @@ is pruned (matched by Legistar event id, with a 14-day grace period).
 
 **Tuesday evenings** (23:00 UTC / 6 pm CT — ahead of Thursday's meeting),
 the `preview` job runs `preview-agendas` and commits `upcoming/` — agenda
-PDF, topic summary, and link-check results for each upcoming meeting.
+PDF, topic summary, and link-check results for each upcoming meeting. It then
+runs `scripts/summarize_agendas.py`, the repo's **one LLM step**: a single
+Claude API call per new/amended agenda that writes `summary.md` (3–8
+plain-language bullets for the website's main page). This layer is strictly
+additive — it needs the `ANTHROPIC_API_KEY` repo secret (`gh secret set
+ANTHROPIC_API_KEY`) and skips gracefully without it, the site falls back to
+the verbatim topic list, and a generation failure never fails the sync. The
+scraping/parsing pipeline itself remains LLM-free. Summaries regenerate only
+when the agenda content actually changes (tracked by a source hash in
+`summary.md`).
 
 **Friday mornings** (meetings are Thursday evenings), the `sync` job runs:
 
@@ -114,15 +123,20 @@ higher-fidelity transcript. `captions.txt` is available immediately either way.
 
 ## Website
 
-The archive is browsable at
-**<https://caden-helbling.github.io/hsv-city-council-transcripts/>** — an
-index of every meeting plus one page per meeting (records links, votes,
-notes, pre-meeting agenda preview). `scripts/build_site.py` renders it
-deterministically from the repo's data (`pip install -r requirements-site.txt`,
-then `python3 scripts/build_site.py` → `_site/`); the `Publish site` workflow
+The site is live at
+**<https://caden-helbling.github.io/hsv-city-council-transcripts/>**. The main
+page leads with **upcoming meetings** (from `upcoming/`): a card per meeting
+with the plain-language `summary.md` when generated (labeled AI-generated,
+falling back to the verbatim topic list), the full parsed agenda in a
+collapsible section, and links to the agenda PDF and Legistar. Below that is
+the **archive** — one page per past meeting with records links, votes table,
+notes, the pre-meeting agenda preview, and the archived plain-language
+summary. `scripts/build_site.py` renders everything deterministically from
+the repo's data (`pip install -r requirements-site.txt`, then
+`python3 scripts/build_site.py` → `_site/`); the `Publish site` workflow
 rebuilds and deploys on every push to `main`, so the Tuesday/Friday syncs
-republish automatically. Roadmap (upcoming-meeting cards, plain-language
-summaries): `docs/superpowers/plans/2026-08-13-github-pages-site.md`.
+republish automatically. Plan doc:
+`docs/superpowers/plans/2026-08-13-github-pages-site.md`.
 
 ## Generating notes with an LLM
 

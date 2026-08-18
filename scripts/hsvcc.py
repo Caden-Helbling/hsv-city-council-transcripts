@@ -819,8 +819,10 @@ def prune_upcoming(upcoming_dir: Path, meetings_dir: Path, today: date) -> None:
             for mdir in sorted(meetings_dir.glob(f"{meeting_day.isoformat()}*")):
                 if ((mdir / "meeting.json").exists()
                         and Manifest.load(mdir).legistar_event_id == event_id):
-                    if not (mdir / "agenda-preview.md").exists():
-                        shutil.copy(preview, mdir / "agenda-preview.md")
+                    # summary.md is the plain-language LLM layer, when generated
+                    for name in ("agenda-preview.md", "summary.md"):
+                        if (pdir / name).exists() and not (mdir / name).exists():
+                            shutil.copy(pdir / name, mdir / name)
                     archived = True
                     break
         if archived or not preview.exists() or (today - meeting_day).days > 14:

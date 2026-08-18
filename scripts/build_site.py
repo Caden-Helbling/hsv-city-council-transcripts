@@ -24,6 +24,7 @@ BLOB_URL = f"https://github.com/{REPO}/blob/main"
 RELEASE_URL = f"https://github.com/{REPO}/releases/tag"
 REPO_ROOT = Path(__file__).resolve().parent.parent
 MEETINGS_DIR = REPO_ROOT / "meetings"
+UPCOMING_DIR = REPO_ROOT / "upcoming"
 SITE_DIR = REPO_ROOT / "_site"
 
 MD_EXTENSIONS = ["tables", "fenced_code", "sane_lists"]
@@ -99,6 +100,14 @@ th { color: var(--muted); font-weight: 600; }
 details { margin: 1rem 0; }
 details > summary { cursor: pointer; color: var(--accent); }
 .note { color: var(--muted); font-size: 0.9rem; }
+.card {
+  border: 1px solid var(--line); border-radius: 8px; background: var(--card);
+  padding: 1rem 1.25rem; margin: 1rem 0;
+}
+.card h3 { margin: 0 0 0.15rem; font-size: 1.1rem; }
+.card .meta { margin-bottom: 0.75rem; font-size: 0.92rem; }
+.card details { margin: 0.75rem 0 0.25rem; }
+.ai-note { color: var(--muted); font-size: 0.8rem; }
 """
 
 
@@ -128,7 +137,7 @@ def page(title: str, body: str, *, root: str) -> str:
 <style>{CSS}</style>
 </head>
 <body>
-<header class="site-header"><div><a href="{root}index.html">Huntsville City Council — Meeting Archive</a></div></header>
+<header class="site-header"><div><a href="{root}index.html">Huntsville City Council Meetings</a></div></header>
 <main>
 {body}
 </main>
@@ -143,7 +152,8 @@ video captions, Whisper transcripts). Source data and pipeline:
 
 def load_meeting(mdir: Path) -> dict:
     meeting = json.loads((mdir / "meeting.json").read_text(encoding="utf-8"))
-    for name, key in (("notes.md", "notes_md"), ("agenda-preview.md", "preview_md")):
+    for name, key in (("notes.md", "notes_md"), ("agenda-preview.md", "preview_md"),
+                      ("summary.md", "summary_md")):
         f = mdir / name
         meeting[key] = f.read_text(encoding="utf-8") if f.exists() else None
     votes_f = mdir / "votes.json"
@@ -164,21 +174,74 @@ def _badges(meeting: dict) -> str:
     return "".join(f'<span class="badge">{label}</span>' for label in labels)
 
 
-def render_index(meetings: list[dict]) -> str:
+def load_upcoming(pdir: Path) -> dict:
+    entry: dict = {"slug": pdir.name}
+    event_f = pdir / "event.json"
+    entry["event"] = json.loads(event_f.read_text(encoding="utf-8")) if event_f.exists() else {}
+    for name, key in (("agenda-preview.md", "preview_md"), ("summary.md", "summary_md")):
+        f = pdir / name
+        entry[key] = f.read_text(encoding="utf-8") if f.exists() else None
+    return entry
+
+
+def render_upcoming_card(entry: dict) -> str:
+    event = entry["event"]
+    day = (event.get("EventDate") or entry["slug"])[:10]
+    body_name = event.get("EventBodyName") or "City Council meeting"
+    parts = ['<div class="card">',
+             f"<h3>{html.escape(body_name)} — {_fmt_date(day, long=True)}</h3>"]
+    when_where = " · ".join(s for s in (event.get("EventTime"),
+                                        event.get("EventLocation")) if s)
+    if when_where:
+        parts.append(f'<p class="meta">{html.escape(when_where)}</p>')
+    if entry.get("summary_md"):
+        parts.append(f'<div class="md">{_md(_demote_headings(entry["summary_md"]))}</div>')
+    else:
+        parts.append('<p class="note">Plain-language summary not generated yet — '
+                     "the full topic list is below.</p>")
+    if entry.get("preview_md"):
+        parts.append("<details><summary>Full agenda topics</summary>")
+        parts.append(f'<div class="md">{_md(_demote_headings(entry["preview_md"]))}</div>')
+        parts.append("</details>")
+    links = [(label, url) for label, url in (
+        ("Agenda (PDF)", event.get("EventAgendaFile")),
+        ("Legistar", event.get("EventInSiteURL"))) if url]
+    if links:
+        parts.append('<p class="note">' + " · ".join(
+            f'<a href="{html.escape(url)}">{html.escape(label)}</a>'
+            for label, url in links) + "</p>")
+    parts.append("</div>")
+    return "\n".join(parts)
+
+
+def render_index(meetings: list[dict], upcoming: list[dict], today: date) -> str:
+    current = [u for u in upcoming
+               if (u["event"].get("EventDate") or u["slug"])[:10] >= today.isoformat()]
+    current.sort(key=lambda u: u["slug"])
+    if current:
+        upcoming_html = "\n".join(render_upcoming_card(u) for u in current)
+    else:
+        upcoming_html = ('<p class="note">No upcoming meeting agendas posted yet. '
+                         "Agendas usually appear on Legistar a couple of days before "
+                         "each meeting (regular meetings are Thursday evenings) — "
+                         "this page updates automatically when one is published.</p>")
     items = []
     for m in sorted(meetings, key=lambda m: (m["date"], m["slug"]), reverse=True):
         items.append(
             f'<li><span class="date">{_fmt_date(m["date"])}</span> '
             f'<a href="meetings/{html.escape(m["slug"])}/index.html">'
             f'{html.escape(m["title"])}</a>{_badges(m)}</li>')
-    body = f"""<h1>Meeting archive</h1>
-<p>Every archived Huntsville (AL) City Council meeting: what was on the agenda,
-what was decided, and what was said — from the official Legistar records,
-meeting video captions, and locally-run Whisper transcripts.</p>
+    body = f"""<h1>Huntsville City Council meetings</h1>
+<p>What the city council is about to decide and what it already did — from the
+official Legistar records, meeting video captions, and locally-run Whisper
+transcripts.</p>
+<h2>Coming up</h2>
+{upcoming_html}
+<h2>Meeting archive</h2>
 <ul class="meeting-list">
 {chr(10).join(items)}
 </ul>"""
-    return page("Huntsville City Council Meeting Archive", body, root="")
+    return page("Huntsville City Council Meetings", body, root="")
 
 
 def _record_links(meeting: dict) -> str:
@@ -233,6 +296,12 @@ def render_meeting_page(meeting: dict) -> str:
     parts.append(f'<p class="meta">{meta}</p>')
     parts.append("<h2>Records</h2>")
     parts.append(_record_links(meeting))
+    if meeting.get("summary_md"):
+        parts.append('<div class="card">')
+        parts.append(f'<div class="md">{_md(_demote_headings(meeting["summary_md"]))}</div>')
+        parts.append('<p class="ai-note">Written before the meeting from the '
+                     "published agenda.</p>")
+        parts.append("</div>")
     if meeting.get("votes"):
         parts.append("<h2>Votes</h2>")
         parts.append(_votes_table(meeting["votes"]))
@@ -248,21 +317,29 @@ def render_meeting_page(meeting: dict) -> str:
     return page(meeting["title"], "\n".join(parts), root="../../")
 
 
-def build(meetings_dir: Path, site_dir: Path) -> int:
+def build(meetings_dir: Path, site_dir: Path, upcoming_dir: Path | None = None,
+          today: date | None = None) -> int:
+    today = today or date.today()
     if site_dir.exists():
         shutil.rmtree(site_dir)
     site_dir.mkdir(parents=True)
     (site_dir / ".nojekyll").write_text("")
     meetings = [load_meeting(d) for d in sorted(meetings_dir.iterdir())
                 if (d / "meeting.json").exists()]
-    (site_dir / "index.html").write_text(render_index(meetings), encoding="utf-8")
+    upcoming = []
+    if upcoming_dir is not None and upcoming_dir.exists():
+        upcoming = [load_upcoming(d) for d in sorted(upcoming_dir.iterdir())
+                    if d.is_dir() and (d / "agenda-preview.md").exists()]
+    (site_dir / "index.html").write_text(render_index(meetings, upcoming, today),
+                                         encoding="utf-8")
     for meeting in meetings:
         out = site_dir / "meetings" / meeting["slug"]
         out.mkdir(parents=True)
         (out / "index.html").write_text(render_meeting_page(meeting), encoding="utf-8")
-    print(f"built {len(meetings)} meeting pages -> {site_dir}")
+    print(f"built {len(meetings)} meeting pages, {len(upcoming)} upcoming previews "
+          f"-> {site_dir}")
     return 0
 
 
 if __name__ == "__main__":
-    sys.exit(build(MEETINGS_DIR, SITE_DIR))
+    sys.exit(build(MEETINGS_DIR, SITE_DIR, UPCOMING_DIR))

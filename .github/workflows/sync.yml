@@ -66,6 +66,12 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - name: Fetch upcoming agendas, summarize topics, check links
         run: python3 scripts/hsvcc.py preview-agendas
+      - name: Plain-language agenda summaries (LLM; skips gracefully without a key)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -n "$ANTHROPIC_API_KEY" ]; then pip install -q anthropic; fi
+          python3 scripts/summarize_agendas.py
       - name: Commit agenda previews and push
         run: |
           git config user.name "github-actions[bot]"
