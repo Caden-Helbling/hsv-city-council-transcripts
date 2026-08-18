@@ -3,6 +3,7 @@ on:
   schedule:
     - cron: "0 13 * * 5" # Fridays 13:00 UTC — post-meeting sync (meetings are Thursday evenings)
     - cron: "0 23 * * 2" # Tuesdays 23:00 UTC (6 pm CT) — agenda preview ahead of Thursday's meeting
+    - cron: "0 23 * * 3" # Wednesdays — safety net for agendas posted after the Tuesday run (no-op otherwise); git history shows which day captured each agenda
   workflow_dispatch:
 
 concurrency:
@@ -69,7 +70,7 @@ jobs:
   # always() keeps this job running on Tuesdays when sync is skipped.
   preview:
     needs: sync
-    if: always() && (github.event_name != 'schedule' || github.event.schedule == '0 23 * * 2')
+    if: always() && (github.event_name != 'schedule' || github.event.schedule == '0 23 * * 2' || github.event.schedule == '0 23 * * 3')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
