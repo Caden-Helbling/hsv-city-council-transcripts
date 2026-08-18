@@ -135,8 +135,22 @@ preview job and the Friday sync job run the check.
    `fetch-audio` never needs the full video.
 
 Whisper is **not** run in CI (4-core runners are too slow for a 3-hour
-meeting at acceptable quality) — run `transcribe` locally when you want the
-higher-fidelity transcript. `captions.txt` is available immediately either way.
+meeting at acceptable quality). Instead, `scripts/transcribe-council.ps1`
+runs as a **weekly scheduled task on slayden** (Fridays 8 PM, registered via
+`powershell -File scripts\transcribe-council.ps1 -Register`): it pulls, checks
+for meetings with a published audio asset but no transcript (exits untouched
+most weeks), downloads the opus release assets, stops llama-server to free
+VRAM, transcribes on the GPU, restarts the LLM stack in a `finally`, and
+commits + pushes (which redeploys the site). Log: `D:\llm\logs\transcribe-council.log`.
+`captions.txt` is available immediately either way, when Castus publishes it.
+
+**Meeting notes** (`notes.md`) are drafted with the local LLM too:
+`python scripts/generate_notes.py <date>` (same env vars as the summarizer)
+feeds the full agenda text, attachment excerpts, and the transcript to the
+model with the output contract in `scripts/prompts/meeting-notes.md`. The
+result is a **draft** — review names, numbers, and vote records against the
+transcript before committing (the script refuses to overwrite an existing
+notes.md without `--force`).
 
 ## Website
 
