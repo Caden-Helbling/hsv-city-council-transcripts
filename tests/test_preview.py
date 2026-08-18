@@ -2,9 +2,12 @@ import json
 from datetime import date
 from pathlib import Path
 
-from fakes import FakeSession
-from hsvcc import (Manifest, check_links, parse_agenda_items, preview_agendas,
-                   prune_upcoming, render_agenda_preview)
+import pytest
+
+from fakes import FakeResponse, FakeSession
+from hsvcc import (Manifest, backfill_previews, check_links,
+                   fetch_agenda_attachments, parse_agenda_items,
+                   preview_agendas, prune_upcoming, render_agenda_preview)
 
 AGENDA_TEXT = """
 Tommy Battle, Mayor
@@ -138,6 +141,91 @@ def test_preview_agendas_writes_folder_from_legistar_event(tmp_path: Path) -> No
     # fake PDF bytes: no text or links extractable, rendered as such
     assert "no items parsed" in md
     assert "no links found" in md
+
+
+def test_backfill_previews_builds_from_archived_pdf(tmp_path: Path,
+                                                    monkeypatch: pytest.MonkeyPatch) -> None:
+    import hsvcc
+
+    meetings = tmp_path / "meetings"
+    mdir = _make_meeting(meetings, "2026-06-25-city-council-meeting", 1223)
+    (mdir / "agenda.pdf").write_bytes(b"%PDF-fake")
+    done = _make_meeting(meetings, "2026-05-14-city-council-meeting", 9)
+    (done / "agenda.pdf").write_bytes(b"%PDF-fake")
+    (done / "agenda-preview.md").write_text("existing", encoding="utf-8")
+    no_pdf = _make_meeting(meetings, "2026-04-09-city-council-meeting", 8)
+
+    monkeypatch.setattr(hsvcc, "_pdf_text", lambda p: AGENDA_TEXT)
+    monkeypatch.setattr(hsvcc, "extract_pdf_links", lambda p: ["https://x/file.pdf"])
+    rc = backfill_previews(meetings, FakeSession(), today=date(2026, 8, 18))
+    assert rc == 0
+    md = (mdir / "agenda-preview.md").read_text(encoding="utf-8")
+    assert md.startswith("# Agenda preview —")
+    assert "Resolution No. 26-616" in md
+    assert "1/1 agenda links OK." in md
+    assert (done / "agenda-preview.md").read_text(encoding="utf-8") == "existing"
+    assert not (no_pdf / "agenda-preview.md").exists()
+
+
+class AttachmentFakeSession(FakeSession):
+    """Extends the shared fake with Legistar matter-attachment routes."""
+
+    def get(self, url, params=None, timeout=0, stream=False):  # type: ignore[override]
+        self.calls.append(url)
+        if "/matters/8434/attachments" in url:
+            return FakeResponse(payload=[
+                {"MatterAttachmentName": "Expenditures - Complete",
+                 "MatterAttachmentHyperlink": "https://legistar/expenditures.pdf"},
+                {"MatterAttachmentName": "Backup memo",
+                 "MatterAttachmentHyperlink": "https://legistar/memo.pdf"},
+            ])
+        if url.endswith(".pdf"):
+            return FakeResponse(content=b"%PDF-fake")
+        return super().get(url, params=params, timeout=timeout, stream=stream)
+
+
+def test_fetch_agenda_attachments_writes_matching_excerpts(
+        tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    import hsvcc
+
+    pdf = tmp_path / "agenda.pdf"
+    pdf.write_bytes(b"%PDF-fake")
+    dest = tmp_path / "agenda-attachments.md"
+    monkeypatch.setattr(hsvcc, "extract_pdf_links", lambda p: [
+        "https://huntsvilleal.legistar.com/gateway.aspx?m=l&id=/matter.aspx?key=8434",
+        "https://huntsvilleal.legistar.com/gateway.aspx?M=F&ID=abc.pdf",
+    ])
+    monkeypatch.setattr(hsvcc, "_pdf_text", lambda p: "Grand Total $30,015,087.43")
+    session = AttachmentFakeSession()
+    assert fetch_agenda_attachments(pdf, dest, session) == 1
+    text = dest.read_text(encoding="utf-8")
+    assert "## Expenditures - Complete" in text
+    assert "$30,015,087.43" in text
+    assert "Backup memo" not in text  # name doesn't match the high-value patterns
+
+
+def test_fetch_agenda_attachments_no_match_writes_nothing(
+        tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    import hsvcc
+
+    pdf = tmp_path / "agenda.pdf"
+    pdf.write_bytes(b"%PDF-fake")
+    dest = tmp_path / "agenda-attachments.md"
+    monkeypatch.setattr(hsvcc, "extract_pdf_links", lambda p: [])
+    assert fetch_agenda_attachments(pdf, dest, FakeSession()) == 0
+    assert not dest.exists()
+
+
+def test_backfill_previews_skips_unparseable_pdf(tmp_path: Path,
+                                                 monkeypatch: pytest.MonkeyPatch) -> None:
+    import hsvcc
+
+    meetings = tmp_path / "meetings"
+    mdir = _make_meeting(meetings, "2026-06-25-city-council-meeting", 1223)
+    (mdir / "agenda.pdf").write_bytes(b"%PDF-fake")
+    monkeypatch.setattr(hsvcc, "_pdf_text", lambda p: None)
+    assert backfill_previews(meetings, FakeSession(), today=date(2026, 8, 18)) == 0
+    assert not (mdir / "agenda-preview.md").exists()
 
 
 def test_preview_agendas_skips_meetings_outside_window(tmp_path: Path) -> None:

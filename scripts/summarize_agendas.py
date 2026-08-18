@@ -92,16 +92,39 @@ def generate_bullets(preview_md: str) -> str:
     return text
 
 
+def _source_md(pdir: Path) -> str:
+    """The LLM's full input: agenda preview + attachment excerpts when present.
+
+    Both feed the source hash, so a late-arriving attachments file (or an
+    amended agenda) triggers a richer regeneration.
+    """
+    source = (pdir / "agenda-preview.md").read_text(encoding="utf-8")
+    att = pdir / "agenda-attachments.md"
+    if att.exists():
+        source += "\n\n" + att.read_text(encoding="utf-8")
+    return source
+
+
+def hash_input(source_md: str) -> str:
+    """What the source hash covers: the prompt template plus the LLM input.
+
+    Including the prompt means a prompt improvement regenerates every summary
+    on the next run instead of leaving old summaries on the old instructions.
+    """
+    return PROMPT_PATH.read_text(encoding="utf-8") + source_md
+
+
 def _summarize_dir(pdir: Path, today: date, generate: "callable[[str], str]",
                    label: str) -> None:
-    preview_md = (pdir / "agenda-preview.md").read_text(encoding="utf-8")
-    if summary_is_current(pdir / "summary.md", preview_md):
+    source = _source_md(pdir)
+    hashable = hash_input(source)
+    if summary_is_current(pdir / "summary.md", hashable):
         print(f"ok: {pdir.name}: summary.md up to date")
         return
     try:
-        bullets = generate(preview_md)
+        bullets = generate(source)
         (pdir / "summary.md").write_text(
-            render_summary_md(bullets, preview_md, today.isoformat()),
+            render_summary_md(bullets, hashable, today.isoformat()),
             encoding="utf-8")
         print(f"ok: {pdir.name}: wrote summary.md{label}")
     except Exception as exc:  # noqa: BLE001 — LLM layer must never fail the sync

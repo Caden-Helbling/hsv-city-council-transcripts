@@ -17,8 +17,15 @@ Write a plain-language summary as a markdown bullet list:
 - Fold routine housekeeping (board appointments, recognitions, minutes
   approval, travel expenses) into at most one brief bullet, or omit it.
 - Mention public hearings explicitly — residents can speak at those.
-- Use only what is in the agenda; do not invent details, speculate about
-  outcomes, or editorialize.
+- The outline may be followed by "Agenda attachment excerpts" (expenditure
+  lists, bid summaries, appropriation details). Use them for concrete
+  figures — total dollar amounts, recipients, project costs. Prefer grand
+  totals over long line-item lists.
+- Every dollar figure you write MUST appear verbatim in the text below. If
+  an item's cost is not given, describe the item without a number — never
+  estimate, infer, or round one into existence.
+- Use only what is in the agenda and its attachment excerpts; do not invent
+  details, speculate about outcomes, or editorialize.
 
 Output ONLY the markdown bullet list — no title, no preamble, no closing note.
 

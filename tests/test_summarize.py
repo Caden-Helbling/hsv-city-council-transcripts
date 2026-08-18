@@ -3,8 +3,8 @@ from pathlib import Path
 
 import pytest
 
-from summarize_agendas import (render_summary_md, source_hash, summarize,
-                               summary_is_current)
+from summarize_agendas import (hash_input, render_summary_md, source_hash,
+                               summarize, summary_is_current)
 
 TODAY = date(2026, 8, 18)
 PREVIEW = "# Agenda preview\n\n- item\n"
@@ -33,7 +33,7 @@ def test_generates_summary_with_hash_marker(tmp_path: Path,
                      generate=lambda _: "- The city plans X\n") == 0
     text = (pdir / "summary.md").read_text(encoding="utf-8")
     assert "- The city plans X" in text
-    assert f"source-sha256: {source_hash(PREVIEW)}" in text
+    assert f"source-sha256: {source_hash(hash_input(PREVIEW))}" in text
     assert "AI-generated" in text
 
 
@@ -41,7 +41,7 @@ def test_skips_when_summary_matches_preview_hash(tmp_path: Path,
                                                  monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
     pdir = _make_upcoming(tmp_path)
-    (pdir / "summary.md").write_text(render_summary_md("- old", PREVIEW, "2026-08-11"),
+    (pdir / "summary.md").write_text(render_summary_md("- old", hash_input(PREVIEW), "2026-08-11"),
                                      encoding="utf-8")
     assert summarize(tmp_path / "upcoming", today=TODAY,
                      generate=lambda _: pytest.fail("hash unchanged; must not regen")) == 0
@@ -52,8 +52,8 @@ def test_regenerates_when_agenda_amended(tmp_path: Path,
     monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
     pdir = _make_upcoming(tmp_path)
     (pdir / "summary.md").write_text(
-        render_summary_md("- old", "different preview", "2026-08-11"), encoding="utf-8")
-    assert not summary_is_current(pdir / "summary.md", PREVIEW)
+        render_summary_md("- old", hash_input("different preview"), "2026-08-11"), encoding="utf-8")
+    assert not summary_is_current(pdir / "summary.md", hash_input(PREVIEW))
     summarize(tmp_path / "upcoming", today=TODAY, generate=lambda _: "- new\n")
     assert "- new" in (pdir / "summary.md").read_text(encoding="utf-8")
 
@@ -70,6 +70,30 @@ def test_generation_failure_is_nonfatal(tmp_path: Path,
     assert not (pdir / "summary.md").exists()
 
 
+def test_attachment_excerpts_enrich_source_and_hash(tmp_path: Path,
+                                                    monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
+    pdir = _make_upcoming(tmp_path)
+    # summary was generated from the preview alone...
+    (pdir / "summary.md").write_text(render_summary_md("- old", hash_input(PREVIEW), "2026-08-11"),
+                                     encoding="utf-8")
+    # ...then attachment excerpts arrive: hash changes, summary regenerates richer
+    (pdir / "agenda-attachments.md").write_text(
+        "# Agenda attachment excerpts\n\n## Expenditures - Complete\n\n"
+        "Grand Total $30,015,087.43\n", encoding="utf-8")
+    seen: list[str] = []
+
+    def gen(source: str) -> str:
+        seen.append(source)
+        return "- richer bullet\n"
+
+    assert summarize(tmp_path / "upcoming", today=TODAY, generate=gen) == 0
+    assert len(seen) == 1
+    assert "$30,015,087.43" in seen[0]      # excerpts reach the LLM input
+    assert "Agenda preview" in seen[0]      # preview still included
+    assert "- richer bullet" in (pdir / "summary.md").read_text(encoding="utf-8")
+
+
 def _make_meeting(tmp_path: Path, slug: str, with_preview: bool = True,
                   with_summary: bool = False) -> Path:
     mdir = tmp_path / "meetings" / slug
@@ -78,7 +102,7 @@ def _make_meeting(tmp_path: Path, slug: str, with_preview: bool = True,
         (mdir / "agenda-preview.md").write_text(PREVIEW, encoding="utf-8")
     if with_summary:
         (mdir / "summary.md").write_text(
-            render_summary_md("- archived", PREVIEW, "2026-08-11"), encoding="utf-8")
+            render_summary_md("- archived", hash_input(PREVIEW), "2026-08-11"), encoding="utf-8")
     return mdir
 
 

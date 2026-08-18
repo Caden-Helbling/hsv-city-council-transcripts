@@ -790,6 +790,73 @@ def render_agenda_preview(event: dict, sections: list[dict],
     return "\n".join(lines).rstrip() + "\n"
 
 
+ATTACHMENT_NAME_RE = re.compile(r"expenditure|summary of bids|improvement", re.I)
+_MATTER_KEY_RE = re.compile(r"matter\.aspx\?key=(\d+)", re.I)
+ATTACHMENT_CHAR_CAP = 12_000       # per attachment: keep head + tail (totals sit at the end)
+ATTACHMENTS_TOTAL_CAP = 48_000     # across the whole file — bounds the LLM prompt
+
+
+def fetch_agenda_attachments(pdf_path: Path, dest: Path,
+                             session: requests.Session) -> int:
+    """Write text excerpts of high-value agenda attachments next to the preview.
+
+    Agenda item titles carry no dollar figures — those live in Legistar
+    attachments (expenditure lists, bid summaries, improvement-fund
+    appropriations). Resolve the matter keys embedded in the agenda PDF's
+    links, list each matter's attachments via the Legistar API, and extract
+    text from the ones matching ATTACHMENT_NAME_RE so the LLM summary step
+    can quote real numbers. Everything is best-effort; returns the number of
+    excerpts written (0 = no file).
+    """
+    keys: list[str] = []
+    for url in extract_pdf_links(pdf_path):
+        m = _MATTER_KEY_RE.search(url)
+        if m and m.group(1) not in keys:
+            keys.append(m.group(1))
+    sections: list[str] = []
+    total = 0
+    for key in keys:
+        if total >= ATTACHMENTS_TOTAL_CAP:
+            break
+        try:
+            resp = _get_with_retry(f"{LEGISTAR_API}/matters/{key}/attachments",
+                                   session, attempts=2)
+            attachments = resp.json()
+        except Exception:  # noqa: BLE001 — a missing matter must not kill the batch
+            continue
+        if not isinstance(attachments, list):
+            continue
+        for att in attachments:
+            name = (att.get("MatterAttachmentName") or "").strip()
+            href = att.get("MatterAttachmentHyperlink")
+            if not name or not href or not ATTACHMENT_NAME_RE.search(name):
+                continue
+            if total >= ATTACHMENTS_TOTAL_CAP:
+                break
+            try:
+                tmp = Path(tempfile.gettempdir()) / f"hsvcc_att_{key}.pdf"
+                download_file(href, tmp, session)
+                text = _pdf_text(tmp)
+                tmp.unlink(missing_ok=True)
+            except Exception:  # noqa: BLE001
+                continue
+            if not text or not text.strip():
+                continue
+            text = text.strip()
+            if len(text) > ATTACHMENT_CHAR_CAP:
+                text = f"{text[:8000]}\n[... middle truncated ...]\n{text[-4000:]}"
+            sections.append(f"## {name}\n\n{text}\n")
+            total += len(text)
+    if not sections:
+        return 0
+    dest.write_text(
+        "# Agenda attachment excerpts\n\n"
+        "Machine-extracted from Legistar attachments for the plain-language "
+        "summary step; may be truncated.\n\n" + "\n".join(sections),
+        encoding="utf-8")
+    return len(sections)
+
+
 def _body_slug(body: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", body.lower()).strip("-")
 
@@ -820,7 +887,8 @@ def prune_upcoming(upcoming_dir: Path, meetings_dir: Path, today: date) -> None:
                 if ((mdir / "meeting.json").exists()
                         and Manifest.load(mdir).legistar_event_id == event_id):
                     # summary.md is the plain-language LLM layer, when generated
-                    for name in ("agenda-preview.md", "summary.md"):
+                    for name in ("agenda-preview.md", "agenda-attachments.md",
+                                 "summary.md"):
                         if (pdir / name).exists() and not (mdir / name).exists():
                             shutil.copy(pdir / name, mdir / name)
                     archived = True
@@ -860,15 +928,67 @@ def preview_agendas(window_days: int, upcoming_dir: Path, meetings_dir: Path,
             (pdir / "agenda-preview.md").write_text(
                 render_agenda_preview(event, sections, links, today.isoformat()),
                 encoding="utf-8")
+            n_att = fetch_agenda_attachments(pdir / "agenda.pdf",
+                                             pdir / "agenda-attachments.md", session)
             n_items = sum(len(s["items"]) for s in sections)
             n_broken = sum(1 for r in links if not r["ok"])
             print(f"ok: {pdir.name}: {n_items} agenda items, "
-                  f"{len(links)} links ({n_broken} broken)")
+                  f"{len(links)} links ({n_broken} broken), "
+                  f"{n_att} attachment excerpts")
         except Exception as exc:  # noqa: BLE001 — one bad meeting must not kill the batch
             failures += 1
             print(f"FAIL: {day} {body}: {exc}", file=sys.stderr)
     if not found:
         print(f"no upcoming agendas within {window_days} days of {today}")
+    return 1 if failures else 0
+
+
+def backfill_previews(meetings_dir: Path, session: requests.Session,
+                      today: date | None = None) -> int:
+    """Write agenda-preview.md for archived meetings that never got one.
+
+    Meetings that predate the Tuesday preview run (or whose agenda was
+    published after it ran) have agenda.pdf but no preview. Build the same
+    preview from the archived PDF + manifest so every meeting looks alike
+    and the summary backlog can reach it. Skips meetings whose PDF yields no
+    parseable agenda items — a topicless preview would only feed the
+    LLM-summary step garbage.
+    """
+    today = today or date.today()
+    failures = 0
+    for mdir in sorted(p for p in meetings_dir.iterdir() if p.is_dir()):
+        if not ((mdir / "meeting.json").exists() and (mdir / "agenda.pdf").exists()):
+            continue
+        try:
+            if not (mdir / "agenda-preview.md").exists():
+                manifest = Manifest.load(mdir)
+                text = _pdf_text(mdir / "agenda.pdf")
+                sections = parse_agenda_items(text) if text else []
+                if not any(s["items"] for s in sections):
+                    print(f"skip: {mdir.name}: no agenda items parsed from agenda.pdf")
+                    continue
+                event = {
+                    "EventDate": f"{manifest.date}T00:00:00",
+                    "EventBodyName": manifest.body or manifest.title,
+                    "EventInSiteURL": manifest.legistar_url,
+                    "EventAgendaFile": manifest.agenda_url,
+                }
+                links = check_links(extract_pdf_links(mdir / "agenda.pdf"), session)
+                (mdir / "agenda-preview.md").write_text(
+                    render_agenda_preview(event, sections, links, today.isoformat()),
+                    encoding="utf-8")
+                n_items = sum(len(s["items"]) for s in sections)
+                n_broken = sum(1 for r in links if not r["ok"])
+                print(f"ok: {mdir.name}: backfilled preview — {n_items} items, "
+                      f"{len(links)} links ({n_broken} broken)")
+            if not (mdir / "agenda-attachments.md").exists():
+                n_att = fetch_agenda_attachments(
+                    mdir / "agenda.pdf", mdir / "agenda-attachments.md", session)
+                if n_att:
+                    print(f"ok: {mdir.name}: backfilled {n_att} attachment excerpts")
+        except Exception as exc:  # noqa: BLE001 — one bad meeting must not kill the batch
+            failures += 1
+            print(f"FAIL: {mdir.name}: {exc}", file=sys.stderr)
     return 1 if failures else 0
 
 
@@ -945,6 +1065,9 @@ def main(argv: list[str] | None = None) -> int:
         help="fetch agendas for upcoming meetings; summarize topics + check links")
     p_prev.add_argument("--window", type=int, default=7,
                         help="days ahead to look for meetings (default 7)")
+    sub.add_parser(
+        "backfill-previews",
+        help="build agenda-preview.md from archived agenda.pdf where missing")
     args = parser.parse_args(argv)
     session = requests.Session()
     session.headers["User-Agent"] = "hsv-city-council-transcripts (personal archival tool)"
@@ -962,6 +1085,8 @@ def main(argv: list[str] | None = None) -> int:
         return extract_votes(args.slugs, MEETINGS_DIR, session)
     if args.command == "preview-agendas":
         return preview_agendas(args.window, UPCOMING_DIR, MEETINGS_DIR, session)
+    if args.command == "backfill-previews":
+        return backfill_previews(MEETINGS_DIR, session)
     return 0
 
 

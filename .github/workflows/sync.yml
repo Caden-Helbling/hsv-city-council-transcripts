@@ -37,6 +37,10 @@ jobs:
         run: |
           git add meetings/
           git diff --cached --quiet || git commit -m "chore: extract votes from minutes"
+      # catches agendas published after the Tuesday preview run (e.g. special
+      # meetings announced late) so every archived meeting gets a preview
+      - name: Backfill agenda previews from archived PDFs
+        run: python3 scripts/hsvcc.py backfill-previews
       # backlog check: meetings that passed while the local LLM was down get
       # their plain-language summary generated on the next run it's up for
       - name: Backfill plain-language summaries (local LLM)

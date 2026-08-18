@@ -56,6 +56,10 @@ python3 scripts/hsvcc.py extract-votes <slug> ...     # specific meetings
 # topics, and check every link inside the PDF -> upcoming/<date>-<body>/
 python3 scripts/hsvcc.py preview-agendas              # next 7 days
 python3 scripts/hsvcc.py preview-agendas --window 14
+
+# build agenda-preview.md from the archived agenda.pdf for meetings that
+# never got one (predates the preview run, or agenda posted late)
+python3 scripts/hsvcc.py backfill-previews
 ```
 
 `votes` resolves the adopted number to its Legistar matter, prints the
@@ -100,7 +104,13 @@ the `preview` job runs `preview-agendas` and commits `upcoming/` — agenda
 PDF, topic summary, and link-check results for each upcoming meeting. It then
 runs `scripts/summarize_agendas.py`, the repo's **one LLM step**: a single
 call per new/amended agenda that writes `summary.md` (3–8 plain-language
-bullets for the website's main page). It runs on the self-hosted
+bullets for the website's main page). Alongside the preview, the pipeline
+also writes `agenda-attachments.md` — deterministic text excerpts of
+high-value Legistar attachments (expenditure lists, bid summaries,
+improvement-fund appropriations, resolved via the Legistar API from the
+agenda's matter links) — so summaries can quote real dollar amounts; the
+prompt requires every figure to appear verbatim in the input. It runs on
+the self-hosted
 Qwen3.5-35B (llama-server on slayden) through its token-authed public
 endpoint — `SLAYDEN_API_TOKEN` repo secret; base URL and model overridable
 via `SUMMARY_BASE_URL` / `SUMMARY_MODEL`. Qwen must run with thinking
