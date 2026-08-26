@@ -136,3 +136,44 @@ def test_backlog_and_upcoming_processed_in_one_run(tmp_path: Path,
                      today=TODAY, generate=lambda _: "- bullet\n") == 0
     assert (up / "summary.md").exists()
     assert (missed / "summary.md").exists()
+
+
+def _make_past(tmp_path: Path, name: str = "2026-05-14-city-council-meeting") -> Path:
+    pdir = tmp_path / "meetings" / name
+    pdir.mkdir(parents=True)
+    (pdir / "agenda-preview.md").write_text(PREVIEW, encoding="utf-8")
+    return pdir
+
+
+def test_past_meeting_summary_is_never_regenerated(tmp_path: Path,
+                                                   monkeypatch: pytest.MonkeyPatch) -> None:
+    """A stale hash (e.g. after a prompt change) must not rewrite the archive."""
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
+    pdir = _make_past(tmp_path)
+    (pdir / "summary.md").write_text(
+        render_summary_md("- as published", hash_input("a different prompt"), "2026-05-15"),
+        encoding="utf-8")
+    assert summarize(tmp_path / "upcoming", tmp_path / "meetings", today=TODAY,
+                     generate=lambda _: pytest.fail("must not regenerate a past meeting")) == 0
+    assert "- as published" in (pdir / "summary.md").read_text(encoding="utf-8")
+
+
+def test_past_meeting_without_summary_is_backfilled(tmp_path: Path,
+                                                    monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
+    pdir = _make_past(tmp_path)
+    assert summarize(tmp_path / "upcoming", tmp_path / "meetings", today=TODAY,
+                     generate=lambda _: "- backfilled bullet\n") == 0
+    assert "- backfilled bullet" in (pdir / "summary.md").read_text(encoding="utf-8")
+
+
+def test_upcoming_still_regenerates_on_prompt_change(tmp_path: Path,
+                                                     monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
+    pdir = _make_upcoming(tmp_path)
+    (pdir / "summary.md").write_text(
+        render_summary_md("- old", hash_input("a different prompt"), "2026-08-11"),
+        encoding="utf-8")
+    assert summarize(tmp_path / "upcoming", tmp_path / "meetings", today=TODAY,
+                     generate=lambda _: "- regenerated\n") == 0
+    assert "- regenerated" in (pdir / "summary.md").read_text(encoding="utf-8")

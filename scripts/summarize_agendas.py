@@ -77,7 +77,7 @@ def generate_bullets(preview_md: str) -> str:
         headers={"Authorization": f"Bearer {os.environ['SLAYDEN_API_TOKEN']}"},
         json={
             "model": MODEL,
-            "max_tokens": 4096,
+            "max_tokens": 8192,
             "messages": [{"role": "user", "content": prompt}],
             "chat_template_kwargs": {"enable_thinking": False},
         },
@@ -108,14 +108,29 @@ def _source_md(pdir: Path) -> str:
 def hash_input(source_md: str) -> str:
     """What the source hash covers: the prompt template plus the LLM input.
 
-    Including the prompt means a prompt improvement regenerates every summary
-    on the next run instead of leaving old summaries on the old instructions.
+    Including the prompt means a prompt improvement regenerates the summary for
+    an UPCOMING meeting, so the next agenda gets the current instructions. Past
+    meetings are frozen once written - see _summarize_dir's backfill_only.
     """
     return PROMPT_PATH.read_text(encoding="utf-8") + source_md
 
 
 def _summarize_dir(pdir: Path, today: date, generate: "callable[[str], str]",
-                   label: str) -> None:
+                   label: str, backfill_only: bool = False) -> None:
+    """Write summary.md for one meeting directory.
+
+    backfill_only (past meetings): generate only when there is no summary at
+    all. A past meeting's summary is a record of what was published at the
+    time - a prompt change must not silently rewrite the archive, and the
+    agenda it described can no longer change. Only genuine gaps get filled.
+
+    Otherwise (upcoming meetings): regenerate whenever the hash moves, so an
+    amended agenda, a late-arriving attachment, or an improved prompt is
+    picked up before the meeting happens.
+    """
+    if backfill_only and (pdir / "summary.md").exists():
+        print(f"ok: {pdir.name}: summary.md exists; past meeting, left as published")
+        return
     source = _source_md(pdir)
     hashable = hash_input(source)
     if summary_is_current(pdir / "summary.md", hashable):
@@ -142,18 +157,18 @@ def summarize(upcoming_dir: Path, meetings_dir: Path | None = None,
     today = today or date.today()
     # upcoming meetings first (site main page), then the backlog of past
     # meetings whose summary was skipped while the LLM was down
-    dirs: list[tuple[Path, str]] = []
+    dirs: list[tuple[Path, str, bool]] = []
     if upcoming_dir.exists():
-        dirs += [(p, "") for p in sorted(upcoming_dir.iterdir()) if p.is_dir()]
+        dirs += [(p, "", False) for p in sorted(upcoming_dir.iterdir()) if p.is_dir()]
     if meetings_dir is not None and meetings_dir.exists():
-        dirs += [(p, " (backfilled)") for p in sorted(meetings_dir.iterdir())
+        dirs += [(p, " (backfilled)", True) for p in sorted(meetings_dir.iterdir())
                  if p.is_dir()]
-    todo = [(p, label) for p, label in dirs if (p / "agenda-preview.md").exists()]
+    todo = [d for d in dirs if (d[0] / "agenda-preview.md").exists()]
     if not todo:
         print("nothing to summarize")
         return 0
-    for pdir, label in todo:
-        _summarize_dir(pdir, today, generate, label)
+    for pdir, label, backfill_only in todo:
+        _summarize_dir(pdir, today, generate, label, backfill_only)
     return 0
 
 
