@@ -152,6 +152,19 @@ result is a **draft** — review names, numbers, and vote records against the
 transcript before committing (the script refuses to overwrite an existing
 notes.md without `--force`).
 
+Long meetings are handled in two passes. A 3-hour transcript can run past
+210,000 characters, which overflows the 64K context on its own, so
+`generate_notes.py` splits the transcript on sentence boundaries into
+overlapping portions, extracts each one against the agenda
+(`prompts/meeting-notes-chunk.md`), then merges the extracts into the same
+output contract (`prompts/meeting-notes-merge.md`). Meetings that fit stay on
+the single-pass path - one call that reads the whole transcript is the better
+draft, so chunking only kicks in when it has to. As of 2026-08-25 that is 2 of
+the 12 meetings on file (April 23 and May 14). Either path prints a warning
+listing any dollar figure in the draft that appears in none of the sources -
+a May 14 draft invented a $1,334,500 architect fee inside an otherwise accurate
+sentence, so the figures are worth checking first.
+
 ## Website
 
 The site is live at
