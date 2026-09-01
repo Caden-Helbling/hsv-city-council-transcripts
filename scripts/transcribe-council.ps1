@@ -18,6 +18,7 @@ $ErrorActionPreference = 'Stop'
 $repo = 'C:\Users\caden\code\hsv-city-council-transcripts'
 $logDir = 'D:\llm\logs'
 $logFile = Join-Path $logDir 'transcribe-council.log'
+$errFile = Join-Path $logDir 'transcribe-council.stderr.txt'
 
 if ($Register) {
     $action = New-ScheduledTaskAction -Execute 'powershell.exe' `
@@ -41,6 +42,27 @@ function Log($msg) {
 # NOTE: no 2>&1 on native commands anywhere in this script - under
 # ErrorActionPreference=Stop, PS 5.1 wraps redirected native stderr in
 # NativeCommandError and a routine git/whisper progress line would abort the run.
+#
+# But discarding stderr made a real failure undiagnosable: on 2026-08-28 whisper
+# failed 55s into the 2026-08-27 meeting and the log recorded only
+# 'WARN: transcribe reported failures' - hsvcc.py prints the reason to stderr, so
+# the reason was gone and the failure could not be reproduced afterwards. So the
+# redirect is handed to cmd.exe instead: cmd does the 2> itself, PowerShell only
+# ever sees stdout, and the captured stderr is appended to the log on failure.
+# python runs -u so stdout is unbuffered and progress lines land as they happen
+# rather than being lost in the pipe buffer when a run dies.
+# Sets $script:LastRunExit rather than returning the code: Log writes to the
+# pipeline via Write-Output, so a 'return $code' hands back every logged line
+# with the code appended, and the caller's '-ne 0' then tests an array.
+function Invoke-Logged($argline) {
+    if (Test-Path $errFile) { Remove-Item $errFile -Force }
+    cmd /c "python -u $argline 2>`"$errFile`"" | ForEach-Object { Log $_ }
+    $script:LastRunExit = $LASTEXITCODE
+    if ($script:LastRunExit -ne 0 -and (Test-Path $errFile)) {
+        Get-Content $errFile | Where-Object { $_.Trim() } |
+            ForEach-Object { Log ('  stderr: ' + $_) }
+    }
+}
 try {
     Set-Location $repo
     Log 'run start'
@@ -59,14 +81,16 @@ try {
     }
     Log ('pending: ' + ($pending -join ', '))
 
-    python scripts\hsvcc.py fetch-audio --all-pending | ForEach-Object { Log $_ }
-    if ($LASTEXITCODE -ne 0) { Log 'WARN: fetch-audio reported failures' }
+    Invoke-Logged 'scripts\hsvcc.py fetch-audio --all-pending'
+    if ($script:LastRunExit -ne 0) { Log 'WARN: fetch-audio reported failures' }
 
     Log 'stopping llama-server (frees VRAM for whisper)'
     Stop-Service llama-server -Force
     try {
-        python scripts\hsvcc.py transcribe --all-pending | ForEach-Object { Log $_ }
-        if ($LASTEXITCODE -ne 0) { Log 'WARN: transcribe reported failures' }
+        Invoke-Logged 'scripts\hsvcc.py transcribe --all-pending'
+        if ($script:LastRunExit -ne 0) {
+            Log 'WARN: transcribe reported failures (stderr above)'
+        }
     } finally {
         Log 'restarting llama-server + open-webui'
         Start-Service llama-server
