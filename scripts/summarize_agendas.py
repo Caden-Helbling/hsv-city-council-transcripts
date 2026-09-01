@@ -33,6 +33,9 @@ from pathlib import Path
 
 import requests
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import grounding  # noqa: E402
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 UPCOMING_DIR = REPO_ROOT / "upcoming"
 MEETINGS_DIR = REPO_ROOT / "meetings"
@@ -41,6 +44,7 @@ PROMPT_PATH = Path(__file__).resolve().parent / "prompts" / "laymans-summary.md"
 BASE_URL = os.environ.get("SUMMARY_BASE_URL", "https://slayden-api.duckdns.org")
 MODEL = os.environ.get("SUMMARY_MODEL", "qwen3.5-35b")
 TIMEOUT = 300
+
 _HASH_RE = re.compile(r"source-sha256: ([0-9a-f]{64})")
 
 
@@ -115,6 +119,48 @@ def hash_input(source_md: str) -> str:
     return PROMPT_PATH.read_text(encoding="utf-8") + source_md
 
 
+def _generate_grounded(pdir: Path, source: str, preview: str,
+                       generate: "callable[[str], str]") -> str:
+    """Generate a summary, refusing to publish one that invents a dollar figure.
+
+    Two tiers, because the failures are not equally bad.
+
+    A fabricated dollar figure or company name is worse than no summary at all:
+    the site falls back to the verbatim agenda topic list, which is honest, while
+    a made-up number on a civic page is not. So those get one regeneration, and
+    if the retry is also bad nothing is written and the caller logs it.
+
+    Missing agenda items only warn. A partial summary still helps a reader, and
+    the coverage check is a heuristic over word rarity - it should not be able to
+    take the page down on its own.
+
+    Kept cheap deliberately: one extra call at most, twice a week.
+    """
+    attempts = []
+    for attempt in (1, 2):
+        bullets = generate(source)
+        hard = grounding.report(bullets, source)          # figures + names
+        soft = grounding.uncovered_items(bullets, preview)
+        attempts.append((bullets, hard, soft))
+        if not hard:
+            break
+        print(f"warn: {pdir.name}: attempt {attempt} not grounded:", file=sys.stderr)
+        for line in hard:
+            print(f"  {line}", file=sys.stderr)
+
+    bullets, hard, soft = attempts[-1]
+    if hard:
+        raise RuntimeError(
+            f"{len(hard)} ungrounded claim(s) after {len(attempts)} attempts; "
+            f"refusing to publish (site falls back to the topic list)")
+    if soft:
+        print(f"warn: {pdir.name}: {len(soft)} agenda item(s) not covered:",
+              file=sys.stderr)
+        for item_id, title in soft:
+            print(f"  {item_id} {title[:80]}", file=sys.stderr)
+    return bullets
+
+
 def _summarize_dir(pdir: Path, today: date, generate: "callable[[str], str]",
                    label: str, backfill_only: bool = False) -> None:
     """Write summary.md for one meeting directory.
@@ -136,8 +182,9 @@ def _summarize_dir(pdir: Path, today: date, generate: "callable[[str], str]",
     if summary_is_current(pdir / "summary.md", hashable):
         print(f"ok: {pdir.name}: summary.md up to date")
         return
+    preview = (pdir / "agenda-preview.md").read_text(encoding="utf-8")
     try:
-        bullets = generate(source)
+        bullets = _generate_grounded(pdir, source, preview, generate)
         (pdir / "summary.md").write_text(
             render_summary_md(bullets, hashable, today.isoformat()),
             encoding="utf-8")

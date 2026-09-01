@@ -26,6 +26,7 @@ from pathlib import Path
 import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import grounding  # noqa: E402
 from hsvcc import Manifest, _pdf_text  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -55,28 +56,9 @@ def trim_attachments(attachments_md: str, cap: int = ATTACHMENT_SECTION_CAP) -> 
     return "\n".join(out)
 
 
-_MONEY = re.compile(r"\$\s?\d[\d,]*(?:\.\d{2})?")
-
-
-def unsupported_figures(notes: str, sources: str) -> list[str]:
-    """Dollar figures in the draft that appear in none of the sources.
-
-    The grounding rules tell the model every figure must be verbatim from the
-    agenda, attachments, or transcript, and it mostly obeys - but a May 14 draft
-    invented a $1,334,500 architect fee that appears nowhere, wrapped in an
-    otherwise accurate sentence. Notes are a reviewed draft, so the useful
-    move is to point the reviewer straight at the figures worth checking.
-
-    Comparison ignores commas and spaces, so "$8,000" matches "$8 000". A
-    restatement like "12 million" written as "$12,000,000" is still reported -
-    it is not a fabrication, but it is worth a glance.
-    """
-    flat = re.sub(r"[,\s]", "", sources)
-    flagged = []
-    for fig in sorted(set(_MONEY.findall(notes))):
-        if re.sub(r"[,\s]", "", fig).lstrip("$") not in flat:
-            flagged.append(fig)
-    return flagged
+# The figure check lives in grounding.py, shared with the agenda summarizer.
+# Re-exported so callers and tests can reach it from either module.
+unsupported_figures = grounding.unsupported_figures
 
 
 def _sources(mdir: Path) -> tuple[str, str, str, str, str]:
@@ -203,13 +185,23 @@ def generate(prompt: str, expect: str = "# Meeting Notes") -> str:
 
 
 def _checked(notes: str, agenda: str, attachments: str, transcript: str) -> str:
-    """Pass the draft through, printing any dollar figure the sources do not back."""
-    flagged = unsupported_figures(notes, f"{agenda}\n{attachments}\n{transcript}")
+    """Pass the draft through, printing what the sources do not back.
+
+    Names are not checked here - see grounding.report. Figures are, and they
+    earn it: the first real run of this path (2026-08-27) invented $1,126,000
+    for the Moores Mill surplus sale and $45,090 for an engineering contract,
+    both for items passed in a consolidated batch that the transcript never
+    discusses aloud. It also flagged $6,752.94, which is genuine - the
+    transcript says "6752 dollars and 94 cents" and converting that is correct.
+    Read the list as "check these", not "these are wrong".
+    """
+    flagged = grounding.report(notes, f"{agenda}\n{attachments}\n{transcript}",
+                               check_names=False)
     if flagged:
-        print(f"warn: {len(flagged)} dollar figure(s) not found in the sources - "
-              f"verify these before committing:", file=sys.stderr)
-        for fig in flagged:
-            print(f"  {fig}", file=sys.stderr)
+        print(f"warn: {len(flagged)} item(s) the sources do not back - "
+              f"verify before committing:", file=sys.stderr)
+        for line in flagged:
+            print(f"  {line}", file=sys.stderr)
     return notes
 
 
