@@ -29,6 +29,9 @@ if ($Register) {
     Register-ScheduledTask -TaskName 'HSV council whisper transcription' `
         -Action $action -Trigger $trigger -Settings $settings -Force | Out-Null
     Write-Output 'Registered task: HSV council whisper transcription (Fridays 8 PM)'
+    Write-Output 'NOTE: this registers an INTERACTIVE principal, so the task only fires'
+    Write-Output 'while caden is signed in. If it had been converted to S4U, re-run'
+    Write-Output 'scripts\elevated-transcribe-s4u.ps1 (elevated) to restore that.'
     exit 0
 }
 

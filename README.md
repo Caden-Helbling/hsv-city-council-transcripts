@@ -103,8 +103,9 @@ is pruned (matched by Legistar event id, with a 14-day grace period).
 the `preview` job runs `preview-agendas` and commits `upcoming/` — agenda
 PDF, topic summary, and link-check results for each upcoming meeting. It then
 runs `scripts/summarize_agendas.py`, the repo's **one LLM step**: a single
-call per new/amended agenda that writes `summary.md` (3–8 plain-language
-bullets for the website's main page). Alongside the preview, the pipeline
+call per new/amended agenda that writes `summary.md` (plain-language bullets
+for the website's main page — one per agenda item, so a reader sees everything
+the council will take up; 40-plus for a full regular meeting). Alongside the preview, the pipeline
 also writes `agenda-attachments.md` — deterministic text excerpts of
 high-value Legistar attachments (expenditure lists, bid summaries,
 improvement-fund appropriations, resolved via the Legistar API from the
@@ -142,6 +143,24 @@ for meetings with a published audio asset but no transcript (exits untouched
 most weeks), downloads the opus release assets, stops llama-server to free
 VRAM, transcribes on the GPU, restarts the LLM stack in a `finally`, and
 commits + pushes (which redeploys the site). Log: `D:\llm\logs\transcribe-council.log`.
+The log now carries whisper's stderr too: a 2026-08-28 run failed 55s in and
+recorded only `WARN: transcribe reported failures`, because the reason went to
+stderr while only stdout was piped. cmd.exe does the redirect now (PowerShell 5.1
+wraps redirected native stderr in a terminating NativeCommandError) and python
+runs `-u`, so progress lines land as they happen.
+
+That task is **Interactive**, so it only fires while caden is signed in;
+`StartWhenAvailable` defers a logged-off Friday to the next logon rather than
+skipping it, trading a predictable 8 PM window for an unpredictable one.
+`scripts\elevated-transcribe-s4u.ps1` (run elevated) converts it to S4U so it
+runs logged out. Two things must come with that flip, which is why it is a script
+and not a checkbox: llama-server's ACL grants start/stop to `IU` (Interactive
+Users, S-1-5-4) and an S4U token is a *batch* logon carrying no S-1-5-4, so the
+ACE has to name the account itself; and S4U has no DPAPI master key, so Git
+Credential Manager cannot supply the push token and the repo must be on an SSH
+remote first. The script refuses to run until origin is SSH, verifies the result
+under a real S4U token using a throwaway probe task, and rolls both changes back
+if either check fails. `-Revert` undoes it.
 `captions.txt` is available immediately either way, when Castus publishes it.
 
 **Meeting notes** (`notes.md`) are drafted with the local LLM too:
