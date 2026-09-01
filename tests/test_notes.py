@@ -123,9 +123,29 @@ def test_unsupported_figures_ignores_comma_and_space_differences() -> None:
     assert gn.unsupported_figures("costs $1,012,230.91", "$ 1012230.91 paid") == []
 
 
-def test_unsupported_figures_reports_restated_amounts() -> None:
-    """"12 million" rewritten as "$12,000,000" is not fabricated, but is worth a look."""
-    assert gn.unsupported_figures("$12,000,000 total", "about 12 million dollars") == ["$12,000,000"]
+def test_spoken_and_scaled_amounts_count_as_present() -> None:
+    """A source that says an amount in words is still stating it.
+
+    Meeting notes are checked against a Whisper transcript, so amounts arrive as
+    speech. Flagging these produced three false alarms on the 2026-08-27 draft
+    and one on 2026-05-14 - every figure a review then nearly "corrected" out of
+    accurate notes.
+    """
+    assert gn.unsupported_figures("$12,000,000 total", "about 12 million dollars") == []
+    assert gn.unsupported_figures(
+        "a $45,090 contract",
+        "a lump-sum design contract amount of forty five thousand ninety dollars") == []
+    assert gn.unsupported_figures(
+        "sold for $1,126,000",
+        "purchase price is one point one two six million dollars") == []
+    assert gn.unsupported_figures(
+        "assessed $6,752.94 in cleanup costs",
+        "a total amount of 6752 dollars and 94 cents") == []
+
+
+def test_a_figure_in_no_form_at_all_is_still_reported() -> None:
+    assert gn.unsupported_figures("the fee was $88,412",
+                                  "a contract for twelve thousand dollars") == ["$88,412"]
 
 
 def test_notes_for_flags_unsupported_figures(monkeypatch, capsys) -> None:

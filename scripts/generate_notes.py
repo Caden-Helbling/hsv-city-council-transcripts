@@ -187,13 +187,15 @@ def generate(prompt: str, expect: str = "# Meeting Notes") -> str:
 def _checked(notes: str, agenda: str, attachments: str, transcript: str) -> str:
     """Pass the draft through, printing what the sources do not back.
 
-    Names are not checked here - see grounding.report. Figures are, and they
-    earn it: the first real run of this path (2026-08-27) invented $1,126,000
-    for the Moores Mill surplus sale and $45,090 for an engineering contract,
-    both for items passed in a consolidated batch that the transcript never
-    discusses aloud. It also flagged $6,752.94, which is genuine - the
-    transcript says "6752 dollars and 94 cents" and converting that is correct.
-    Read the list as "check these", not "these are wrong".
+    Names are not checked here - see grounding.report.
+
+    Read the output as "check these", never as "these are wrong". On the first
+    real run of this path (2026-08-27) all three flagged figures were genuine:
+    the transcript stated them as speech - "one point one two six million
+    dollars", "forty five thousand ninety dollars" - and writing them as digits
+    was correct. grounding.spoken_numbers now understands those forms, but the
+    lesson generalises past the fix: a flag is a place to look, and the sources
+    decide.
     """
     flagged = grounding.report(notes, f"{agenda}\n{attachments}\n{transcript}",
                                check_names=False)

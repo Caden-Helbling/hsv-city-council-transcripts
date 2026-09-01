@@ -1,22 +1,25 @@
 #!/usr/bin/env python3
 """Deterministic checks on what the local model wrote, before it is published.
 
-Two real defects motivated this, both of which reached the public site:
-
-  - 2026-08-25: the agenda summary covered 6 of 85 items, silently dropping the
-    FBI/schools/police threat-assessment MOU, outside counsel for the fire
-    apparatus antitrust litigation, and a whole landscape contract re-award.
-  - 2026-05-14: a meeting-notes draft invented a $1,334,500 architect fee,
-    wrapped in an otherwise accurate sentence about a real agenda item.
-
-Both are caught by string comparison against the sources - no second model, no
+The defect that motivated this is real and reached the public site: the
+2026-08-25 agenda summary covered 6 of 85 items, silently dropping the
+FBI/schools/police threat-assessment MOU, outside counsel for the fire apparatus
+antitrust litigation, and a whole landscape contract re-award. uncovered_items
+catches that by string comparison against the agenda - no second model, no
 second opinion to trust. An LLM verifier can hallucinate its own approval; a
-substring check cannot. Prompt wording alone did not hold: the map pass that
-invented that fee had been told, in the same prompt, that every dollar figure
-must appear verbatim.
+substring check cannot.
 
-These are deliberately conservative. A miss is tolerable; a false accusation
-that trains the reader to ignore warnings is not.
+The figure and name checks have not yet caught a fabrication. Four amounts were
+flagged during development and every one turned out to be genuine, stated in the
+source in a form the check could not see: "one point one two six million
+dollars", "forty five thousand ninety dollars", "6752 dollars and 94 cents",
+"$12 million". A review acting on those flags would have edited correct numbers
+out of accurate notes - which nearly happened. spoken_numbers exists because of
+that, and the episode is the reason for the rule below.
+
+These checks are deliberately conservative, and the asymmetry is the whole
+design. A miss is tolerable. A false accusation is not: it costs a reader's
+trust, and acted on carelessly it corrupts a document that was right.
 """
 from __future__ import annotations
 
@@ -28,6 +31,108 @@ from collections import Counter
 _MONEY = re.compile(r"\$\s?\d[\d,]*(?:\.\d{2})?")
 
 
+# ------------------------------------------------------- numbers said out loud
+
+# Meeting notes are checked against a Whisper transcript, where people say
+# amounts rather than write them: "forty five thousand ninety dollars", "one
+# point one two six million". Comparing digit strings to that flags correct
+# figures as invented - it flagged all three in the 2026-08-27 draft, all three
+# genuine, and the review that followed nearly "corrected" accurate numbers out
+# of the notes.
+# So spoken forms are converted to digits and added to the haystack.
+
+_ONES = {
+    "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
+    "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12,
+    "thirteen": 13, "fourteen": 14, "fifteen": 15, "sixteen": 16,
+    "seventeen": 17, "eighteen": 18, "nineteen": 19,
+}
+_TENS = {"twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, "sixty": 60,
+         "seventy": 70, "eighty": 80, "ninety": 90}
+_SCALES = {"hundred": 100, "thousand": 1000, "million": 1000000,
+           "billion": 1000000000}
+_GLUE = {"and", "point"}
+
+_NUMWORD = re.compile(
+    r"\b(?:" + "|".join(list(_ONES) + list(_TENS) + list(_SCALES) + list(_GLUE))
+    + r")\b(?:[\s-]+(?:" + "|".join(list(_ONES) + list(_TENS) + list(_SCALES) + list(_GLUE))
+    + r")\b)*", re.I)
+
+
+def _value_of(words: list[str]) -> float | None:
+    """Evaluate one run of number words. None when it says no number."""
+    if "point" in words:
+        i = words.index("point")
+        head, tail = words[:i], words[i + 1:]
+        scale = 1
+        while tail and tail[-1] in _SCALES:
+            scale *= _SCALES[tail.pop()]
+        if not all(w in _ONES for w in tail) or not tail:
+            return None
+        whole = _value_of(head) if head else 0
+        if whole is None:
+            return None
+        frac = float("0." + "".join(str(_ONES[w]) for w in tail))
+        return (whole + frac) * scale
+
+    total = current = 0
+    seen = False
+    for w in words:
+        if w in _ONES:
+            current += _ONES[w]; seen = True
+        elif w in _TENS:
+            current += _TENS[w]; seen = True
+        elif w == "hundred":
+            current = (current or 1) * 100; seen = True
+        elif w in _SCALES:
+            total += (current or 1) * _SCALES[w]; current = 0; seen = True
+        # "and" is glue and contributes nothing
+    return total + current if seen else None
+
+
+def spoken_numbers(text: str) -> set[str]:
+    """Digit strings for every amount `text` states in words.
+
+    "forty five thousand ninety" -> {"45090"}, and a following "and ninety four
+    cents" folds in as {"45090.94"}. Both the whole number and the cents form
+    are emitted, since a draft may write either.
+    """
+    out: set[str] = set()
+    low = text.lower()
+
+    # "12 million" - a digit with a spoken scale, which the word scanner below
+    # cannot see because the leading token is not a number word.
+    for m in re.finditer(r"(\d[\d,]*(?:\.\d+)?)\s+(hundred|thousand|million|billion)\b", low):
+        try:
+            val = float(m.group(1).replace(",", "")) * _SCALES[m.group(2)]
+        except ValueError:
+            continue
+        out.add(str(int(val)) if val == int(val) else str(val))
+
+    # "6752 dollars and 94 cents" - the agenda PDFs write it this way
+    for m in re.finditer(r"(\d[\d,]*)\s+dollars?\s+and\s+(\d{1,2})\s+cents?", low):
+        out.add("%s.%02d" % (m.group(1).replace(",", ""), int(m.group(2))))
+
+    for m in _NUMWORD.finditer(low):
+        words = [w for w in re.split(r"[\s-]+", m.group(0)) if w]
+        val = _value_of(words)
+        if val is None:
+            continue
+        if val == int(val):
+            out.add(str(int(val)))
+        else:
+            out.add(("%.10f" % val).rstrip("0").rstrip("."))
+        # "<amount> dollars and <n> cents"
+        tail = low[m.end():m.end() + 40]
+        cents = re.match(r"\s*dollars?\s+and\s+(.{0,30}?)\s+cents?", tail)
+        if cents:
+            cw = [w for w in re.split(r"[\s-]+", cents.group(1)) if w]
+            cv = _value_of(cw)
+            if cv is not None and 0 <= cv < 100:
+                out.add("%d.%02d" % (int(val), int(cv)))
+    return out
+
+
 def _flat(text: str) -> str:
     return re.sub(r"[,\s]", "", text)
 
@@ -36,11 +141,12 @@ def unsupported_figures(text: str, sources: str) -> list[str]:
     """Dollar figures in `text` that appear nowhere in `sources`.
 
     Commas and spaces are ignored, so "$8,000" matches a source "$8 000" and the
-    "$    13,999,801.48" spacing real expenditure tables use. A restatement -
-    "12 million" written as "$12,000,000" - is still reported: not a fabrication,
-    but worth a glance before it goes out.
+    "$    13,999,801.48" spacing real expenditure tables use. Amounts the source
+    only states in words count as present too - see spoken_numbers - because a
+    transcript says "forty five thousand ninety dollars" and writing that as
+    $45,090 is correct, not invented.
     """
-    flat = _flat(sources)
+    flat = _flat(sources) + "|" + "|".join(sorted(spoken_numbers(sources)))
     return [fig for fig in sorted(set(_MONEY.findall(text)))
             if _flat(fig).lstrip("$") not in flat]
 

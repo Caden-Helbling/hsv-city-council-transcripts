@@ -181,8 +181,10 @@ the single-pass path - one call that reads the whole transcript is the better
 draft, so chunking only kicks in when it has to. As of 2026-08-25 that is 2 of
 the 12 meetings on file (April 23 and May 14). Either path prints a warning
 listing any dollar figure in the draft that appears in none of the sources -
-a May 14 draft invented a $1,334,500 architect fee inside an otherwise accurate
-sentence, so the figures are worth checking first.
+so the figures are worth checking first. Treat a flag as "look here", not as
+proof: every figure flagged so far has turned out to be genuine, stated in the
+transcript as speech ("forty five thousand ninety dollars") rather than digits.
+The checker understands spoken forms now, but the sources always decide.
 
 ## Website
 
