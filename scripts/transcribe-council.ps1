@@ -1,7 +1,11 @@
 # transcribe-council.ps1 - scheduled Whisper transcription for the council archive.
 #
-# Runs weekly (Friday 8 PM, after the morning sync has published audio release
-# assets) as a non-elevated Interactive scheduled task on slayden. Safe to run
+# Runs daily (8 PM, after the morning sync has published audio release assets)
+# as a scheduled task on slayden. It was weekly-on-Friday until 2026-09-07, for
+# a council that meets Thursday evenings - but work sessions and special
+# sessions happen on other days, and one of those could then wait most of a
+# week for its transcript. Daily is nearly free because the task no-ops when
+# nothing is pending; see scripts\elevated-transcribe-daily.ps1. Safe to run
 # any time:
 #   - exits immediately when no meeting needs transcription (llama-server untouched)
 #   - stops llama-server only for the transcription window; restart is in finally
@@ -23,12 +27,12 @@ $errFile = Join-Path $logDir 'transcribe-council.stderr.txt'
 if ($Register) {
     $action = New-ScheduledTaskAction -Execute 'powershell.exe' `
         -Argument ('-NoProfile -ExecutionPolicy Bypass -File "' + $repo + '\scripts\transcribe-council.ps1"')
-    $trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Friday -At 8pm
+    $trigger = New-ScheduledTaskTrigger -Daily -At 8pm
     $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable `
         -ExecutionTimeLimit (New-TimeSpan -Hours 3)
     Register-ScheduledTask -TaskName 'HSV council whisper transcription' `
         -Action $action -Trigger $trigger -Settings $settings -Force | Out-Null
-    Write-Output 'Registered task: HSV council whisper transcription (Fridays 8 PM)'
+    Write-Output 'Registered task: HSV council whisper transcription (daily, 8 PM)'
     Write-Output 'NOTE: this registers an INTERACTIVE principal, so the task only fires'
     Write-Output 'while caden is signed in. If it had been converted to S4U, re-run'
     Write-Output 'scripts\elevated-transcribe-s4u.ps1 (elevated) to restore that.'

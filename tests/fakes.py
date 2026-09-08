@@ -4,6 +4,16 @@ from typing import Any
 ARCHIVE_HTML = '<a href="https://www.huntsvilleal.gov/videos/huntsville-city-council-meeting-june-25-2026-2/">x</a>'
 VIDEO_HTML = ('<h1 class="full-width-headline">Huntsville City Council Meeting &#8211; June 25, 2026</h1>'
               '<iframe src="https://cloud.castus.tv/vod/hsv-tv/embed/6a3dcff79537260002c64cd9"></iframe>')
+# A Legistar calendar page listing one meeting whose agenda is not posted yet
+# (the anchor carries no href) - the state the API cannot report at all.
+CALENDAR_HTML = (
+    '<table><tr id="ctl00_ContentPlaceHolder1_gridCalendar_ctl00__0">'
+    '<td><a id="a_gridCalendar_ctl00_ctl04_hypBody" href="d">'
+    "City Council Regular Meeting</a></td><td>7/23/2026</td>"
+    '<td><span id="a_gridCalendar_ctl00_ctl04_lblTime">5:30 PM</span></td>'
+    '<td><a id="a_gridCalendar_ctl00_ctl04_hypAgenda">Not available</a></td>'
+    "</tr></table>"
+)
 LEGISTAR_EVENTS = [{
     "EventId": 1223, "EventDate": "2026-06-25T00:00:00",
     "EventBodyName": "City Council Regular Meeting",
@@ -52,6 +62,8 @@ class FakeSession:
             return FakeResponse(text=ARCHIVE_HTML)
         if "/videos/" in url:
             return FakeResponse(text=VIDEO_HTML, status=self.video_status)
+        if "Calendar.aspx" in url:
+            return FakeResponse(text=CALENDAR_HTML)
         if "webapi.legistar.com" in url:
             return FakeResponse(payload=LEGISTAR_EVENTS)
         if url.endswith(".pdf"):

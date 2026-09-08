@@ -23,6 +23,7 @@ import requests
 CASTUS_API = "https://imd0mxanj2.execute-api.us-west-2.amazonaws.com"
 LEGISTAR_API = "https://webapi.legistar.com/v1/huntsvilleal"
 ARCHIVE_URL = "https://www.huntsvilleal.gov/videocategory/city-council-meetings/"
+CALENDAR_URL = "https://huntsvilleal.legistar.com/Calendar.aspx"
 TIMEOUT = 60
 REPO_ROOT = Path(__file__).resolve().parent.parent
 MEETINGS_DIR = REPO_ROOT / "meetings"
@@ -52,13 +53,22 @@ def parse_archive_page(html: str) -> list[str]:
     return seen
 
 
+def _strip_tags(fragment: str, sep: str = "") -> str:
+    """Tags out, entities decoded. `sep` replaces each tag.
+
+    An h1 title wants "" (the tags sit inside a single run of text); a table
+    cell wants " " (its tags separate fields that would otherwise run
+    together).
+    """
+    return html_lib.unescape(re.sub(r"<[^>]+>", sep, fragment)).strip()
+
+
 def parse_video_page(html: str) -> tuple[str, str]:
     h1 = _H1_RE.search(html)
     castus = _CASTUS_RE.search(html)
     if not h1 or not castus:
         raise ValueError("video page missing h1 title or castus embed")
-    title = html_lib.unescape(re.sub(r"<[^>]+>", "", h1.group(1))).strip()
-    return title, castus.group(1)
+    return _strip_tags(h1.group(1)), castus.group(1)
 
 
 def date_from_slug(url: str) -> date | None:
@@ -174,6 +184,65 @@ def fetch_legistar_events(since: date, session: requests.Session) -> list[dict]:
     if not isinstance(events, list):
         raise ValueError(f"unexpected Legistar events shape: {type(events)}")
     return events
+
+
+# --- Legistar calendar page (schedule) -------------------------------------
+#
+# The Web API only publishes an event once its agenda is posted: measured
+# 2026-09-07, /events knew nothing past 2026-09-01 while the calendar page
+# already listed 09-10, 09-18, 09-24 and 09-29. So the API cannot answer "what
+# is scheduled", only "what has an agenda". The calendar page answers the
+# former, and `coverage` uses it to turn a silently-missed meeting into a
+# failing check.
+#
+# Two grids carry the schedule and neither is complete alone:
+# gridUpcomingMeetings is capped at the next few meetings (it omitted 09-24 on
+# 2026-09-07) while gridCalendar shows the current month only. Take the union.
+_CAL_GRIDS = ("gridUpcomingMeetings", "gridCalendar")
+_CAL_BODY_RE = re.compile(r'<a id="[^"]*hypBody"[^>]*>(.*?)</a>', re.S)
+_CAL_DATE_RE = re.compile(r">(\d{1,2})/(\d{1,2})/(\d{4})<")
+_CAL_TIME_RE = re.compile(r'<span id="[^"]*lblTime"[^>]*>(.*?)</span>', re.S)
+_CAL_AGENDA_RE = re.compile(r'<a id="[^"]*hypAgenda"([^>]*)>')
+
+
+def parse_legistar_calendar(page: str) -> list[dict]:
+    """Scheduled council meetings from the Legistar calendar HTML.
+
+    Matched on the stable Telerik cell ids (hypBody / lblTime / hypAgenda)
+    rather than column position, so a re-ordered or added column does not
+    silently shift the fields.
+    """
+    seen: dict[tuple[str, str], dict] = {}
+    for grid in _CAL_GRIDS:
+        row_re = re.compile(
+            r'<tr[^>]*id="[^"]*' + grid + r'_ctl00__\d+"[^>]*>(.*?)</tr>', re.S)
+        for row in row_re.findall(page):
+            body_m = _CAL_BODY_RE.search(row)
+            date_m = _CAL_DATE_RE.search(row)
+            if not (body_m and date_m):
+                continue
+            month, day, year = (int(g) for g in date_m.groups())
+            body = _strip_tags(body_m.group(1), " ")
+            if "council" not in body.lower():
+                continue
+            time_m = _CAL_TIME_RE.search(row)
+            agenda_m = _CAL_AGENDA_RE.search(row)
+            entry = {
+                "date": date(year, month, day).isoformat(),
+                "body": body,
+                "time": _strip_tags(time_m.group(1), " ") if time_m else None,
+                # "Not available" renders as an <a> with no href
+                "has_agenda": bool(agenda_m and "href=" in agenda_m.group(1)),
+            }
+            key = (entry["date"], body.lower())
+            # listed in both grids: keep whichever row already sees an agenda
+            if key not in seen or entry["has_agenda"]:
+                seen[key] = entry
+    return sorted(seen.values(), key=lambda e: (e["date"], e["body"]))
+
+
+def fetch_legistar_calendar(session: requests.Session) -> list[dict]:
+    return parse_legistar_calendar(_get_with_retry(CALENDAR_URL, session).text)
 
 
 def match_event(meeting_date: date, title: str, events: list[dict]) -> dict | None:
@@ -939,7 +1008,25 @@ def preview_agendas(window_days: int, upcoming_dir: Path, meetings_dir: Path,
             failures += 1
             print(f"FAIL: {day} {body}: {exc}", file=sys.stderr)
     if not found:
+        # "no agendas" and "no meetings" are very different, and the old
+        # message could not tell them apart: an event is absent from the API
+        # until its agenda is posted, so a scheduled meeting whose agenda is
+        # late looked exactly like a week with no council business. Name the
+        # scheduled meetings so a missed preview is visible in the log.
         print(f"no upcoming agendas within {window_days} days of {today}")
+        try:
+            upcoming = [e for e in fetch_legistar_calendar(session)
+                        if today <= date.fromisoformat(e["date"]) <= end]
+        except Exception as exc:  # noqa: BLE001 - advisory only
+            print(f"  warn: could not read the Legistar calendar: {exc}",
+                  file=sys.stderr)
+            upcoming = []
+        for entry in upcoming:
+            print(f"  scheduled: {entry['date']} {entry['body']} "
+                  f"{entry['time'] or ''} - agenda not published yet")
+        if upcoming:
+            print(f"  {len(upcoming)} meeting(s) scheduled in the window with "
+                  f"no agenda to preview; a later run picks them up")
     return 1 if failures else 0
 
 
@@ -1040,6 +1127,138 @@ def votes(number: str, session: requests.Session, meetings_dir: Path) -> int:
     return 0
 
 
+# every archived meeting should end up with all of these
+COVERAGE_ARTIFACTS = (
+    ("agenda.pdf", "agenda"),
+    ("agenda-preview.md", "preview"),
+    ("summary.md", "summary"),
+    ("transcript/whisper-medium.txt", "transcript"),
+)
+
+
+def coverage(since: date, meetings_dir: Path, upcoming_dir: Path,
+             session: requests.Session, today: date | None = None,
+             grace_days: int = 10, strict: bool = False) -> int:
+    """Cross-check the council schedule against the archive; name every gap.
+
+    Three sources, because each is blind in a different direction:
+      - the Legistar CALENDAR page knows what is scheduled (see CALENDAR_URL)
+      - the Legistar API knows which events have an agenda or minutes file,
+        but does not list an event at all until its agenda is posted
+      - the video archive is all `discover` can see, and a meeting only enters
+        it once the city posts the video
+
+    So the one failure nothing else in the pipeline notices - a meeting that
+    was scheduled, has now happened, and has no folder - is only visible by
+    comparing all three. The video normally lands a day or two after the
+    meeting, so a recent absence is reported as pending; past `grace_days` it
+    becomes a gap, and --strict then fails the run so it cannot pass quietly.
+    """
+    today = today or date.today()
+    scheduled = fetch_legistar_calendar(session)
+    events = fetch_legistar_events(since, session)
+
+    archived: list[tuple[Path, Manifest]] = []
+    for mdir in sorted(p for p in meetings_dir.iterdir() if p.is_dir()):
+        if (mdir / "meeting.json").exists():
+            archived.append((mdir, Manifest.load(mdir)))
+    folders_by_date: dict[str, list[Path]] = {}
+    for mdir, manifest in archived:
+        folders_by_date.setdefault(manifest.date, []).append(mdir)
+    scheduled_by_date: dict[str, list[dict]] = {}
+    for entry in scheduled:
+        scheduled_by_date.setdefault(entry["date"], []).append(entry)
+
+    gaps: list[str] = []
+    pending: list[str] = []
+
+    def record(day: date, message: str) -> None:
+        """A gap once the meeting is older than the grace period, else pending."""
+        age = (today - day).days
+        (gaps if age > grace_days else pending).append(f"{message} ({age}d ago)")
+
+    print(f"Scheduled on the Legistar calendar ({len(scheduled)} meetings):")
+    if not scheduled:
+        # Treated as a gap, not as "nothing scheduled". The month grid always
+        # carries the current month, so an empty parse in practice means
+        # Legistar changed its markup - and this check failing open would be
+        # worse than the silent misses it exists to catch.
+        print("  (none)")
+        gaps.append("the Legistar calendar page yielded no council meetings - "
+                    "the schedule scrape is probably broken, so a missed "
+                    "meeting would not be detected (check CALENDAR_URL and "
+                    "parse_legistar_calendar against the live page)")
+    for day_iso in sorted(scheduled_by_date):
+        day = date.fromisoformat(day_iso)
+        entries = scheduled_by_date[day_iso]
+        have = len(folders_by_date.get(day_iso, []))
+        for entry in entries:
+            bits = ["agenda posted" if entry["has_agenda"] else "agenda NOT posted"]
+            if day >= today:
+                pdir = upcoming_dir / f"{day_iso}-{_body_slug(entry['body'])}"
+                built = (pdir / "agenda-preview.md").exists()
+                bits.append("preview built" if built else "preview pending")
+                bits.append(f"{(day - today).days}d out")
+            else:
+                bits.append(f"archived {have}/{len(entries)}")
+            label = entry["body"]
+            when = entry["time"] or ""
+            print(f"  {day_iso}  {label:32s} {when:>8s}  " + ", ".join(bits))
+        if day < today and have < len(entries):
+            record(day, f"{day_iso}: {len(entries) - have} scheduled meeting(s) "
+                        f"with no archive folder")
+
+    # The calendar page only shows the current month, so a meeting that slipped
+    # in an earlier month is invisible there; the API covers those, being
+    # complete for any past meeting whose agenda was published.
+    for event in events:
+        day_iso = (event.get("EventDate") or "")[:10]
+        try:
+            day = date.fromisoformat(day_iso)
+        except ValueError:
+            continue
+        if not since <= day < today or folders_by_date.get(day_iso):
+            continue
+        if day_iso in scheduled_by_date:
+            continue  # already reported from the calendar
+        record(day, f"{day_iso}: {event.get('EventBodyName')} is in Legistar "
+                    f"with no archive folder")
+
+    print(f"\nArchived meetings ({len(archived)}):")
+    for mdir, manifest in archived:
+        missing = [label for rel, label in COVERAGE_ARTIFACTS
+                   if not (mdir / rel).exists()]
+        if not manifest.status.get("has_audio_asset"):
+            missing.append("audio asset")
+        if missing:
+            gaps.append(f"{mdir.name}: missing {', '.join(missing)}")
+        flag = "GAP " if missing else "ok  "
+        detail = f" - missing {', '.join(missing)}" if missing else ""
+        print(f"  {flag}{mdir.name}{detail}")
+
+    # Explains the empty votes.json files: extract-votes has nothing to parse
+    # until the clerk publishes Final minutes. Informational, never a gap.
+    minutes_file = {e.get("EventId"): e.get("EventMinutesFile") for e in events}
+    awaiting = [m.slug for _, m in archived
+                if not minutes_file.get(m.legistar_event_id)]
+    if awaiting:
+        print(f"\nAwaiting Final minutes: {len(awaiting)} of {len(archived)} "
+              f"archived meetings. votes.json cannot be extracted until the "
+              f"clerk publishes them - the city cadence, not a pipeline fault.")
+
+    pending = list(dict.fromkeys(pending))
+    gaps = list(dict.fromkeys(gaps))
+    if pending:
+        print(f"\nPending ({len(pending)}, inside the {grace_days}-day grace "
+              f"period - the video is probably not posted yet):")
+        for line in pending:
+            print(f"  {line}")
+    print(f"\n{len(gaps)} gap(s)")
+    for line in gaps:
+        print(f"  GAP: {line}", file=sys.stderr)
+    return 1 if (gaps and strict) else 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="hsvcc", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -1068,6 +1287,15 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser(
         "backfill-previews",
         help="build agenda-preview.md from archived agenda.pdf where missing")
+    p_cov = sub.add_parser(
+        "coverage",
+        help="cross-check the Legistar schedule against the archive; list gaps")
+    p_cov.add_argument("--since", type=date.fromisoformat, default=date(2026, 4, 1))
+    p_cov.add_argument("--grace", type=int, default=10,
+                       help="days a past meeting may go unarchived before it "
+                            "counts as a gap (default 10)")
+    p_cov.add_argument("--strict", action="store_true",
+                       help="exit non-zero when there are gaps (CI alarm)")
     args = parser.parse_args(argv)
     session = requests.Session()
     session.headers["User-Agent"] = "hsv-city-council-transcripts (personal archival tool)"
@@ -1085,6 +1313,9 @@ def main(argv: list[str] | None = None) -> int:
         return extract_votes(args.slugs, MEETINGS_DIR, session)
     if args.command == "preview-agendas":
         return preview_agendas(args.window, UPCOMING_DIR, MEETINGS_DIR, session)
+    if args.command == "coverage":
+        return coverage(args.since, MEETINGS_DIR, UPCOMING_DIR, session,
+                        grace_days=args.grace, strict=args.strict)
     if args.command == "backfill-previews":
         return backfill_previews(MEETINGS_DIR, session)
     return 0

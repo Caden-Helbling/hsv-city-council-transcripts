@@ -9,9 +9,9 @@
 #
 # WHY
 #
-# 'HSV council whisper transcription' runs Fridays 8 PM as an Interactive task,
-# so it only fires while caden is signed in. StartWhenAvailable means a logged-off
-# Friday is not lost - it runs at the next logon instead - but that pulls the LLM
+# 'HSV council whisper transcription' runs at 8 PM as an Interactive task, so it
+# only fires while caden is signed in. StartWhenAvailable means a logged-off
+# night is not lost - it runs at the next logon instead - but that pulls the LLM
 # stack down at an unpredictable moment rather than a known 8 PM window. S4U
 # ("whether logged on or not", no stored password) is what the other four tasks
 # on this box already use.

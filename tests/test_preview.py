@@ -234,3 +234,23 @@ def test_preview_agendas_skips_meetings_outside_window(tmp_path: Path) -> None:
     rc = preview_agendas(2, upcoming, meetings, FakeSession(), today=date(2026, 6, 20))
     assert rc == 0
     assert not upcoming.exists() or not list(upcoming.iterdir())
+
+
+def test_preview_agendas_names_scheduled_meetings_with_no_agenda(
+        tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    """An empty run must say which of the two empties it was.
+
+    A meeting is absent from the Legistar API until its agenda is posted, so
+    "no agendas in the window" used to read identically whether the council
+    had no business or the clerk was simply late. The calendar knows the
+    difference; the log now says so.
+    """
+    upcoming, meetings = tmp_path / "upcoming", tmp_path / "meetings"
+    meetings.mkdir()
+    # 2026-07-20: the fake calendar's 07-23 meeting is in window, but the fake
+    # API's only event (06-25) is not, so nothing is previewable
+    rc = preview_agendas(7, upcoming, meetings, FakeSession(), today=date(2026, 7, 20))
+    out = capsys.readouterr().out
+    assert rc == 0
+    assert "scheduled: 2026-07-23 City Council Regular Meeting" in out
+    assert "agenda not published yet" in out
