@@ -127,6 +127,42 @@ def _demote_headings(md_text: str) -> str:
     return re.sub(r"^(#{1,5})(\s)", r"#\1\2", md_text, flags=re.M)
 
 
+# A summary is a lead section plus grouped `###` sections (see
+# scripts/prompts/laymans-summary.md). On the index card only the lead is shown
+# open; the groups go behind a disclosure, because a regular agenda runs 40-plus
+# items and printing all of them inline made the front page a wall of text
+# longer than the verbatim topic list collapsed underneath it.
+#
+# The cut is duplicated from summarize_agendas.lead_and_rest rather than
+# imported: build_site is deliberately dependency-light and network-free, and
+# importing that module would pull requests into the site build.
+_SUMMARY_H3 = re.compile(r"^###\s", re.M)
+
+# The generated disclaimer is the one standalone italic line at the end of a
+# summary. Matched as markdown (a lone emphasized paragraph) rather than by its
+# wording, so it stays visible on the card without coupling to the exact text.
+_ITALIC_FOOTER = re.compile(r"\n\s*(\*[^*\n][^\n]*\*)\s*$")
+
+
+def split_summary_card(summary_md: str) -> tuple[str, str, str]:
+    """Split a summary into (lead, grouped remainder, trailing italic footer).
+
+    A summary with fewer than two `###` headings predates the grouped shape, or
+    the model ignored it; the remainder comes back empty and the caller renders
+    the whole thing open, as it always did.
+    """
+    footer = ""
+    m = _ITALIC_FOOTER.search(summary_md)
+    if m:
+        footer = m.group(1)
+        summary_md = summary_md[:m.start()]
+    heads = list(_SUMMARY_H3.finditer(summary_md))
+    if len(heads) < 2:
+        return summary_md.strip(), "", footer
+    cut = heads[1].start()
+    return summary_md[:cut].strip(), summary_md[cut:].strip(), footer
+
+
 def page(title: str, body: str, *, root: str) -> str:
     return f"""<!doctype html>
 <html lang="en">
@@ -195,7 +231,15 @@ def render_upcoming_card(entry: dict) -> str:
     if when_where:
         parts.append(f'<p class="meta">{html.escape(when_where)}</p>')
     if entry.get("summary_md"):
-        parts.append(f'<div class="md">{_md(_demote_headings(entry["summary_md"]))}</div>')
+        lead, rest, footer = split_summary_card(entry["summary_md"])
+        parts.append(f'<div class="md">{_md(_demote_headings(lead))}</div>')
+        if rest:
+            parts.append("<details><summary>Everything else on this agenda"
+                         "</summary>")
+            parts.append(f'<div class="md">{_md(_demote_headings(rest))}</div>')
+            parts.append("</details>")
+        if footer:
+            parts.append(f'<div class="md">{_md(footer)}</div>')
     else:
         parts.append('<p class="note">Plain-language summary not generated yet — '
                      "the full topic list is below.</p>")

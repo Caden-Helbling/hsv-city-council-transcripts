@@ -3,11 +3,24 @@ from pathlib import Path
 
 import pytest
 
-from summarize_agendas import (hash_input, render_summary_md, source_hash,
+from summarize_agendas import (MAX_ATTEMPTS, hash_input, lead_and_rest,
+                               render_summary_md, source_hash,
+                               structure_problems, structure_report,
                                summarize, summary_is_current)
 
 TODAY = date(2026, 8, 18)
 PREVIEW = "# Agenda preview\n\n- item\n"
+
+
+def shaped(lead: str = "- The vote that matters",
+           rest: str = "- A routine appointment") -> str:
+    """The shape prompts/laymans-summary.md asks for: a lead, then groups.
+
+    Test generators return this so structure_problems stays quiet and the
+    off-shape retry does not fire in tests that count generate() calls.
+    """
+    return (f"### What matters most\n\n{lead}\n\n"
+            f"### Routine business\n\n{rest}\n")
 
 
 def _make_upcoming(tmp_path: Path) -> Path:
@@ -30,7 +43,7 @@ def test_generates_summary_with_hash_marker(tmp_path: Path,
     monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
     pdir = _make_upcoming(tmp_path)
     assert summarize(tmp_path / "upcoming", today=TODAY,
-                     generate=lambda _: "- The city plans X\n") == 0
+                     generate=lambda _: shaped("- The city plans X")) == 0
     text = (pdir / "summary.md").read_text(encoding="utf-8")
     assert "- The city plans X" in text
     assert f"source-sha256: {source_hash(hash_input(PREVIEW))}" in text
@@ -54,7 +67,7 @@ def test_regenerates_when_agenda_amended(tmp_path: Path,
     (pdir / "summary.md").write_text(
         render_summary_md("- old", hash_input("different preview"), "2026-08-11"), encoding="utf-8")
     assert not summary_is_current(pdir / "summary.md", hash_input(PREVIEW))
-    summarize(tmp_path / "upcoming", today=TODAY, generate=lambda _: "- new\n")
+    summarize(tmp_path / "upcoming", today=TODAY, generate=lambda _: shaped("- new"))
     assert "- new" in (pdir / "summary.md").read_text(encoding="utf-8")
 
 
@@ -85,7 +98,7 @@ def test_attachment_excerpts_enrich_source_and_hash(tmp_path: Path,
 
     def gen(source: str) -> str:
         seen.append(source)
-        return "- richer bullet\n"
+        return shaped("- richer bullet")
 
     assert summarize(tmp_path / "upcoming", today=TODAY, generate=gen) == 0
     assert len(seen) == 1
@@ -117,7 +130,7 @@ def test_backfills_past_meeting_missing_summary(tmp_path: Path,
 
     def gen(preview: str) -> str:
         calls.append(preview)
-        return "- backfilled bullet\n"
+        return shaped("- backfilled bullet")
 
     assert summarize(tmp_path / "upcoming", tmp_path / "meetings",
                      today=TODAY, generate=gen) == 0
@@ -133,7 +146,7 @@ def test_backlog_and_upcoming_processed_in_one_run(tmp_path: Path,
     up = _make_upcoming(tmp_path)
     missed = _make_meeting(tmp_path, "2026-08-13-city-council-meeting")
     assert summarize(tmp_path / "upcoming", tmp_path / "meetings",
-                     today=TODAY, generate=lambda _: "- bullet\n") == 0
+                     today=TODAY, generate=lambda _: shaped("- bullet")) == 0
     assert (up / "summary.md").exists()
     assert (missed / "summary.md").exists()
 
@@ -163,7 +176,7 @@ def test_past_meeting_without_summary_is_backfilled(tmp_path: Path,
     monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
     pdir = _make_past(tmp_path)
     assert summarize(tmp_path / "upcoming", tmp_path / "meetings", today=TODAY,
-                     generate=lambda _: "- backfilled bullet\n") == 0
+                     generate=lambda _: shaped("- backfilled bullet")) == 0
     assert "- backfilled bullet" in (pdir / "summary.md").read_text(encoding="utf-8")
 
 
@@ -175,5 +188,214 @@ def test_upcoming_still_regenerates_on_prompt_change(tmp_path: Path,
         render_summary_md("- old", hash_input("a different prompt"), "2026-08-11"),
         encoding="utf-8")
     assert summarize(tmp_path / "upcoming", tmp_path / "meetings", today=TODAY,
-                     generate=lambda _: "- regenerated\n") == 0
+                     generate=lambda _: shaped("- regenerated")) == 0
     assert "- regenerated" in (pdir / "summary.md").read_text(encoding="utf-8")
+
+
+# --------------------------------------------------------------- output shape
+
+def test_shaped_summary_has_no_structure_problems() -> None:
+    assert structure_problems(shaped()) == []
+
+
+def test_flat_bullet_list_is_reported_as_off_shape() -> None:
+    problems = structure_problems("- one\n- two\n- three\n")
+    assert any("### headings" in p for p in problems)
+
+
+def test_boilerplate_opener_is_reported() -> None:
+    body = shaped("- The council will vote to rezone 12 acres")
+    problems = structure_problems(body)
+    assert any("The council" in p for p in problems)
+
+
+def test_bolded_boilerplate_opener_is_still_reported() -> None:
+    """The prefix hides behind bold just as easily: **The council will vote**."""
+    body = shaped("- **The council will vote** on a rezoning")
+    assert any("The council" in p for p in structure_problems(body))
+
+
+def test_council_filler_after_the_dash_is_reported() -> None:
+    body = shaped("- **Budget amendment** — the council amends the budget")
+    assert any("after the dash" in p for p in structure_problems(body))
+
+
+def test_volunteered_item_number_is_reported() -> None:
+    """Misattribution is invisible to grounding, so the citation itself is banned."""
+    body = shaped("- **TIF D8 hearing** — a hearing on a new district "
+                  "(Ordinance 26-761).")
+    assert any("ordinance/resolution number" in p for p in structure_problems(body))
+
+
+def test_trailing_item_number_is_reported() -> None:
+    body = shaped("- **Travel expenses** — travel expenses are authorized, "
+                  "Resolution No. 26-796.")
+    assert any("ordinance/resolution number" in p for p in structure_problems(body))
+
+
+def test_stated_count_is_reported() -> None:
+    """'five separate properties' above a list of four — an observed failure."""
+    body = shaped("- **Rezonings** — hearings are set on five separate properties")
+    assert any("state a count" in p for p in structure_problems(body))
+
+
+def test_acreages_and_terms_are_not_mistaken_for_counts() -> None:
+    body = shaped("- **536.68 acres east of US Hwy 72 E** — rezoned to Residence 1",
+                  "- **Beautification Board** — three-year terms expiring in 2029")
+    assert structure_problems(body) == []
+
+
+def test_all_caps_source_text_is_reported() -> None:
+    body = shaped("- **Expenditures** — drawn from the 6.5 MILL SCHOOL PROPERTY "
+                  "TAX fund")
+    assert any("ALL-CAPS" in p for p in structure_problems(body))
+
+
+def test_short_acronyms_are_not_mistaken_for_shouting() -> None:
+    body = shaped('- **TIF D8** — a hearing on the district, per US Hwy 431',
+                  "- **FSA administration** — an amendment with WageWorks, LLC")
+    assert structure_problems(body) == []
+
+
+def test_amended_ordinance_number_is_allowed() -> None:
+    """The agenda ties 89-79 to the salary plan; that citation is not a guess."""
+    body = shaped("- **Public safety salary schedule** — amends Ordinance No. "
+                  "89-79, the classification and salary plan, to add pay rates.")
+    assert structure_problems(body) == []
+
+
+def test_overlong_lead_is_reported() -> None:
+    lead = "\n".join(f"- item {i}" for i in range(8))
+    problems = structure_problems(shaped(lead))
+    assert any("lead has 8 bullets" in p for p in problems)
+
+
+def test_lead_length_not_judged_without_groups() -> None:
+    """A body with no groups is already reported; do not pile on a second flag."""
+    flat = "### What matters most\n\n" + "\n".join(f"- item {i}" for i in range(9))
+    assert not any("bullets" in p for p in structure_problems(flat))
+
+
+def test_renamed_lead_heading_is_reported() -> None:
+    body = "### Highlights\n\n- a\n\n### Routine business\n\n- b\n"
+    problems = structure_problems(body)
+    assert any("expected '### What matters most'" in p for p in problems)
+
+
+def test_lead_and_rest_splits_at_second_heading() -> None:
+    lead, rest = lead_and_rest(shaped("- lead bullet", "- group bullet"))
+    assert "lead bullet" in lead and "group bullet" not in lead
+    assert rest.startswith("### Routine business")
+    assert "group bullet" in rest
+
+
+def test_lead_and_rest_keeps_an_ungrouped_body_whole() -> None:
+    lead, rest = lead_and_rest("- one\n- two\n")
+    assert lead == "- one\n- two"
+    assert rest == ""
+
+
+def test_off_shape_summary_is_retried_then_published_anyway(
+        tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    """Shape earns one retry but never blocks: accurate and ugly beats nothing."""
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
+    pdir = _make_upcoming(tmp_path)
+    calls: list[str] = []
+
+    def flat(_: str) -> str:
+        calls.append("call")
+        return "- The council will vote on item one\n"
+
+    assert summarize(tmp_path / "upcoming", today=TODAY, generate=flat) == 0
+    assert len(calls) == MAX_ATTEMPTS            # bounded retries, then publish
+    text = (pdir / "summary.md").read_text(encoding="utf-8")
+    assert "The council will vote on item one" in text
+
+
+def test_weight_ranks_two_drafts_with_the_same_problem_kind() -> None:
+    """The bug this caught: both drafts flagged 'the council' filler, one 38
+    bullets' worth and one 8, and an empty-or-not test picked the worse."""
+    worse = shaped("- **A** — the council does a", "- **B** — the council does b")
+    better = shaped("- **A** — the council does a", "- **B** — adopts b")
+    worse_problems, worse_weight = structure_report(worse)
+    better_problems, better_weight = structure_report(better)
+    assert len(worse_problems) == len(better_problems) == 1
+    assert better_weight < worse_weight
+
+
+def test_missing_shape_outweighs_any_number_of_per_bullet_nits() -> None:
+    flat = "- **A** — the council does a\n"
+    nitty = shaped("- **A** — the council does a", "- **B** — the council does b")
+    assert structure_report(nitty)[1] < structure_report(flat)[1]
+
+
+def test_less_bad_draft_wins_when_both_are_off_shape(
+        tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
+    pdir = _make_upcoming(tmp_path)
+    bodies = iter([
+        "- The council will vote on one\n- The council will vote on two\n",
+        shaped("- **Budget** — the council adopts it"),   # off-shape, but barely
+        "- The council will vote on three\n",
+    ])
+    assert summarize(tmp_path / "upcoming", today=TODAY,
+                     generate=lambda _: next(bodies)) == 0
+    text = (pdir / "summary.md").read_text(encoding="utf-8")
+    assert "**Budget**" in text
+    assert "The council will vote on one" not in text
+
+
+def test_coverage_outranks_shape_when_choosing_a_draft(
+        tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    """A well-shaped draft that drops an item loses to an ugly complete one."""
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
+    pdir = tmp_path / "upcoming" / "2026-09-10-city-council-regular-meeting"
+    pdir.mkdir(parents=True)
+    (pdir / "agenda-preview.md").write_text(
+        "# Agenda preview\n\n## Topics\n\n"
+        "- 2026-999 Ordinance to exempt hearing aids from city sales tax.\n"
+        "- 2026-935 Ordinance approving the Vandiver Road culvert.\n",
+        encoding="utf-8")
+    bodies = iter([
+        shaped("- **Vandiver Road culvert** — approves the work"),   # drops 999
+        shaped("- **Hearing aid sales tax exemption** — the council exempts them",
+               "- **Vandiver Road culvert** — the council approves the work"),
+        shaped("- **Vandiver Road culvert** — approves the work"),   # drops 999
+    ])
+    assert summarize(tmp_path / "upcoming", today=TODAY,
+                     generate=lambda _: next(bodies)) == 0
+    text = (pdir / "summary.md").read_text(encoding="utf-8")
+    assert "Hearing aid sales tax exemption" in text     # complete, though ugly
+
+
+def test_shaped_retry_is_preferred_over_the_flat_first_attempt(
+        tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
+    pdir = _make_upcoming(tmp_path)
+    bodies = iter(["- flat and boilerplate\n", shaped("- properly grouped")])
+
+    assert summarize(tmp_path / "upcoming", today=TODAY,
+                     generate=lambda _: next(bodies)) == 0
+    text = (pdir / "summary.md").read_text(encoding="utf-8")
+    assert "properly grouped" in text
+    assert "flat and boilerplate" not in text
+
+
+def test_shaped_summary_is_generated_once(tmp_path: Path,
+                                          monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
+    _make_upcoming(tmp_path)
+    calls: list[str] = []
+
+    def gen(_: str) -> str:
+        calls.append("call")
+        return shaped()
+
+    assert summarize(tmp_path / "upcoming", today=TODAY, generate=gen) == 0
+    assert len(calls) == 1                       # a good draft is not retried
+
+
+def test_rendered_summary_nests_groups_under_the_wrapper_heading() -> None:
+    text = render_summary_md(shaped(), hash_input(PREVIEW), "2026-09-09")
+    assert text.index("## In plain language") < text.index("### What matters most")
+    assert "### Routine business" in text
