@@ -89,8 +89,13 @@ the largest number on most agendas and must never be a one-line placeholder.
 Its attachment excerpt carries a fund table. Write one bullet giving:
 
 - the grand total and the date range it covers, and
-- the three largest funds by amount, each with its amount, and each named with
-  the table's own words.
+- the three largest funds, each with its amount.
+
+**Do not rank the fund table yourself.** The text below ends with a section
+headed "Largest funds in that expenditure report (computed)" that already
+names the three largest and their amounts. Use exactly those three, with those
+amounts. Reading the ranking off the table by eye gets it wrong — the largest
+fund has been left out that way more than once.
 
 **The fund table is printed in capitals. Never copy capitals into your
 summary** — it reads as shouting on the page. Lower-case the fund name and

@@ -6,7 +6,8 @@ import pytest
 from summarize_agendas import (MAX_ATTEMPTS, hash_input, lead_and_rest,
                                render_summary_md, source_hash,
                                structure_problems, structure_report,
-                               summarize, summary_is_current)
+                               summarize, summary_is_current, top_funds,
+                               TOP_FUNDS_HEADING)
 
 TODAY = date(2026, 8, 18)
 PREVIEW = "# Agenda preview\n\n- item\n"
@@ -233,9 +234,85 @@ def test_trailing_item_number_is_reported() -> None:
     assert any("ordinance/resolution number" in p for p in structure_problems(body))
 
 
+FUND_TABLE = """# Agenda attachment excerpts
+
+## Expenditures - Complete
+
+City Cost Amount: $ 42,341,723.17
+
+FUND ACCOUNT
+         FUND NAME                                 AMOUNT
+  1000    GENERAL FUND                    $    11,276,708.72
+  1005    HEALTH & LIFE BENEFITS          $      (400,608.86)
+  2101    COMMUNITY DEV COVID             $              -
+  3010    6.5 MILL SCHOOL PROPERTY TAX    $     9,068,273.03
+  3020    1990 CAPITAL IMPROVEMENTS       $     4,134,468.63
+  6000    WATER POLLUTION CONTROL         $     3,443,192.04
+"""
+
+
+def test_top_funds_ranks_the_table_deterministically() -> None:
+    """The model ranked this wrong in four of five drafts; the parser cannot."""
+    assert top_funds(FUND_TABLE) == [
+        ("GENERAL FUND", "$11,276,708.72"),
+        ("6.5 MILL SCHOOL PROPERTY TAX", "$9,068,273.03"),
+        ("1990 CAPITAL IMPROVEMENTS", "$4,134,468.63"),
+    ]
+
+
+def test_top_funds_skips_zero_and_credit_rows() -> None:
+    names = [n for n, _ in top_funds(FUND_TABLE, n=99)]
+    assert "COMMUNITY DEV COVID" not in names     # "-" is not an expenditure
+    assert "HEALTH & LIFE BENEFITS" not in names  # a credit is not "largest"
+
+
+def test_top_funds_is_empty_without_a_table() -> None:
+    assert top_funds("no fund table here") == []
+
+
+def test_computed_ranking_reaches_the_llm_input(tmp_path: Path,
+                                                monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
+    pdir = _make_upcoming(tmp_path)
+    (pdir / "agenda-attachments.md").write_text(FUND_TABLE, encoding="utf-8")
+    seen: list[str] = []
+
+    def gen(source: str) -> str:
+        seen.append(source)
+        return shaped("- **Expenditures** — $11,276,708.72, $9,068,273.03, "
+                      "$4,134,468.63")
+
+    assert summarize(tmp_path / "upcoming", today=TODAY, generate=gen) == 0
+    assert TOP_FUNDS_HEADING in seen[0]
+    assert seen[0].index("GENERAL FUND $11,276,708.72") > seen[0].index(TOP_FUNDS_HEADING)
+
+
+def test_draft_omitting_a_top_fund_loses_to_one_that_keeps_it(
+        tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
+    pdir = _make_upcoming(tmp_path)
+    (pdir / "agenda-attachments.md").write_text(FUND_TABLE, encoding="utf-8")
+    bodies = iter([
+        # drops the largest fund for a smaller one - the observed live failure
+        shaped("- **Expenditures** — $9,068,273.03, $4,134,468.63, $3,443,192.04"),
+        shaped("- **Expenditures** — $11,276,708.72, $9,068,273.03, $4,134,468.63"),
+        shaped("- **Expenditures** — $9,068,273.03 only"),
+    ])
+    assert summarize(tmp_path / "upcoming", today=TODAY,
+                     generate=lambda _: next(bodies)) == 0
+    assert "$11,276,708.72" in (pdir / "summary.md").read_text(encoding="utf-8")
+
+
 def test_stated_count_is_reported() -> None:
     """'five separate properties' above a list of four — an observed failure."""
     body = shaped("- **Rezonings** — hearings are set on five separate properties")
+    assert any("state a count" in p for p in structure_problems(body))
+
+
+def test_bare_count_before_a_verb_is_reported() -> None:
+    """'three are appointed to X and Y' — was four, and read as a total."""
+    body = shaped("- **Boards** — three are appointed or reappointed to the "
+                  "Human Relations Commission and City Tree Commission")
     assert any("state a count" in p for p in structure_problems(body))
 
 

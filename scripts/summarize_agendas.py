@@ -144,12 +144,18 @@ _SHOUTING_RE = re.compile(r"\b[A-Z]{3,}(?:\s+[A-Z&.]{3,}){2,}\b")
 # four separate runs, most recently promising "five separate properties" above a
 # list of four. Anchored on a number word plus a countable noun so acreages,
 # dates, dollar amounts and "three-year terms" are left alone.
+_NUMBER_WORD = (r"\b(?:two|three|four|five|six|seven|eight|nine|ten|eleven|"
+                r"twelve)\s+")
 _COUNT_RE = re.compile(
-    r"\b(?:two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\s+"
-    r"(?:\w+\s+){0,2}"
+    # "four public hearings", "five board reappointments"
+    _NUMBER_WORD + r"(?:\w+\s+){0,2}"
     r"(?:hearings|items|properties|parcels|reappointments|appointments|"
     r"contracts|ordinances|resolutions|settlements|agreements|nominations|"
-    r"seats|permits|amendments|easements)\b", re.I)
+    r"seats|permits|amendments|easements|members|others|people|residents)\b"
+    # "three are appointed to ...", the bare form that reads as a total. It
+    # slipped past the noun list above and was wrong: three named to the Human
+    # Relations Commission plus one to the City Tree Commission is four.
+    r"|" + _NUMBER_WORD + r"(?:are|is|were|will)\b", re.I)
 
 
 def lead_and_rest(body: str) -> tuple[str, str]:
@@ -253,6 +259,55 @@ def structure_problems(body: str) -> list[str]:
     return structure_report(body)[0]
 
 
+# A fund row in the expenditure attachment: account number, name, amount.
+# Zero rows print as "-" and credits as "(400,608.86)".
+_FUND_ROW_RE = re.compile(
+    r"^\s*(\d{4})\s+(.+?)\s+\$\s*(\([\d,]+\.\d{2}\)|[\d,]+\.\d{2}|-)\s*$", re.M)
+
+TOP_FUNDS_HEADING = "## Largest funds in that expenditure report (computed)"
+
+
+def _fund_amount(raw: str) -> float:
+    if raw.strip() == "-":
+        return 0.0
+    negative = raw.startswith("(")
+    value = float(raw.strip("()").replace(",", ""))
+    return -value if negative else value
+
+
+def top_funds(attachments_md: str, n: int = 3) -> list[tuple[str, str]]:
+    """The n largest funds in the expenditure table, as (name, amount) strings.
+
+    Sorting a 40-row table is not something to ask a 35B model to do: across
+    five drafts of the 2026-09-10 agenda it named the correct three funds once,
+    variously promoting water pollution control or the debt property tax over
+    the general fund - which is the LARGEST line in the report. Every figure it
+    used was copied verbatim from the table, so grounding.report saw nothing
+    wrong; the claim "the three largest" was simply false.
+
+    So the ranking is computed here and handed to the model as input. Ties and
+    zero or negative rows fall out naturally: a credit sorts below every real
+    expenditure, which is what "largest" should mean.
+    """
+    rows = [(name.strip(), raw, _fund_amount(raw))
+            for _, name, raw in _FUND_ROW_RE.findall(attachments_md)]
+    rows = [r for r in rows if r[2] > 0]
+    rows.sort(key=lambda r: -r[2])
+    return [(name, f"${raw}") for name, raw, _ in rows[:n]]
+
+
+def _top_funds_block(attachments_md: str) -> str:
+    """The computed ranking, appended to the LLM input; empty when unparseable."""
+    funds = top_funds(attachments_md)
+    if len(funds) < 3:
+        return ""
+    lines = "\n".join(f"- {name} {amount}" for name, amount in funds)
+    return (f"\n\n{TOP_FUNDS_HEADING}\n\n"
+            "These are the three largest, already ranked. Use exactly these "
+            "three, with these amounts, and do not re-rank the table yourself.\n\n"
+            f"{lines}\n")
+
+
 def _source_md(pdir: Path) -> str:
     """The LLM's full input: agenda preview + attachment excerpts when present.
 
@@ -262,7 +317,8 @@ def _source_md(pdir: Path) -> str:
     source = (pdir / "agenda-preview.md").read_text(encoding="utf-8")
     att = pdir / "agenda-attachments.md"
     if att.exists():
-        source += "\n\n" + att.read_text(encoding="utf-8")
+        attachments = att.read_text(encoding="utf-8")
+        source += "\n\n" + attachments + _top_funds_block(attachments)
     return source
 
 
@@ -307,6 +363,12 @@ def _generate_grounded(pdir: Path, source: str, preview: str,
         body = generate(source)
         hard = grounding.report(body, source)             # figures + names
         shape, weight = structure_report(body)
+        missing_funds = [f"expenditure report omits {name} ({amount}), one of "
+                         f"the three largest funds"
+                         for name, amount in top_funds(source)
+                         if amount not in body]
+        shape += missing_funds
+        weight += 10 * len(missing_funds)
         soft = grounding.uncovered_items(body, preview)
         attempts.append((body, hard, shape, weight, soft))
         if not hard and not shape and not soft:
