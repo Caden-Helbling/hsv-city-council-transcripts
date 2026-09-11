@@ -1,4 +1,4 @@
-<!-- AI-generated (qwen3.5-35b) from agenda-preview.md on 2026-09-09; source-sha256: 852d8443015959a4fdacf86c0a9caca03c62e07c35121aef65be195de4e12817 -->
+<!-- AI-generated (qwen3.5-35b) from agenda-preview.md on 2026-09-09; source-sha256: 3109b449e7e74223538098763b17db5740e314d9cc3f969ec61c4a67e9437834 -->
 ## In plain language
 
 ### What matters most

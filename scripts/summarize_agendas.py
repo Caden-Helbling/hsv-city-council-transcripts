@@ -322,13 +322,30 @@ def _source_md(pdir: Path) -> str:
     return source
 
 
+# The preview's own provenance stamp, rewritten on every preview run:
+#     - Generated 2026-09-10 by `hsvcc.py preview-agendas` (verbatim ...)
+# See hsvcc.py's write_preview. Excluded from the hash below.
+_GENERATED_STAMP_RE = re.compile(
+    r"^- Generated \d{4}-\d{2}-\d{2} by `hsvcc\.py preview-agendas`.*$", re.M)
+
+
 def hash_input(source_md: str) -> str:
     """What the source hash covers: the prompt template plus the LLM input.
 
     Including the prompt means a prompt improvement regenerates the summary for
     an UPCOMING meeting, so the next agenda gets the current instructions. Past
     meetings are frozen once written - see _summarize_dir's backfill_only.
+
+    The preview's "Generated <date>" stamp is excluded, because it changes on
+    every preview run whether or not the agenda did. That was harmless while
+    previews ran twice a week; once 20d3579 moved the schedules to daily it
+    meant every upcoming summary was regenerated every day, burning an LLM call
+    and committing a diff for an agenda nobody had touched - and since drafts
+    vary run to run, quietly swapping a verified summary for an untested one.
+    A real amendment still regenerates: when Legistar assigned resolution
+    numbers to two items on 2026-09-09 those lines changed, and they are hashed.
     """
+    source_md = _GENERATED_STAMP_RE.sub("", source_md)
     return PROMPT_PATH.read_text(encoding="utf-8") + source_md
 
 

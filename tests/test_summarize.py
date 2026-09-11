@@ -251,6 +251,48 @@ FUND ACCOUNT
 """
 
 
+# ------------------------------------------------- preview provenance stamp
+
+STAMPED = ("# Agenda preview\n\n"
+           "- Generated {date} by `hsvcc.py preview-agendas` "
+           "(verbatim agenda item titles, no LLM)\n\n"
+           "## Topics\n\n- 2026-999 {item}\n")
+
+
+def test_generated_stamp_alone_does_not_change_the_hash() -> None:
+    """A daily preview re-run restamps the date; the agenda is untouched."""
+    yesterday = STAMPED.format(date="2026-09-09", item="Exempt hearing aids.")
+    today = STAMPED.format(date="2026-09-10", item="Exempt hearing aids.")
+    assert yesterday != today
+    assert hash_input(yesterday) == hash_input(today)
+
+
+def test_an_amended_agenda_item_still_changes_the_hash() -> None:
+    """The 2026-09-09 amendment assigned resolution numbers to two items."""
+    before = STAMPED.format(date="2026-09-10", item="Exempt hearing aids.")
+    after = STAMPED.format(date="2026-09-10",
+                           item="Exempt hearing aids. *(Ordinance No. 26-836)*")
+    assert hash_input(before) != hash_input(after)
+
+
+def test_restamped_preview_leaves_an_existing_summary_current(
+        tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "test-key")
+    pdir = tmp_path / "upcoming" / "2026-09-10-city-council-regular-meeting"
+    pdir.mkdir(parents=True)
+    preview = pdir / "agenda-preview.md"
+    preview.write_text(STAMPED.format(date="2026-09-09", item="Exempt hearing aids."),
+                       encoding="utf-8")
+    assert summarize(tmp_path / "upcoming", today=TODAY,
+                     generate=lambda _: shaped("- **Hearing aids** — exempted")) == 0
+
+    # the next day's preview run rewrites only the stamp
+    preview.write_text(STAMPED.format(date="2026-09-10", item="Exempt hearing aids."),
+                       encoding="utf-8")
+    assert summarize(tmp_path / "upcoming", today=TODAY,
+                     generate=lambda _: pytest.fail("agenda unchanged; no regen")) == 0
+
+
 def test_top_funds_ranks_the_table_deterministically() -> None:
     """The model ranked this wrong in four of five drafts; the parser cannot."""
     assert top_funds(FUND_TABLE) == [
