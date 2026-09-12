@@ -1,0 +1,37 @@
+# Turns a silently-missed meeting into a red X.
+#
+# Nothing else in the pipeline can notice one. `discover` only sees meetings the
+# city has posted a video for, and the Legistar API does not list an event at
+# all until its agenda is published - so a meeting that happened and never got
+# archived produces no error anywhere: every step succeeds on the meetings it
+# does know about. `hsvcc.py coverage` cross-checks the Legistar calendar page
+# (the only source that knows what was scheduled) against meetings/ and exits
+# non-zero on a gap.
+#
+# Deliberately a separate workflow rather than a step in "Sync meetings": the
+# site publish triggers on that workflow's conclusion, so a coverage failure
+# living inside it would stop the site from rebuilding. An archive gap should
+# raise an alarm, not take the site down.
+name: Coverage check
+
+on:
+  schedule:
+    - cron: "30 13 * * *" # daily, ~30 min after the 13:00 sync has pushed
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      # --strict fails the run on a gap. A meeting whose video has not been
+      # posted yet is reported as pending, not as a gap, for `--grace` days.
+      - name: Schedule vs archive
+        run: python3 scripts/hsvcc.py coverage --strict

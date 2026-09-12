@@ -1,0 +1,4967 @@
+1
+00:00:00,000 --> 00:00:02,060
+you
+
+2
+00:00:30,000 --> 00:00:33,060
+you
+
+3
+00:01:00,000 --> 00:01:02,000
+you
+
+4
+00:01:03,000 --> 00:01:13,000
+welcome everyone it is Thursday July 23rd 2026 530 p.m. and this meeting of
+
+5
+00:01:13,000 --> 00:01:17,420
+the Huntsville City Council is called to order we are met in the chambers city
+
+6
+00:01:17,420 --> 00:01:21,840
+hall in Huntsville Alabama we welcome everyone who has joined us here in the
+
+7
+00:01:21,840 --> 00:01:27,360
+chambers and who is joining us remotely you may notice that our numbers are
+
+8
+00:01:27,360 --> 00:01:33,040
+down a bit tonight we miss mayor battle and councilmember David little they are
+
+9
+00:01:33,040 --> 00:01:37,440
+both out of town and we look forward to having them rejoin us at our next
+
+10
+00:01:37,440 --> 00:01:42,480
+meeting but be assured a quorum of the council is present and we will conduct
+
+11
+00:01:42,480 --> 00:01:48,040
+our business tonight we will begin by an invocation offered by one of our
+
+12
+00:01:48,040 --> 00:01:52,360
+Huntsville Alabama public safety chaplains chaplain Scott Lowry he will
+
+13
+00:01:52,360 --> 00:01:56,520
+be followed by Pledge of Allegiance which we led by councilmember Bill Kling
+
+14
+00:01:56,520 --> 00:02:05,840
+all who wish to stand for the invocation and pledge please do so it's
+
+15
+00:02:05,840 --> 00:02:10,920
+been a privilege to serve this my 20th year as a volunteer police chaplain
+
+16
+00:02:10,920 --> 00:02:17,640
+we've seen a lot happen I stood beside mayor battle in the hallway of UAH when
+
+17
+00:02:17,640 --> 00:02:22,840
+there were no words to speak 16 years ago we've seen God bless this community
+
+18
+00:02:22,840 --> 00:02:29,920
+tremendously may we never take those blessings for granted let's pray father
+
+19
+00:02:29,920 --> 00:02:36,800
+we come before you with Thanksgiving I thank you for the privilege of living and
+
+20
+00:02:36,800 --> 00:02:45,040
+ministering in a progressive community but also a community with moral value I
+
+21
+00:02:45,040 --> 00:02:51,360
+pray God that you will give our leaders continued wisdom help us never to take
+
+22
+00:02:51,400 --> 00:02:56,240
+the blessing of living where we live for granted but to understand that you've
+
+23
+00:02:56,240 --> 00:03:02,000
+been very very good to us we pray Lord for our leadership tonight for the
+
+24
+00:03:02,000 --> 00:03:06,840
+things that will be discussed we pray for our state we pray for our country and
+
+25
+00:03:06,840 --> 00:03:11,640
+we ask for your blessings we ask for wisdom and once again thank you for the
+
+26
+00:03:11,640 --> 00:03:16,200
+way you poured your blessings out throughout the years bless now and all
+
+27
+00:03:17,040 --> 00:03:22,040
+that is done and we will give you the praise amen
+
+28
+00:03:22,040 --> 00:03:24,080
+you
+
+29
+00:03:41,880 --> 00:03:47,400
+thank you so much for your 20 years of service chaplain Lowry thank you also
+
+30
+00:03:47,400 --> 00:03:52,240
+mr. cling for opening our meeting for us council members we have a couple of
+
+31
+00:03:52,240 --> 00:03:58,000
+changes to be noted on the agenda item 9a has been withdrawn at the request of
+
+32
+00:03:58,000 --> 00:04:01,160
+the sponsor because the property has been brought into compliance that's
+
+33
+00:04:01,160 --> 00:04:06,840
+always a good thing and then we have had a request to add an item regarding a
+
+34
+00:04:06,840 --> 00:04:14,200
+firetruck lease which will become 20 item 20 ad and and our bylaws require
+
+35
+00:04:14,280 --> 00:04:19,640
+that to be added by motion is there a motion to add item the item that will
+
+36
+00:04:19,640 --> 00:04:25,720
+become 20 ad motion to do that mr. mr. Meredith and mr. cling we take the
+
+37
+00:04:25,720 --> 00:04:30,680
+second on that all in favor please indicate I pose the motion carries we
+
+38
+00:04:30,680 --> 00:04:36,480
+will then need a motion to approve the agenda with the removal of item 9a the
+
+39
+00:04:36,480 --> 00:04:43,360
+addition of a D their motion second from mr. clink walk from his Watkins
+
+40
+00:04:43,360 --> 00:04:47,840
+second by mr. cling I like how y'all are working together tonight all in favor
+
+41
+00:04:47,840 --> 00:04:52,600
+please indicate I any pose the motion carries and the agenda is approved we
+
+42
+00:04:52,600 --> 00:04:57,320
+should also note that mr. cling made a nomination from the floor last week to
+
+43
+00:04:57,320 --> 00:05:00,800
+nominate Barbara Hughes for the Human Relations Commission but that
+
+44
+00:05:00,800 --> 00:05:05,120
+nomination was made outside of the 30-day window before the end of her term
+
+45
+00:05:05,120 --> 00:05:12,440
+so you will not see it tonight on board on nominations to be approved so we will
+
+46
+00:05:12,440 --> 00:05:18,120
+take that appointment that that nomination process forward to August when
+
+47
+00:05:18,120 --> 00:05:23,120
+it will be timely and vote it take care of it then are there any I guess I
+
+48
+00:05:23,120 --> 00:05:26,080
+should have asked earlier any other changes or additions to the agenda we're
+
+49
+00:05:26,080 --> 00:05:29,680
+good all right very good thank you we'll now move on to the approval of minutes
+
+50
+00:05:29,680 --> 00:05:34,000
+for a is the minutes of the regular meeting of the council held on July 9th
+
+51
+00:05:34,160 --> 00:05:40,040
+2026 are there any changes or additions to be made to those minutes see none
+
+52
+00:05:40,040 --> 00:05:45,240
+we're good and then 4b is the minutes of a work session of the City Council held
+
+53
+00:05:45,240 --> 00:05:50,920
+on July 10 2026 any changes or additions to those those minutes then those
+
+54
+00:05:50,920 --> 00:05:56,960
+minutes will all be accepted as they've been presented mayor is not here with so
+
+55
+00:05:56,960 --> 00:06:00,200
+no special recognition from the mayor but we do have a couple from the council
+
+56
+00:06:00,760 --> 00:06:07,080
+6a is a resolution honoring the 10th cavalry hill Buffalo soldiers American
+
+57
+00:06:07,080 --> 00:06:12,920
+Legion post 351 for over 60 years of service to the Huntsville community is
+
+58
+00:06:12,920 --> 00:06:16,840
+there motion to approve to vote for miss Watkins second for mr. cling all in
+
+59
+00:06:16,840 --> 00:06:20,420
+favor please in Kate I oppose motion carries miss Watkins would you like to
+
+60
+00:06:20,420 --> 00:06:23,420
+make that presentation
+
+61
+00:06:24,420 --> 00:06:27,420
+sorry
+
+62
+00:06:37,340 --> 00:06:44,260
+good evening can I have the 10th cavalry soldiers please come up please
+
+63
+00:06:53,940 --> 00:06:58,580
+so while they're coming up let me tell you all a little background about myself
+
+64
+00:06:58,580 --> 00:07:05,660
+come on up on stage before I read the resolution I grew up and went to school
+
+65
+00:07:05,660 --> 00:07:11,140
+in elementary at Caver Hills elementary school and throughout the time that I
+
+66
+00:07:11,140 --> 00:07:15,140
+was at Cava Hills this is why your history is so important and I talked to
+
+67
+00:07:15,140 --> 00:07:18,940
+several people that with school with me because I thought how did I miss that
+
+68
+00:07:18,940 --> 00:07:25,340
+but no one never told us why the school's name Cabrio and throughout the
+
+69
+00:07:25,340 --> 00:07:30,100
+years when we came to learn why it was called Cava Hills and a lot of people
+
+70
+00:07:30,100 --> 00:07:35,500
+refer to it as 10th cavalry instead of Cava Hills and it's so important for us
+
+71
+00:07:35,500 --> 00:07:40,860
+to teach our history know our history and recognize our history so that's why
+
+72
+00:07:40,860 --> 00:07:45,340
+tonight I have them here because I want to recognize them for the hard work that
+
+73
+00:07:45,460 --> 00:07:49,420
+they do in the community so I'm gonna read some of the resolution and then I'm
+
+74
+00:07:49,420 --> 00:07:52,660
+gonna turn it over to mr. Walker
+
+75
+00:07:59,300 --> 00:08:04,220
+okay whereas the City Council and mayor of Huntsville recognized the 10th
+
+76
+00:08:04,220 --> 00:08:10,140
+cavalry heels Buffalo Soldier American Legion post 351 as a distinguished
+
+77
+00:08:10,140 --> 00:08:15,140
+veterans organization whose members have faithfully served both our nation and
+
+78
+00:08:15,180 --> 00:08:19,180
+the Huntsville community through military service civic leadership and
+
+79
+00:08:19,180 --> 00:08:24,420
+unwavering commitment to equality and service whereas following honorable
+
+80
+00:08:24,420 --> 00:08:29,140
+military service nearly 300 veterans from Huntsville Madison County and
+
+81
+00:08:29,140 --> 00:08:33,980
+surrounding communities united to established American Legion post 351
+
+82
+00:08:33,980 --> 00:08:38,660
+after being denied equal access to existing American Legion facilities
+
+83
+00:08:38,660 --> 00:08:44,860
+receiving their official charter in 1961 following years of perseverance and
+
+84
+00:08:44,900 --> 00:08:49,820
+determination whereas the founding members of post 351 cared for the proud
+
+85
+00:08:49,820 --> 00:08:54,300
+legacy of generations of African-American service men and women
+
+86
+00:08:54,300 --> 00:09:00,900
+including the Buffalo Soldier the Tuskegee Airmen 369th Infantry Regiment
+
+87
+00:09:00,900 --> 00:09:06,140
+and the 761 Tank Battalion and countless others who answered the call to defend
+
+88
+00:09:06,140 --> 00:09:11,020
+our nation with courage and distinction whereas throughout its history post 351
+
+89
+00:09:11,020 --> 00:09:15,860
+has demonstrated remarkable resilience by overcoming numerous challenges
+
+90
+00:09:15,860 --> 00:09:19,660
+preserving its charter through the dedication of generations of commanders
+
+91
+00:09:19,660 --> 00:09:24,580
+officers members and volunteers who remain steadfast in their commitment to
+
+92
+00:09:24,580 --> 00:09:28,620
+serving veterans in the community whereas the post has made lasting
+
+93
+00:09:28,620 --> 00:09:33,540
+contributions to Huntsville through youth mentorship educational program
+
+94
+00:09:33,540 --> 00:09:38,380
+boy state sponsorship or to Oracle competitions tutoring initiatives
+
+95
+00:09:38,580 --> 00:09:43,420
+community service projects and advocacy on behalf of veterans and their families
+
+96
+00:09:43,420 --> 00:09:48,580
+while promoting the principles of duty honor patriotism and citizenship
+
+97
+00:09:48,580 --> 00:09:53,980
+whereas in 2024 the members voted to rename the organization the 10th
+
+98
+00:09:53,980 --> 00:09:59,740
+Calvary Hill Buffalo Soldiers American Legion post 351 in recognition of the
+
+99
+00:09:59,740 --> 00:10:04,300
+historic legacy of the Buffalo Soldiers who once camped in North Huntsville and
+
+100
+00:10:04,340 --> 00:10:08,940
+to honor the enduring connection between the legacy and the service of the post
+
+101
+00:10:08,940 --> 00:10:14,260
+members for more than six decades the members of post 351 has strengthened the
+
+102
+00:10:14,260 --> 00:10:20,980
+Huntsville community through their dedication of veterans youth education
+
+103
+00:10:20,980 --> 00:10:24,780
+public service and preservation of a African-American military history
+
+104
+00:10:24,780 --> 00:10:29,420
+inspiring future generations through their enduring example of leadership and
+
+105
+00:10:29,420 --> 00:10:33,380
+perseverance now let it therefore be resolved that the City Council and the
+
+106
+00:10:33,420 --> 00:10:37,220
+mayor of Huntsville Alabama do hereby congratulate and honor the 10th
+
+107
+00:10:37,220 --> 00:10:42,980
+Calvary Hill Buffalo Soldiers American Legion post 351 upon its continued legacy
+
+108
+00:10:42,980 --> 00:10:47,460
+of service and express sincere appreciation for more than 60 years of
+
+109
+00:10:47,460 --> 00:10:51,780
+dedicated commitment to veterans youth community service and preservation of
+
+110
+00:10:51,780 --> 00:10:56,820
+the proud military heritage and history of African-Americans in Huntsville and
+
+111
+00:10:56,820 --> 00:10:58,780
+the state of Alabama and our nation
+
+112
+00:11:03,380 --> 00:11:10,900
+thank you Councilwoman Watkins normally first I do a lot of talk but tonight
+
+113
+00:11:10,900 --> 00:11:15,900
+we're not going to do this so I want to say happy birthday to America 250 years
+
+114
+00:11:15,900 --> 00:11:21,300
+of perseverance and I want to thank the mayor Councilwoman Watkins the City
+
+115
+00:11:21,300 --> 00:11:25,300
+Council members and all of you for coming and we appreciate this award and
+
+116
+00:11:25,300 --> 00:11:29,140
+this recognition and we will carry forward from this day forward thank you
+
+117
+00:11:29,140 --> 00:11:32,220
+thank you
+
+118
+00:12:03,380 --> 00:12:05,420
+you
+
+119
+00:12:09,300 --> 00:12:14,300
+thank you all for 60 years of service
+
+120
+00:12:15,980 --> 00:12:22,940
+item 6b is a resolution recognizing National Health Center week 2026 is there
+
+121
+00:12:22,940 --> 00:12:29,020
+a motion to approve chairman second miss Watkins I will take the motion mr.
+
+122
+00:12:29,020 --> 00:12:32,780
+cling the second all in favor please indicate I impose the motion carries
+
+123
+00:12:33,180 --> 00:12:37,780
+Miss Watkins would you like to make that presentation as well
+
+124
+00:12:47,100 --> 00:12:53,140
+good evening again can I get thrive happy health and central north Alabama to
+
+125
+00:12:53,140 --> 00:12:55,740
+come up please
+
+126
+00:13:02,780 --> 00:13:15,260
+so we brought all of them together in recognition of National Health Center
+
+127
+00:13:15,260 --> 00:13:18,140
+week so I'm going to read this resolution and then I'm going to let
+
+128
+00:13:18,140 --> 00:13:21,100
+each one of you from each your organization speak if you don't mind
+
+129
+00:13:21,100 --> 00:13:25,460
+okay whereas the City Council mayor of Huntsville Alabama recognized National
+
+130
+00:13:25,460 --> 00:13:30,820
+Health Center week to be observed August 2nd through a 2026 as an opportunity to
+
+131
+00:13:30,900 --> 00:13:34,500
+celebrate the essential role that the community health centers play in
+
+132
+00:13:34,500 --> 00:13:38,900
+providing high quality affordable and accessible hair care to individuals and
+
+133
+00:13:38,900 --> 00:13:43,180
+family throughout our community whereas central north Alabama health services
+
+134
+00:13:43,180 --> 00:13:47,420
+Inc a federally qualified health center serving the citizens of North Alabama
+
+135
+00:13:47,420 --> 00:13:52,860
+since 1982 has remained steadfast in its mission to improve health and well-being
+
+136
+00:13:52,860 --> 00:13:56,900
+of the community by providing comprehensive primary health care
+
+137
+00:13:56,900 --> 00:14:02,020
+services regardless of a patient's ability to pay whereas thrive Alabama
+
+138
+00:14:02,020 --> 00:14:07,220
+happy health together with central north Alabama services work collaboratively to
+
+139
+00:14:07,220 --> 00:14:11,020
+ensure that residents throughout north Alabama have access to comprehensive
+
+140
+00:14:11,020 --> 00:14:16,780
+primary care preventive services behavior health care dental care pharmacy
+
+141
+00:14:16,780 --> 00:14:20,820
+services and other essential health care resources that improve the quality of
+
+142
+00:14:20,820 --> 00:14:24,780
+life and strengthen our community whereas community health center serve as
+
+143
+00:14:24,780 --> 00:14:29,900
+trusted health care homes for thousands of individuals and families reducing
+
+144
+00:14:29,900 --> 00:14:34,460
+health disparities promoting wellness preventing diseases and ensuring that
+
+145
+00:14:34,460 --> 00:14:39,300
+quality health care remains accessible to all in our community whereas the
+
+146
+00:14:39,300 --> 00:14:43,300
+physician nurses dentists behavioral health professionals pharmacists
+
+147
+00:14:43,300 --> 00:14:48,060
+administrators and support staff of our community health centers demonstrate
+
+148
+00:14:48,060 --> 00:14:52,580
+extraordinary dedication compassion and professionalism and caring for the
+
+149
+00:14:52,620 --> 00:14:56,740
+health care needs of our residents each day whereas the collaboration
+
+150
+00:14:56,740 --> 00:15:03,540
+celebration to be held on Saturday August 8 2026 at campus 805 Butler green
+
+151
+00:15:03,540 --> 00:15:07,900
+reflects the shared commitment of central north Alabama health services
+
+152
+00:15:07,900 --> 00:15:13,300
+thrive Alabama and happy health to honoring their patients while
+
+153
+00:15:13,300 --> 00:15:16,940
+strengthening community engagement and promoting healthier lives for the
+
+154
+00:15:16,940 --> 00:15:20,980
+residents north Alabama now therefore let it be resolved that the City Council
+
+155
+00:15:21,020 --> 00:15:26,020
+and mayor of Huntsville Alabama do hereby recognize August 2nd through 8 2026
+
+156
+00:15:26,020 --> 00:15:30,940
+as national health center week in the city of Huntsville and command central
+
+157
+00:15:30,940 --> 00:15:35,340
+north Alabama health services Inc thrive Alabama and happy health for their
+
+158
+00:15:35,340 --> 00:15:39,580
+outstanding service unwavering commitment and collaborative efforts to
+
+159
+00:15:39,580 --> 00:15:43,700
+prevent to promoting the health and well-being of our community the City
+
+160
+00:15:43,700 --> 00:15:47,300
+Council may extend our sincere appreciation to the health care
+
+161
+00:15:47,340 --> 00:15:51,620
+professional staff volunteers and community partners whose dedication
+
+162
+00:15:51,620 --> 00:15:56,220
+continues to make quality health care accessible to all and encourage all our
+
+163
+00:15:56,220 --> 00:16:00,420
+citizens to recognize and celebrate the invaluable contributions of our
+
+164
+00:16:00,420 --> 00:16:02,620
+community health centers thank you
+
+165
+00:16:10,140 --> 00:16:15,100
+I'm Carlson Pfeiffer I'm the CEO of central north Alabama health services
+
+166
+00:16:15,580 --> 00:16:22,460
+and we have provided services since 1982 to indigent and low-income individuals
+
+167
+00:16:22,460 --> 00:16:30,700
+primary people below 200% of poverty and 100% of poverty federal guidelines we
+
+168
+00:16:30,700 --> 00:16:35,780
+will continue to do that and we appreciate our patients and the
+
+169
+00:16:35,780 --> 00:16:41,740
+government's the City Council the heart hospital etc who has supported us all
+
+170
+00:16:41,780 --> 00:16:44,780
+during this 46 24 years thank you
+
+171
+00:16:49,540 --> 00:16:55,060
+I am Stephanie Harville I serve thrive Alabama I just want to thank the council
+
+172
+00:16:55,060 --> 00:17:00,140
+and councilwoman Watkins for inviting us here tonight we love our community and
+
+173
+00:17:00,140 --> 00:17:03,140
+those that we serve and we just appreciate the opportunity
+
+174
+00:17:07,940 --> 00:17:08,940
+thank you
+
+175
+00:17:11,740 --> 00:17:12,740
+thank you
+
+176
+00:17:14,740 --> 00:17:19,180
+my name is Geeta Berry I'm the CFO for happy health I am here representing miss
+
+177
+00:17:19,180 --> 00:17:24,460
+Johnson the CEO as well as happy health thank you again miss Watkins for the
+
+178
+00:17:24,460 --> 00:17:30,100
+invitation we are really committed to providing quality elite care for all of
+
+179
+00:17:30,100 --> 00:17:35,020
+our patients no matter who shows up at our door and I think we cannot take that
+
+180
+00:17:35,020 --> 00:17:38,100
+for granted and we have just privileged to be in this space thank you
+
+181
+00:18:11,740 --> 00:18:17,140
+our community miss Watkins thank you for making those presentations the next
+
+182
+00:18:17,140 --> 00:18:21,660
+resolution is for approval only not for presentation 6c is a resolution
+
+183
+00:18:21,660 --> 00:18:26,260
+recognizing and celebrating the 150th anniversary of temple benai shalom is
+
+184
+00:18:26,260 --> 00:18:30,220
+there motion so much motion mr. cling second for mr. Meredith all in favor
+
+185
+00:18:30,220 --> 00:18:34,700
+please indicate I oppose the motion carries mr. cling is my understanding you
+
+186
+00:18:34,700 --> 00:18:38,500
+will make this presentation on Friday evening is that correct that is correct
+
+187
+00:18:38,500 --> 00:18:43,260
+that will be to celebrate their 150th anniversary of the temple their Shabbat
+
+188
+00:18:43,260 --> 00:18:49,620
+service wonderful thank you for doing that we have one presentation tonight
+
+189
+00:18:49,620 --> 00:18:54,660
+and that is an update on the northern bypass project this what comes I
+
+190
+00:18:54,660 --> 00:18:58,340
+understand you've requested that and mr. Davis will be making the presentation
+
+191
+00:18:58,340 --> 00:19:00,340
+mr. Davis
+
+192
+00:19:05,340 --> 00:19:08,340
+good evening councilmember Shane Davis director urban economic development
+
+193
+00:19:08,540 --> 00:19:14,620
+so tonight the administration wants to provide you and the public an update on
+
+194
+00:19:14,620 --> 00:19:18,620
+one of the larger construction projects we have going on in the city and that's
+
+195
+00:19:18,620 --> 00:19:23,060
+the northern bypass as we refer to it locally but it's actually the extension
+
+196
+00:19:23,060 --> 00:19:30,660
+of state route 255 so remind everybody the overall scope of the project is four
+
+197
+00:19:30,660 --> 00:19:36,300
+and a half miles of new limited access highway from Pulaski Pike to about a
+
+198
+00:19:36,340 --> 00:19:42,060
+thousand feet east of us 231 for 31 original project cost was 43 million
+
+199
+00:19:42,060 --> 00:19:48,780
+dollars the project replaces the existing two lane Bob Wade Lane that was
+
+200
+00:19:48,780 --> 00:19:54,060
+a local road both in the city and portions of it being in unincorporated
+
+201
+00:19:54,060 --> 00:19:59,860
+Madison County the construction includes the relocation and replacement of
+
+202
+00:19:59,860 --> 00:20:06,180
+utilities new water new gas electric and communication relocation the
+
+203
+00:20:06,180 --> 00:20:09,660
+mentioned four and a half miles a new curb and gutter roadway and then
+
+204
+00:20:09,660 --> 00:20:16,780
+multiple new road intersections along the corridor the arrow that you see to
+
+205
+00:20:16,780 --> 00:20:25,020
+the right kind of shows the the current stage as of about 30 days ago I think
+
+206
+00:20:25,020 --> 00:20:31,740
+this aerial shows a good scope of work of what is going on we'll work from the
+
+207
+00:20:31,740 --> 00:20:37,620
+top part of the of the photo and down so in yellow the two areas you can see
+
+208
+00:20:37,620 --> 00:20:43,220
+the new portion that is actually open to traffic for so to the top of the screen
+
+209
+00:20:43,220 --> 00:20:48,220
+would be Memorial Parkway or us 231 bottom of the screen would be getting
+
+210
+00:20:48,220 --> 00:20:52,940
+close to Pulaski Pike you can see where the new intersections at Mount Lebanon
+
+211
+00:20:52,940 --> 00:20:59,380
+and Northgate Drive will connect and then in the black box you can see the
+
+212
+00:20:59,380 --> 00:21:04,900
+light gray that's the old Bob Wade Lane that this road project is replacing I
+
+213
+00:21:04,900 --> 00:21:11,380
+will tell you contractors and crews are in the most difficult section of the
+
+214
+00:21:11,380 --> 00:21:15,460
+project and that is cutting through the upper the lower slope of the mountain
+
+215
+00:21:15,460 --> 00:21:20,780
+side you can you can see as we get into some of these additional photos again
+
+216
+00:21:20,780 --> 00:21:24,820
+this is near Mount Lebanon Road intersection you can start to see on the
+
+217
+00:21:25,820 --> 00:21:32,540
+the divided four lane highway coming to the west and then just to the right side
+
+218
+00:21:32,540 --> 00:21:37,420
+of the screen you can see the old Bob Wade Lane and the new that would be the
+
+219
+00:21:37,420 --> 00:21:44,820
+new westbound two lanes this is the part that is really we knew would slow the
+
+220
+00:21:44,820 --> 00:21:49,060
+progress of the project down it's cutting through the mountain slope very
+
+221
+00:21:49,660 --> 00:21:55,100
+similar to a Cecil Ashburn widening project the contractor is hammering and
+
+222
+00:21:55,100 --> 00:22:00,420
+busting rock and processing on site for roadbed material but this type of
+
+223
+00:22:00,420 --> 00:22:09,780
+construction is very slow in for the amount of productivity here for the next
+
+224
+00:22:09,780 --> 00:22:13,340
+couple of slides I'm going to show you the portions that are complete and open
+
+225
+00:22:13,340 --> 00:22:19,940
+to traffic to the left would be going westbound towards Pulaski Pike where
+
+226
+00:22:19,940 --> 00:22:25,260
+Facebook and Metta and Toyota Motor Manufacturing and L3 Harris North
+
+227
+00:22:25,260 --> 00:22:30,340
+Huntsville Industrial Park and to the right you're moving towards the Parkway
+
+228
+00:22:30,540 --> 00:22:35,820
+again so this is the new 255 I will point out the two-lane road just in the
+
+229
+00:22:35,820 --> 00:22:42,100
+upper part is the old Bob Wade Lane that will reconnect will stay a local portion
+
+230
+00:22:42,140 --> 00:22:48,020
+we will once the project is complete we will identify this road as council lady
+
+231
+00:22:48,020 --> 00:22:52,740
+Watkins met with the neighbors locally it will be called Bob Wade Lane it will
+
+232
+00:22:52,740 --> 00:22:58,220
+have State Route 250 signage so we will at the point that we dedicate this road
+
+233
+00:22:58,220 --> 00:23:04,220
+comes open to public we will need to rename that two-lane portion and the
+
+234
+00:23:04,220 --> 00:23:08,580
+Sharp family had indicated they would be open miss Watkins has we've made no
+
+235
+00:23:08,580 --> 00:23:12,060
+commitment but the Sharp family has lived on that road for a very long time
+
+236
+00:23:12,060 --> 00:23:14,940
+so that could be an option but certainly this council will make that
+
+237
+00:23:14,940 --> 00:23:22,060
+determination there's plenty time to do that as I move a little further you can
+
+238
+00:23:22,060 --> 00:23:28,700
+see the intersection of US 231 431 and State Route 255 when we bid the project
+
+239
+00:23:28,700 --> 00:23:33,900
+we put this as an early completion or requiring the contractor to work from
+
+240
+00:23:33,940 --> 00:23:39,100
+this intersection westbound so that's why you see everything near the Parkway
+
+241
+00:23:39,100 --> 00:23:45,060
+is complete four-way traffic is moving and then we transition as we get further
+
+242
+00:23:45,060 --> 00:23:50,020
+west as we approach Pulaski Pike back to the two-lane as we're continuing to do
+
+243
+00:23:50,020 --> 00:23:55,140
+construction you see that work is progressing on North Huntsville village
+
+244
+00:23:55,140 --> 00:24:00,620
+or North Village town center the first phase being anchored by Home Depot and
+
+245
+00:24:00,620 --> 00:24:07,220
+Target and food City to the bottom so again this is just a better close-up of
+
+246
+00:24:07,220 --> 00:24:12,820
+the intersection that is complete heavy amount of traffic already getting
+
+247
+00:24:12,820 --> 00:24:17,020
+diverted westbound seeing this as an alternate route in the mornings to get
+
+248
+00:24:17,020 --> 00:24:24,580
+to research part redstone Arsenal the Western corridor of our city project
+
+249
+00:24:24,580 --> 00:24:31,340
+summary you know as what's complete this section will be significant to our
+
+250
+00:24:31,340 --> 00:24:35,900
+community as far as transportation network it will complete a 14 mile loop
+
+251
+00:24:35,900 --> 00:24:41,660
+of limited access highway from interstate 565 to US 231 and what I mean
+
+252
+00:24:41,660 --> 00:24:46,540
+by limited access is as we go through major intersections like University
+
+253
+00:24:46,540 --> 00:24:53,380
+Drive in highway 53 those overpasses already in place so from US 231 to
+
+254
+00:24:53,420 --> 00:24:58,540
+interstate 565 other than the signal at Mount Lebanon that I showed you earlier
+
+255
+00:24:58,540 --> 00:25:05,540
+and Pulaski Pike it travels much like an interstate system project status is
+
+256
+00:25:05,540 --> 00:25:11,220
+about 75 percent complete we're currently scheduled for the calendar days
+
+257
+00:25:11,220 --> 00:25:17,340
+contractually of November 20 26 we have had you know some inclement weather this
+
+258
+00:25:17,340 --> 00:25:21,980
+summer a lot of rain this is a federal aid project so we probably will add some
+
+259
+00:25:21,980 --> 00:25:27,620
+days to that but as you can see we're getting really close the hardest part
+
+260
+00:25:27,620 --> 00:25:34,500
+around the mountain toe once that rock is excavated most utilities are complete
+
+261
+00:25:34,500 --> 00:25:40,460
+Huntsville Toys likes just a little bit with electric there near Toyota area but
+
+262
+00:25:40,460 --> 00:25:44,680
+most utilities are in place so that's usually the slowest part and the good
+
+263
+00:25:44,680 --> 00:25:49,660
+thing is those have been moved now for about six months in totality I'll
+
+264
+00:25:49,660 --> 00:25:55,700
+answer any questions the council may have on the project yes one of the
+
+265
+00:25:55,700 --> 00:26:01,140
+questions as well first of all thank you mr. Davis for that presentation a couple
+
+266
+00:26:01,140 --> 00:26:04,700
+of people have been asking me about the northern bypass I thought the best thing
+
+267
+00:26:04,700 --> 00:26:09,820
+to do was just to have an update in council chambers yes ma'am so we're 75
+
+268
+00:26:09,820 --> 00:26:13,780
+percent complete and I was gonna ask you but you said we're running a couple of
+
+269
+00:26:13,780 --> 00:26:18,380
+days behind because of inclement weather do you still project this to be
+
+270
+00:26:18,380 --> 00:26:22,660
+completed in November we are pushing both the contractor and the engineering
+
+271
+00:26:22,660 --> 00:26:28,460
+department to be completed by this calendar year okay I will just point out
+
+272
+00:26:28,460 --> 00:26:32,460
+that I know engineering is working through it this this is probably the
+
+273
+00:26:32,460 --> 00:26:37,980
+best illustration so the geotech naturally showed rock in this area for
+
+274
+00:26:37,980 --> 00:26:43,460
+toe of the mountain so would be what you would expect but as you see along the
+
+275
+00:26:43,460 --> 00:26:48,980
+tree line it's not solid rock so the design plans for this project had much
+
+276
+00:26:48,980 --> 00:26:53,940
+like Cecil Asperin we would drill shoot the rock and it would leave a stone face
+
+277
+00:26:53,940 --> 00:26:59,220
+a rock face along that with no treatment needed much like you'd see on Governor's
+
+278
+00:26:59,220 --> 00:27:03,700
+Drive you see on Cecil Asperin naturally you see that is not the case it's what
+
+279
+00:27:03,700 --> 00:27:08,320
+we refer to in engineering is a mixed face it's partly dark partly rock so we
+
+280
+00:27:08,320 --> 00:27:13,020
+are working on a supplement plan of how to stabilize that it could be slope-paved
+
+281
+00:27:13,060 --> 00:27:17,580
+it could be riprap the state will do that it's the state highway so that way
+
+282
+00:27:17,580 --> 00:27:22,460
+had a little bit of time but what we are focused on is maintaining schedule of
+
+283
+00:27:22,460 --> 00:27:27,220
+the road itself and get traffic on it this would be outside the traffic lane
+
+284
+00:27:27,220 --> 00:27:34,220
+and we believe could be done without not withholding opening the road so as we
+
+285
+00:27:34,220 --> 00:27:37,740
+get through the next couple months I continue to update you but everybody's
+
+286
+00:27:37,740 --> 00:27:42,060
+focused to get the road finished and traffic going both directions by the end
+
+287
+00:27:42,060 --> 00:27:45,500
+calendar year okay and I've been traveling through that road and I'll
+
+288
+00:27:45,500 --> 00:27:49,660
+tell you that I have seen that it has come a long way it looks good it looks
+
+289
+00:27:49,660 --> 00:27:54,220
+really good the other question I have is how's this going to help commute time
+
+290
+00:27:54,220 --> 00:28:00,580
+for travelers who are traveling to Redstone Arsenal so as far as travel
+
+291
+00:28:00,580 --> 00:28:04,100
+distance versus if you live in the northern part of the city or northern
+
+292
+00:28:04,100 --> 00:28:07,460
+part of the county today you're traveling us 231 you're coming through I
+
+293
+00:28:07,460 --> 00:28:13,940
+565 and then headed westbound our traffic modeling for this project which
+
+294
+00:28:13,940 --> 00:28:18,740
+the Federal Highway requires us to estimates and that's computer generation
+
+295
+00:28:18,740 --> 00:28:24,460
+modeling but cuts 15 minutes off that commute time because it's more of a
+
+296
+00:28:24,460 --> 00:28:29,500
+direct route but if one of the things I do I want to answer your questions of
+
+297
+00:28:29,500 --> 00:28:34,880
+course but then I want to give you a quick update just two slides of what we
+
+298
+00:28:34,880 --> 00:28:38,280
+knew what happened one this is going to move a lot of traffic which we need in
+
+299
+00:28:38,280 --> 00:28:42,000
+a growing community but we knew is also going to be an economic development
+
+300
+00:28:42,000 --> 00:28:48,320
+generator as most major arterials do in any city and I will show that momentary
+
+301
+00:28:48,320 --> 00:28:52,400
+we want to take your questions first okay that's all I have now thank you for
+
+302
+00:28:52,400 --> 00:28:57,280
+presentation yes ma'am mr. Merida I just have a couple of quick ones could you
+
+303
+00:28:57,280 --> 00:29:03,240
+show me the reconfigured intersection at Mount Lebanon it seems like it well if
+
+304
+00:29:03,240 --> 00:29:06,800
+you could just show me that
+
+305
+00:29:09,200 --> 00:29:19,560
+it's best here yeah so I'm assuming where the road goes to the north from
+
+306
+00:29:19,560 --> 00:29:25,280
+this perspective yes that's going to be the new intersection correct you know it
+
+307
+00:29:25,280 --> 00:29:29,960
+will so you see the current T intersection I'm out Lebanon the two
+
+308
+00:29:29,960 --> 00:29:35,480
+lane of Bob Wade so think of that two lane direction of Bob Wade remaining
+
+309
+00:29:35,480 --> 00:29:41,880
+becoming the new two lane westbound of 255 you see where the construction
+
+310
+00:29:41,880 --> 00:29:46,080
+equipment and the new gravel that is eastbound towards the parkway there will
+
+311
+00:29:46,080 --> 00:29:51,200
+be an asphalt median between those two travels right turning movements in that
+
+312
+00:29:51,200 --> 00:29:57,760
+median so think of a four lane divided highway like a 431 US 72 it would act
+
+313
+00:29:57,760 --> 00:30:02,040
+very similar to say Nance Road in 72 in your district that's what it will look
+
+314
+00:30:02,040 --> 00:30:08,760
+like okay so turning movements both turning movements will directly go into
+
+315
+00:30:08,760 --> 00:30:14,360
+Mount Lebanon or will there be like a little u-turn that someone knows it will
+
+316
+00:30:14,360 --> 00:30:17,320
+be a conventional signalized intersection full turning movements
+
+317
+00:30:17,320 --> 00:30:21,560
+excellent thank you because a little I got misled by that service road sure
+
+318
+00:30:21,560 --> 00:30:25,720
+that you were good profit that's good point okay my other question is the tie
+
+319
+00:30:25,720 --> 00:30:31,480
+in the 565 is going to be on ride-out road by the the gates to the arsenal
+
+320
+00:30:31,480 --> 00:30:36,320
+yes in Bridge Street that's that's right yeah that will be the terminus of state
+
+321
+00:30:36,320 --> 00:30:44,000
+route 255 thank you thank this is a great road project and I guess next to
+
+322
+00:30:44,000 --> 00:30:48,400
+councilmember Watkins I'm biggest cheerleader of it it's gonna be great
+
+323
+00:30:48,400 --> 00:30:52,800
+and I can see where it's what it's gonna mean to the community okay now let's say
+
+324
+00:30:52,800 --> 00:30:58,920
+this gets wrapped up roughly around November looking ahead are y'all
+
+325
+00:30:58,920 --> 00:31:03,240
+starting to work plan toward I guess what we would call the eastern bypass
+
+326
+00:31:03,240 --> 00:31:10,480
+over towards highway 72 east and over to Hampton Cove my ultimate goal is the
+
+327
+00:31:10,480 --> 00:31:14,040
+ring road around the city that would take stress off of the center part of
+
+328
+00:31:14,040 --> 00:31:20,200
+the city yes sir we are so we refer to this as the northern bypass phase one
+
+329
+00:31:20,280 --> 00:31:27,280
+from Pulaski pot us 231 we are at 60% set of plan completion for phase two
+
+330
+00:31:27,280 --> 00:31:34,840
+which will go from us 231 to Winchester Road in Moore'sville Road we've Kathy
+
+331
+00:31:34,840 --> 00:31:39,600
+Martin I just got confirmation about 30 days ago after meeting with Mark Bartlett
+
+332
+00:31:39,600 --> 00:31:44,720
+Federal Highway with having federal funds you have to have what is called a
+
+333
+00:31:44,720 --> 00:31:49,360
+logical term and I meaning where you would pick up the next phase and where
+
+334
+00:31:49,360 --> 00:31:53,520
+federal highway says you can in the next phase well the issue is is when you
+
+335
+00:31:53,520 --> 00:31:58,240
+model this and the amount of traffic will be diverted off I-5 65 and come
+
+336
+00:31:58,240 --> 00:32:04,240
+through this corridor the logical terminal would be US highway 72 our
+
+337
+00:32:04,240 --> 00:32:11,600
+argument has been that becomes a significant cost project in the tune of
+
+338
+00:32:11,600 --> 00:32:16,400
+180 million dollars we want to move local traffic so we've been advocating
+
+339
+00:32:16,400 --> 00:32:21,920
+for a year to say letter letter next phase to go from the Parkway to
+
+340
+00:32:21,920 --> 00:32:26,960
+Winchester more so we can obtain funding it's a little bit of right away the
+
+341
+00:32:26,960 --> 00:32:32,120
+large-track owners and we can fund that now it's taken a long time but we got
+
+342
+00:32:32,120 --> 00:32:35,640
+confirmation about two weeks ago that federal highways going less move for
+
+343
+00:32:35,640 --> 00:32:41,320
+that so to answer your question mr. clean we believe that we can bid that
+
+344
+00:32:41,320 --> 00:32:47,640
+project next year which would get us to Winchester Moore's World Road which will
+
+345
+00:32:47,640 --> 00:32:51,160
+help alleviate if you see what we're doing even though we got our own
+
+346
+00:32:51,160 --> 00:32:55,480
+malfunction junction of I-5 65 and US 231 it's about 350 million dollar
+
+347
+00:32:55,480 --> 00:33:00,320
+project these type projects are you know if we can move 15,000 cars out of that
+
+348
+00:33:00,320 --> 00:33:05,320
+inner interchange a day and give an alternate route it helps South Huntsville
+
+349
+00:33:05,320 --> 00:33:09,320
+helps downtown it helps East Huntsville and West Huntsville that come through
+
+350
+00:33:09,320 --> 00:33:13,560
+that interchange every day because it's the nerve center of North Alabama North
+
+351
+00:33:13,560 --> 00:33:19,200
+South East West so we're advocating for that the eastern bypass that would come
+
+352
+00:33:19,200 --> 00:33:24,600
+from Hampton Cove to US 72 we've completed a corridor study we know what
+
+353
+00:33:24,600 --> 00:33:29,560
+the alignment will look like we've sent sent that off how what tied to US 72 to
+
+354
+00:33:29,560 --> 00:33:35,400
+aldot there are actually funding in the cap plan to start design plans for that
+
+355
+00:33:35,400 --> 00:33:41,520
+next year that you approved they were approved in 2025 but we've been waiting
+
+356
+00:33:41,520 --> 00:33:45,800
+for the corridor study and getting a federal highway now dot to approve where
+
+357
+00:33:45,800 --> 00:33:49,960
+we would tie to us 72 before we start the design and that's occurred this year
+
+358
+00:33:49,960 --> 00:33:54,880
+I guess I'm hoping for the day down the line when Huntsville has a ring road
+
+359
+00:33:54,880 --> 00:34:00,120
+Eastern bypass come around Arsenal East connector come back on the ring road
+
+360
+00:34:00,120 --> 00:34:04,280
+that takes stress off the medical district and all the other central
+
+361
+00:34:04,280 --> 00:34:09,360
+portions of the city and I think that would really you know just remake
+
+362
+00:34:09,360 --> 00:34:13,760
+Huntsville and take traffic flow improvement but we're working on all you
+
+363
+00:34:13,760 --> 00:34:18,080
+guys are doing some great things not fast enough of course yeah but all y'all
+
+364
+00:34:18,080 --> 00:34:26,760
+they're all in progress I think we should call it the cling ring so we just
+
+365
+00:34:26,760 --> 00:34:30,960
+referred to now I think you may have answered one of my questions and that is
+
+366
+00:34:30,960 --> 00:34:37,560
+you're anticipating 15,000 cars would come off the parkway and transition and
+
+367
+00:34:37,560 --> 00:34:41,920
+take pressure off of that's right junction that's a great thing all right
+
+368
+00:34:41,920 --> 00:34:47,280
+any other comments or questions mr. I've been instructed to ask or to state that
+
+369
+00:34:47,280 --> 00:34:58,000
+we can't name it after bill exactly put it in John Hunt Park maybe maybe this
+
+370
+00:34:58,040 --> 00:35:02,440
+council would see an exception for mr. clean thank you so much mr. Davis we
+
+371
+00:35:02,440 --> 00:35:06,040
+appreciate that update and a good work everyone so I can have two more minutes
+
+372
+00:35:06,040 --> 00:35:11,960
+this council so let's give you an update also for phase one update of North
+
+373
+00:35:11,960 --> 00:35:16,200
+Village Town Center so as you know it's previous been announced North Village
+
+374
+00:35:16,200 --> 00:35:20,240
+Town Center is a 200 acre of mixed-use retail development at the intersection
+
+375
+00:35:20,240 --> 00:35:25,800
+we were just speaking of us 231 state route 255 the project would deliver a
+
+376
+00:35:25,840 --> 00:35:29,920
+little over 650,000 square feet of retail restaurants medical
+
+377
+00:35:29,920 --> 00:35:35,400
+hospitality fitness along with resident new residential development progress is
+
+378
+00:35:35,400 --> 00:35:40,840
+moving the city's almost completed some relocation of utilities hunts for
+
+379
+00:35:40,840 --> 00:35:44,520
+utilities new water line they want to go ahead and get a loop in through this
+
+380
+00:35:44,520 --> 00:35:49,680
+project there was some sewer that we needed to reroute a drainage ditch that
+
+381
+00:35:49,680 --> 00:35:53,320
+arrow photography that you saw a regional detention pond that we want to
+
+382
+00:35:53,320 --> 00:36:00,080
+create all that is about 95% complete so work very quietly has been occurring
+
+383
+00:36:00,080 --> 00:36:04,080
+with not a lot of fanfare but the fanfare is about to start so we are
+
+384
+00:36:04,080 --> 00:36:08,640
+scheduling real estate closings both with Target and Home Depot in August and
+
+385
+00:36:08,640 --> 00:36:14,280
+September so this fall you'll see tilt up concrete wall start to come up out
+
+386
+00:36:14,280 --> 00:36:19,880
+of that red dirt phase one is scheduled to open in 2027 the whole development
+
+387
+00:36:19,880 --> 00:36:25,960
+will take about three years to complete it is a lot of land so we will bust that
+
+388
+00:36:25,960 --> 00:36:29,760
+up into three phases I'm about to show you those phases but phase one will
+
+389
+00:36:29,760 --> 00:36:35,480
+open next year phase two will start mid to late next year so they'll they'll run
+
+390
+00:36:35,480 --> 00:36:42,160
+a little bit in parallel as things start to open you'll see new retail hotels and
+
+391
+00:36:42,160 --> 00:36:49,860
+residential start to catch up so this is the site so you can see some of the
+
+392
+00:36:49,860 --> 00:36:53,540
+utilities you can see the regional retention pond along the TVA
+
+393
+00:36:53,540 --> 00:36:59,700
+transmission lines and then we were required to sell this property to remove
+
+394
+00:36:59,700 --> 00:37:03,540
+any structures on site so there's some it was formerly a farm so there was some
+
+395
+00:37:03,540 --> 00:37:10,500
+barns and things that that we needed to demo and get off site there was an open
+
+396
+00:37:10,500 --> 00:37:16,340
+drainage public drainage ditch we put that underground and rerouted it to
+
+397
+00:37:16,340 --> 00:37:21,220
+maximize the retail out parcels we could have left it there but for us the
+
+398
+00:37:21,220 --> 00:37:24,620
+amount of money it took us to relocate versus the out parcels we would get
+
+399
+00:37:24,620 --> 00:37:29,260
+creating sales tax and property tax it was well worth those utility
+
+400
+00:37:29,260 --> 00:37:36,660
+relocations so again just another view of this you can see food City to the
+
+401
+00:37:36,660 --> 00:37:43,060
+south you have approved so out in front of food City there you see some grass
+
+402
+00:37:43,100 --> 00:37:48,900
+area you have sold one of those and approved this council so a bavillion
+
+403
+00:37:48,900 --> 00:37:55,980
+express it would be the far left of half and then we are in negotiations with an
+
+404
+00:37:55,980 --> 00:37:59,780
+entity to purchase the three out parcels that will bring set down
+
+405
+00:37:59,780 --> 00:38:03,980
+restaurants there we'll bring that to you very shortly so we've wanted to wait
+
+406
+00:38:03,980 --> 00:38:07,980
+our phone is rung off the hook but knowing what we were creating across the
+
+407
+00:38:07,980 --> 00:38:12,160
+street we wanted to make sure we got the highest and best use out of city
+
+408
+00:38:12,160 --> 00:38:18,760
+property and I think we're doing that so let's kind of walk through everything
+
+409
+00:38:18,760 --> 00:38:23,320
+that's occurring around this intersection so the white boxes you see
+
+410
+00:38:23,320 --> 00:38:27,820
+that is the phase one you have approved real estate contracts for everything
+
+411
+00:38:27,820 --> 00:38:32,560
+except the two parcels I've showed you out from a food City so the red dirt
+
+412
+00:38:32,560 --> 00:38:38,160
+that you see on the west side of the Parkway the kind of triangular piece 16
+
+413
+00:38:38,160 --> 00:38:42,360
+and a half acres that you see on the north side of State Route 255 those are
+
+414
+00:38:42,360 --> 00:38:47,760
+contractually obligated to our master developer of target and then directly
+
+415
+00:38:47,760 --> 00:38:54,920
+with Home Depot and then master developer for the north side once they
+
+416
+00:38:54,920 --> 00:39:02,120
+close in August and September the master developer will have the authority to
+
+417
+00:39:02,120 --> 00:39:06,880
+bring more public announcements of the actual end-users I can tell you the
+
+418
+00:39:06,880 --> 00:39:13,000
+entire phase one is sold out so every square foot of phase one which includes
+
+419
+00:39:13,000 --> 00:39:20,160
+about 350,000 square feet of retail is spoken for and if what I would call it's
+
+420
+00:39:20,160 --> 00:39:26,160
+the best in class type brand names we all know household names a phase two
+
+421
+00:39:26,160 --> 00:39:30,240
+would be in yellow we are starting to work on that as well as far as public
+
+422
+00:39:30,240 --> 00:39:34,960
+infrastructure the far south portion of phase two Huntsville Hospital is closed
+
+423
+00:39:35,040 --> 00:39:40,720
+on their property and is in full design for new emergency and imaging Center to
+
+424
+00:39:40,720 --> 00:39:46,280
+about a 50 million dollar project that will break ground next year so they'll
+
+425
+00:39:46,280 --> 00:39:51,200
+be one of the anchors and then the other anchors we are starting to finalize with
+
+426
+00:39:51,200 --> 00:39:55,240
+our master developer same master developer with the target as we move
+
+427
+00:39:55,240 --> 00:40:02,200
+west flanking phase one and two is phase three so we're in final negotiations to
+
+428
+00:40:02,200 --> 00:40:06,880
+scare that property and starting to talk to retailers on that piece of the orange
+
+429
+00:40:06,880 --> 00:40:11,400
+piece to even further west so that would be the corner of 255 and Mount Lebanon
+
+430
+00:40:11,400 --> 00:40:15,840
+Road so we're working with the Harris family and their master developer
+
+431
+00:40:15,840 --> 00:40:20,680
+actually there's a rezoning action on that project tonight for a planned
+
+432
+00:40:20,680 --> 00:40:25,360
+development that we're very excited to partner with and bring for this council
+
+433
+00:40:25,360 --> 00:40:31,040
+in the coming months and then to the far right and so the last comment I'll make
+
+434
+00:40:31,080 --> 00:40:35,560
+is new residential single-family for sale it's called Camden Place new
+
+435
+00:40:35,560 --> 00:40:40,800
+residential community that's under construction this is exactly what we
+
+436
+00:40:40,800 --> 00:40:45,480
+thought we could create five six years ago as we kept pushing and pushing and
+
+437
+00:40:45,480 --> 00:40:51,040
+pushing to get this project when I say this project state route 255 underway I
+
+438
+00:40:51,040 --> 00:40:57,320
+am done I'll take any questions mr. Davis again thank you thank you to your team
+
+439
+00:40:57,320 --> 00:41:02,200
+and I know miss Watkins you must be very proud of this I'm absolutely proud
+
+440
+00:41:02,200 --> 00:41:06,280
+and ecstatic and I think that I don't like about Shane Davis he won't let me
+
+441
+00:41:06,280 --> 00:41:10,680
+tell anything I have shared some stuff and she swore to
+
+442
+00:41:10,680 --> 00:41:13,840
+secret she's done a great job with that we will look forward to hearing good
+
+443
+00:41:13,840 --> 00:41:19,280
+news in the future thank you council members we have no move on then we have
+
+444
+00:41:19,280 --> 00:41:23,360
+met no matters with outside legal representation we do however have a
+
+445
+00:41:24,240 --> 00:41:28,600
+couple of public hearings to be held 9a has been deleted because the property
+
+446
+00:41:28,600 --> 00:41:31,880
+was brought into compliance and we always like to hear that so we'll move
+
+447
+00:41:31,880 --> 00:41:35,840
+on to 9b 9b is a public hearing authorizing community development to
+
+448
+00:41:35,840 --> 00:41:39,480
+assess the cost for demolition cleanup of a structural public nuisance located
+
+449
+00:41:39,480 --> 00:41:44,680
+at 13032 Cheney Thompson Road southeast Huntsville Alabama and consideration of
+
+450
+00:41:44,680 --> 00:41:49,240
+a resolution pertaining to the same mr. Erwin yes council members Scott Erwin
+
+451
+00:41:49,240 --> 00:41:52,840
+community development department this is a public hearing on a resolution
+
+452
+00:41:52,880 --> 00:41:56,400
+authorizing community development to assess the cost for demolition and
+
+453
+00:41:56,400 --> 00:42:01,800
+cleanup of a structural public nuisance located at 13032 Cheney Thompson Road
+
+454
+00:42:01,800 --> 00:42:06,000
+the resolution before you authorizes an assessment in the amount of sixteen
+
+455
+00:42:06,000 --> 00:42:09,920
+thousand four hundred and thirty eight dollars and thirty eight cents all
+
+456
+00:42:09,920 --> 00:42:13,960
+procedural requirements related to the declaration demolition and cleanup of a
+
+457
+00:42:13,960 --> 00:42:17,080
+structural public nuisance have been fulfilled in accordance with the state of
+
+458
+00:42:17,080 --> 00:42:21,280
+Alabama's Public Nuisance Act property owners were notified then assessment
+
+459
+00:42:21,280 --> 00:42:25,840
+authorized and placed on their property at the City Council meeting of July 23rd
+
+460
+00:42:25,840 --> 00:42:29,840
+2026 during which time they may have the opportunity to appear and present any
+
+461
+00:42:29,840 --> 00:42:35,200
+objections to the assessed cost thank you very much mr. Erwin oh and let the
+
+462
+00:42:35,200 --> 00:42:40,000
+record show that mayor battle has joined us welcome back mayor battle the public
+
+463
+00:42:40,000 --> 00:42:45,080
+hearing on item 9b is now open is there anyone here who wishes to address us
+
+464
+00:42:45,080 --> 00:42:51,480
+regarding item 9b anyone wishing to comment seeing none the public hearing
+
+465
+00:42:51,480 --> 00:42:56,040
+is now closed there a motion to approve the resolution motion to approve motion
+
+466
+00:42:56,040 --> 00:43:02,120
+from mr. Maris second from mr. cling any questions regarding this I'm just
+
+467
+00:43:02,120 --> 00:43:05,880
+grateful to you for getting this on the agenda and getting it taken care of
+
+468
+00:43:05,880 --> 00:43:10,800
+thank you very much all in favor please indicate I'm opposed motion carries
+
+469
+00:43:10,800 --> 00:43:17,280
+thank you councilman thank you 9c is a public hearing on the zoning of 2.41
+
+470
+00:43:17,280 --> 00:43:20,460
+acres of land lying on the west side of old Big Cove Road and south of Worley
+
+471
+00:43:20,460 --> 00:43:24,240
+Drive to residents to district and consideration of an ordinance pertaining
+
+472
+00:43:24,240 --> 00:43:28,500
+to this name mr. Nunez good evening council members mayor battle Thomas
+
+473
+00:43:28,500 --> 00:43:33,520
+Nunez manager planning and zoning services this item was annexed into city
+
+474
+00:43:33,520 --> 00:43:39,000
+of Huntsville approximately two months ago the zoning of this property is
+
+475
+00:43:39,040 --> 00:43:44,480
+approximately 2.41 acres it is an existing single-family home and residents
+
+476
+00:43:44,480 --> 00:43:49,160
+are seeking to zone the property residents to district in which is
+
+477
+00:43:49,160 --> 00:43:55,040
+consistent with the Jason zoning properties the public hearing on item 9c
+
+478
+00:43:55,040 --> 00:43:59,280
+is now open is there anyone here wishing to address us regarding or make comments
+
+479
+00:43:59,280 --> 00:44:06,480
+regarding 9c seeing none the hearing is closed their emotion to approve motion
+
+480
+00:44:06,520 --> 00:44:11,720
+second from mr. Maris second from miss Watkins any questions for mr. Nunez all
+
+481
+00:44:11,720 --> 00:44:16,080
+in favor please indicate I oppose motion carries 90 is a public hearing on the
+
+482
+00:44:16,080 --> 00:44:20,560
+zoning of 2.47 acres of land lying on the south side of old highway 20 east of
+
+483
+00:44:20,560 --> 00:44:24,040
+Greenbrier Parkway to commercial industrial Park District and
+
+484
+00:44:24,040 --> 00:44:27,400
+consideration of an ordinance pertaining to the same mr. Nunez
+
+485
+00:44:27,400 --> 00:44:33,520
+councilman decided him is located old on old highway 7 on highway 20 and east of
+
+486
+00:44:33,520 --> 00:44:37,560
+Greenbrier Parkway this property was recently annexed into city limits in
+
+487
+00:44:37,560 --> 00:44:41,840
+his own seeking to zone the property commercial industrial Park consistent
+
+488
+00:44:41,840 --> 00:44:47,520
+with adjacent properties thank you mr. Nunez public hearing on item 90 is now
+
+489
+00:44:47,520 --> 00:44:52,280
+open is anyone wishing to comment seeing none the public hearing is closed is
+
+490
+00:44:52,280 --> 00:44:56,200
+there a motion to approve motion to motion mr. Meredith second for mr.
+
+491
+00:44:56,200 --> 00:45:02,760
+cling any questions for mr. Nunez all in favor please indicate I pose motion
+
+492
+00:45:02,800 --> 00:45:08,640
+carries and finally 90 is a public hearing on the rezoning of 505.03 acres
+
+493
+00:45:08,640 --> 00:45:13,160
+of land lying on north of bogway lane east of West Mountain Mount Lebanon road
+
+494
+00:45:13,160 --> 00:45:16,940
+from residence to and residents to be districts to plan development housing
+
+495
+00:45:16,940 --> 00:45:22,520
+district LUI 45 and 56 and consideration of an ordinance pertaining to the same
+
+496
+00:45:22,520 --> 00:45:31,800
+some hope we just heard about mr. new let's let mr. Nunez go first sure
+
+497
+00:45:31,960 --> 00:45:35,800
+again council members I'll start with a small presentation I'll try to make this
+
+498
+00:45:35,800 --> 00:45:39,800
+as quickly as possible as you currently have a motion on the table that has not
+
+499
+00:45:39,800 --> 00:45:44,040
+yet been seconded again this item is our plan development housing district
+
+500
+00:45:44,040 --> 00:45:49,680
+rezoning property was recently annexed into city Huntsville in August of 2025
+
+501
+00:45:49,680 --> 00:45:54,200
+and was zoned appropriately so that they can go through the plan development
+
+502
+00:45:54,200 --> 00:46:01,120
+process so through this you would see a proposal of 505 acres essentially
+
+503
+00:46:01,120 --> 00:46:06,440
+producing approximately 1800 homes those 1800 homes were consistent of
+
+504
+00:46:06,440 --> 00:46:13,520
+multiple phasing of homes that we call home choice and options where that this
+
+505
+00:46:13,520 --> 00:46:25,480
+proposal will produce a 42 lot 42 width lot development also a 56 56 foot lot
+
+506
+00:46:25,560 --> 00:46:31,640
+development and also a 66 lot size lot development when you look at these 30 40
+
+507
+00:46:31,640 --> 00:46:37,720
+in the town homes this is talking about product so getting down to the very last
+
+508
+00:46:37,720 --> 00:46:43,200
+role in that with says Harris farms overall within the 30 foot this is just
+
+509
+00:46:43,200 --> 00:46:48,800
+the product that is the home the style itself and not the lot sizes through my
+
+510
+00:46:48,800 --> 00:46:53,080
+presentation I'll get into a little bit of deeper discussion is how that fits
+
+511
+00:46:53,080 --> 00:46:55,960
+into the light and some of the modifications that will come before you
+
+512
+00:46:55,960 --> 00:47:04,920
+soon but overall this produces 1800 units 548 of those units would be a 30
+
+513
+00:47:04,920 --> 00:47:12,360
+foot product 40 of 623 units would be a 40 foot product and 226 would be a 54
+
+514
+00:47:12,360 --> 00:47:19,280
+foot product and lastly 141 proposed town homes one of the things that planning
+
+515
+00:47:19,480 --> 00:47:24,560
+staff likes about this development is that is a diverse housing strategy that
+
+516
+00:47:24,560 --> 00:47:28,640
+is new what it keeps and allows for affordability throughout the
+
+517
+00:47:28,640 --> 00:47:33,480
+development as I move forward this proposal will have four different
+
+518
+00:47:33,480 --> 00:47:38,760
+street sections that are non-traditional to how we currently design streets
+
+519
+00:47:38,760 --> 00:47:41,960
+nevertheless they are still streets that we've seen on a common basis
+
+520
+00:47:41,960 --> 00:47:46,240
+throughout our city but it kept of course as you look at other housing and
+
+521
+00:47:46,240 --> 00:47:51,680
+plan development you see these types of styles each one of these sections has
+
+522
+00:47:51,680 --> 00:47:57,200
+approximately an 8 foot planting section which is similar to that of our crime
+
+523
+00:47:57,200 --> 00:48:00,480
+prevention through environmental design that is allowed through our subdivision
+
+524
+00:48:00,480 --> 00:48:05,140
+regulations they produce a tree that will add for vegetation and shading over
+
+525
+00:48:05,140 --> 00:48:09,160
+time for those that will commute and walk through this community this
+
+526
+00:48:09,160 --> 00:48:13,000
+community as I speak about it will be very walkable as majority of these
+
+527
+00:48:13,240 --> 00:48:19,840
+phases of ABC all have six foot sidewalks currently our regulations require
+
+528
+00:48:19,840 --> 00:48:23,520
+four foot as you can see they are going just beyond and have to ask for
+
+529
+00:48:23,520 --> 00:48:27,840
+modification for these these different street sections but through that
+
+530
+00:48:27,840 --> 00:48:32,280
+development you can see the primaries there's a Boulevard Street which is a
+
+531
+00:48:32,280 --> 00:48:38,760
+a major collector Street which is B there are two of those and then a C
+
+532
+00:48:38,760 --> 00:48:42,360
+collector minor collector Street which would be on the west side of Mount
+
+533
+00:48:42,400 --> 00:48:49,040
+Lebanon through this development there will also be a local road that has a 50
+
+534
+00:48:49,040 --> 00:48:54,120
+foot right away there will also ask for a modification but I'll get to those a
+
+535
+00:48:54,120 --> 00:48:59,000
+little bit later this is the housing style and products that you will see
+
+536
+00:48:59,000 --> 00:49:04,000
+these are similar to developments that we've seen throughout our city but also
+
+537
+00:49:04,000 --> 00:49:09,120
+has will have designs that standards and architectural review committees that
+
+538
+00:49:09,120 --> 00:49:14,440
+will review each component as these homes are built therefore if the city
+
+539
+00:49:14,440 --> 00:49:20,440
+council approves this plan development furthermore this open space rendering
+
+540
+00:49:20,440 --> 00:49:25,000
+and amenities what I do want to bring to the forefront is that this development
+
+541
+00:49:25,000 --> 00:49:31,320
+is heavily amenitized but approximately 350 acres of open space and about 15
+
+542
+00:49:31,320 --> 00:49:36,880
+acres of recreational space throughout the entire development so when getting
+
+543
+00:49:36,880 --> 00:49:44,560
+to the deeper details you'll see larger amenities pickleball courts greenways
+
+544
+00:49:44,560 --> 00:49:53,080
+larger sidewalks some other aspects of pickleball courts pocket parks dog parks
+
+545
+00:49:53,080 --> 00:49:56,000
+that will happen throughout this all throughout the entirety of the
+
+546
+00:49:56,000 --> 00:49:59,560
+development that would make it attainable for those to walk and just
+
+547
+00:49:59,560 --> 00:50:06,120
+live and have a sense of community throughout the development as well now
+
+548
+00:50:06,160 --> 00:50:11,200
+this is just another depiction of our land use intensity calculations that are
+
+549
+00:50:11,200 --> 00:50:15,000
+requirement of the zoning ordinance and just showing that we meet and require or
+
+550
+00:50:15,000 --> 00:50:20,920
+are above those particular standards as established now the modifications
+
+551
+00:50:20,920 --> 00:50:25,640
+themselves within our planning our zoning districts of our two there are
+
+552
+00:50:25,640 --> 00:50:30,520
+several modifications the primary one is that under our two we only allow for
+
+553
+00:50:30,520 --> 00:50:35,520
+approximately 6,000 square foot in a 50 foot lot this modification for the 30
+
+554
+00:50:35,520 --> 00:50:41,960
+foot product will reduce that size by a feet to a 42 foot lot size without 5040
+
+555
+00:50:41,960 --> 00:50:48,000
+square feet and also a reduction in the rear yard setbacks to approximately 15
+
+556
+00:50:48,000 --> 00:50:53,960
+feet for each style at each product and lastly or multiple throughout that side
+
+557
+00:50:53,960 --> 00:51:00,200
+yard setbacks will be reduced to 5 feet and for two stories will go to 5.5 feet
+
+558
+00:51:00,400 --> 00:51:05,680
+with the sum of side yards at 12 feet throughout the development the one unique
+
+559
+00:51:05,680 --> 00:51:12,080
+thing is the typically within our two you see a 40% lot coverage this
+
+560
+00:51:12,080 --> 00:51:17,320
+development with a request or ask for modification to go to a 63% lot
+
+561
+00:51:17,320 --> 00:51:21,960
+coverage now within that 63% lot coverage you spoke to the fact that you
+
+562
+00:51:21,960 --> 00:51:28,360
+are producing approximately 350 acres of just open space green space open space
+
+563
+00:51:28,400 --> 00:51:33,440
+that is clear to the sky with no true development on it but also 15 acres of
+
+564
+00:51:33,440 --> 00:51:38,840
+recreational space so the amenities align with the density controls that are
+
+565
+00:51:38,840 --> 00:51:42,960
+being placed within this development as we see it from a planning perspective
+
+566
+00:51:42,960 --> 00:51:48,360
+again another modification that you'll see is for the townhome developments
+
+567
+00:51:48,360 --> 00:51:53,560
+currently by our regulations we do not allow for garage in the front yard and
+
+568
+00:51:53,560 --> 00:51:58,000
+for a townhome but this would request that they have a front loaded product
+
+569
+00:51:58,040 --> 00:52:03,680
+in the garage in the front and of course the light one of the closest to last
+
+570
+00:52:03,680 --> 00:52:08,880
+modifications is a height adjustment to the amenity buildings typically within
+
+571
+00:52:08,880 --> 00:52:13,400
+your subdivisions with a clubhouse on the many buildings built it has to meet
+
+572
+00:52:13,400 --> 00:52:17,680
+the requirements of that of the single family home those homes are 30 feet and
+
+573
+00:52:17,680 --> 00:52:23,080
+or 35 depending on the regulation this modifications asking to a go to a 45
+
+574
+00:52:23,160 --> 00:52:29,040
+foot that is all due to the heavy amenity of activities to pools and
+
+575
+00:52:29,040 --> 00:52:33,080
+recreational spaces that are happening in this development so you'll ask for
+
+576
+00:52:33,080 --> 00:52:38,680
+they're asking for an additional 10 feet for the amenity sections but again when
+
+577
+00:52:38,680 --> 00:52:42,080
+you if I were to go back you would see how large these spaces are and they
+
+578
+00:52:42,080 --> 00:52:45,640
+don't seem to overpower the current developments that would happen if you
+
+579
+00:52:45,640 --> 00:52:51,640
+see that this section is approved and when the last ones is a 50 foot right
+
+580
+00:52:51,680 --> 00:52:56,920
+away reduction to 12 feet of pavement a typical right away sections are require
+
+581
+00:52:56,920 --> 00:53:03,400
+a 26 feet of pavement this would go to 24 feet of pavement so 2 feet of a
+
+582
+00:53:03,400 --> 00:53:07,760
+reduction of just pavement area but however recall that I stated that you're
+
+583
+00:53:07,760 --> 00:53:12,040
+getting the minute as sections through larger sidewalks these sidewalks would
+
+584
+00:53:12,040 --> 00:53:21,600
+go to 5 feet in this section and also a the tree planting section as well and
+
+585
+00:53:21,600 --> 00:53:26,480
+I do want to give cadence in respect to those that are doing this work Suncrest
+
+586
+00:53:26,480 --> 00:53:31,880
+Thomas and Hutton shoulder engineering Casey and spectrum sudden Suncrest and
+
+587
+00:53:31,880 --> 00:53:36,320
+Thomas and Hutton are present and will happily answer any questions that you
+
+588
+00:53:36,320 --> 00:53:42,960
+have but that is my presentation you will hold on questions until we've had
+
+589
+00:53:42,960 --> 00:53:49,520
+the public hearing so the public hearing on on this item is a 9e is now open is
+
+590
+00:53:49,520 --> 00:53:55,520
+there anyone wishing to make comments regarding this anyone wishing to make
+
+591
+00:53:55,520 --> 00:53:59,760
+comments seeing none the public hearing is now closed this Watkins would you
+
+592
+00:53:59,760 --> 00:54:04,920
+like to make a motion move to approve second by mr. Meredith questions for
+
+593
+00:54:04,920 --> 00:54:11,200
+mr. Nunes I do I'm more so not questions you thoroughly explained
+
+594
+00:54:11,200 --> 00:54:17,120
+everything to me and I really appreciate that and more so comment I'm really
+
+595
+00:54:17,120 --> 00:54:21,640
+excited about this development in district one it's going to go in line
+
+596
+00:54:21,640 --> 00:54:26,560
+with the retail space and commercial space that's being developed as well so
+
+597
+00:54:26,560 --> 00:54:31,280
+it's going to complement it as well as give the residents an opportunity for
+
+598
+00:54:31,280 --> 00:54:39,440
+work health play and I want to also comment that in the past I had voted
+
+599
+00:54:39,440 --> 00:54:44,680
+against a development in mr. Meredith's district and that was because there was
+
+600
+00:54:44,680 --> 00:54:48,600
+not a clear understanding of if things have been communicated with Huntsville
+
+601
+00:54:48,600 --> 00:54:55,120
+City Schools since that time Shane Davis economic development director and their
+
+602
+00:54:55,120 --> 00:54:58,560
+battle both have reassured me that they've been communicating with
+
+603
+00:54:58,560 --> 00:55:05,160
+Huntsville City Schools and I even spoke with dr. Sudden as well and he is happy
+
+604
+00:55:05,160 --> 00:55:09,920
+about this development happy about the prospect of having students come in and
+
+605
+00:55:10,520 --> 00:55:14,720
+attend schools in district one so this is the main reason why I'm supporting
+
+606
+00:55:14,720 --> 00:55:18,640
+because I'm confident that the city and Huntsville City Schools are working
+
+607
+00:55:18,640 --> 00:55:23,160
+together to ensure that our students are taken care of and that was my only
+
+608
+00:55:23,160 --> 00:55:28,360
+concern that concern now has been reassured appreciate you for that mayor
+
+609
+00:55:28,360 --> 00:55:33,640
+battle appreciate you that Shane Davis and Dr. Sudden so I just want to say job
+
+610
+00:55:33,640 --> 00:55:39,000
+well done thank you and welcome to the family district one I'll get you a
+
+611
+00:55:39,000 --> 00:55:45,120
+t-shirt okay thank you miss Watkins other questions mr. yes you had
+
+612
+00:55:45,120 --> 00:55:50,120
+mentioned the town homes has a front-loaded garages do you have an
+
+613
+00:55:50,120 --> 00:56:00,520
+illustration of that yes that is in a slide that would be provided there so
+
+614
+00:56:00,520 --> 00:56:05,440
+just to the right where town homes on the front and a small use you can see
+
+615
+00:56:05,440 --> 00:56:09,280
+the different styles on it just to the left of those screens that speak to the
+
+616
+00:56:09,280 --> 00:56:12,920
+size like the minute so through this development we established the minimums
+
+617
+00:56:12,920 --> 00:56:17,800
+and they can go beyond those particular standards thank you you're very welcome
+
+618
+00:56:17,800 --> 00:56:27,120
+sir and thank you miss Watkins glad you feel good about the Westmoreland planned
+
+619
+00:56:27,120 --> 00:56:32,800
+development that you had concerns about earlier but I don't have any concerns
+
+620
+00:56:32,840 --> 00:56:39,680
+about this good stuff for you and as you said welcome district one but welcome to
+
+621
+00:56:39,680 --> 00:56:45,280
+Huntsville from my perspective mr. clean comments just said I think what's good
+
+622
+00:56:45,280 --> 00:56:49,520
+for North Huntsville is good for all of Huntsville and you have more of this
+
+623
+00:56:49,520 --> 00:56:54,680
+type of development this type of growth taking place it spreads it out and you
+
+624
+00:56:54,680 --> 00:56:59,400
+know takes takes away the congestion in the central portion of the city traffic
+
+625
+00:56:59,400 --> 00:57:04,600
+flow goes a little bit better and again I think we've got great things going on
+
+626
+00:57:04,600 --> 00:57:09,000
+in different corners throughout the city absolutely check out the point that
+
+627
+00:57:09,000 --> 00:57:13,480
+Councilman Watkins has made this is definitely a steering point of the
+
+628
+00:57:13,480 --> 00:57:16,240
+trajectory of growth of district one that we've seen over the last six years
+
+629
+00:57:16,240 --> 00:57:21,280
+and one of the primary actions that are happening now so thanks to Shane and his
+
+630
+00:57:21,280 --> 00:57:24,600
+support on these as well as we go through these particular actions of
+
+631
+00:57:24,600 --> 00:57:27,600
+bringing in developments and expectations and thank you council
+
+632
+00:57:27,600 --> 00:57:32,360
+members for voting but also asking the hard questions of how we get to make
+
+633
+00:57:32,360 --> 00:57:36,160
+sure that we continue to put out the best product that we can thank you very
+
+634
+00:57:36,160 --> 00:57:43,400
+much mr. Nunez and again for the whole team great work so all in favor
+
+635
+00:57:43,400 --> 00:57:49,920
+any opposed motion carries thank you all very much we have one public hearing to
+
+636
+00:57:49,920 --> 00:57:55,160
+set 10a is a resolution to set a public hearing on the rezoning of 12.50 acres
+
+637
+00:57:55,160 --> 00:57:58,600
+of land lying on the east side of Leman Ferry Road north of Phil Dots Drive from
+
+638
+00:57:58,600 --> 00:58:03,120
+commercial recreation c5 district to highway business c4 district and
+
+639
+00:58:03,120 --> 00:58:06,320
+introduction of an ordinance to be pertained to the same is there a motion
+
+640
+00:58:06,320 --> 00:58:12,040
+to set the hearing for August 27 26 26 regular council meeting motion for mr.
+
+641
+00:58:12,040 --> 00:58:15,720
+cling second for mr. Meredith all in favor please indicate aye any opposed
+
+642
+00:58:15,720 --> 00:58:21,440
+motion carries the hearing is set brings us to agenda related public comments and
+
+643
+00:58:21,480 --> 00:58:27,160
+we do not have anyone signed up on agenda related public comments so we
+
+644
+00:58:27,160 --> 00:58:32,240
+will go on and officially welcome mayor back mayor battle back from the London
+
+645
+00:58:32,240 --> 00:58:36,360
+Air Show he is with us now mayor would you have you overcome jet lags
+
+646
+00:58:36,360 --> 00:58:41,080
+sufficiently to make comments we landed about an hour ago so we're not not quite
+
+647
+00:58:41,080 --> 00:58:48,800
+quite over the jet lag yet but you know it was let me say as we were out there
+
+648
+00:58:48,840 --> 00:58:53,760
+we went through probably five different functions with different groups 20
+
+649
+00:58:53,760 --> 00:58:58,920
+different meetings and were able to talk to industry some industry was already
+
+650
+00:58:58,920 --> 00:59:03,520
+located here talk to them about growth and what what they were looking for in
+
+651
+00:59:03,520 --> 00:59:07,080
+the future and every one of them were looking at how we could grow more in the
+
+652
+00:59:07,080 --> 00:59:12,200
+future and offer more opportunity in the future but it was also a lot of
+
+653
+00:59:12,200 --> 00:59:18,360
+companies who you know fit into the mode of what we do here and needed to be here
+
+654
+00:59:18,520 --> 00:59:26,320
+and so we had about 20 meetings with with companies that might be looking to
+
+655
+00:59:26,320 --> 00:59:31,000
+settle down and get a new home a lot of them moving from overseas production and
+
+656
+00:59:31,000 --> 00:59:36,080
+moving into the United States and so we've got some some opportunity we made
+
+657
+00:59:36,080 --> 00:59:42,720
+an announcement there for 150 jobs which the 150 jobs will equal about 12 million
+
+658
+00:59:42,720 --> 00:59:46,360
+dollars a year coming into this community year in and year out from
+
+659
+00:59:46,920 --> 00:59:51,520
+payroll so that was it was it was really a good meeting and you know but I was
+
+660
+00:59:51,520 --> 00:59:55,000
+glad to be able to get back there's nothing like sleeping in your own bed
+
+661
+00:59:55,000 --> 00:59:59,680
+and but also this weekend I mean there's a lot of activities happening this
+
+662
+00:59:59,680 --> 01:00:05,960
+weekend Kathy will be going on Saturday at Calhoun where we'll be making sure
+
+663
+01:00:05,960 --> 01:00:10,560
+that young people have have the tools they need to get back in school with
+
+664
+01:00:10,560 --> 01:00:17,600
+backpacks the times buildings having its 100th year anniversary and Delta Sigma
+
+665
+01:00:17,600 --> 01:00:23,440
+theta is in town and we'll have to be having a luncheon on well maybe have an
+
+666
+01:00:23,440 --> 01:00:30,280
+activities weekend but a luncheon on Saturday and let me just say you know
+
+667
+01:00:30,280 --> 01:00:35,140
+Harris Farms is a great development for us and you know this just follows in the
+
+668
+01:00:35,140 --> 01:00:43,740
+progression of how these things work you know we started out with with jobs up
+
+669
+01:00:43,740 --> 01:00:50,300
+in up from the North North Huntsville Industrial Park we had jobs there we
+
+670
+01:00:50,300 --> 01:00:55,560
+added infrastructure words we added that our loop road into there and also the
+
+671
+01:00:55,560 --> 01:01:03,380
+overpass it on the North Parkway area and then we added we've been able to add
+
+672
+01:01:03,380 --> 01:01:09,860
+retail and and along with the infrastructure the last thing that comes
+
+673
+01:01:09,860 --> 01:01:15,500
+in is residential and this is just the way it's worked in out in Limestone
+
+674
+01:01:15,500 --> 01:01:21,700
+County near the Toyota and Mazda Toyota plant this is the way it is working in
+
+675
+01:01:21,700 --> 01:01:27,680
+in what for the Harris Farm development and and other developments that will
+
+676
+01:01:27,680 --> 01:01:30,960
+happen along that area it's a progression and each one of those
+
+677
+01:01:30,960 --> 01:01:38,280
+pieces have to be in place before the next piece can happen so congratulations
+
+678
+01:01:38,280 --> 01:01:42,920
+to our planning staff thank you for the job that y'all done thank you to council
+
+679
+01:01:42,920 --> 01:01:48,160
+for y'all support and making this happen this would be a great thing adding homes
+
+680
+01:01:48,160 --> 01:01:54,760
+and and and people to our community and also adding to our economy up in the
+
+681
+01:01:54,760 --> 01:01:59,600
+north north end of town so thank you. Thank you Mayor Battle welcome home
+
+682
+01:01:59,760 --> 01:02:03,620
+brings us to councilmember comments we'll begin with councilmember John
+
+683
+01:02:03,620 --> 01:02:09,860
+Meredith. Thank you want to give heartfelt condolences to the family of
+
+684
+01:02:09,860 --> 01:02:18,260
+Tom Glenn who recently passed away after battling a fairly long illness I became
+
+685
+01:02:18,260 --> 01:02:25,320
+familiar with him through his leadership at the senior center and just a great
+
+686
+01:02:25,320 --> 01:02:31,600
+individual who I had more recently been working hand-in-hand with to expand the
+
+687
+01:02:31,600 --> 01:02:38,800
+Meals on Wheels program into the 5th district and his his absence has already
+
+688
+01:02:38,800 --> 01:02:44,360
+been felt but I know his family's going through a tough time right now and all
+
+689
+01:02:44,360 --> 01:02:52,200
+my heartfelt condolences to his family the we feel foundation will be hold
+
+690
+01:02:52,360 --> 01:02:59,000
+holding its launch pad event this Saturday July 25th from 10 a.m. until
+
+691
+01:02:59,000 --> 01:03:04,760
+noon at the West Huntsville Recreation Center the foundation is a young
+
+692
+01:03:04,760 --> 01:03:10,200
+community-based organization located in district 5 and they will be distributing
+
+693
+01:03:10,200 --> 01:03:14,400
+free backpacks and school supplies to students and families in need of those
+
+694
+01:03:14,400 --> 01:03:20,600
+items for those who are in need of those items I look forward to seeing you at
+
+695
+01:03:20,640 --> 01:03:28,120
+this first of its kind event in district 5 I want to acknowledge being a
+
+696
+01:03:28,120 --> 01:03:35,920
+participant in a ribbon cutting for at rather the Grove at Indian Creek off
+
+697
+01:03:35,920 --> 01:03:43,640
+Jeff Road which is in district 5 it is and it will be providing senior
+
+698
+01:03:43,640 --> 01:03:50,840
+affordable housing units that not only will increase the quality of life for
+
+699
+01:03:50,840 --> 01:03:56,000
+its residents but also provide seniors that are having a tough time right now
+
+700
+01:03:56,000 --> 01:04:04,240
+in terms of housing costs particularly those that rent and this could not have
+
+701
+01:04:04,240 --> 01:04:10,960
+happened without coordination between several non-governmental agencies but a
+
+702
+01:04:11,000 --> 01:04:17,440
+lot of departments within the city of Huntsville and community development
+
+703
+01:04:17,440 --> 01:04:26,800
+the engineering department are thanks they're not enough thanks to express the
+
+704
+01:04:26,800 --> 01:04:32,400
+fact that you all really really outdid yourselves in making this happen and
+
+705
+01:04:32,400 --> 01:04:38,920
+don't want to downplay mr. Hamilton in making this happen as well but again
+
+706
+01:04:38,960 --> 01:04:45,720
+this is an addition to an already existing senior community one of which
+
+707
+01:04:45,720 --> 01:04:54,760
+I have a familiar familial relationship with it is where my now deceased mother
+
+708
+01:04:54,760 --> 01:05:01,760
+in law lived for many years and I can tell you that this particular place is
+
+709
+01:05:01,960 --> 01:05:10,560
+one that really really adds quality of life to these seniors they get together
+
+710
+01:05:10,560 --> 01:05:16,520
+they don't wait on management they organize themselves everything from card
+
+711
+01:05:16,520 --> 01:05:22,280
+games to socials and ice cream and margaritas when the time comes so the
+
+712
+01:05:22,280 --> 01:05:26,360
+quality of life that's going to be available to seniors in this community
+
+713
+01:05:26,360 --> 01:05:31,240
+is one of the best in any senior community throughout the city so it was
+
+714
+01:05:31,240 --> 01:05:39,840
+a pleasure to be there I guess finally if Damon could start the slide show on
+
+715
+01:05:39,840 --> 01:05:47,000
+this I wanted to address some traffic concerns in the village of Providence
+
+716
+01:05:47,000 --> 01:05:56,160
+particularly around the off-broadway roadways as you can tell there is a lot
+
+717
+01:05:56,200 --> 01:06:02,160
+of truck traffic and the trucks are frankly violating our traffic laws and
+
+718
+01:06:02,160 --> 01:06:10,280
+blocking this this Avenue into the western side of the village of Providence
+
+719
+01:06:10,280 --> 01:06:18,040
+all the time it is the only way into the west side of Providence and they are
+
+720
+01:06:18,040 --> 01:06:24,640
+causing residents untold amounts of frustration to access their house this
+
+721
+01:06:24,680 --> 01:06:28,760
+is their only way in their only way well their only way out if you are heading
+
+722
+01:06:28,760 --> 01:06:37,040
+east there is another Avenue for them to exit heading west but that's of limited
+
+723
+01:06:37,040 --> 01:06:43,600
+usage for them so I certainly want to encourage and I know they have been
+
+724
+01:06:43,600 --> 01:06:48,640
+already had the outreach based on the fact that they knew I was going to make
+
+725
+01:06:48,640 --> 01:06:55,400
+this presentation but kudos and thank you to both traffic enforcement as well
+
+726
+01:06:55,400 --> 01:07:00,160
+as Huntsville Police Department they're going to be really really monitoring
+
+727
+01:07:00,160 --> 01:07:05,080
+this even more than they have but I wanted to make sure that the residents
+
+728
+01:07:05,080 --> 01:07:11,960
+of Providence are aware that their council person hears them they have been
+
+729
+01:07:11,960 --> 01:07:17,720
+complaining about this a long time we have been quietly working on a second
+
+730
+01:07:17,720 --> 01:07:24,120
+entrance to the west side of Providence so that they can avoid all of this and
+
+731
+01:07:24,120 --> 01:07:30,400
+have an additional way to get access their side of Providence and hopefully
+
+732
+01:07:30,400 --> 01:07:35,280
+we're just a few months away from that project being started and hopefully
+
+733
+01:07:35,280 --> 01:07:39,920
+completed in the very near future but given the fact that that is their only
+
+734
+01:07:39,920 --> 01:07:47,360
+way in it well only way in and of limited uses the exit out from that other
+
+735
+01:07:47,360 --> 01:07:57,520
+side so again I want to thank Huntsville Police and our traffic enforcement
+
+736
+01:07:57,520 --> 01:08:03,680
+people as well but the second entrance is obviously needed and it creates its
+
+737
+01:08:03,680 --> 01:08:12,320
+its own ecosystem because it will allow folks to enter that side it's better in
+
+738
+01:08:12,320 --> 01:08:17,920
+terms of access for first responders particularly Huntsville Fire and Rescue
+
+739
+01:08:17,920 --> 01:08:23,920
+as they can access a light and go in versus having to go all the way around
+
+740
+01:08:23,920 --> 01:08:30,520
+and then make a u-turn and go over what is a barricade at 72 and I believe it's
+
+741
+01:08:30,520 --> 01:08:35,000
+Hillcrest so thank everyone involved that we really appreciate it thank you
+
+742
+01:08:35,000 --> 01:08:40,920
+madam president thank you mr. Meredith miss Watkins good evening everyone I want
+
+743
+01:08:40,920 --> 01:08:46,400
+to invite everyone out on Saturday morning at 8 o'clock at the Shurning
+
+744
+01:08:46,400 --> 01:08:50,120
+Center we're gonna have an overdose awareness walk and it's to bring
+
+745
+01:08:50,120 --> 01:08:55,240
+awareness to the epidemic that we currently have not just in Alabama and
+
+746
+01:08:55,240 --> 01:08:59,120
+Huntsville but throughout the country also want to invite everybody out to
+
+747
+01:08:59,120 --> 01:09:05,160
+Kathy our multicultural affairs office with Randy Barber and Harry Hobbs at
+
+748
+01:09:05,160 --> 01:09:10,000
+Huntsville utilities will host Kathy annual event they have activities for
+
+749
+01:09:10,000 --> 01:09:14,000
+the kids they give away free book bags and school supplies and they have
+
+750
+01:09:14,000 --> 01:09:19,600
+information available as well if you're one to participate in the celebrating
+
+751
+01:09:19,600 --> 01:09:24,760
+education parade this year it's going to be on August 22nd parade a rollout at
+
+752
+01:09:24,760 --> 01:09:28,720
+eight o'clock on Maston Lake turn on Pulaski and we will arrive on
+
+753
+01:09:28,720 --> 01:09:34,200
+Jemison High School there'll be plenty of activities for the kids as well as
+
+754
+01:09:34,200 --> 01:09:41,120
+opportunities for parents to sign up for PTA and lastly I want to thank Public
+
+755
+01:09:41,120 --> 01:09:46,680
+Works landscape management community development public safety fire and
+
+756
+01:09:46,680 --> 01:09:52,840
+rescue let me just say there's not been a time that I've called and asked
+
+757
+01:09:52,840 --> 01:09:57,440
+questions and they were not promptly answered and I appreciate that I
+
+758
+01:09:57,440 --> 01:10:01,200
+appreciate our employees taking time out to do that for us I want to thank
+
+759
+01:10:01,200 --> 01:10:06,400
+Thomas and Shane personally for tonight you like gave me Christmas in July so
+
+760
+01:10:06,400 --> 01:10:12,920
+thank you thank you miss Watkins mr. clean thank you madam president I want
+
+761
+01:10:12,920 --> 01:10:19,160
+to join councilmember Meredith in recognizing the great contributions and
+
+762
+01:10:19,160 --> 01:10:26,160
+the great loss we feel with the passing of Tom Glenn Tom was a yeoman working
+
+763
+01:10:26,160 --> 01:10:31,180
+at that senior center he was a visionary he cared about the people there and he
+
+764
+01:10:31,180 --> 01:10:36,460
+took Huntsville senior center and he really turned it into a thriving active
+
+765
+01:10:36,460 --> 01:10:42,820
+community and he really leaves a big void that's going to be greatly missed
+
+766
+01:10:42,820 --> 01:10:48,100
+and this community is a lot better for having Tom Glenn as a citizen in it for
+
+767
+01:10:48,100 --> 01:10:56,740
+the years that we had him I wanted to ask if I can get mr. Hamilton to come up
+
+768
+01:10:56,900 --> 01:11:04,180
+we've had a lot of discussion input internet flow and concerns expressed
+
+769
+01:11:04,180 --> 01:11:10,620
+about tree removals that took place at the Huntsville middle school location
+
+770
+01:11:10,620 --> 01:11:15,100
+which is school system property not city of Huntsville property and adjacent to
+
+771
+01:11:15,100 --> 01:11:20,400
+it of course is California Park which is a city park and mr. Hamilton can you
+
+772
+01:11:20,400 --> 01:11:25,440
+just tell us about was any of the trees impacted are those trees going to be
+
+773
+01:11:25,440 --> 01:11:31,080
+protected or how is that all going to work in the future sure councilmember
+
+774
+01:11:31,080 --> 01:11:36,280
+John Hamilton city administrator so yes there's we received questions just just
+
+775
+01:11:36,280 --> 01:11:40,400
+like you did mr. clang about you know kind of the school system construction
+
+776
+01:11:40,400 --> 01:11:44,560
+how it relates to our adjacent properties of California Park sits at the
+
+777
+01:11:44,560 --> 01:11:51,380
+corner of California and low Avenue which is adjacent to where current
+
+778
+01:11:51,380 --> 01:11:54,400
+Huntsville junior high my understanding is that they're they're going to rename
+
+779
+01:11:54,480 --> 01:11:58,240
+it Tunsville middle school when it when the new facility opens so the school
+
+780
+01:11:58,240 --> 01:12:01,480
+system has started their construction on that new facility course are making
+
+781
+01:12:01,480 --> 01:12:05,240
+significant capital investments in schools all across the city that's one
+
+782
+01:12:05,240 --> 01:12:09,880
+of the earlier ones in that in that cycle so their their project is solely
+
+783
+01:12:09,880 --> 01:12:13,060
+on their land which really kind of surrounds the park you know to the to
+
+784
+01:12:13,060 --> 01:12:18,080
+the west and to to the south along California all of their work is contained
+
+785
+01:12:18,080 --> 01:12:22,080
+solely on their property and so their their work will not touch the parcels
+
+786
+01:12:22,080 --> 01:12:26,080
+that we own that that make up California Park and certainly you know
+
+787
+01:12:26,080 --> 01:12:28,740
+would encourage citizens to if they have any questions about the school's
+
+788
+01:12:28,740 --> 01:12:31,520
+capital plans to engage with their school board members and the school
+
+789
+01:12:31,520 --> 01:12:35,760
+system to understand those in greater detail but this answer to the specific
+
+790
+01:12:35,760 --> 01:12:38,080
+question that you and I have both been hit with is that that school
+
+791
+01:12:38,080 --> 01:12:42,640
+construction does not affect California Park now you know California Park is one
+
+792
+01:12:42,640 --> 01:12:48,160
+of several that we know in the out years is due for some renovations and some
+
+793
+01:12:48,160 --> 01:12:51,680
+investment things and so when I bring you the update to the 90 capital plan
+
+794
+01:12:51,680 --> 01:12:55,720
+here in September I intend to have a project in it you know out in a few
+
+795
+01:12:55,720 --> 01:12:59,400
+years kind of after the school system is done with their work for the things we
+
+796
+01:12:59,400 --> 01:13:03,080
+need to to spruce that park back up along with others throughout the city
+
+797
+01:13:03,080 --> 01:13:07,800
+well I think I think that'll be good so the bottom line is the the trees at
+
+798
+01:13:07,800 --> 01:13:13,200
+California Park city land will not be impacted by what's taking place and I'm
+
+799
+01:13:13,200 --> 01:13:17,120
+assuming that whatever plan we have concerning and I know councilmember
+
+800
+01:13:17,120 --> 01:13:21,280
+little and I both been talking about you know getting California Park upgraded
+
+801
+01:13:21,520 --> 01:13:26,200
+I'm sure there'll be plenty of time for public to see plans give us input town
+
+802
+01:13:26,200 --> 01:13:31,760
+meetings and see where we go there so it'll be a collaborative process that
+
+803
+01:13:31,760 --> 01:13:35,400
+between the city and the community and they're not going to just wake up and
+
+804
+01:13:35,400 --> 01:13:39,920
+all of a sudden see something's there take it or leave it correct okay thank
+
+805
+01:13:39,920 --> 01:13:47,280
+you sir thank you thank you mr. cling on August 4th I we will be holding South
+
+806
+01:13:47,320 --> 01:13:52,320
+Huntsville town hall at six o'clock at the Moon Center in the band rehearsal
+
+807
+01:13:52,320 --> 01:13:55,760
+room we hope this is maybe the last time we will be meeting in the band rehearsal
+
+808
+01:13:55,760 --> 01:14:00,720
+room we look forward to getting into the new event hall the speaker on August
+
+809
+01:14:00,720 --> 01:14:04,480
+4th at six o'clock will be our long-range planner Dennis Madsen he will
+
+810
+01:14:04,480 --> 01:14:11,080
+be presenting an update on the big picture plan it's a 10-year plan and and
+
+811
+01:14:11,080 --> 01:14:15,680
+there are some exciting things to to see and also to talk about what the next
+
+812
+01:14:16,160 --> 01:14:20,240
+so join us at on August 4th at six o'clock we will also have a report on
+
+813
+01:14:20,240 --> 01:14:26,520
+the completion of the Moon Center I also want to extend thanks to our
+
+814
+01:14:26,520 --> 01:14:32,760
+sanitation workers who worked extra hours this past week to pick up
+
+815
+01:14:32,760 --> 01:14:40,800
+recycling after the July 4th holiday we had some significant delays in recycling
+
+816
+01:14:40,800 --> 01:14:45,040
+pickups the blue can in front of our house sat out there for ten days and
+
+817
+01:14:45,080 --> 01:14:50,400
+that is inexcusable and so I just want to go on record to let our friends at
+
+818
+01:14:50,400 --> 01:14:56,120
+the the solid waste disposal authority know that we need a new contractor for
+
+819
+01:14:56,120 --> 01:15:00,640
+our recycling we needed it for a while and this sort of was the last the last
+
+820
+01:15:00,640 --> 01:15:05,280
+time last excuse and I hope it's the last time our sanitation workers have
+
+821
+01:15:05,280 --> 01:15:11,200
+to make up their shortfall so many thanks to Chris McNeese and everyone in
+
+822
+01:15:11,560 --> 01:15:17,600
+public works and sanitation who helped ran a catch-up we'll move on to the
+
+823
+01:15:17,600 --> 01:15:22,600
+finance committee report 14 a is a resolution authorizing expenditures for
+
+824
+01:15:22,600 --> 01:15:26,240
+payment mr. mayor I move for the authorization and approval of
+
+825
+01:15:26,240 --> 01:15:32,200
+expenditures in the amount of 30 million fifteen thousand eighty seven dollars
+
+826
+01:15:32,200 --> 01:15:36,160
+and forty three cents second by second for mr. clang all in favor please in
+
+827
+01:15:36,160 --> 01:15:42,560
+case I can pose motion carries 14 be is there a report oh I'm sorry no not
+
+828
+01:15:42,560 --> 01:15:46,360
+tonight thank you 14 be is an ordinance approving appropriations goods or
+
+829
+01:15:46,360 --> 01:15:49,680
+services for district 1 council improvement funds the chair makes the
+
+830
+01:15:49,680 --> 01:15:53,560
+motion second second from Miss Watkins miss Watkins would you like to share
+
+831
+01:15:53,560 --> 01:15:58,760
+with us this is and yes real father's making a difference incorporated it's a
+
+832
+01:15:58,760 --> 01:16:05,600
+nonprofit that works directly with parents and males specifically at youth
+
+833
+01:16:05,600 --> 01:16:13,160
+risk to assist them and being successful I have observed and seen this program
+
+834
+01:16:13,160 --> 01:16:18,840
+for the last four or five years and mr. Smith who runs program is hands-on in
+
+835
+01:16:18,840 --> 01:16:23,640
+this program to the point that he visits the school talks with the teacher talks
+
+836
+01:16:23,640 --> 01:16:28,320
+with principal about behavior and grades I've seen the impact that he had on
+
+837
+01:16:28,320 --> 01:16:33,400
+these young men lives to the point that when they age out of the program they
+
+838
+01:16:33,400 --> 01:16:37,720
+don't want to leave he has to actually tell them you got to fly the nest now so
+
+839
+01:16:37,720 --> 01:16:43,640
+I'm appropriating these funds because I believe in this program and we need
+
+840
+01:16:43,640 --> 01:16:49,960
+someone working with our youth at this point that has an impact any discussion
+
+841
+01:16:49,960 --> 01:16:56,160
+mr. Merritt no real discussion but I just want to concur I think that mr.
+
+842
+01:16:57,160 --> 01:17:06,040
+an excellent job of conducting this program he does not ask for much and has
+
+843
+01:17:06,040 --> 01:17:12,920
+been is miss Watkins said so influential over so many lives that it's a pleasure
+
+844
+01:17:12,920 --> 01:17:19,080
+to be able to to vote in favor of this the other all in favor please indicate
+
+845
+01:17:19,080 --> 01:17:23,780
+I oppose the motion carries we now have board appointments to be voted on
+
+846
+01:17:23,780 --> 01:17:30,020
+council members note that 15 a and b both require four fifths vote of the
+
+847
+01:17:30,020 --> 01:17:35,300
+council to approve since mr. little is not here we will be asking for a motion
+
+848
+01:17:35,300 --> 01:17:40,140
+to postpone to the August 13th meeting with both of these items 15 a is a
+
+849
+01:17:40,140 --> 01:17:49,100
+resolution to a point I'm sorry is is I understand but I think they're gonna get
+
+850
+01:17:49,100 --> 01:17:54,220
+four fifths is there really a need to postpone I just offer that it's in
+
+851
+01:17:54,220 --> 01:17:58,980
+fairness to the nominee and also the the organization just that we need to have
+
+852
+01:17:58,980 --> 01:18:03,300
+all council members present that's fine that's fine 15 a is a resolution to
+
+853
+01:18:03,300 --> 01:18:06,300
+reappoint David Nass the museum board of the city of Huntsville to his current
+
+854
+01:18:06,300 --> 01:18:12,020
+seat for a six-year term to expire August 13th 2032 the chair moose to
+
+855
+01:18:12,020 --> 01:18:15,860
+postpone consideration to the August 13th meeting we need a motion in the
+
+856
+01:18:15,860 --> 01:18:21,260
+second first but I don't see anybody saying no to it but motion you know it
+
+857
+01:18:21,260 --> 01:18:25,340
+is there is there a motion to approve motion to approve thank you motion
+
+858
+01:18:25,340 --> 01:18:30,020
+mr. Smith second from the chair a motion to postpone consideration to the August
+
+859
+01:18:30,020 --> 01:18:36,700
+13th meeting I guess motion to approve that thank you a second from the chair
+
+860
+01:18:36,700 --> 01:18:41,260
+all in favor please indicate a consideration is postponed to the August
+
+861
+01:18:41,260 --> 01:18:45,880
+13th meeting 15b is a resolution to reappoint Joyce Griffin to the museum
+
+862
+01:18:45,880 --> 01:18:48,460
+board of the city of Huntsville to her current seat for a six-year term to
+
+863
+01:18:48,460 --> 01:18:54,740
+expire August 13th 2032 is there a motion to approve motion second second
+
+864
+01:18:54,740 --> 01:18:58,260
+from miss Watkins the chair moves to postpone consideration to the August
+
+865
+01:18:58,260 --> 01:19:05,660
+13th meeting is there a second from mr. Kling all in favor please indicate I the
+
+866
+01:19:06,660 --> 01:19:12,580
+consideration is approved the August 13th meeting 15c is a resolution to
+
+867
+01:19:12,580 --> 01:19:16,940
+reappoint Mark harberger to the Huntsville downtown redevelopment
+
+868
+01:19:16,940 --> 01:19:22,100
+authority group see his current seat for a six-year term to expire July 26 2032
+
+869
+01:19:22,100 --> 01:19:25,980
+is there a motion for this Watkins second mr. Meredith all in favor please
+
+870
+01:19:25,980 --> 01:19:32,220
+indicate I you pose the motion carries 15d is a resolution to repoint Jumber
+
+871
+01:19:32,220 --> 01:19:35,900
+to the Huntsville downtown redevelopment authority group see his current seat
+
+872
+01:19:35,900 --> 01:19:40,820
+for a six-year term to expire July 26 2032 move to motion from the Watkins
+
+873
+01:19:40,820 --> 01:19:44,380
+second for mr. Meredith all in favor please indicate I pose the motion
+
+874
+01:19:44,380 --> 01:19:48,020
+carries 15e is a resolution to appoint Sharon Beauclair to the Huntsville
+
+875
+01:19:48,020 --> 01:19:51,820
+downtown redevelopment authority group seated a seat previously held by Joseph
+
+876
+01:19:51,820 --> 01:19:57,180
+Clark for a six-year term to expire July 26 2032 move to approve motion from
+
+877
+01:19:57,180 --> 01:20:02,540
+Watkins second for mr. Kling all in favor please indicate I motion carries
+
+878
+01:20:02,540 --> 01:20:07,020
+we have several board appointment nominations these are nominations only
+
+879
+01:20:07,020 --> 01:20:12,220
+they will be considered at the August 13 2026 council meeting 16a is a
+
+880
+01:20:12,220 --> 01:20:15,660
+nomination to reappoint Steve Thornton to the Von Braun Center Board of Control
+
+881
+01:20:15,660 --> 01:20:21,260
+to his current seat for a four-year term to expire August 27 2031 16b is a
+
+882
+01:20:21,260 --> 01:20:24,740
+nomination to reappoint Lynn Troy to the Von Braun Center Board of Control to her
+
+883
+01:20:24,740 --> 01:20:29,980
+current seat for a four-year term to expire August 27 2030 16c is a nomination
+
+884
+01:20:29,980 --> 01:20:34,020
+to appoint Vicki Guerrero to the Housing Board of Adjustments and Appeals to the
+
+885
+01:20:34,020 --> 01:20:37,940
+seat previously held by Robert Jones for a five-year term to expire August 22
+
+886
+01:20:37,940 --> 01:20:44,540
+2031 16d is a nomination to appoint Zachary Hester to the Human Relations
+
+887
+01:20:44,540 --> 01:20:47,360
+Commission place to due to the resignation Tracy Harris for the
+
+888
+01:20:47,360 --> 01:20:52,940
+remainder of a four-year term to expire September 30 2027 16e is a nomination to
+
+889
+01:20:52,940 --> 01:20:56,780
+appoint Emily Rogers the early works Museum Board place three to the seat
+
+890
+01:20:56,780 --> 01:21:02,580
+previously held by Joanna Wyatt for a three-year term to expire June 26 2029 16f
+
+891
+01:21:02,580 --> 01:21:06,700
+is a nomination to appoint Joanna White to the early works Museum Board place
+
+892
+01:21:06,700 --> 01:21:10,820
+eight due to the resignation of Joshua McCoy for the remainder of a three-year
+
+893
+01:21:10,820 --> 01:21:15,620
+term to expire June 26 2028 and again these will be taken up at the August
+
+894
+01:21:15,620 --> 01:21:21,060
+13th meeting we have no utility items we have no legal department items and one
+
+895
+01:21:21,060 --> 01:21:25,020
+unfinished item of an unfinished business 19a is an ordinance concerning
+
+896
+01:21:25,020 --> 01:21:28,300
+a franchise agreement between the City of Huntsville Alabama and Limestone County
+
+897
+01:21:28,300 --> 01:21:31,940
+water and sewer authorities their motion to approve motion mr. mayor second from
+
+898
+01:21:31,940 --> 01:21:36,140
+the chair are there any questions regarding this is just right right away
+
+899
+01:21:36,140 --> 01:21:47,420
+okay Mr. Davis for the listening audience will you tell them what this is
+
+900
+01:21:47,900 --> 01:21:52,260
+yes ma'am so good evening council Shane Davis director urban economic
+
+901
+01:21:52,260 --> 01:21:58,420
+development so as we provide utilities across our city limits our sea limits is
+
+902
+01:21:58,420 --> 01:22:03,900
+very broad especially when it comes to water they are territorial rights by
+
+903
+01:22:03,900 --> 01:22:10,220
+law with 8m of certain service areas for water utilities so you will see within
+
+904
+01:22:10,220 --> 01:22:15,620
+the sea limits of Huntsville we have the majority I would say is served by
+
+905
+01:22:15,620 --> 01:22:19,420
+utilities of course there's a small percentage in actually in the Hampton
+
+906
+01:22:19,420 --> 01:22:23,540
+Cove area that actually is Madison County water customers because that is
+
+907
+01:22:23,540 --> 01:22:27,060
+their territory and then as we get to the Western corridor we actually have
+
+908
+01:22:27,060 --> 01:22:32,720
+harvest from Rovia and Limestone County water we require them to as they get in
+
+909
+01:22:32,720 --> 01:22:36,740
+our right way to have a franchise so franchises get into they will provide
+
+910
+01:22:36,740 --> 01:22:40,620
+service they'll publish their rates but also as we'd make road improvements say
+
+911
+01:22:40,620 --> 01:22:45,980
+we widen a road we want that franchise such that they will relocate their
+
+912
+01:22:45,980 --> 01:22:52,620
+utilities at their cost so that's what this is doing is as we've annexed south
+
+913
+01:22:52,620 --> 01:22:58,380
+of off off 65 in the rapidly growing swanky road area district 5 we need to
+
+914
+01:22:58,380 --> 01:23:03,660
+provide Limestone County water and sewer authority franchised in that area to
+
+915
+01:23:03,660 --> 01:23:10,180
+subdivisions actually that have some CEOs such that we need to get water there so
+
+916
+01:23:10,220 --> 01:23:14,220
+we're expanding their franchise their ability to operate within the corporate
+
+917
+01:23:14,220 --> 01:23:18,900
+limits of the city of Huntsville thank you mr. Davis yes ma'am thank you any
+
+918
+01:23:18,900 --> 01:23:23,500
+other questions all in favor please indicate I was the motion carries okay
+
+919
+01:23:23,500 --> 01:23:27,740
+it brings us to 20 new item you business items for consideration or action these
+
+920
+01:23:27,740 --> 01:23:30,780
+items will be approved in one motion unless any council member wishes to
+
+921
+01:23:30,780 --> 01:23:33,780
+remove an item for discussion the reading of each item will be waived
+
+922
+01:23:33,780 --> 01:23:37,300
+unless the council member requests otherwise council members which items
+
+923
+01:23:37,300 --> 01:23:46,420
+would you like held for separate consideration I would like EFG J and X
+
+924
+01:23:46,420 --> 01:24:06,540
+G J X X okay anybody have any other items EFG J and X and mr. Meredith
+
+925
+01:24:06,580 --> 01:24:20,420
+mr. Klein and chair would like to hold items L M and a D holding a D just the
+
+926
+01:24:20,420 --> 01:24:24,500
+ad is the one that was added at the last ad the one that was added at the last
+
+927
+01:24:24,500 --> 01:24:33,660
+just for transparency so we're holding EFG J LM X and a D so the chair moves
+
+928
+01:24:33,660 --> 01:24:42,020
+for approval items 28 consolidation approval items 20 a to D 20 H and I 20
+
+929
+01:24:42,020 --> 01:24:51,780
+K 20 N to W 20 Y to AC second by mr. cling all in favor please indicate I
+
+930
+01:24:51,780 --> 01:24:57,580
+oppose the motion carries we'll begin with item 20 E 20 E is an ordinance
+
+931
+01:24:57,580 --> 01:25:02,540
+appointing the election officials for the August 25 2026 City of Huntsville
+
+932
+01:25:02,620 --> 01:25:08,700
+municipal election and if necessary the September 22 2026 runoff election is
+
+933
+01:25:08,700 --> 01:25:13,340
+there a motion to approve move to approve motion from Swatkin second from
+
+934
+01:25:13,340 --> 01:25:21,460
+mr. Meredith miss Edwards good evening council mayor battle the item before
+
+935
+01:25:21,460 --> 01:25:27,860
+you is an ordinance to include the 225 election officials for the 26 precincts
+
+936
+01:25:27,860 --> 01:25:32,060
+that we were open for the upcoming election I'll be glad to take any
+
+937
+01:25:32,060 --> 01:25:38,340
+questions what questions do we have a comment I held these three items
+
+938
+01:25:38,340 --> 01:25:42,180
+because I want the public to understand what are we doing with the election
+
+939
+01:25:42,180 --> 01:25:47,540
+thank you miss Edwards and just to note the same poll workers will be utilized
+
+940
+01:25:47,540 --> 01:25:53,580
+if we have a runoff very good any other comments questions all in favor please
+
+941
+01:25:53,580 --> 01:26:00,060
+indicate I opposed motion carries then the next item is 20 F 20 F is a
+
+942
+01:26:00,060 --> 01:26:03,300
+resolution authorizing mayor to enter to agreement for election custodial
+
+943
+01:26:03,300 --> 01:26:06,860
+services between the city of Huntsville and Madison County Alabama is there a
+
+944
+01:26:06,860 --> 01:26:14,380
+motion to approve motion for mr. cling second from the chair questions the
+
+945
+01:26:14,380 --> 01:26:18,580
+evening council center you get it works the resolution before you is the
+
+946
+01:26:18,580 --> 01:26:23,180
+agreement with Madison County they will provide all voting machines there will
+
+947
+01:26:23,180 --> 01:26:28,620
+be 43 utilized but in the number you see before you it does say it's 43 we
+
+948
+01:26:28,620 --> 01:26:33,100
+will utilize but we are paying for six additional spares so you will see 49
+
+949
+01:26:33,100 --> 01:26:37,460
+that we are paying for and that's for an estimated total cost of seventy six
+
+950
+01:26:37,460 --> 01:26:41,700
+thousand nine hundred and thirty dollars and that will also include printing
+
+951
+01:26:41,700 --> 01:26:47,100
+materials for elections training supply kit materials as well as postage for the
+
+952
+01:26:47,700 --> 01:26:56,980
+Any questions? I have a question. We have six backups over the history of our
+
+953
+01:26:56,980 --> 01:27:02,900
+elections at the municipal level how often do we use backups? Not often and
+
+954
+01:27:02,900 --> 01:27:06,900
+after talking to a probate judge we just came up with the number you know what
+
+955
+01:27:06,900 --> 01:27:10,980
+makes the most sense we hope we have no technical difficulties what we're
+
+956
+01:27:10,980 --> 01:27:15,620
+praying for but we came up with six just to say we have it available should it
+
+957
+01:27:15,620 --> 01:27:21,300
+occur and we have not in the past to my knowledge had that happened. Oh okay even
+
+958
+01:27:21,300 --> 01:27:26,000
+better thank you you're welcome all in favor please indicate aye. Opposed? Motion
+
+959
+01:27:26,000 --> 01:27:30,620
+carries. 20g is resolution authorizing there to accept price quote from
+
+960
+01:27:30,620 --> 01:27:34,100
+election systems and software ink for all ballots and supplies provisional
+
+961
+01:27:34,100 --> 01:27:38,300
+kits express vote cards and programming coding of three ballot styles data
+
+962
+01:27:38,300 --> 01:27:43,940
+conversion fees L and A testing machine testing of poll books and on-site
+
+963
+01:27:43,940 --> 01:27:49,340
+support for the August 25 2026 municipal election is there a motion to
+
+964
+01:27:49,340 --> 01:27:52,940
+approve? So moved. Motion from Ms. Watkins second from the chair that is a whole
+
+965
+01:27:52,940 --> 01:27:56,660
+lot you got going on there. We're excited about the upcoming election
+
+966
+01:27:56,660 --> 01:28:01,020
+hopefully you won't see very much coming up this should be the bulk of it but
+
+967
+01:28:01,020 --> 01:28:05,300
+we're excited and we're ready the resolution before you is for the 43
+
+968
+01:28:05,300 --> 01:28:09,980
+machines for the upcoming election all ballots supplies provisional kits
+
+969
+01:28:09,980 --> 01:28:15,420
+express vote cards programming for all three ballot styles data conversion
+
+970
+01:28:15,420 --> 01:28:20,260
+programming as well as to election day technicians for support should we have
+
+971
+01:28:20,260 --> 01:28:25,860
+any issues across the 26 precincts for an estimated cost of $37,000. Any
+
+972
+01:28:25,860 --> 01:28:30,380
+questions for Ms. Edwards? All in favor please indicate aye. Opposed? Motion
+
+973
+01:28:30,380 --> 01:28:34,820
+carries thank you Ms. Edwards. Thank you counsel. 20j is a resolution authorizing
+
+974
+01:28:34,820 --> 01:28:37,900
+mayor to enter into a construction agreement for a federal-age project
+
+975
+01:28:37,900 --> 01:28:41,220
+between the City of Huntsville and Alabama Department of Transportation for
+
+976
+01:28:41,220 --> 01:28:48,500
+bridge replacement on Sparkman Drive over Pinhook Creek project number 71-26-SP 49
+
+977
+01:28:48,500 --> 01:28:55,740
+and LDOT project number demo-A 245. Is there a motion to approve? Motion for
+
+978
+01:28:55,740 --> 01:29:01,140
+second. Meredith second from Ms. Watkins. Mr. Davis. Good evening council member
+
+979
+01:29:01,140 --> 01:29:04,780
+Shane Davis director of urban economic development it seems to be a district
+
+980
+01:29:04,900 --> 01:29:11,380
+one night tonight this project is in district one so we would be should you
+
+981
+01:29:11,380 --> 01:29:15,180
+approve this we'll be accepting a two million dollar allocation of federal
+
+982
+01:29:15,180 --> 01:29:20,740
+funds for partial replacement Sparkman Bridge just off the west side of
+
+983
+01:29:20,740 --> 01:29:27,860
+Memorial Parkway we must give acknowledgments sent to Katie Britt who
+
+984
+01:29:27,860 --> 01:29:34,740
+is providing this we made an application to this bridge is very unique and that
+
+985
+01:29:34,780 --> 01:29:40,300
+it is a local bridge from a maintenance standpoint but as the parkway or us 231
+
+986
+01:29:40,300 --> 01:29:44,820
+was widened years ago in the overpass at Sparkman this bridge is just west of the
+
+987
+01:29:44,820 --> 01:29:50,900
+overpass it actually lies in LDOT right away but at the end of the project the
+
+988
+01:29:50,900 --> 01:29:54,780
+federal a project they gave us because it's a local road gave us the bridge so
+
+989
+01:29:54,780 --> 01:30:00,220
+we felt that it was in kind of a gray area of being in actually federal right
+
+990
+01:30:01,220 --> 01:30:06,020
+away but a local bridge and and Ms. Britt agreed and got us to be in our
+
+991
+01:30:06,020 --> 01:30:14,020
+allocation to go with our local funds to do some major bridge upgrades to the
+
+992
+01:30:14,020 --> 01:30:18,420
+Sparkman Bridge the amount of allocations two million dollars and then
+
+993
+01:30:18,420 --> 01:30:22,220
+the local city match would be five hundred thousand
+
+994
+01:30:22,380 --> 01:30:27,380
+I have questions thank you mr. Davis yes ma'am all in favor please indicate I
+
+995
+01:30:27,540 --> 01:30:33,780
+oppose the motion carries okay 20 L is a resolution authorizing the mayor to
+
+996
+01:30:33,780 --> 01:30:36,580
+execute modification number one to the agreement between the city of Huntsville
+
+997
+01:30:36,580 --> 01:30:40,860
+and Rosales and Partners Inc for engineering design services for US
+
+998
+01:30:40,860 --> 01:30:45,300
+Highway 231 and US Highway 431 pedestrian and bicycling bridge project
+
+999
+01:30:45,300 --> 01:30:51,380
+number 71-24-BR02 is there a motion to approve some of motion from
+
+1000
+01:30:51,380 --> 01:30:56,540
+Ms. Watkins second from the chair mr. Davis can the sky bridge has been a
+
+1001
+01:30:56,580 --> 01:31:00,700
+great public interest and so I thought just for clarity and transparency would
+
+1002
+01:31:00,700 --> 01:31:04,460
+you share with us what we're doing here yes ma'am thank you madam president so
+
+1003
+01:31:04,460 --> 01:31:10,820
+councilman as you're aware we have a large project that is has begun downtown
+
+1004
+01:31:10,820 --> 01:31:16,060
+that goes from Holmes Avenue lost the Western Bank of pin hook Creek crosses
+
+1005
+01:31:16,060 --> 01:31:19,980
+Clint Avenue goes down the West Bank of the Bond-Bronx Center crosses over
+
+1006
+01:31:19,980 --> 01:31:27,460
+Memorial Parkway US 231 also us 431 a cave governor's drive and stops just
+
+1007
+01:31:27,460 --> 01:31:33,500
+south of low mill that includes channel widening flood mitigation a new 13 acre
+
+1008
+01:31:33,500 --> 01:31:40,100
+linear park channel restoration aquatic restoration within pin hook Creek today
+
+1009
+01:31:40,100 --> 01:31:45,060
+as you well aware it looks like a red mud ditch it will not look that way so
+
+1010
+01:31:45,060 --> 01:31:49,540
+we have bid phase one which is the flood mitigation and channel widening and
+
+1011
+01:31:49,580 --> 01:31:55,060
+a lot of ready rock walls that you will see along the bank that is about 5%
+
+1012
+01:31:55,060 --> 01:31:59,380
+started if you drive down Clinton Avenue you'll see a large duck bank going
+
+1013
+01:31:59,380 --> 01:32:04,980
+underground to move a lot of utilities in that this change order or our
+
+1014
+01:32:04,980 --> 01:32:08,940
+modification number one and should be final by the way is whether a bridge
+
+1015
+01:32:08,940 --> 01:32:14,380
+designer so Rosales partners is designing five bridges a bridge that
+
+1016
+01:32:14,940 --> 01:32:21,420
+the new linear park and harder hunts will back into our canal between embassy
+
+1017
+01:32:21,420 --> 01:32:26,300
+suites and the BBC that thrasher fountain area so that you could go from
+
+1018
+01:32:26,300 --> 01:32:30,900
+big spring part on to the linear part and this new gateway Greenway if you
+
+1019
+01:32:30,900 --> 01:32:36,860
+call it one that will link from the park in the Greenway to the medical mall the
+
+1020
+01:32:36,860 --> 01:32:40,420
+medical district and then the three large bridges that have got the most
+
+1021
+01:32:40,500 --> 01:32:46,340
+attention that a cave but gotten deemed a sky bridge so as we got some federal
+
+1022
+01:32:46,340 --> 01:32:49,980
+aid for that project this project has been around it started as Army Corps
+
+1023
+01:32:49,980 --> 01:32:54,660
+engineer project and we say can we make it a local project because it was stuck
+
+1024
+01:32:54,660 --> 01:32:59,420
+in a funding cycle that just seemed to never move forward we did that about
+
+1025
+01:32:59,420 --> 01:33:03,740
+five years ago as we started designing this project we designed it as a city
+
+1026
+01:33:03,740 --> 01:33:09,540
+project as we got the federal funds we quickly was very easily to convert our
+
+1027
+01:33:09,780 --> 01:33:13,420
+local design plans to federal and state standards but we had to ask our bridge
+
+1028
+01:33:13,420 --> 01:33:18,220
+designer to do the same and go through a federal peer review of that design
+
+1029
+01:33:18,660 --> 01:33:24,340
+this $69,000 completes all of that such that we can bid this project in the
+
+1030
+01:33:24,340 --> 01:33:30,060
+first quarter next year so to go along with the channel widening in the
+
+1031
+01:33:30,060 --> 01:33:34,460
+Greenways there'll be two more things that would come for Council one would be
+
+1032
+01:33:34,480 --> 01:33:38,560
+the actual construction contract of these five bridges would be in one
+
+1033
+01:33:38,560 --> 01:33:43,520
+contract and then as we get further enough along with the sky bridges and
+
+1034
+01:33:43,520 --> 01:33:48,240
+the river walk if you will in the linear part the last package that will come
+
+1035
+01:33:48,240 --> 01:33:53,560
+before you probably in late 27 will be what we call the hearts gate it will be
+
+1036
+01:33:53,880 --> 01:33:58,360
+all the pretty stuff the landscaping the trees the benches the repair stations
+
+1037
+01:33:58,360 --> 01:34:02,920
+and in that portion we those are all specialized contractors we didn't want
+
+1038
+01:34:02,920 --> 01:34:07,000
+to lump this into one big contract we think it's more economical to break it
+
+1039
+01:34:07,020 --> 01:34:11,700
+in these phases so that we have contractors that is their style of work
+
+1040
+01:34:11,720 --> 01:34:18,080
+without a markup of a big prime GC so this is to finalize the plans in short
+
+1041
+01:34:18,680 --> 01:34:23,460
+to get them ready to bid for federal standards first quarter next year this
+
+1042
+01:34:23,460 --> 01:34:26,640
+is an effort to make sure we're doing everything right yes ma'am thank you
+
+1043
+01:34:26,880 --> 01:34:32,280
+any questions all in favor please indicate I impose motion carries when
+
+1044
+01:34:32,280 --> 01:34:36,280
+council members thank you Mr Davis 20 a.m. is a resolution authorizing mayor
+
+1045
+01:34:36,280 --> 01:34:38,880
+to enter a lease agreement between the city of Huntsville and Green Mountain
+
+1046
+01:34:38,880 --> 01:34:44,280
+volunteer fire department chair moves for approval second from mr. Watkins from
+
+1047
+01:34:44,280 --> 01:34:49,360
+his Watkins I'm sorry miss Watkins then I was calling mr. Hamilton and this
+
+1048
+01:34:49,360 --> 01:34:55,960
+Watkins mr. Hamilton thank you council members part of our fire response and
+
+1049
+01:34:55,960 --> 01:34:59,800
+medical response capability up on Green Mountain is shared with the violent
+
+1050
+01:34:59,800 --> 01:35:02,280
+volunteer fire department that has served that community for quite some
+
+1051
+01:35:02,280 --> 01:35:05,560
+time and so they are they are a great partner and then extend our capability
+
+1052
+01:35:05,560 --> 01:35:09,560
+there that area is in the coverage of one of our full-time fire stations down
+
+1053
+01:35:09,560 --> 01:35:12,920
+at the bottom of the mountain but because of the kind of the unique nature
+
+1054
+01:35:12,920 --> 01:35:16,200
+some of the properties there the work that the volunteer fire department does
+
+1055
+01:35:16,200 --> 01:35:20,360
+is also very very helpful to us as part of that there's a specialized equipment
+
+1056
+01:35:20,360 --> 01:35:23,940
+that we need them to have may recall a few council meetings ago you accepted a
+
+1057
+01:35:23,940 --> 01:35:28,080
+donation from the from the volunteer fire department on fundraising they did
+
+1058
+01:35:28,080 --> 01:35:32,840
+to assist with purchasing that truck we will then combine our own capital fleet
+
+1059
+01:35:32,840 --> 01:35:36,640
+funds with that to purchase the truck what's before you as a lease so
+
+1060
+01:35:36,640 --> 01:35:40,240
+essentially the city will own that piece of fleet or be our piece of equipment
+
+1061
+01:35:40,240 --> 01:35:44,280
+but we will lease it back to them to use in the service to the community there
+
+1062
+01:35:44,280 --> 01:35:51,680
+and how much will that lease be should be at no cost any other comments questions
+
+1063
+01:35:51,680 --> 01:35:57,240
+this is this just is a great community project where you have the hundred
+
+1064
+01:35:57,840 --> 01:36:04,160
+from the private entities combining with city funds to meet the needs of a very
+
+1065
+01:36:04,160 --> 01:36:08,120
+unique community so thanks to everybody that was involved in that all in favor
+
+1066
+01:36:08,120 --> 01:36:15,920
+please indicate aye opposed motion carries 20 what's our next 20x is a
+
+1067
+01:36:15,920 --> 01:36:19,680
+resolution authorizing they are entering into a memorandum of agreement between
+
+1068
+01:36:19,680 --> 01:36:24,200
+the city of Huntsville on behalf of the police department and the Alabama law
+
+1069
+01:36:24,200 --> 01:36:28,880
+enforcement agency and the Alabama Gulf Coast high-intensity drug trafficking
+
+1070
+01:36:28,880 --> 01:36:34,240
+area grant is there a motion a motion for mr. cling second from the chair I
+
+1071
+01:36:34,240 --> 01:36:38,960
+believe mr. Hamilton could you just tell us what we're doing here
+
+1072
+01:36:38,960 --> 01:36:44,600
+members that is this will be acceptance of grant funds from the state that
+
+1073
+01:36:44,600 --> 01:36:49,480
+reimburses us for overtime and other expenses the police department incurs as
+
+1074
+01:36:49,480 --> 01:36:56,400
+a member of this drug task force any questions for mr. Hamilton all in favor
+
+1075
+01:36:56,400 --> 01:37:04,080
+please indicate I know I posed the motion carries and 20 ad this is the
+
+1076
+01:37:04,080 --> 01:37:09,080
+item this is the item that was added to the agenda tonight 20 ad is a resolution
+
+1077
+01:37:09,080 --> 01:37:12,840
+authorizing the mayor to enter into an equipment lease agreement between the
+
+1078
+01:37:12,840 --> 01:37:16,480
+city of Huntsville and Brindley Mountain fire apparatus the chair moves for
+
+1079
+01:37:16,480 --> 01:37:23,520
+approval second from miss Watkins our second fire truck mr. Hamilton yes
+
+1080
+01:37:23,520 --> 01:37:27,600
+customers first thank you for for adding this to the agenda we've actually had
+
+1081
+01:37:27,600 --> 01:37:32,480
+multiple of our ladder trucks go down for maintenance issues that have some
+
+1082
+01:37:32,480 --> 01:37:38,200
+long lead time parts and things associated with them because of because
+
+1083
+01:37:38,200 --> 01:37:41,520
+of those unexpected issues we had difficulty providing the coverage that
+
+1084
+01:37:41,520 --> 01:37:45,440
+we really want to have for ladder trucks across the city fortunately we have
+
+1085
+01:37:45,440 --> 01:37:48,880
+Brindley Mountain fire apparatus it's kind of right here in our area and have
+
+1086
+01:37:48,880 --> 01:37:52,520
+trucks available for lease what's before you as a lease that will allow us to
+
+1087
+01:37:52,520 --> 01:37:56,080
+bring one of their ladder trucks in for a period of time as we work through the
+
+1088
+01:37:56,080 --> 01:37:59,720
+maintenance issues on our on our permanent fleet so with your approval
+
+1089
+01:37:59,720 --> 01:38:02,840
+tonight we'll get that we'll get that letter truck in service and the urgency
+
+1090
+01:38:02,840 --> 01:38:07,000
+of adding it to the agenda tonight is that these fire trucks do not come along
+
+1091
+01:38:07,000 --> 01:38:11,600
+very often and we need to act very quickly and can't wait for because the
+
+1092
+01:38:11,600 --> 01:38:14,960
+next councilman you will be three weeks right yeah we really don't we would we
+
+1093
+01:38:14,960 --> 01:38:17,880
+prefer to not wait the three weeks without the appropriate council members
+
+1094
+01:38:17,880 --> 01:38:21,200
+thank you for permitting us to add to the agenda do you have any questions mr.
+
+1095
+01:38:21,200 --> 01:38:26,200
+Meredith housekeeping it would have been nice to for each of us to have gotten a
+
+1096
+01:38:26,200 --> 01:38:31,280
+copy of that so I know that's a great point we had actually talked about
+
+1097
+01:38:31,280 --> 01:38:34,840
+doing that and it that did not happen that's honest it is you're right now the
+
+1098
+01:38:34,840 --> 01:38:41,000
+lease authorized us to do it for several months it's $360 a day that sounds like
+
+1099
+01:38:41,000 --> 01:38:44,680
+a lot but a ladder truck is over two million dollars and so actually 360
+
+1100
+01:38:44,680 --> 01:38:49,840
+bucks a day is it's not a bad price I didn't have any issue with that it's
+
+1101
+01:38:49,840 --> 01:38:56,560
+just I keep all the records and now I'm not gonna have a copy of it thank you
+
+1102
+01:38:56,560 --> 01:39:01,320
+thank you appreciate the comment just want to say because of the urgency we
+
+1103
+01:39:01,320 --> 01:39:05,520
+totally understand why this was added at the last minute and very happy to
+
+1104
+01:39:05,520 --> 01:39:10,160
+support when it comes to life health safety all right all in favor please
+
+1105
+01:39:10,160 --> 01:39:14,640
+indicate I oppose the motion carries thank you we have several new
+
+1106
+01:39:14,640 --> 01:39:18,680
+business items for introduction these are for introduction only and will be
+
+1107
+01:39:18,680 --> 01:39:23,600
+considered at the August 13th 2026 council meeting 21 a is the introduction
+
+1108
+01:39:23,600 --> 01:39:27,680
+of an ordinance to amend ordinance number a 9-7 9 classification and
+
+1109
+01:39:27,680 --> 01:39:32,320
+salary plan ordinance 21 B is the introduction of an ordinance to amend
+
+1110
+01:39:32,320 --> 01:39:36,320
+the budget ordinance number 23-7 for forward to modify the authorized strength
+
+1111
+01:39:36,320 --> 01:39:40,960
+of departments 21 C is the introduction of an ordinance annexing 1.14 acres of
+
+1112
+01:39:40,960 --> 01:39:45,840
+land lying on the north campus road west of Jake Jim Drive 21 D is the
+
+1113
+01:39:45,840 --> 01:39:50,120
+introduction of an ordinance annexing 3.07 acres of land lying on the west of
+
+1114
+01:39:50,120 --> 01:39:56,000
+Dupree worthy road north and south of US Highway 72 West 21 ease the
+
+1115
+01:39:56,000 --> 01:40:01,120
+introduction of an ordinance annexing 536.68 acres of land lying on the east
+
+1116
+01:40:01,120 --> 01:40:07,160
+of US Highway 72 East north and south of Little Cove Road and 21 F is the
+
+1117
+01:40:07,160 --> 01:40:11,160
+introduction of an ordinance to declare property a surplus and authorizing the
+
+1118
+01:40:11,160 --> 01:40:14,240
+mayor to entry into a purchase agreement between the city of Huntsville and API
+
+1119
+01:40:14,240 --> 01:40:19,480
+Huntsville LLC in connection with the North Huntsville Target shopping center
+
+1120
+01:40:19,480 --> 01:40:25,360
+that concludes our items for introduction we will move on to second
+
+1121
+01:40:25,360 --> 01:40:30,120
+roster public comments and we have four people signed up this portion of the
+
+1122
+01:40:30,120 --> 01:40:32,800
+meeting is reserved for persons wishing to address the council on matters
+
+1123
+01:40:32,800 --> 01:40:37,680
+relating to city business whether it's on the items or on the meeting agenda
+
+1124
+01:40:37,680 --> 01:40:41,240
+again we have four people who have signed up previous to this meeting when
+
+1125
+01:40:41,240 --> 01:40:44,680
+called approach the microphone state your name home address and city of
+
+1126
+01:40:44,680 --> 01:40:48,400
+residence each speaker may address the council for three minutes speakers shall
+
+1127
+01:40:48,400 --> 01:40:51,640
+refrain from entering into a dialogue with council members or city staff and
+
+1128
+01:40:51,640 --> 01:40:55,960
+from making comments regarding the good name and character of any individual I
+
+1129
+01:40:55,960 --> 01:41:00,720
+will call each person's name please come to the microphone right there and I will
+
+1130
+01:41:00,760 --> 01:41:04,120
+also call the name of the person following so you can be ready to come up
+
+1131
+01:41:04,120 --> 01:41:07,800
+and we can make this go as quickly as possible first we will hear from the
+
+1132
+01:41:07,800 --> 01:41:15,120
+team of Crawford and she will be followed by Ashley Doubthit miss Crawford
+
+1133
+01:41:15,120 --> 01:41:23,400
+just come right up here and then miss Doubthit be prepared to follow good
+
+1134
+01:41:23,400 --> 01:41:28,000
+evening council members my name is the team of Crawford and I'm here with my
+
+1135
+01:41:28,080 --> 01:41:33,160
+husband and my son you need your address I'm sorry okay my address is 112
+
+1136
+01:41:33,160 --> 01:41:38,120
+Hollybrook Drive Northwest Madison Alabama 357 very much and what else did
+
+1137
+01:41:38,120 --> 01:41:44,640
+you need that's it okay all right and I'm here my husband and my son Alfred the
+
+1138
+01:41:44,640 --> 01:41:49,000
+second and Alfred the third we are the founders of we feel foundation that
+
+1139
+01:41:49,000 --> 01:41:54,640
+councilmember Meredith mentioned earlier we are committed to empowering families
+
+1140
+01:41:54,640 --> 01:42:00,360
+affected by hemophilia through education advocacy and community support before I
+
+1141
+01:42:00,360 --> 01:42:03,880
+begin I would like to extend my sincere appreciation to councilmember Meredith
+
+1142
+01:42:03,880 --> 01:42:08,280
+for taking the time to meet with our family and learn about our mission your
+
+1143
+01:42:08,280 --> 01:42:13,080
+encouragement and willingness to support our organization means more than you
+
+1144
+01:42:13,080 --> 01:42:19,240
+know so thank you our journey began May 13th 2023 when our son Trey experienced
+
+1145
+01:42:19,240 --> 01:42:23,240
+an eight-hour nosebleed that would not stop that frightening two-day hospital
+
+1146
+01:42:23,240 --> 01:42:27,560
+stay in it with a blood transfusion that he had to receive and it was through
+
+1147
+01:42:27,560 --> 01:42:31,640
+that medical emergency that we learned that he has hemophilia a rare inherited
+
+1148
+01:42:31,640 --> 01:42:35,720
+bleeding disorder as our family underwent additional testing we
+
+1149
+01:42:35,720 --> 01:42:39,880
+discovered that our youngest son Cairo also inherited the hemophilia mutation
+
+1150
+01:42:39,880 --> 01:42:45,080
+and our youngest daughter Amaya is a carrier of the hemophilia trait and what
+
+1151
+01:42:45,080 --> 01:42:48,960
+felt like a single moment changed our lives forever we found ourselves
+
+1152
+01:42:48,960 --> 01:42:53,080
+searching for answers resources and a community that truly understood what our
+
+1153
+01:42:53,120 --> 01:42:57,440
+family was experiencing so their journey inspired us to create we feel foundation
+
+1154
+01:42:57,440 --> 01:43:02,640
+so that no family has to face that path alone our motto is simple we care we
+
+1155
+01:43:02,640 --> 01:43:07,080
+fight we feel in just two days we were host our first annual we feel launchpad
+
+1156
+01:43:07,080 --> 01:43:12,440
+packed with purpose experience at the West Huntsville rec center tonight we
+
+1157
+01:43:12,440 --> 01:43:15,960
+are here not to ask for anything we're simply here to introduce we feel
+
+1158
+01:43:15,960 --> 01:43:19,400
+foundation share our story and let you know that we are committed to serving
+
+1159
+01:43:19,400 --> 01:43:22,480
+the families of Huntsville we look forward to building meaningful
+
+1160
+01:43:22,520 --> 01:43:25,520
+relationships with each of you as we work together to make our community
+
+1161
+01:43:25,520 --> 01:43:29,880
+stronger so thank you for your time your service and opportunity to introduce we
+
+1162
+01:43:29,880 --> 01:43:34,280
+feel foundation thank you thank you miss Crawford thank you for joining us
+
+1163
+01:43:34,280 --> 01:43:39,000
+tonight we will now hear from Ashley doubt that who will be followed by Samuel
+
+1164
+01:43:39,000 --> 01:43:44,840
+Bramlett my name is Ashley Delfit I live at 44 Pine Street Huntsville Alabama
+
+1165
+01:43:44,840 --> 01:43:49,920
+thank you hello everyone good evening to you all I'm here tonight to address the
+
+1166
+01:43:49,960 --> 01:43:54,040
+traffic disaster that's been going on for years in Providence I bought my
+
+1167
+01:43:54,040 --> 01:43:58,640
+first home in the newer part of Providence in January 2022 I was so
+
+1168
+01:43:58,640 --> 01:44:03,120
+excited and that excitement was incredibly short-lived soon thereafter
+
+1169
+01:44:03,120 --> 01:44:08,280
+construction started on the behemoth 2020 at Providence Apartments from that
+
+1170
+01:44:08,280 --> 01:44:13,640
+day until now I have been living a daily living hell navigating these tight
+
+1171
+01:44:13,640 --> 01:44:17,480
+short streets that are littered at every bend with some type of delivery truck
+
+1172
+01:44:17,520 --> 01:44:22,960
+that blocks the taxpayer paid public roads I am here today not to ask but to
+
+1173
+01:44:22,960 --> 01:44:28,160
+demand a second entrance I wish you all would have anticipated the traffic
+
+1174
+01:44:28,160 --> 01:44:31,680
+disaster you were creating when you allowed the Slimans to build this
+
+1175
+01:44:31,680 --> 01:44:37,120
+monstrosity in fact to ever approve this without putting up proper signage street
+
+1176
+01:44:37,120 --> 01:44:41,640
+markings and a second entrance needs to be reprimanded I hope you have learned
+
+1177
+01:44:41,640 --> 01:44:46,160
+from this and don't allow this to happen again anywhere else in out in Huntsville
+
+1178
+01:44:46,840 --> 01:44:50,000
+if you think I'm the only annoyed resident you are wrong my other
+
+1179
+01:44:50,000 --> 01:44:54,400
+neighbors are too busy slaving away to a corrupt tax system that steals half of
+
+1180
+01:44:54,400 --> 01:44:59,440
+what we make to be here but I promise you come to Providence and bring this
+
+1181
+01:44:59,440 --> 01:45:03,560
+issue up and you will see how angry we all are we are all fed up with this
+
+1182
+01:45:03,560 --> 01:45:07,920
+traffic we are all fed up with this traffic catastrophe there are five
+
+1183
+01:45:07,920 --> 01:45:12,840
+things that I'm demanding to be done and be done now number one get us a second
+
+1184
+01:45:12,840 --> 01:45:16,120
+entrance built through Paramount Drive this is the easiest and quickest
+
+1185
+01:45:16,120 --> 01:45:21,120
+resolution for our problem the majority of my neighbors agree we need this done
+
+1186
+01:45:21,120 --> 01:45:26,520
+yesterday and when you do this please remove back the median that impedes at
+
+1187
+01:45:26,520 --> 01:45:30,920
+the intersection of Gates Mill and Hillcrest it is creating a traffic
+
+1188
+01:45:30,920 --> 01:45:35,120
+hazard by blocking part of the street we also need more lighting at that
+
+1189
+01:45:35,120 --> 01:45:39,400
+intersection as it is impossible to see pedestrians at night especially if it's
+
+1190
+01:45:39,400 --> 01:45:44,200
+raining this is a very pedestrian heavy area with residents crossing to get to
+
+1191
+01:45:44,200 --> 01:45:49,080
+restaurants in Providence number two we need no delivery signs installed on
+
+1192
+01:45:49,080 --> 01:45:54,320
+town center drive off Broadway and Gates Mill streets number three we need
+
+1193
+01:45:54,320 --> 01:45:58,200
+Huntsville Police Department to frequent patrol these three streets and to ticket
+
+1194
+01:45:58,200 --> 01:46:04,280
+all offenders no exceptions number four we need a city official to immediately
+
+1195
+01:46:04,280 --> 01:46:08,560
+notify the leasing office at 20 20 at Providence that tenants moving in and
+
+1196
+01:46:08,600 --> 01:46:12,400
+out or not to block the roads with their moving trucks they are responsible for
+
+1197
+01:46:12,400 --> 01:46:16,040
+their tenants and they must make their tenants aware of this these tenants are
+
+1198
+01:46:16,040 --> 01:46:20,280
+now becoming the number one offender of this issue the final thing we need is
+
+1199
+01:46:20,280 --> 01:46:25,680
+for Providence main street to be repaved in front of Spring Hill Suites this was
+
+1200
+01:46:25,680 --> 01:46:29,000
+promised years ago was supposed to be done when 20 20 at Providence was
+
+1201
+01:46:29,000 --> 01:46:33,200
+completed per traffic engineering that street took a beating during the
+
+1202
+01:46:33,200 --> 01:46:37,520
+construction of 20 20 at Providence please help us as you are the only ones
+
+1203
+01:46:37,600 --> 01:46:41,600
+who can help we are depending on you to fix the wrong that you allowed in the
+
+1204
+01:46:41,600 --> 01:46:46,360
+first place thank you councilmember Meredith and Shane Davis for all of your
+
+1205
+01:46:46,360 --> 01:46:51,840
+help so far thank you miss staff we will now hear from Samuel Bramlett who will
+
+1206
+01:46:51,840 --> 01:46:59,200
+be followed by Joseph Lee hello council my name is Sam Bramlett live at 101
+
+1207
+01:46:59,200 --> 01:47:06,440
+Linbury Road Meridianville Alabama third generation huntsvillian wanted to bring
+
+1208
+01:47:06,480 --> 01:47:10,800
+to the council's attention the lack of public information regarding the use of
+
+1209
+01:47:10,800 --> 01:47:18,840
+flock cameras in the city if you look at the open source map the flock there is a
+
+1210
+01:47:18,840 --> 01:47:26,680
+lot of flock cameras inside the city has the council considered where who owns
+
+1211
+01:47:26,680 --> 01:47:33,920
+the data data retention the the public oversight I have not seen much
+
+1212
+01:47:33,960 --> 01:47:40,160
+information concerning how this is like helped our community it would be good to
+
+1213
+01:47:40,160 --> 01:47:48,920
+put that data out there if it exists and just more transparency flock was
+
+1214
+01:47:48,920 --> 01:47:53,960
+established in Huntsville in 2022 I have a quote from the Huntsville Police
+
+1215
+01:47:53,960 --> 01:47:58,760
+Department public information officer Chris Jackson when time is critical
+
+1216
+01:47:58,760 --> 01:48:03,000
+this technology can assist investigators in locating suspects recovering stolen
+
+1217
+01:48:03,040 --> 01:48:07,880
+vehicles and finding missing persons my question is are there any static
+
+1218
+01:48:07,880 --> 01:48:15,200
+statistics to back this up Huntsville is on the national network which means any
+
+1219
+01:48:15,200 --> 01:48:23,560
+flock customer can view our cameras and what's shown on them so to me I mean
+
+1220
+01:48:23,560 --> 01:48:29,960
+the hospital is obviously big DOD industry is this not a maybe a national
+
+1221
+01:48:29,960 --> 01:48:35,160
+security threat if if if we have a centralized database of a bunch of
+
+1222
+01:48:35,160 --> 01:48:40,160
+engineers and people that are are critical to the Department of War now
+
+1223
+01:48:40,160 --> 01:48:47,840
+I would like the council to consider that these these cameras don't just
+
+1224
+01:48:47,840 --> 01:48:53,080
+track cars they they track people and and phones through Bluetooth through our
+
+1225
+01:48:53,080 --> 01:48:58,000
+unique Bluetooth signatures on our phones there's been hundreds of cases so
+
+1226
+01:48:58,000 --> 01:49:03,280
+far of misuse by local authorities nationwide I could list a few examples
+
+1227
+01:49:03,280 --> 01:49:09,800
+but uh I just want to reiterate that we're lacking transparency with with
+
+1228
+01:49:09,800 --> 01:49:16,440
+how our data is collected how long how was the retention policy that's all
+
+1229
+01:49:16,440 --> 01:49:21,120
+thank you thank you very much for joining us and our last person we will
+
+1230
+01:49:21,120 --> 01:49:26,040
+hear from is mr. Joseph Lee is mr. Lee still here
+
+1231
+01:49:26,080 --> 01:49:31,640
+yeah I think he left mr. Lee mr. Lee left so we'll take his name off the list
+
+1232
+01:49:31,640 --> 01:49:36,720
+council members that concludes our citizen comments and is there a motion
+
+1233
+01:49:36,720 --> 01:49:42,800
+to adjourn before we do that I know it's unusual but I'd like to address not
+
+1234
+01:49:42,800 --> 01:49:47,680
+really address but inform the last speaker that I've been getting a lot of
+
+1235
+01:49:47,680 --> 01:49:53,160
+constituent concerns about flock and my next town hall will be about the flock
+
+1236
+01:49:53,160 --> 01:50:00,440
+cameras so pay attention to my postings and you will be informed and yes the
+
+1237
+01:50:00,440 --> 01:50:04,080
+chief and mr. Hamilton and I have also had meetings with folks who are
+
+1238
+01:50:04,080 --> 01:50:08,960
+concerned about license plate readers and also the informing about the
+
+1239
+01:50:08,960 --> 01:50:13,360
+success that the police have had in using them so perhaps that's something
+
+1240
+01:50:13,360 --> 01:50:18,400
+that we might make information we might share more broadly sounds great but with
+
+1241
+01:50:18,440 --> 01:50:23,800
+that said it's a good motion to know I do make the motion to adjourn the
+
+1242
+01:50:23,800 --> 01:50:29,800
+meeting is adjourned at 719 thank you all very much

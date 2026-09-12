@@ -24,6 +24,21 @@ here, not in caden-work-machine.)
 
 ## Recently done
 
+- (2026-08-09) Ran `/council-notes` on the **2026-07-23 regular meeting** → notes.md.
+  Highlights: Harris Farms PDH approved (505 ac → ~1,800 homes, Ord 26-495), Northern
+  Bypass 75% done + North Village phase 1 sold out (Target/Home Depot closings
+  Aug–Sept), $30.0M expenditures, Aug 25 election machinery approved, emergency
+  ladder-truck lease added same-night ($360/day), Museum Board reappointments
+  postponed to Aug 13 (4/5 vote, Little absent), Flock ALPR public comment → Meredith's
+  next town hall will be about Flock. This meeting has NO official captions (Castus
+  404s the VTT) — whisper is its only transcript.
+- (2026-08-09) Transcribed **2026-07-23 regular**, **2026-07-10 budget work session**,
+  and **2026-07-23 northern-bypass clip** locally on **slayden's RTX 4080 SUPER**
+  (whisper medium, ~1h50m main meeting in a few minutes). slayden is now a CUDA
+  transcription node: installed torch 2.13.0+cu130 into the user Python 3.11 env
+  (was CPU-only). Gotcha: `llama-server` holds ~15 GB of the 4080's 16 GB —
+  `Stop-Service llama-server -Force` (also stops dependent `open-webui`) before
+  transcribing, `Start-Service` both after.
 - (2026-07-12) Ran `/council-notes` on **all remaining meetings** — every meeting in the repo now
   has a notes.md. New: Apr 9 (40 MW solar farm lease, Res 26-327), Apr 23 (Huntsville Hospital →
   Crestwood $450M acquisition; TIF 9 project plan launched, ~3,689.58 ac), May 14 (TIF 9 public

@@ -1,7 +1,19 @@
 name: Sync meetings
+# Both jobs are idempotent and cost ~20 s when nothing has changed, so they run
+# daily rather than on the council's nominal Thursday rhythm. The weekly
+# schedule they replaced missed real meetings by construction:
+#   - the preview ran Tuesday/Wednesday 18:00 CT, so a Tuesday NOON special
+#     session (2026-09-01, and 2026-09-29 next) was already over before the
+#     only run that could have previewed it;
+#   - a meeting is absent from the Legistar API until its agenda is posted, so
+#     an agenda published Thursday morning had no run left to catch it;
+#   - sync ran Friday 08:00 CT, so a Friday-LATE-MORNING work session
+#     (2026-09-18) waited a full week for its captions, audio and transcript.
 on:
   schedule:
-    - cron: "0 13 * * 5" # Fridays 13:00 UTC — meetings are Thursday evenings
+    - cron: "0 13 * * *" # daily 08:00 CT — full sync (discover, votes, summaries, audio)
+    - cron: "0 11 * * *" # daily 06:00 CT — preview, ahead of any same-day meeting
+    - cron: "0 23 * * *" # daily 18:00 CT — preview, catching agendas posted during the day
   workflow_dispatch:
 
 concurrency:
@@ -13,6 +25,7 @@ permissions:
 
 jobs:
   sync:
+    if: github.event_name != 'schedule' || github.event.schedule == '0 13 * * *'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -35,6 +48,20 @@ jobs:
         run: |
           git add meetings/
           git diff --cached --quiet || git commit -m "chore: extract votes from minutes"
+      # catches agendas published after the Tuesday preview run (e.g. special
+      # meetings announced late) so every archived meeting gets a preview
+      - name: Backfill agenda previews from archived PDFs
+        run: python3 scripts/hsvcc.py backfill-previews
+      # backlog check: meetings that passed while the local LLM was down get
+      # their plain-language summary generated on the next run it's up for
+      - name: Backfill plain-language summaries (local LLM)
+        env:
+          SLAYDEN_API_TOKEN: ${{ secrets.SLAYDEN_API_TOKEN }}
+        run: python3 scripts/summarize_agendas.py
+      - name: Commit summaries
+        run: |
+          git add -A upcoming/ meetings/
+          git diff --cached --quiet || git commit -m "chore: backfill agenda summaries"
       - name: Extract + publish audio release assets
         env:
           GH_TOKEN: ${{ github.token }}
@@ -43,6 +70,42 @@ jobs:
         run: |
           git add meetings/
           git diff --cached --quiet || git commit -m "chore: record published audio assets"
+          # main may have moved while this job ran (races with local pushes)
+          git pull --rebase origin main
+          git push
+
+  # Twice daily: grab upcoming agendas from Legistar before the meeting,
+  # summarize the topics, and check the links inside each agenda. Two runs a
+  # day means an agenda posted at any hour is previewed before the meeting,
+  # including a same-day noon session. Skipped on the 13:00 cron because the
+  # sync job's backfill-previews step already covers that pass.
+  # `needs: sync` serializes the two jobs' pushes on workflow_dispatch;
+  # always() keeps this job running on the crons where sync is skipped.
+  preview:
+    needs: sync
+    if: always() && (github.event_name != 'schedule' || github.event.schedule != '0 13 * * *')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - name: Fetch upcoming agendas, summarize topics, check links
+        run: python3 scripts/hsvcc.py preview-agendas
+      # LLM step runs on the self-hosted Qwen3.5-35B (slayden) via its public
+      # token-authed endpoint; skips gracefully if the token or server is absent
+      - name: Plain-language agenda summaries (local LLM)
+        env:
+          SLAYDEN_API_TOKEN: ${{ secrets.SLAYDEN_API_TOKEN }}
+        run: python3 scripts/summarize_agendas.py
+      - name: Commit agenda previews and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A upcoming/ meetings/
+          git diff --cached --quiet || git commit -m "chore: agenda preview $(date -u +%F)"
           # main may have moved while this job ran (races with local pushes)
           git pull --rebase origin main
           git push
