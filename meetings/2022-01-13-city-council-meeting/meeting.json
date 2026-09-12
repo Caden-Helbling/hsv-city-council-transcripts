@@ -1,0 +1,26 @@
+{
+  "slug": "2022-01-13-city-council-meeting",
+  "title": "Huntsville City Council Meeting - January 13, 2022",
+  "date": "2022-01-13",
+  "video_page_url": "https://www.huntsvilleal.gov/videos/huntsville-city-council-meeting-january-13-2022/",
+  "castus_id": "63aaa716fd1b1954d50a90ba",
+  "mp4_url": "https://dlttx48mxf9m3.cloudfront.net/outputs/63aaa716fd1b1954d50a90ba/Default/MP4/out.mp4",
+  "legistar_event_id": 1001,
+  "agenda_url": "http://huntsvilleal.legistar1.com/huntsvilleal/meetings/2022/1/1001_A_City_Council_Regular_Meeting_22-01-13_Agenda.pdf",
+  "minutes_url": null,
+  "minutes_status": "Draft",
+  "duration_seconds": 7178,
+  "status": {
+    "has_agenda": true,
+    "has_minutes": false,
+    "has_captions": false,
+    "has_audio": false,
+    "has_transcript": true
+  },
+  "notes": [
+    "Official Castus captions do not exist for 2022 videos (get-captions returns a signed URL to a nonexistent object), so Whisper is the only transcript source.",
+    "Legistar minutes for this meeting were never published: minutes_url is null and status is still Draft.",
+    "Fetched and transcribed manually on 2026-09-11, not via hsvcc.py. Note that hsvcc.py transcribe currently fails under torch 2.7.1: whisper.load_model(..., device='mps') cannot move the sparse alignment_heads buffer (no SparseMPS kernel). Workaround used here: load on cpu, densify that buffer, then .to(device).",
+    "Contains agenda item 20M, Resolution 22-30, the original Flock Group MOU."
+  ]
+}
