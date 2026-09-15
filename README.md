@@ -193,6 +193,17 @@ stderr while only stdout was piped. cmd.exe does the redirect now (PowerShell 5.
 wraps redirected native stderr in a terminating NativeCommandError) and python
 runs `-u`, so progress lines land as they happen.
 
+That 2026-08-28 failure and a repeat on 2026-09-14 were **Windows Smart App
+Control** blocking numba's unsigned native extension (`ImportError: DLL load
+failed while importing _helperlib: An Application Control policy has blocked
+this file`). Smart App Control judges unsigned files by cloud reputation, so a
+current numba build can be blocked while an older, widely installed one passes:
+slayden's Python 3.11 stack is therefore pinned to `numba==0.61.2
+llvmlite==0.44.0 numpy==2.2.6` (verified importable 2026-09-14). If the error
+comes back, check `Get-WinEvent -LogName Microsoft-Windows-CodeIntegrity/Operational`
+for event 3077 naming the file; the durable fix is turning Smart App Control
+off, which is a one-way switch and Caden's call.
+
 It was weekly-on-Friday until 2026-09-07, chosen for a council that meets
 Thursday evenings — but work sessions and special sessions land on other days,
 and audio only becomes transcribable after the sync run that publishes the

@@ -1186,10 +1186,14 @@ def coverage(since: date, meetings_dir: Path, upcoming_dir: Path,
     gaps: list[str] = []
     pending: list[str] = []
 
-    def record(day: date, message: str) -> None:
-        """A gap once the meeting is older than the grace period, else pending."""
+    def record(day: date, message: str) -> bool:
+        """A gap once the meeting is older than the grace period, else pending.
+
+        Returns True when it was recorded as a gap."""
         age = (today - day).days
-        (gaps if age > grace_days else pending).append(f"{message} ({age}d ago)")
+        is_gap = age > grace_days
+        (gaps if is_gap else pending).append(f"{message} ({age}d ago)")
+        return is_gap
 
     print(f"Scheduled on the Legistar calendar ({len(scheduled)} meetings):")
     if not scheduled:
@@ -1244,19 +1248,21 @@ def coverage(since: date, meetings_dir: Path, upcoming_dir: Path,
                    if not (mdir / rel).exists()]
         if not manifest.status.get("has_audio_asset"):
             missing.append("audio asset")
+        flag, detail = "ok  ", ""
         if missing:
             # Same grace as a missing folder. The artifacts arrive on a lag by
             # design: the transcript comes from slayden's 20:00 CT whisper run
             # the day after the video is discovered, the summary from whichever
             # run next has the LLM up - so a fresh meeting is short of both
             # for a day even when nothing is wrong.
+            message = f"{mdir.name}: missing {', '.join(missing)}"
             try:
-                record(date.fromisoformat(manifest.date),
-                       f"{mdir.name}: missing {', '.join(missing)}")
+                is_gap = record(date.fromisoformat(manifest.date), message)
             except ValueError:
-                gaps.append(f"{mdir.name}: missing {', '.join(missing)}")
-        flag = "GAP " if missing else "ok  "
-        detail = f" - missing {', '.join(missing)}" if missing else ""
+                gaps.append(message)
+                is_gap = True
+            flag = "GAP " if is_gap else "wait"
+            detail = f" - missing {', '.join(missing)}"
         print(f"  {flag}{mdir.name}{detail}")
 
     # Explains the empty votes.json files: extract-votes has nothing to parse
