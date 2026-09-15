@@ -1,0 +1,22 @@
+{
+  "slug": "2026-09-10-city-council-meeting",
+  "title": "Huntsville City Council Meeting \u2013 September 10, 2026",
+  "date": "2026-09-10",
+  "body": "City Council Regular Meeting",
+  "video_page_url": "https://www.huntsvilleal.gov/videos/huntsville-city-council-meeting-september-10-2026-2/",
+  "castus_id": "6aa37a3fbc542e2684129a7f",
+  "mp4_url": "https://dlttx48mxf9m3.cloudfront.net/outputs/6aa37a3fbc542e2684129a7f/Default/MP4/out_1080.mp4",
+  "legistar_event_id": 1228,
+  "legistar_url": "https://huntsvilleal.legistar.com/MeetingDetail.aspx?LEGID=1228&GID=835&G=6DB813AB-6E2A-4080-9388-DE513170C63D",
+  "agenda_url": "https://huntsvilleal.legistar1.com/huntsvilleal/meetings/2026/9/1228_A_City_Council_Regular_Meeting_26-09-10_Agenda.pdf",
+  "minutes_url": null,
+  "audio_asset_tag": "audio-2026-09-10-city-council-meeting",
+  "status": {
+    "has_agenda": true,
+    "has_minutes": false,
+    "has_captions": true,
+    "has_audio_asset": false,
+    "has_whisper": false,
+    "has_votes": false
+  }
+}
