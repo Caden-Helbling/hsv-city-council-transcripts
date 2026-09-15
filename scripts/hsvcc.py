@@ -98,14 +98,28 @@ class Manifest:
     minutes_url: str | None
     audio_asset_tag: str
     status: dict[str, bool] = field(default_factory=_default_status)
+    # free-text provenance for hand-archived meetings (how it was fetched, why a
+    # source is missing); omitted from meeting.json when empty
+    notes: list[str] = field(default_factory=list)
 
     @classmethod
     def load(cls, meeting_dir: Path) -> "Manifest":
-        return cls(**json.loads((meeting_dir / "meeting.json").read_text()))
+        path = meeting_dir / "meeting.json"
+        try:
+            return cls(**json.loads(path.read_text(encoding="utf-8")))
+        except TypeError as e:
+            # a hand-edited manifest with a stray or missing key used to take down
+            # every command that sweeps meetings/ (extract-votes, coverage, ...)
+            # with a bare dataclass TypeError - name the file so it is fixable
+            raise ValueError(f"{path}: does not match the Manifest schema: {e}") from e
 
     def save(self, meeting_dir: Path) -> None:
         meeting_dir.mkdir(parents=True, exist_ok=True)
-        (meeting_dir / "meeting.json").write_text(json.dumps(asdict(self), indent=2) + "\n")
+        data = asdict(self)
+        if not data["notes"]:
+            del data["notes"]
+        (meeting_dir / "meeting.json").write_text(json.dumps(data, indent=2) + "\n",
+                                                  encoding="utf-8")
 
 
 def recompute_status(meeting_dir: Path, manifest: Manifest) -> None:
