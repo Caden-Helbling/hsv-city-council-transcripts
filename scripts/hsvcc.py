@@ -1245,7 +1245,16 @@ def coverage(since: date, meetings_dir: Path, upcoming_dir: Path,
         if not manifest.status.get("has_audio_asset"):
             missing.append("audio asset")
         if missing:
-            gaps.append(f"{mdir.name}: missing {', '.join(missing)}")
+            # Same grace as a missing folder. The artifacts arrive on a lag by
+            # design: the transcript comes from slayden's 20:00 CT whisper run
+            # the day after the video is discovered, the summary from whichever
+            # run next has the LLM up - so a fresh meeting is short of both
+            # for a day even when nothing is wrong.
+            try:
+                record(date.fromisoformat(manifest.date),
+                       f"{mdir.name}: missing {', '.join(missing)}")
+            except ValueError:
+                gaps.append(f"{mdir.name}: missing {', '.join(missing)}")
         flag = "GAP " if missing else "ok  "
         detail = f" - missing {', '.join(missing)}" if missing else ""
         print(f"  {flag}{mdir.name}{detail}")

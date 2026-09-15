@@ -34,11 +34,13 @@ accurate, hallucination-free bullet list.
 from __future__ import annotations
 
 import hashlib
+import json
 import os
 import re
 import sys
 from datetime import date
 from pathlib import Path
+from typing import Iterable
 
 import requests
 
@@ -52,7 +54,12 @@ PROMPT_PATH = Path(__file__).resolve().parent / "prompts" / "laymans-summary.md"
 
 BASE_URL = os.environ.get("SUMMARY_BASE_URL", "https://slayden-api.duckdns.org")
 MODEL = os.environ.get("SUMMARY_MODEL", "qwen3.5-35b")
-TIMEOUT = 300
+CONNECT_TIMEOUT = 15
+# per-read, not per-call: the response is streamed, so the longest quiet
+# stretch is prompt processing (~13 s for a 13k-token agenda), and a healthy
+# generation finishes in about a minute. See generate_body for the history.
+TIMEOUT = 90
+LLM_CALL_ATTEMPTS = 2
 
 _HASH_RE = re.compile(r"source-sha256: ([0-9a-f]{64})")
 
@@ -78,28 +85,74 @@ def render_summary_md(body: str, preview_md: str, generated: str) -> str:
             "check the agenda PDF for the authoritative wording.*\n")
 
 
+def collect_stream(lines: "Iterable[str]") -> tuple[str, str | None]:
+    """Fold an OpenAI-style SSE stream into (text, finish_reason)."""
+    parts: list[str] = []
+    finish = None
+    for raw in lines:
+        if not raw or not raw.startswith("data:"):
+            continue
+        data = raw[len("data:"):].strip()
+        if data == "[DONE]":
+            break
+        for choice in json.loads(data).get("choices", []):
+            delta = (choice.get("delta") or {}).get("content")
+            if delta:
+                parts.append(delta)
+            if choice.get("finish_reason"):
+                finish = choice["finish_reason"]
+    return "".join(parts), finish
+
+
+def _stream_completion(prompt: str) -> str:
+    with requests.post(
+            f"{BASE_URL}/v1/chat/completions",
+            headers={"Authorization": f"Bearer {os.environ['SLAYDEN_API_TOKEN']}"},
+            json={
+                "model": MODEL,
+                "max_tokens": 8192,
+                "stream": True,
+                "messages": [{"role": "user", "content": prompt}],
+                "chat_template_kwargs": {"enable_thinking": False},
+            },
+            stream=True, timeout=(CONNECT_TIMEOUT, TIMEOUT)) as resp:
+        resp.raise_for_status()
+        text, finish = collect_stream(resp.iter_lines(decode_unicode=True))
+    if finish != "stop":
+        raise RuntimeError(f"generation did not finish: {finish}")
+    return text
+
+
 def generate_body(preview_md: str) -> str:
     """One LLM call: agenda preview markdown -> the plain-language summary body.
 
     OpenAI-compatible endpoint with Qwen thinking disabled via
     chat_template_kwargs — the same recipe the aider config uses.
+
+    Streamed, with a short per-read timeout and a retry, because of what the
+    logs showed on 2026-09-15: between 2026-08-25 and then, 7 of 11 CI calls
+    through slayden-api.duckdns.org ended in the client's 300 s read timeout
+    while Caddy on thinku and llama-swap had both logged the same request as
+    a 200 finished in 37-65 s. The finished response never reached the
+    runner. Whatever drops it sits between the gateway and GitHub, so the
+    client is the only side that can react: with streaming the connection is
+    never idle for more than the prompt-processing seconds, a dead one is
+    noticed after TIMEOUT rather than 300 s, and a fresh connection (which is
+    what the one call that did succeed that night used) gets another chance.
     """
     prompt = PROMPT_PATH.read_text(encoding="utf-8").replace("{agenda}", preview_md)
-    resp = requests.post(
-        f"{BASE_URL}/v1/chat/completions",
-        headers={"Authorization": f"Bearer {os.environ['SLAYDEN_API_TOKEN']}"},
-        json={
-            "model": MODEL,
-            "max_tokens": 8192,
-            "messages": [{"role": "user", "content": prompt}],
-            "chat_template_kwargs": {"enable_thinking": False},
-        },
-        timeout=TIMEOUT)
-    resp.raise_for_status()
-    choice = resp.json()["choices"][0]
-    if choice.get("finish_reason") != "stop":
-        raise RuntimeError(f"generation did not finish: {choice.get('finish_reason')}")
-    text = (choice["message"].get("content") or "").strip()
+    last: Exception | None = None
+    for attempt in range(1, LLM_CALL_ATTEMPTS + 1):
+        try:
+            text = _stream_completion(prompt).strip()
+            break
+        except (requests.Timeout, requests.ConnectionError) as exc:
+            last = exc
+            print(f"warn: LLM call {attempt}/{LLM_CALL_ATTEMPTS} lost "
+                  f"({type(exc).__name__}); retrying on a new connection",
+                  file=sys.stderr)
+    else:
+        raise RuntimeError(f"LLM call failed {LLM_CALL_ATTEMPTS} times: {last}")
     if not text.startswith(("#", "-", "*")):
         raise RuntimeError(f"unexpected summary shape: {text[:120]!r}")
     return text

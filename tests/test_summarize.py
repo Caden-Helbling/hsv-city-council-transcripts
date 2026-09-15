@@ -518,3 +518,54 @@ def test_rendered_summary_nests_groups_under_the_wrapper_heading() -> None:
     text = render_summary_md(shaped(), hash_input(PREVIEW), "2026-09-09")
     assert text.index("## In plain language") < text.index("### What matters most")
     assert "### Routine business" in text
+
+
+def test_collect_stream_folds_sse_chunks() -> None:
+    from summarize_agendas import collect_stream
+    lines = [
+        'data: {"choices":[{"delta":{"role":"assistant"},"finish_reason":null}]}',
+        "",
+        'data: {"choices":[{"delta":{"content":"### What"},"finish_reason":null}]}',
+        ': keep-alive comment',
+        'data: {"choices":[{"delta":{"content":" matters"},"finish_reason":null}]}',
+        'data: {"choices":[{"delta":{},"finish_reason":"stop"}]}',
+        "data: [DONE]",
+    ]
+    assert collect_stream(lines) == ("### What matters", "stop")
+
+
+def test_collect_stream_reports_a_truncated_generation() -> None:
+    from summarize_agendas import collect_stream
+    lines = ['data: {"choices":[{"delta":{"content":"- a"},"finish_reason":"length"}]}',
+             "data: [DONE]"]
+    assert collect_stream(lines) == ("- a", "length")
+
+
+def test_generate_body_retries_a_lost_connection(monkeypatch: pytest.MonkeyPatch) -> None:
+    import requests
+    import summarize_agendas as sa
+    calls: list[int] = []
+
+    def flaky(prompt: str) -> str:
+        calls.append(1)
+        if len(calls) == 1:
+            raise requests.ReadTimeout("gone")
+        return "### What matters most\n- fine"
+
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "t")
+    monkeypatch.setattr(sa, "_stream_completion", flaky)
+    assert sa.generate_body("agenda").startswith("### What matters most")
+    assert len(calls) == 2
+
+
+def test_generate_body_gives_up_after_the_retry(monkeypatch: pytest.MonkeyPatch) -> None:
+    import requests
+    import summarize_agendas as sa
+
+    def dead(prompt: str) -> str:
+        raise requests.ConnectionError("reset")
+
+    monkeypatch.setenv("SLAYDEN_API_TOKEN", "t")
+    monkeypatch.setattr(sa, "_stream_completion", dead)
+    with pytest.raises(RuntimeError, match="failed 2 times"):
+        sa.generate_body("agenda")

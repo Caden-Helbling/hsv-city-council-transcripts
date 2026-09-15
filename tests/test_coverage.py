@@ -169,8 +169,16 @@ def test_coverage_flags_missing_artifacts(tmp_path, capsys) -> None:
     session = CalendarSession(
         _row("gridCalendar", 0, "City Council Regular Meeting", "9/10/2026",
              agenda=True), [])
+    # inside the grace period the missing pieces are pending, not a gap: the
+    # transcript and summary land a day after discovery by design
     rc = coverage(date(2026, 4, 1), meetings, upcoming, session,
                   today=date(2026, 9, 14), strict=True)
+    captured = capsys.readouterr()
+    assert rc == 0
+    assert "Pending (1" in captured.out and "0 gap(s)" in captured.out
+    # past it they are a real gap
+    rc = coverage(date(2026, 4, 1), meetings, upcoming, session,
+                  today=date(2026, 9, 25), strict=True)
     captured = capsys.readouterr()
     assert rc == 1
     for label in ("preview", "summary", "transcript", "audio asset"):
