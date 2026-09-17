@@ -3,7 +3,7 @@
 - When/where: 11:00 AM · CITY COUNCIL CHAMBERS
 - Legistar: https://huntsvilleal.legistar.com/MeetingDetail.aspx?LEGID=1404&GID=835&G=6DB813AB-6E2A-4080-9388-DE513170C63D
 - Agenda PDF: https://huntsvilleal.legistar1.com/huntsvilleal/meetings/2026/9/1404_A_City_Council_Work_Session_26-09-18_Agenda.pdf
-- Generated 2026-09-16 by `hsvcc.py preview-agendas` (verbatim agenda item titles, no LLM)
+- Generated 2026-09-17 by `hsvcc.py preview-agendas` (verbatim agenda item titles, no LLM)
 
 ## Topics
 
