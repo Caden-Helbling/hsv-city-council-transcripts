@@ -16,7 +16,7 @@
     "has_minutes": false,
     "has_captions": false,
     "has_audio_asset": true,
-    "has_whisper": false,
+    "has_whisper": true,
     "has_votes": false
   }
 }
