@@ -12,7 +12,7 @@ import sys
 import tempfile
 import time
 from dataclasses import asdict, dataclass, field
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any, Callable
 
@@ -329,12 +329,95 @@ def download_file(url: str, dest: Path, session: requests.Session) -> None:
                 fh.write(chunk)
 
 
+# --- videos whose URL carries no date ---------------------------------------
+#
+# The city normally slugs a council video with its date
+# (...-meeting-november-5-2026-2), and `date_from_slug` is how discover dates a
+# meeting. The 2026-11-02 reorganization special session was posted as
+# .../huntsville-city-council-2026-27-reorganization-special-session/ and was
+# skipped without a word for two weeks. Such a video is dated from Legistar
+# instead: the council event of the same kind held on, or in the week before,
+# the day the page was published.
+_PUBLISHED_RE = re.compile(r'"datePublished":"([^"]+)"')
+UNDATED_LOOKBACK_DAYS = 7
+# (words in the video title, word in the Legistar body name). Deliberately
+# strict: an unrelated undated video in the same category ("City of Huntsville
+# Council 2026 Oath of Office Ceremony", posted the same night) must not claim
+# a meeting's date.
+_UNDATED_KINDS = (("special", "special"), ("work session", "work session"),
+                  ("meeting", "regular"))
+
+
+def parse_published_date(html: str) -> date | None:
+    """The page's schema.org datePublished as a (UTC) date.
+
+    UTC runs at most a day ahead of Huntsville, which only widens the
+    lookback window by a day."""
+    m = _PUBLISHED_RE.search(html)
+    if not m:
+        return None
+    try:
+        return datetime.fromisoformat(m.group(1).replace("Z", "+00:00")).date()
+    except ValueError:
+        return None
+
+
+def match_undated_event(title: str, published: date, events: list[dict],
+                        taken_dates: set[str]) -> dict | None:
+    """The Legistar event an undated council video belongs to, or None.
+
+    `taken_dates` are dates that already have an archive folder; they are
+    excluded so a clip cut from an archived meeting cannot be filed as a second
+    copy of it."""
+    title_l = title.lower()
+    if "city council" not in title_l:
+        return None
+    body_word = next((b for t, b in _UNDATED_KINDS if t in title_l), None)
+    if body_word is None:
+        return None
+    earliest = published - timedelta(days=UNDATED_LOOKBACK_DAYS)
+    best: tuple[date, dict] | None = None
+    for event in events:
+        day_iso = (event.get("EventDate") or "")[:10]
+        try:
+            day = date.fromisoformat(day_iso)
+        except ValueError:
+            continue
+        body = (event.get("EventBodyName") or "").lower()
+        if (not earliest <= day <= published or day_iso in taken_dates
+                or "council" not in body or body_word not in body):
+            continue
+        if best is None or day > best[0]:
+            best = (day, event)
+    return best[1] if best else None
+
+
+def _resolve_undated(url: str, events: list[dict], since: date,
+                     taken_dates: set[str], session: requests.Session) -> date | None:
+    """Date for a council video whose slug has none; None means leave it alone."""
+    resp = session.get(url, timeout=TIMEOUT)
+    resp.raise_for_status()
+    title, _ = parse_video_page(resp.text)
+    published = parse_published_date(resp.text)
+    if published is not None and published < since:
+        return None  # older than the window being synced: not ours to chase
+    event = (match_undated_event(title, published, events, taken_dates)
+             if published else None)
+    if event is None:
+        # loud on purpose: a silent skip here is exactly how a meeting went
+        # missing until the coverage check aged it into a gap
+        print(f"  warn: {url}: no date in the URL and no matching Legistar "
+              f"event (title {title!r}, published {published}) - not archived")
+        return None
+    return date.fromisoformat(event["EventDate"][:10])
+
+
 def _discover_one(url: str, events: list[dict], meetings_dir: Path,
-                  session: requests.Session) -> None:
+                  session: requests.Session, meeting_date: date | None = None) -> None:
     resp = session.get(url, timeout=TIMEOUT)
     resp.raise_for_status()
     title, castus_id = parse_video_page(resp.text)
-    meeting_date = date_from_slug(url)
+    meeting_date = meeting_date or date_from_slug(url)
     if meeting_date is None:
         raise ValueError(f"cannot parse date from slug: {url}")
     slug = meeting_slug(title, meeting_date)
@@ -378,12 +461,33 @@ def _discover_one(url: str, events: list[dict], meetings_dir: Path,
 def discover(since: date, meetings_dir: Path, session: requests.Session) -> int:
     events = fetch_legistar_events(since, session)
     failures = 0
+    # what is already archived: an undated video resolved on an earlier run is
+    # recognised by its URL, so it is neither re-resolved nor dependent on
+    # Legistar still listing the event
+    known_dates: dict[str, date] = {}
+    taken_dates: set[str] = set()
+    if meetings_dir.is_dir():
+        for mdir in meetings_dir.iterdir():
+            if not (mdir / "meeting.json").exists():
+                continue
+            try:
+                manifest = Manifest.load(mdir)
+                known_dates[manifest.video_page_url] = date.fromisoformat(manifest.date)
+            except ValueError:
+                continue  # coverage reports a broken manifest; not discover's job
+            taken_dates.add(manifest.date)
     for url in iter_archive_video_urls(session, since):
-        d = date_from_slug(url)
-        if d is None or d < since:
-            continue
+        d = date_from_slug(url) or known_dates.get(url)
         try:
-            _discover_one(url, events, meetings_dir, session)
+            if d is None:
+                # the category also carries undated non-council videos
+                # (interviews, forums); only a council one is worth a fetch
+                if "council" not in url.rstrip("/").rsplit("/", 1)[-1]:
+                    continue
+                d = _resolve_undated(url, events, since, taken_dates, session)
+            if d is None or d < since:
+                continue
+            _discover_one(url, events, meetings_dir, session, meeting_date=d)
             print(f"ok: {url}")
         except Exception as exc:  # noqa: BLE001 — one bad meeting must not kill the batch
             failures += 1
