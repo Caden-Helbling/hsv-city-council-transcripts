@@ -19,6 +19,8 @@ from typing import Any, Callable
 RunFn = Callable[..., Any]
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 CASTUS_API = "https://imd0mxanj2.execute-api.us-west-2.amazonaws.com"
 LEGISTAR_API = "https://webapi.legistar.com/v1/huntsvilleal"
@@ -1432,6 +1434,15 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     session = requests.Session()
     session.headers["User-Agent"] = "hsv-city-council-transcripts (personal archival tool)"
+    # Legistar's web API intermittently drops a connection with no response
+    # (RemoteDisconnected: 2026-10-27, 11-21, 11-24), which failed whole CI
+    # runs on a single GET. Retry idempotent requests with backoff; POSTs are
+    # excluded by urllib3's default allowed_methods. raise_on_status=False
+    # hands the last response back so raise_for_status() behaves as before.
+    retry = Retry(total=4, backoff_factor=2, raise_on_status=False,
+                  status_forcelist=(429, 500, 502, 503, 504))
+    session.mount("https://", HTTPAdapter(max_retries=retry))
+    session.mount("http://", HTTPAdapter(max_retries=retry))
     if args.command == "discover":
         return 1 if discover(args.since, MEETINGS_DIR, session) else 0
     if args.command == "fetch-audio":
